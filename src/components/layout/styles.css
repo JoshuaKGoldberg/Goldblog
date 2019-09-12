@@ -1,0 +1,10 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 810px;
+}
+
+.main {
+    flex-grow: 1;
+}
