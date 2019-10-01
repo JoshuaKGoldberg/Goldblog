@@ -13,7 +13,7 @@ Nothing in the slightest!
 Ugh.
 This is what code highlighting with Medium's code blocks looked like then and looks like today:
 
-[Medium code highlighting screenshot]()
+![Medium code highlighting screenshot](./medium-capture.png)
 
 This is code highlighting with Gatsby's [official PrismJS plugin](https://www.gatsbyjs.org/packages/gatsby-remark-prismjs):
 
