@@ -1,20 +1,19 @@
 ---
-title: I'm Moving Blogs to Gatsby!
+title: I'm Moving Blogs!
 date: "2019-09-13T12:34:56.117Z"
-description: "Medium can eat it. I'm going open source!"
+description: "Medium can eat it. I'm going open source with Gatsby!"
 ---
 
-This is my first post on my new ~~fake~~ real blog! How exciting!
+I first set up a Medium blog in 2016.
+Their code snippets and code blocks were visualized as dark grey text on a light gray background.
+That combination is unreadable for regular text and particularly unreadable for programming code, which should generally have colorful syntax highlighting.
 
-My needs for a blog are pretty simple:
+It's now 2019 and Medium's code highlighting has not changed one bit.
+Nothing in the slightest!
+Ugh.
+This is what code highlighting with Medium's code blocks looked like then and looks like today:
 
--   Simple, pleasing aesthetics
--   Easy authoring editing experience
--   Automatic SEO tags
-
-I've been becoming steadily angrier at Medium for the last two years over their abysmal code highlighting support.
-
-## Code Highlighting
+[Medium code highlighting screenshot]()
 
 This is code highlighting with Gatsby's [official PrismJS plugin](https://www.gatsbyjs.org/packages/gatsby-remark-prismjs):
 
@@ -23,3 +22,28 @@ const greet = (name: string) => {
     console.log(`Hello, ${name}!`);
 };
 ```
+
+Wow!
+_So much better._
+
+### But What's Gatsby?
+
+Gatsby is a site generator for React.
+Meaning: you write your website template and content with React, and it handles all sorts of infrastructure work for you.
+
+This site you're on has the following written out manually:
+
+* React components and accompanying styles for the page layout
+* Markdown files for blog articles
+* That PrismJS plugin, as an npm dependency
+
+Gatsby manages the rest of the site:
+
+* Super duper fast Webpack rebuilds
+* Server-side rendering of pages, including SEO workings
+* Integrating plugins such as PrismJS and fancy image loading
+
+It's pretty nifty.
+I'm going to transfer my old Medium blog posts over to this new format,
+then replace the Medium content with links to the new site links.
+So long, Medium!

@@ -1,28 +1,23 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import Bio from "../bio";
-import styles from "./styles.css";
+import Bio from "./bio";
+import Footer from './footer';
+import * as styles from "./styles";
 
-const Layout = ({ children, location, title }) => {
-    const rootPath = `${__PATH_PREFIX__}/`;
-    const header = (
-        <h1>
-            {location.pathname === rootPath ? (
-                title
-            ) : (
-                <Link to={`/`}>{title}</Link>
-            )}
-        </h1>
-    );
-
+const Layout = ({ children, title = "Goldblog" }) => {
     return (
-        <div>
-            <header>{header}</header>
-            <main className={styles.main}>{children}</main>
-            <footer>
+        <div style={styles.layout}>
+            <header style={styles.header}>
+                <h1 style={styles.heading}>
+                    <Link style={styles.headingLink} to={`/`}>
+                        {title}
+                    </Link>
+                </h1>
                 <Bio />
-            </footer>
+            </header>
+            <main style={styles.main}>{children}</main>
+            <Footer />
         </div>
     );
 };

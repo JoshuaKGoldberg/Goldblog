@@ -1,5 +1,2 @@
-// custom typefaces
-import "typeface-montserrat";
-import "typeface-merriweather";
-
+import "./src/fonts/index.css";
 import "./src/prism-vs.css";

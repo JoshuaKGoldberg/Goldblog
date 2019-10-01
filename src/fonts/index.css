@@ -1,0 +1,13 @@
+@font-face {
+  font-display: block;
+  font-family: "Lato Regular";
+  src: url("./Lato-Regular-Reduced.woff") format("woff"),
+    url("./Lato-Regular-Reduced.ttf") format("truetype");
+}
+
+@font-face {
+  font-display: block;
+  font-family: "Open Sans Regular";
+  src: url("./Open-Sans-Regular-Reduced.woff") format("woff"),
+    url("./Open-Sans-Regular-Reduced.ttf") format("truetype");
+}
