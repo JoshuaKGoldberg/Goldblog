@@ -6,7 +6,6 @@ import * as styles from "./styles";
 
 const links = [
     ["GitHub", "github.com/joshuakgoldberg"],
-    ["LinkedIn", "linkedin.com/in/joshuakgoldberglinkedin"],
     ["Site", "joshuakgoldberg.com"],
     ["Twitter", "twitter.com/JoshuaKGoldberg"],
 ];
