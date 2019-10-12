@@ -7,7 +7,21 @@ export const navList = {
 }
 
 export const article = {
-    maxWidth: '700px',
     margin: 0,
     padding: 0,
+};
+
+export const info = {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+};
+
+export const download = {
+    display: 'flex',
+    alignItems: 'center',
+};
+
+export const downloadMessage = {
+    paddingLeft: '0.5rem',
 };

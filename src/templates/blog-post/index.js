@@ -8,21 +8,40 @@ import * as styles from "./styles";
 const BlogPostTemplate = ({ data, pageContext }) => {
     const post = data.markdownRemark;
     const { previous, next } = pageContext;
+    const { date, description, download, title } = post.frontmatter;
 
     return (
         <Layout>
             <SEO
-                description={post.frontmatter.description || post.excerpt}
-                title={post.frontmatter.title}
+                description={description || post.excerpt}
+                title={title}
             />
 
             <article style={styles.article}>
                 <header>
-                    <h2>{post.frontmatter.title}</h2>
-                    <p>{post.frontmatter.date}</p>
+                    <h2>{title}</h2>
+                    <p style={styles.info}>
+                        <span>{date}</span>
+                        {download && (
+                            <span style={styles.download}>
+                                <span aria-label="download icon" role="img"> 💾 </span>
+                                {' '}
+                                <a
+                                    href={download}
+                                    rel="noopener noreferrer"
+                                    style={styles.downloadMessage}
+                                    target="_blank"
+                                >
+                                    Download the slides here!
+                                </a>
+                            </span>
+                        )}
+                    </p>
                 </header>
                 <section dangerouslySetInnerHTML={{ __html: post.html }} />
             </article>
+
+            <br />
 
             {(previous || next) && (
                 <nav>
@@ -66,6 +85,7 @@ export const pageQuery = graphql`
                 title
                 date(formatString: "MMMM DD, YYYY")
                 description
+                download
             }
         }
     }

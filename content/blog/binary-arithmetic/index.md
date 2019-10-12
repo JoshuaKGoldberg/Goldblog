@@ -2,6 +2,7 @@
 title: Binary Arithmetic in the TypeScript Type System
 date: "2019-10-11T12:34:56.117Z"
 description: "Just for fun, what if we represented binary values purely within TypeScript's logical type system?"
+download: https://1drv.ms/p/s!AvUc1cvPrJnWvqNRDN6yLPZvYTb8KA?e=aNxTrY
 ---
 
 ## Preamble
