@@ -273,8 +273,8 @@ type Four  = [0, 0, 1, 0, 0, 0, 0, 0];
 // ...and so on...
 ```
 
-It's getting tedious to type out these values using all 8 bits manually
-There's an easier way to generate them..
+It's getting tedious to type out these values using all 8 bits manually.
+There's an easier way to generate them...
 
 ## Mapped Types
 
@@ -296,7 +296,7 @@ function ZeroOut(Ints: Bit[]) {
 ```
 
 `Array#map` and our mapped types come from the same term – to _map_ from one type to another.
-_Map_!
+_Map!_
 
 ### More Mapping
 
