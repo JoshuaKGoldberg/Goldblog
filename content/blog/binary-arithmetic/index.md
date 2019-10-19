@@ -396,7 +396,7 @@ Also, adding eight bits together means we might have to carry a bit from index `
 
 ### Helper: Get [Sum, Carry]s of Two Int8s
 
-We'll add our bit columns together by mapping the known shared keys from them, `0` through `8`, to the `BitAdd` of the those two bits.
+In theory, we could add our bit columns together by mapping the known shared keys from them, `0` through `8`, to the `BitAdd` of the those two bits.
 
 ```ts
 // Output: [[Sum, Carry], [Sum, Carry], [Sum, Carry], ...]
@@ -414,6 +414,8 @@ function BitAdds(A: Int8, B: Int8) {
     );
 }
 ```
+
+_(this utility isn't necessary for the final result - it's just cool)_
 
 ### Generic Parameter Defaults
 
@@ -443,11 +445,8 @@ Before we get into the TypeScript implementation, here's the JavaScript equivale
 
 ```js
 function Int8Add(A: Int8, B: Int8) {
-    // Collect [Sum, Carry]s of input Int8s
-    const Added = BitAdds(A, B);
-
-    // The result's first bit is the first Sum
-    const At0 = Added[0];
+    // Grab the Sum and Carry for the result's first bit
+    const At0 = BitAdd(A[0], B[0]);
 
     // The result at each index is the Sum from that index + the previous Carry.
     const At1 = BitAddThree(A[1], B[1], At0[1]);
@@ -457,6 +456,7 @@ function Int8Add(A: Int8, B: Int8) {
     const At5 = BitAddThree(A[5], B[5], At4[1]);
     const At6 = BitAddThree(A[6], B[6], At5[1]);
     const At7 = BitAddThree(A[7], B[7], At6[1]);
+
     return [At0[0], At1[0], At2[0], At3[0], At4[0], At5[0], At6[0], At7[0]];
 }
 ```
@@ -468,11 +468,8 @@ type Int8Add<
     A extends Int8,
     B extends Int8,
 
-    // Collect [Sum, Carry]s of input Int8s
-    Added extends BitAdds<A, B> = BitAdds<A, B>,
-
-    // The result's first bit is the first Sum
-    At0 extends Added[0] = Added[0],
+    // Grab the Sum and Carry for the result's first bit
+    At0 extends BitAdd<A[0], B[0]> = BitAdd<A[0], B[0]>,
 
     // The result at each index is the Sum from that index + the previous Carry.
     At1 extends BitAddThree<A[1], B[1], At0[1]> = BitAddThree<A[1], B[1], At0[1]>,
