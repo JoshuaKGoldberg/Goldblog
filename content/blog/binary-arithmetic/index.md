@@ -5,6 +5,8 @@ description: "Just for fun, what if we represented binary values purely within T
 download: https://1drv.ms/p/s!AvUc1cvPrJnWvqNRDN6yLPZvYTb8KA?e=aNxTrY
 ---
 
+_(updated 10/19 with typo fixes)_
+
 ## Preamble
 
 Throughout the tech stacks and projects you could work on, the idea of a _language_ is constant.
