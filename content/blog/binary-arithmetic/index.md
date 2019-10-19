@@ -450,13 +450,13 @@ function Int8Add(A: Int8, B: Int8) {
     const At0 = Added[0];
 
     // The result at each index is the Sum from that index + the previous Carry.
-    const At1 = BitAddThree(A[1], B[1], Added[0][1]);
-    const At2 = BitAddThree(A[2], B[2], Added[1][1]);
-    const At3 = BitAddThree(A[3], B[3], Added[2][1]);
-    const At4 = BitAddThree(A[4], B[4], Added[3][1]);
-    const At5 = BitAddThree(A[5], B[5], Added[4][1]);
-    const At6 = BitAddThree(A[6], B[6], Added[5][1]);
-    const At7 = BitAddThree(A[7], B[7], Added[6][1]);
+    const At1 = BitAddThree(A[1], B[1], At0[1]);
+    const At2 = BitAddThree(A[2], B[2], At1[1]);
+    const At3 = BitAddThree(A[3], B[3], At2[1]);
+    const At4 = BitAddThree(A[4], B[4], At3[1]);
+    const At5 = BitAddThree(A[5], B[5], At4[1]);
+    const At6 = BitAddThree(A[6], B[6], At5[1]);
+    const At7 = BitAddThree(A[7], B[7], At6[1]);
     return [At0[0], At1[0], At2[0], At3[0], At4[0], At5[0], At6[0], At7[0]];
 }
 ```
