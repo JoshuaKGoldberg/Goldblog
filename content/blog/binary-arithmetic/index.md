@@ -5,6 +5,8 @@ description: "Just for fun, what if we represented binary values purely within T
 download: https://1drv.ms/p/s!AvUc1cvPrJnWvqNRDN6yLPZvYTb8KA?e=aNxTrY
 ---
 
+_(updated 10/19 with typo fixes)_
+
 ## Preamble
 
 Throughout the tech stacks and projects you could work on, the idea of a _language_ is constant.
@@ -273,8 +275,8 @@ type Four  = [0, 0, 1, 0, 0, 0, 0, 0];
 // ...and so on...
 ```
 
-It's getting tedious to type out these values using all 8 bits manually
-There's an easier way to generate them..
+It's getting tedious to type out these values using all 8 bits manually.
+There's an easier way to generate them...
 
 ## Mapped Types
 
@@ -296,7 +298,7 @@ function ZeroOut(Ints: Bit[]) {
 ```
 
 `Array#map` and our mapped types come from the same term – to _map_ from one type to another.
-_Map_!
+_Map!_
 
 ### More Mapping
 
@@ -394,7 +396,7 @@ Also, adding eight bits together means we might have to carry a bit from index `
 
 ### Helper: Get [Sum, Carry]s of Two Int8s
 
-We'll add our bit columns together by mapping the known shared keys from them, `0` through `8`, to the `BitAdd` of the those two bits.
+In theory, we could add our bit columns together by mapping the known shared keys from them, `0` through `8`, to the `BitAdd` of the those two bits.
 
 ```ts
 // Output: [[Sum, Carry], [Sum, Carry], [Sum, Carry], ...]
@@ -412,6 +414,8 @@ function BitAdds(A: Int8, B: Int8) {
     );
 }
 ```
+
+_(this utility isn't necessary for the final result - it's just cool)_
 
 ### Generic Parameter Defaults
 
@@ -441,20 +445,18 @@ Before we get into the TypeScript implementation, here's the JavaScript equivale
 
 ```js
 function Int8Add(A: Int8, B: Int8) {
-    // Collect [Sum, Carry]s of input Int8s
-    const Added = BitAdds(A, B);
-
-    // The result's first bit is the first Sum
-    const At0 = Added[0];
+    // Grab the Sum and Carry for the result's first bit
+    const At0 = BitAdd(A[0], B[0]);
 
     // The result at each index is the Sum from that index + the previous Carry.
-    const At1 = BitAddThree(A[1], B[1], Added[0][1]);
-    const At2 = BitAddThree(A[2], B[2], Added[1][1]);
-    const At3 = BitAddThree(A[3], B[3], Added[2][1]);
-    const At4 = BitAddThree(A[4], B[4], Added[3][1]);
-    const At5 = BitAddThree(A[5], B[5], Added[4][1]);
-    const At6 = BitAddThree(A[6], B[6], Added[5][1]);
-    const At7 = BitAddThree(A[7], B[7], Added[6][1]);
+    const At1 = BitAddThree(A[1], B[1], At0[1]);
+    const At2 = BitAddThree(A[2], B[2], At1[1]);
+    const At3 = BitAddThree(A[3], B[3], At2[1]);
+    const At4 = BitAddThree(A[4], B[4], At3[1]);
+    const At5 = BitAddThree(A[5], B[5], At4[1]);
+    const At6 = BitAddThree(A[6], B[6], At5[1]);
+    const At7 = BitAddThree(A[7], B[7], At6[1]);
+
     return [At0[0], At1[0], At2[0], At3[0], At4[0], At5[0], At6[0], At7[0]];
 }
 ```
@@ -466,20 +468,17 @@ type Int8Add<
     A extends Int8,
     B extends Int8,
 
-    // Collect [Sum, Carry]s of input Int8s
-    Added extends BitAdds<A, B> = BitAdds<A, B>,
-
-    // The result's first bit is the first Sum
-    At0 extends Added[0] = Added[0],
+    // Grab the Sum and Carry for the result's first bit
+    At0 extends BitAdd<A[0], B[0]> = BitAdd<A[0], B[0]>,
 
     // The result at each index is the Sum from that index + the previous Carry.
-    At1 extends BitAddThree<A[1], B[1], Added[0][1]> = BitAddThree<A[1], B[1], Added[0][1]>,
-    At2 extends BitAddThree<A[2], B[2], Added[1][1]> = BitAddThree<A[2], B[2], Added[1][1]>,
-    At3 extends BitAddThree<A[3], B[3], Added[2][1]> = BitAddThree<A[3], B[3], Added[2][1]>,
-    At4 extends BitAddThree<A[4], B[4], Added[3][1]> = BitAddThree<A[4], B[4], Added[3][1]>,
-    At5 extends BitAddThree<A[5], B[5], Added[4][1]> = BitAddThree<A[5], B[5], Added[4][1]>,
-    At6 extends BitAddThree<A[6], B[6], Added[5][1]> = BitAddThree<A[6], B[6], Added[5][1]>,
-    At7 extends BitAddThree<A[7], B[7], Added[6][1]> = BitAddThree<A[7], B[7], Added[6][1]>,
+    At1 extends BitAddThree<A[1], B[1], At0[1]> = BitAddThree<A[1], B[1], At0[1]>,
+    At2 extends BitAddThree<A[2], B[2], At1[1]> = BitAddThree<A[2], B[2], At1[1]>,
+    At3 extends BitAddThree<A[3], B[3], At2[1]> = BitAddThree<A[3], B[3], At2[1]>,
+    At4 extends BitAddThree<A[4], B[4], At3[1]> = BitAddThree<A[4], B[4], At3[1]>,
+    At5 extends BitAddThree<A[5], B[5], At4[1]> = BitAddThree<A[5], B[5], At4[1]>,
+    At6 extends BitAddThree<A[6], B[6], At5[1]> = BitAddThree<A[6], B[6], At5[1]>,
+    At7 extends BitAddThree<A[7], B[7], At6[1]> = BitAddThree<A[7], B[7], At6[1]>,
 > = [At0[0], At1[0], At2[0], At3[0], At4[0], At5[0], At6[0], At7[0]];
 ```
 
