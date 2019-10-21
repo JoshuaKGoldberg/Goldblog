@@ -172,7 +172,7 @@ wat undefined index.ts Error
     at Object.parseSourceFile (C:\Code\typescript\built\local\tsc.js:17672:26)
 ```
 
-Since `parseExpected` can take in a better error message, I figured the right way to go was to have `parseDelimitedList` pass onel.
+Since `parseExpected` can take in a better error message, I figured the right way to go was to have `parseDelimitedList` pass one.
 `parseDelimitedList` is widely used and can take in `considerSemicolonAsDelimiter?: boolean`, so I was a little hesitant to add _another_ parameter to `parseDelimitedList` itself.
 
 However, there was a `kind: ParsingContext` parameter already passed to `parseDelimitedList`.
