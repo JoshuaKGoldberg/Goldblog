@@ -225,6 +225,17 @@ The feedback was generally positive, with a suggestion to also mention the closi
 
 I made the change, pushed it to the pull request, and as pleased to see the pull request approved and merged a couple hours later.
 
+```
+index.ts:2:9 - error TS1357: An enum member name must be followed by a ',', '=', or '}'.
+
+2     Nope: 'Wat',
+          ~
+
+
+Found 1 error.
+```
+
+
 ## Closing Thoughts
 
 Honestly, I was a little dissapointed by this investigation.
