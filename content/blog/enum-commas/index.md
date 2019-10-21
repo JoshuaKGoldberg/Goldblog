@@ -1,9 +1,18 @@
 ---
 title: "TypeScript Contribution Diary: Improved Syntax Error for Enum Member Colons"
-date: "2019-10-18T12:34:56.117Z"
+date: "2019-10-21T12:34:56.117Z"
 description: "A quick syntax parsing improvement for incorrectly formatted enums."
-download: ""
 ---
+
+!["Petit verdot", or "Colon", French grapes](./colon.jpg)
+
+<em style="display:block;margin-bottom:2rem;text-align:center;">
+"Petit verdot", or "Colon", French grapes. Get it? Ha...
+<br />
+<small>
+File copied from Wikipedia under the Creative Commons Attribution 2.0 Generic license. [<a href="https://en.wikipedia.org/wiki/File:01_Petit_verdot.jpg"  rel="noopener noreferrer"target="_blank">source</a>]
+</small>
+</em>
 
 <em>
 I've been contributing to TypeScript, working my way up from small error reporting nitpicks to real syntactic and control flow improvements.
