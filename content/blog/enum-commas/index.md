@@ -235,6 +235,7 @@ index.ts:2:9 - error TS1357: An enum member name must be followed by a ',', '=',
 Found 1 error.
 ```
 
+Thanks [orta](https://github.com/orta) for the speedy reviews!
 
 ## Closing Thoughts
 
