@@ -24,14 +24,14 @@ _Previous post: [Identifiers after Numeric Literals](https://medium.com/@joshuak
 
 ## Problem Statement
 
-Pop quiz (no peeking!): for `enum` members with values, do you use a colon `:` or equals sign `:` between the name and value?
+Pop quiz (no peeking!): for `enum` members with values, do you use a colon `:` or equals sign `=` between the name and value?
 
 ...
 
 It's hard to remember, right?
 I personally have a 50/50 chance of getting it right each time.
 
-The answer is use an equals sign `:`.
+The answer is use an equals sign `=`.
 This is invalid TypeScript syntax:
 
 ```ts
