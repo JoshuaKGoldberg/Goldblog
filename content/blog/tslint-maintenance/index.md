@@ -6,7 +6,7 @@ description: "Now that TSLint is being deprecated, let's look at the history of 
 
 > Howdy!
 > This blog post is a personal reflection on my experiences working with TSLint.
-> If you're curious about the backing historical context, go back to [TSLint to ESLint Part 1: Historical Drama](../tslint-to-eslint-history).
+> If you're curious about the backing historical context, go back to [TSLint to ESLint Part 1: Historical Context](../tslint-to-eslint-history).
 > If you just want to understand how [tslint-to-eslint-config](https://github.com/typescript-eslint/tslint-to-eslint-config) migrates configurations from TSLint to ESLint with [@typescript-eslint](https://typescript-eslint.io), skip to [TSLint to ESLint Part 2: tslint-to-eslint-config](../tslint-to-eslint-config).
 
 I joined the TSLint maintenance team in November 2018, at the peak of its disrepair.
