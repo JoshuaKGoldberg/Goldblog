@@ -30,7 +30,7 @@ _Of course_ the relevant maintainer teams would be able to resolve the [assorted
 
 But, still, in 2018 the commonly accepted way to lint TypeScript code using rules that had access to the type checker was with TSLint.
 
-Which had those 20 pages of untriaged issues and 70 pull requests left open.
+Which had 20 pages of untriaged issues and 70 pull requests left open.
 
 Which was still recommended by many as "the" TypeScript linter despite having an objectively inferior architecture to the relatively obscure [fimbullinter/wotan](https://github.com/fimbullinter/wotan).
 
