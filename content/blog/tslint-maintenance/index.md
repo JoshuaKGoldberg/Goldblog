@@ -108,3 +108,23 @@ Taking on maintenance for a project _(hopefully)_ means you care about where it 
 I took on a real emotional weight by committing to spending personal time on TSLint.
 We can talk all we want about work/life balance and how volunteer work should be a pleasant experience and how open source should be a golden utopia of working towards common goals... but at the end of the day, many projects are free labor provided out of some feeling of commitment and goodwill.
 
+All this is to say: spending time maintaining a project can truly open you up, emotionally, to an inevitable cesspool of internet rage.
+Single 
+You start to feel responsible for every little _"why isn't this working?"_ or _"please, this feature is necessary!"_ or -the worst of them all- _"why isn't this done yet?"_.
+Issues pile up when you take a break.
+Eventually every spare moment you acquire is a choice between improving the lives of these internet users and improving your own.
+Maintenance is a goddamn burden if you let it be.
+
+One insidious change I noticed in myself was a growing disregard for the plight of users.
+Issues meant more work for me - why would I _want_ more of them?
+My initial enthusiasm for the project matured into a sense of duty... which eventually soured into a reluctant sludgy reluctance to do more than the bare minimum of contribution work.
+My issue responses accordingly went from encouraging, supportive paragraphs of prose in late 2018 to curt MVPs in mid-2019.
+
+> If you haven't yet, read Henry Zhu's [Open Source of Anxiety](https://increment.com/open-source/open-source-of-anxiety) post.
+> I only experienced a small share of maintenance burden; maintainers of massive projects such as Babel have _much_ more to deal with.
+
+Again, if you have the chance to maintain a project, I'd highly recommend you do it.
+But don't go overboard -- don't let it be a significant portion of your life unless you're ready to manage your own emotional labor.
+
+Eventually I'd like to take on more responsibilities in the community again.
+But it'll be a while before I'm ready.
