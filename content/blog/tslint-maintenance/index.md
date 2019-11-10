@@ -6,7 +6,7 @@ description: "Now that TSLint is being deprecated, let's look at the history of 
 
 > Howdy!
 > This blog post is a personal reflection on my experiences working with TSLint.
-> If you're curious about the backing historical context, go back to [TSLint to ESLint Part 1: Historical Drama](../tslint-to-eslint-history).
+> If you're curious about the backing historical context, go back to [TSLint to ESLint Part 1: Historical Context](../tslint-to-eslint-history).
 > If you just want to understand how [tslint-to-eslint-config](https://github.com/typescript-eslint/tslint-to-eslint-config) migrates configurations from TSLint to ESLint with [@typescript-eslint](https://typescript-eslint.io), skip to [TSLint to ESLint Part 2: tslint-to-eslint-config](../tslint-to-eslint-config).
 
 I joined the TSLint maintenance team in November 2018, at the peak of its disrepair.
@@ -30,7 +30,7 @@ _Of course_ the relevant maintainer teams would be able to resolve the [assorted
 
 But, still, in 2018 the commonly accepted way to lint TypeScript code using rules that had access to the type checker was with TSLint.
 
-Which had those 20 pages of untriaged issues and 70 pull requests left open.
+Which had 20 pages of untriaged issues and 70 pull requests left open.
 
 Which was still recommended by many as "the" TypeScript linter despite having an objectively inferior architecture to the relatively obscure [fimbullinter/wotan](https://github.com/fimbullinter/wotan).
 
