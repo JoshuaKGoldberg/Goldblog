@@ -133,7 +133,7 @@ But it'll be a while before I'm ready.
 ## Shoutouts
 
 I spent some time looking back through my GitHub activity in the various TSLint-related repositories.
-A few names stuck out as consistent supports of me, the project, and the community.
+A few names stuck out as consistent supporters of me, the project, and/or the community.
 
 ### TSLint
 
