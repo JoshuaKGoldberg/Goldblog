@@ -1,13 +1,18 @@
 @font-face {
   font-display: block;
   font-family: "Lato Regular";
-  src: url("./Lato-Regular-Reduced.woff") format("woff"),
-    url("./Lato-Regular-Reduced.ttf") format("truetype");
+  src: url("./Lato-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-display: block;
   font-family: "Open Sans Regular";
-  src: url("./Open-Sans-Regular-Reduced.woff") format("woff"),
-    url("./Open-Sans-Regular-Reduced.ttf") format("truetype");
+  src: url("./OpenSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-display: block;
+  font-family: "Open Sans Regular";
+  font-style: italic;
+  src: url("./OpenSans-Italic.ttf") format("truetype");
 }
