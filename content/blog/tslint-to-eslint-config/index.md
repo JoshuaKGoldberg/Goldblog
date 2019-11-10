@@ -6,7 +6,7 @@ description: "Now that TSLint is being deprecated, let's look at how tslint-to-e
 
 > Howdy!
 > This blog post is a technical discussion on migrating how [tslint-to-eslint-config](https://github.com/typescript-eslint/tslint-to-eslint-config) migrates configurations from from TSLint to ESLint with [@typescript-eslint](https://typescript-eslint.io).
-> If you're curious about the backing historical context, go back to [TSLint to ESLint Part 1: Historical Drama](../tslint-to-eslint-history).
+> If you're curious about TSLint's history, go back to [TSLint to ESLint Part 1: Historical Drama](../tslint-to-eslint-history).
 
 ## `tslint-to-eslint-config`
 

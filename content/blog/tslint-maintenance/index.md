@@ -6,10 +6,11 @@ description: "Now that TSLint is being deprecated, let's look at the history of 
 
 > Howdy!
 > This blog post is a personal reflection on my experiences working with TSLint.
-> If you're curious about the backing historical context, go back to [TSLint to ESLint Part 1: Historical Context](../tslint-to-eslint-history).
+> If you're curious about TSLint's history, go back to [TSLint to ESLint Part 1: Historical Context](../tslint-to-eslint-history).
 > If you just want to understand how [tslint-to-eslint-config](https://github.com/typescript-eslint/tslint-to-eslint-config) migrates configurations from TSLint to ESLint with [@typescript-eslint](https://typescript-eslint.io), skip to [TSLint to ESLint Part 2: tslint-to-eslint-config](../tslint-to-eslint-config).
 
 I joined the TSLint maintenance team in November 2018, at the peak of its disrepair.
+No other maintainers were active and the library hadn't been updated in quite a while.
 My first goal was to sludge through the hundreds of unaddressed or stale issues and pull requests.
 
 ### But Why Bother In The First Place?
@@ -43,7 +44,7 @@ That would have helped buffer TSLint from fluctuating attention on the Palantir 
 
 We'll never know what that would have been like now.
 TypeScript [announced its switch of focus to ESLint](https://github.com/microsoft/TypeScript/issues/29288) a couple of months after I started on TSLint.
-As I said to them: as exciting as it was to take on maintaining TSLint, it was _even more exciting_ to see the plans to switch to ESLint.
+As exciting as it was to take on maintaining TSLint, it was _even more exciting_ to see the plans to switch to ESLint.
 
 ### Was It Worth It?
 
@@ -52,13 +53,11 @@ _Of course!_
 
 I wanted to step up and [make the _(linting)_ world a better place](https://www.youtube.com/watch?v=fRUAJVKlUZQ).
 I think I objectively did.
-_We_ did -- through plenty of people, including other maintainers\* and [hundreds of contributors](https://github.com/palantir/tslint/graphs/contributors).
+_We_ did -- through plenty of people, including other maintainers and [hundreds of contributors](https://github.com/palantir/tslint/graphs/contributors).
 
-We helped keep a lot of TypeScript projects linted until typescript-eslint was standardized.
+We helped keep a lot of TypeScript projects linted until typescript-eslint was ready.
 Mathematically, if thousands upon thousands of projects were using TSLint, and TSLint was able to catch issues ESLint was not, we must have prevented thousands upon thousands of bugs.
 That's got to be worth something positive, right?
-
-\* _(shoutout to [Adi Dahiya](https://github.com/adidahiya) for supporting me as a junior maintainer!)_
 
 ### Being a Maintainer Rocks
 
@@ -81,9 +80,9 @@ Managing a project needs empathy and understanding from both ends.
 Maintainers need to understand how users use the project, so they can set up new users for success and empathetically respond to issues and pull requests.
 Users need to understand the reasons behind maintainer decisions so they can work with the system as they're improving it.
 
-Ideally, maintainers have a responsibility to set up processes to allow these streams of information to flow freely and share information as necessary.
-Ideally, users should work within those streams to contribute meaningfully.
-Ideally, everybody plays nice and understands both sides want what's best for the project and its users.
+Maintainers ideally set up processes to allow these streams of information to flow freely and share information as necessary.
+Users ideally work within those streams to contribute meaningfully.
+Ideally, everybody plays nice and understands that both sides want what's best for everyone.
 
 ### Being a Maintainer Sucks
 
@@ -98,33 +97,65 @@ This meme usage is inaccurate: it's really that people have the best intentions,
 
 I'll admit I made mistakes and was the "asshole" plenty of times throughout my maintenance tenure:
 
-* I [merged a PR that duplicated another person's work](https://github.com/palantir/tslint/pull/3992#issuecomment-436633059)...
-* I got into debates [without explaining my context](https://github.com/palantir/tslint/issues/975#issuecomment-435640297) or [over unnecessary esoteric features](https://github.com/palantir/tslint/issues/1306)...
-* I [closed issues prematurely](https://github.com/palantir/tslint/issues/1489#issuecomment-460655323)...
-* I [added rules and features without documenting them well](https://github.com/palantir/tslint/issues/4117), causing headaches for beginner and advanced users...
-* I [indicated a big refactor would be accepted]() even though we didn't have the maintenance staffing to support it...
+* I [merged a PR that duplicated another person's work](https://github.com/palantir/tslint/pull/3992#issuecomment-436633059).
+* I got into debates [without explaining my context](https://github.com/palantir/tslint/issues/975#issuecomment-435640297) or [over unnecessary esoteric features](https://github.com/palantir/tslint/issues/1306).
+* I [closed issues prematurely](https://github.com/palantir/tslint/issues/1489#issuecomment-460655323).
+* I [added rules and features without documenting them well](https://github.com/palantir/tslint/issues/4117), causing headaches for beginner and advanced users.
+* I [indicated a big refactor would be accepted]() even though we didn't have the maintenance staffing to support it.
 
 Taking on maintenance for a project _(hopefully)_ means you care about where it goes: you want it and its users to be made more productive by the time you spend on it.
 I took on a real emotional weight by committing to spending personal time on TSLint.
 We can talk all we want about work/life balance and how volunteer work should be a pleasant experience and how open source should be a golden utopia of working towards common goals... but at the end of the day, many projects are free labor provided out of some feeling of commitment and goodwill.
 
 All this is to say: spending time maintaining a project can truly open you up, emotionally, to an inevitable cesspool of internet rage.
-Single 
-You start to feel responsible for every little _"why isn't this working?"_ or _"please, this feature is necessary!"_ or -the worst of them all- _"why isn't this done yet?"_.
+You feel responsible for every _"why isn't this working?"_ or _"please, this feature is necessary!"_ or -the worst of them all- _"why isn't this done yet?"_.
 Issues pile up when you take a break.
-Eventually every spare moment you acquire is a choice between improving the lives of these internet users and improving your own.
+Eventually every spare moment in your schedule is a choice between improving the lives of internet strangers and improving your own.
+
 Maintenance is a goddamn burden if you let it be.
 
-One insidious change I noticed in myself was a growing disregard for the plight of users.
-Issues meant more work for me - why would I _want_ more of them?
-My initial enthusiasm for the project matured into a sense of duty... which eventually soured into a reluctant sludgy reluctance to do more than the bare minimum of contribution work.
-My issue responses accordingly went from encouraging, supportive paragraphs of prose in late 2018 to curt MVPs in mid-2019.
+#### Embracing the Asshole
 
-> If you haven't yet, read Henry Zhu's [Open Source of Anxiety](https://increment.com/open-source/open-source-of-anxiety) post.
-> I only experienced a small share of maintenance burden; maintainers of massive projects such as Babel have _much_ more to deal with.
+One insidious change I noticed in myself was a growing disregard for the plight of users.
+GitHub activity from users meant more work for me - why would I _want_ more of them?
+My initial enthusiasm for the project matured into a stoic sense of duty, which eventually soured into a sludgy reluctance to do more than the bare minimum of contribution work.
+My issue responses accordingly went from supportive paragraphs of prose in late 2018 to curt MVPs in mid-2019.
 
 Again, if you have the chance to maintain a project, I'd highly recommend you do it.
-But don't go overboard -- don't let it be a significant portion of your life unless you're ready to manage your own emotional labor.
+But don't go overboard -- don't let it be a significant portion of your life unless you're ready to manage significant emotional balancing.
 
 Eventually I'd like to take on more responsibilities in the community again.
 But it'll be a while before I'm ready.
+
+> If you haven't yet, read Henry Zhu's [Open Source of Anxiety](https://increment.com/open-source/open-source-of-anxiety) post.
+> I only experienced a sliver of burden; maintainers of massive projects such as Babel have _infinitely_ more to deal with.
+
+## Shoutouts
+
+I spent some time looking back through my GitHub activity in the various TSLint-related repositories.
+A few names stuck out as consistent supports of me, the project, and the community.
+
+### TSLint
+
+[**Adi Dahiya**](https://github.com/adidahiya) is an obvious MVP here, as the only other active TSLint maintainer in 2019 -- despite switching to studying a completely separate education track!
+Adi was involved in the project early on and, through PR reviews, helped me understand how to play in the TSLint arena.
+Additional shouting-out belongs here for spot-checking my early work as a maintainer and helping keep me on track while I figured out what I was doing.
+
+[**Jason Killian**](https://github.com/JKillian) was similarly helpful back in the day, and has since gone on to help run the ever-interesting TypeScriptNYC meetup.
+My [first substantial TSLint PR](https://github.com/palantir/tslint/pulls/1107) back in April of 2016 involved a perfectly informational technical discussion with Jason.
+
+[**Klaus Meinhardt**](https://github.com/ajafff) is a tour de force: both by creating the [`tslint-consistent-codestyle`](https://github.com/ajafff/tslint-consistent-codestyle) community ruleset and absurdly useful [`tsutils`](https://github.com/ajafff/tsutils), and the wonderfully crafted and themed [fimbullinter/wotan](https://github.com/fimbullinter/wotan).
+Klaus never failed to give sound technical advice in my (often poorly thought out) TSLint pull requests while still a TSLint maintainer -- and more recently, even in [TypeScript](https://github.com/Microsoft/TypeScript/pulls/29374).
+
+I never did end up working with [**Noah Chen**](https://github.com/nchen63) or [**Andy Hanson**](https://github.com/andy-hanson) either, but enjoyed a solid period of helpful PR reviews from them in 2017.
+Sometimes I wonder what it would be like to have worked with [**Ashwin R**](https://github.com/ashwinr), who originally created TSLint.
+
+### tslint-microsoft-contrib
+
+[**Hamlet D'Arcy**](https://github.com/HamletDRC) did super work in setting up tslint-microsoft-contrib as the go-to place for non-core TSLint rules, and was kind enough to add me as a contributor earlier in 2018.
+
+[**Andrii Dieiev**](https://github.com/IllusionMH) came out of nowhere later on and helped support and eventually maintain the library as well, particularly with a bunch of great improvements to its build and release processes.
+
+I'm sad we won't be able to work on tslint-microsoft-contrib more.
+Much of my maintenance style in TSLint was developed in tslint-microsoft-contrib.
+For every way that the TSLint itself was formalized and made for community standards, tslint-microsoft-contrib was the fun side plaything.
