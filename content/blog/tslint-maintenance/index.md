@@ -1,7 +1,7 @@
 ---
 title: "Thoughts as a TSLint Maintainer"
 date: "2019-11-18T12:34:56.117Z"
-description: "Now that TSLint is being deprecated, let's look at the history of JavaScript and TypeScript linting."
+description: "Maintaining TSLint was a wonderful mixed bag of shenanigans. Let's talk about it."
 ---
 
 > Howdy!
