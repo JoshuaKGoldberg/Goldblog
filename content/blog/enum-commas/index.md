@@ -223,7 +223,7 @@ Found 1 error.
 I committed this into a pull request and sent it out for review: https://github.com/microsoft/TypeScript/pull/33336.
 The feedback was generally positive, with a suggestion to also mention the closing curly bracket `}` as an acceptable character.
 
-I made the change, pushed it to the pull request, and as pleased to see the pull request approved and merged a couple hours later.
+I made the change, pushed it to the pull request, and was pleased to see the pull request approved and merged a couple hours later.
 
 ```
 index.ts:2:9 - error TS1357: An enum member name must be followed by a ',', '=', or '}'.
@@ -239,7 +239,7 @@ Thanks [orta](https://github.com/orta) for the speedy reviews!
 
 ## Closing Thoughts
 
-Honestly, I was a little dissapointed by this investigation.
+Honestly, I was a little disappointed by this investigation.
 I was hoping for something meaty and thick to bite into, with a result of achieving some significantly deeper understanding of the TypeScript compiler.
 I guess it's probably better for end users that the pull request was minimal and accepted without major complexities?
 
