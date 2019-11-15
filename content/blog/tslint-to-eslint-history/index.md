@@ -73,10 +73,10 @@ TSLint gained the ability to lint JavaScript files as well as TypeScript in 2016
 
 ## Killing TSLint
 
-On the surface, the tooling upgrade largely responsible for killing off TSLint was when ESLint gained the ability to lint syntax extensions.
+On the surface, the tooling upgrade that enabled for killing off TSLint was when ESLint gained the ability to lint syntax extensions.
 We can now write plugins such as [typescript-eslint](https://typescript-eslint.io) for ESLint to run on TypeScript and other non-standard languages.
 
-The TypeScript itself announced a switch from TSLint to ESLint support in late 2018.
+TSLint's true killer was the TypeScript team itself announcing a switch from TSLint to ESLint support in late 2018.
 Palantir announced TSLint's deprecation plans in a [blog post](https://medium.com/palantir/tslint-in-2019-1a144c2317a9) the next month along with a [deprecation plan](https://github.com/palantir/issues/4534) on the GitHub TSLint issue tracker.
 
 There's no question about it: TSLint is dead.
@@ -85,23 +85,27 @@ Long live ESLint.
 ### Historical Notes
 
 The death of TSLint is a fascinating thing.
+Although the TypeScript switching to ESLint was the surface killer, I like to think there were a few communal issues that helped contribute to its lower community involvement.
 
-You could attribute it to the inconvenience of two competing linters in the JavaScript ecosystem.
+For starters, you can attribute some resentment against TSLint to the inconvenience of two competing linters in the JavaScript ecosystem.
 Every feature added to one linter would inevitably get requested on the other - and because of ESLint's greater community size and TypeScript's nascent popularity at the time, most features came to ESLint first and trickled into TSLint later - or not at all.
 What a maintenance burden!
 
-You could also attribute it, in part, to the difficulties of promoting open source in a for-profit organization.
+You could also blame, in part, the difficulties of promoting open source in a for-profit organization.
 TSLint went mostly or partially unmaintained for long periods several times through 2017 and 2018.
 
-You could _also_ attribute it, in part, to the rising controversies behind its backing sponsor Palantir - a company with numerous data privacy and government involvement controversies, particularly around the U.S. Immigration and Customs Enforcement (ICE).
+You could _also_ blame, in part, the rising controversies behind its backing sponsor Palantir - a company with numerous data privacy and government involvement controversies, particularly around the U.S. Immigration and Customs Enforcement (ICE).
 TSLint gained internet interest in 2018 when a notable JavaScript community member flooded its GitHub issues with political issues ([example](https://github.com/palantir/tslint/issues/4141)).
 
 Did one or two of these maintenance issues cause the others?
-Was there one clear cause of death, or a vicious cycle of community bleeding?
+Was there one clear cause of decay, or a vicious cycle of community bleeding?
 If Clinton had defeated Trump and eased up on ICE raids, would we be talking about merging ESLint into a community-run TSLint?
-The world may never know.
 
-_I doubt it - as TypeScript is one of many expansions on JavaScript, using ESLint as the base makes architectural sense._
+_No._
+As TypeScript is one of many expansions on JavaScript, using ESLint as the base makes architectural sense.
+
+We _might_ have seem a more difficult transition from a more fully-featured TSLint to ESLint, but that's all conjecture.
+Ultimately we'll never know.
 
 ## What's Next?
 
