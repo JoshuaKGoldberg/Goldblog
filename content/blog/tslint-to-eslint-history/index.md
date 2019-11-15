@@ -1,12 +1,11 @@
 ---
-title: "Migrating from ESLint to TSLint Part 1: Historical Context"
+title: "Migrating from TSLint to ESLint Part 1: Historical Context"
 date: "2019-11-17T12:34:56.117Z"
 description: "Now that TSLint is being deprecated, let's look at the history of JavaScript and TypeScript linting."
 ---
 
 > Howdy!
 > This blog post talks about the historical context around migrating from TSLint to ESLint.
-> If you're curious about the backing historical context, go back to [TSLint to ESLint Part 1: Historical Drama](../tslint-to-eslint-history).
 > If you just want to understand how [tslint-to-eslint-config](https://github.com/typescript-eslint/tslint-to-eslint-config) migrates configurations from TSLint to ESLint with [@typescript-eslint](https://typescript-eslint.io), skip to [TSLint to ESLint Part 2: tslint-to-eslint-config](../tslint-to-eslint-config).
 
 ## Vocabulary Base

@@ -1,12 +1,12 @@
 ---
-title: "Migrating from ESLint to TSLint Part 2: tslint-to-eslint-config"
+title: "Migrating from TSLint to ESLint Part 2: tslint-to-eslint-config"
 date: "2019-11-17T23:45:56.117Z"
 description: "Now that TSLint is being deprecated, let's look at how tslint-to-eslint-config converts your TSLint configuration to ESLint."
 ---
 
 > Howdy!
 > This blog post is a technical discussion on migrating how [tslint-to-eslint-config](https://github.com/typescript-eslint/tslint-to-eslint-config) migrates configurations from from TSLint to ESLint with [@typescript-eslint](https://typescript-eslint.io).
-> If you're curious about TSLint's history, go back to [TSLint to ESLint Part 1: Historical Drama](../tslint-to-eslint-history).
+> If you're curious about TSLint's history, go back to [TSLint to ESLint Part 1: Historical Context](../tslint-to-eslint-history).
 
 ## `tslint-to-eslint-config`
 
@@ -259,7 +259,7 @@ This package gives you an ESLint rule named `@typescript-eslint/tslint/config` t
 We heard you like linters, so we put a linter in your linter...
 <br />
 <small>
-File copied from Wikipedia under the Creative Commons Attribution 2.0 Generic license. [<a href="https://en.wikipedia.org/wiki/File:01_Petit_verdot.jpg"  rel="noopener noreferrer"target="_blank">source</a>]
+File copied from Wikipedia under the Creative Commons Attribution 2.0 Generic license. [<a href="https://en.wikipedia.org/wiki/File:01_Petit_verdot.jpg"  rel="noopener noreferrer" target="_blank">source</a>]
 </small>
 </em>
 

@@ -142,10 +142,12 @@ Adi was involved in the project early on and, through PR reviews, helped me unde
 Additional shouting-out belongs here for spot-checking my early work as a maintainer and helping keep me on track while I figured out what I was doing.
 
 [**Jason Killian**](https://github.com/JKillian) was similarly helpful back in the day, and has since gone on to help run the ever-interesting TypeScriptNYC meetup.
-My [first substantial TSLint PR](https://github.com/palantir/tslint/pulls/1107) back in April of 2016 involved a perfectly informational technical discussion with Jason.
+My [first substantial TSLint PR](https://github.com/palantir/tslint/pull/1107) back in April of 2016 involved a perfectly informational technical discussion with Jason.
 
 [**Klaus Meinhardt**](https://github.com/ajafff) is a tour de force: both by creating the [`tslint-consistent-codestyle`](https://github.com/ajafff/tslint-consistent-codestyle) community ruleset and absurdly useful [`tsutils`](https://github.com/ajafff/tsutils), and the wonderfully crafted and themed [fimbullinter/wotan](https://github.com/fimbullinter/wotan).
-Klaus never failed to give sound technical advice in my (often poorly thought out) TSLint pull requests while still a TSLint maintainer -- and more recently, even in [TypeScript](https://github.com/Microsoft/TypeScript/pulls/29374).
+Also was a broken link
+
+Klaus never failed to give sound technical advice in my (often poorly thought out) TSLint pull requests while still a TSLint maintainer -- and more recently, even in [TypeScript](https://github.com/Microsoft/TypeScript/pull/29374).
 
 I never did end up working with [**Noah Chen**](https://github.com/nchen63) or [**Andy Hanson**](https://github.com/andy-hanson) either, but enjoyed a solid period of helpful PR reviews from them in 2017.
 Sometimes I wonder what it would be like to have worked with [**Ashwin R**](https://github.com/ashwinr), who originally created TSLint.
