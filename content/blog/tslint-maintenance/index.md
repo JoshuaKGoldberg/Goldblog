@@ -22,12 +22,10 @@ _Now_ it's obvious I was wrong.
 I was very wrong.
 I was incredibly, obviously, plainly wrong.
 
-_Of course_ we would be able to bring the full TypeScript type checker to ESLint.
-_Of course_ the TypeScript team would choose to support the open source project already commonplace in the rest of the JavaScript ecosystem.
-_Of course_ the relevant maintainer teams would be able to resolve the [assorted](https://github.com/typescript-eslint/typescript-eslint/issues/1132) [structural](https://github.com/typescript-eslint/typescript-eslint/issues/1126) [performance](https://github.com/typescript-eslint/typescript-eslint/issues/1079) **[issues](https://github.com/typescript-eslint/typescript-eslint/issues/1040)**.
-
-> Linking to those issues is not snark or passive-aggressiveness -- it's a celebration of the incredible work done by the TypeScript and typescript-eslint teams in molding together multiple fundamentally different systems.
-> We all owe them a _massive_ debt of gratitude for their work to solidify our linting practices.
+Despite the technical hurdles, the full TypeScript type checker works within ESLint -- the relevant maintainer teams would be able to resolve the [assorted](https://github.com/typescript-eslint/typescript-eslint/issues/1132) [structural](https://github.com/typescript-eslint/typescript-eslint/issues/1126) [performance](https://github.com/typescript-eslint/typescript-eslint/issues/1079) **[issues](https://github.com/typescript-eslint/typescript-eslint/issues/1040)**.
+TypeScript team would eventually choose to support the open source project already commonplace in the rest of the JavaScript ecosystem.
+There was incredible work done by the TypeScript, ESLint, and typescript-eslint teams in molding together multiple fundamentally different systems.
+We all owe them a _massive_ debt of gratitude for their work to solidify our linting practices.
 
 But, still, in 2018 the commonly accepted way to lint TypeScript code using rules that had access to the type checker was with TSLint.
 
@@ -57,7 +55,7 @@ _We_ did -- through plenty of people, including other maintainers and [hundreds 
 
 We helped keep a lot of TypeScript projects linted until typescript-eslint was ready.
 Mathematically, if thousands upon thousands of projects were using TSLint, and TSLint was able to catch issues ESLint was not, we must have prevented thousands upon thousands of bugs.
-That's got to be worth something positive, right?
+I'm so immensely happy with and proud of the work that was done on TSLint over its few years.
 
 ### Being a Maintainer Rocks
 
@@ -123,6 +121,7 @@ My issue responses accordingly went from supportive paragraphs of prose in late 
 
 Again, if you have the chance to maintain a project, I'd highly recommend you do it.
 But don't go overboard -- don't let it be a significant portion of your life unless you're ready to manage significant emotional balancing.
+Maintainer burnout is a real issue you need to pay attention to in yourself and on your projects.
 
 Eventually I'd like to take on more responsibilities in the community again.
 But it'll be a while before I'm ready.
@@ -141,7 +140,7 @@ A few names stuck out as consistent supporters of me, the project, and/or the co
 Adi was involved in the project early on and, through PR reviews, helped me understand how to play in the TSLint arena.
 Additional shouting-out belongs here for spot-checking my early work as a maintainer and helping keep me on track while I figured out what I was doing.
 
-[**Jason Killian**](https://github.com/JKillian) was similarly helpful back in the day, and has since gone on to help run the ever-interesting TypeScriptNYC meetup.
+[**Jason Killian**](https://github.com/JKillian) was similarly helpful back in the day, and has since gone on to help run the ever-interesting [TypeScriptNYC](https://meetup.com/TypeScriptNYC) meetup.
 My [first substantial TSLint PR](https://github.com/palantir/tslint/pull/1107) back in April of 2016 involved a perfectly informational technical discussion with Jason.
 
 [**Klaus Meinhardt**](https://github.com/ajafff) is a tour de force: both by creating the [`tslint-consistent-codestyle`](https://github.com/ajafff/tslint-consistent-codestyle) community ruleset and absurdly useful [`tsutils`](https://github.com/ajafff/tsutils), and the wonderfully crafted and themed [fimbullinter/wotan](https://github.com/fimbullinter/wotan).
@@ -156,7 +155,7 @@ Sometimes I wonder what it would be like to have worked with [**Ashwin R**](http
 
 [**Hamlet D'Arcy**](https://github.com/HamletDRC) did super work in setting up tslint-microsoft-contrib as the go-to place for non-core TSLint rules, and was kind enough to add me as a contributor earlier in 2018.
 
-[**Andrii Dieiev**](https://github.com/IllusionMH) came out of nowhere later on and helped support and eventually maintain the library as well, particularly with a bunch of great improvements to its build and release processes.
+[**Andrii Dieiev**](https://github.com/IllusionMH) came out of nowhere later on and helped support and eventually maintain the library as well. Beyond general maintainership, Andrii did a particularly great job on improvements to its build and release processes.
 
 I'm sad we won't be able to work on tslint-microsoft-contrib more.
 Much of my maintenance style in TSLint was developed in tslint-microsoft-contrib.

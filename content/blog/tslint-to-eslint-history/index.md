@@ -1,5 +1,5 @@
 ---
-title: "Migrating from TSLint to ESLint Part 1: Historical Context"
+title: "TSLint to ESLint Part 1: Historical Context"
 date: "2019-11-17T12:34:56.117Z"
 description: "Now that TSLint is being deprecated, let's look at the history of JavaScript and TypeScript linting."
 ---
