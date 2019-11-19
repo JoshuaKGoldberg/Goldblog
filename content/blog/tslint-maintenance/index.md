@@ -144,7 +144,6 @@ Additional shouting-out belongs here for spot-checking my early work as a mainta
 My [first substantial TSLint PR](https://github.com/palantir/tslint/pull/1107) back in April of 2016 involved a perfectly informational technical discussion with Jason.
 
 [**Klaus Meinhardt**](https://github.com/ajafff) is a tour de force: both by creating the [`tslint-consistent-codestyle`](https://github.com/ajafff/tslint-consistent-codestyle) community ruleset and absurdly useful [`tsutils`](https://github.com/ajafff/tsutils), and the wonderfully crafted and themed [fimbullinter/wotan](https://github.com/fimbullinter/wotan).
-Also was a broken link
 
 Klaus never failed to give sound technical advice in my (often poorly thought out) TSLint pull requests while still a TSLint maintainer -- and more recently, even in [TypeScript](https://github.com/Microsoft/TypeScript/pull/29374).
 
