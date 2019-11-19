@@ -1,6 +1,6 @@
 ---
 title: "TSLint to ESLint Part 2: tslint-to-eslint-config"
-date: "2019-11-17T23:45:56.117Z"
+date: "2019-11-19T10:45:56.117Z"
 description: "Now that TSLint is being deprecated, let's look at how tslint-to-eslint-config converts your TSLint configuration to ESLint."
 ---
 
