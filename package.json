@@ -7,7 +7,7 @@
     "url": "https://github.com/JoshuaKGoldberg/goldblog/issues"
   },
   "dependencies": {
-    "gatsby": "2.18.0",
+    "gatsby": "2.18.1",
     "gatsby-image": "2.2.33",
     "gatsby-plugin-feed": "2.3.21",
     "gatsby-plugin-google-analytics": "2.1.28",
@@ -18,7 +18,7 @@
     "gatsby-remark-autolink-headers": "2.1.18",
     "gatsby-remark-copy-linked-files": "2.1.30",
     "gatsby-remark-images": "3.1.32",
-    "gatsby-remark-prismjs": "3.3.23",
+    "gatsby-remark-prismjs": "3.3.24",
     "gatsby-remark-responsive-iframe": "2.2.27",
     "gatsby-remark-smartypants": "2.1.16",
     "gatsby-source-filesystem": "2.1.38",
