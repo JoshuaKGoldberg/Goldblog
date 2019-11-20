@@ -257,10 +257,6 @@ This package gives you an ESLint rule named `@typescript-eslint/tslint/config` t
 
 <em style="display:block;margin-bottom:2rem;text-align:center;">
 We heard you like linters, so we put a linter in your linter...
-<br />
-<small>
-File copied from Wikipedia under the Creative Commons Attribution 2.0 Generic license. [<a href="https://en.wikipedia.org/wiki/File:01_Petit_verdot.jpg"  rel="noopener noreferrer" target="_blank">source</a>]
-</small>
 </em>
 
 ## Plugins
