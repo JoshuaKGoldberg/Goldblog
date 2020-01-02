@@ -2,6 +2,7 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 
 import Layout from "../components/layout";
+import ArticlePreview from "../components/preview";
 import SEO from "../components/seo";
 
 const BlogIndex = ({ data, location }) => {
@@ -12,26 +13,7 @@ const BlogIndex = ({ data, location }) => {
         <Layout title={siteTitle}>
             <SEO title="All posts" />
             {posts.map(({ node }) => {
-                const title = node.frontmatter.title || node.fields.slug;
-                return (
-                    <article key={node.fields.slug}>
-                        <header>
-                            <h2>
-                                <Link to={node.fields.slug}>{title}</Link>
-                            </h2>
-                            <small>{node.frontmatter.date}</small>
-                        </header>
-                        <section>
-                            <p
-                                dangerouslySetInnerHTML={{
-                                    __html:
-                                        node.frontmatter.description ||
-                                        node.excerpt,
-                                }}
-                            />
-                        </section>
-                    </article>
-                );
+                return <ArticlePreview key={node.fields.slug} node={node} />;
             })}
         </Layout>
     );
