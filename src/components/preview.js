@@ -1,3 +1,6 @@
+import React from 'react';
+import { Link } from "gatsby";
+
 const ArticlePreview = ({ node }) => {
     const title = node.frontmatter.title || node.fields.slug;
 
