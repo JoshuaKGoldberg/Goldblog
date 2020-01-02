@@ -7,16 +7,16 @@ import * as styles from "./styles";
 
 const Layout = ({ children, title = "Goldblog" }) => {
     return (
-        <div style={styles.layout}>
-            <header style={styles.header}>
-                <h1 style={styles.heading}>
-                    <Link style={styles.headingLink} to={`/`}>
+        <div className={styles.layout}>
+            <header className={styles.header}>
+                <h1 className={styles.heading}>
+                    <Link className={styles.headingLink} to={`/`}>
                         {title}
                     </Link>
                 </h1>
                 <Bio />
             </header>
-            <main style={styles.main}>{children}</main>
+            <main className={styles.main}>{children}</main>
             <Footer />
         </div>
     );

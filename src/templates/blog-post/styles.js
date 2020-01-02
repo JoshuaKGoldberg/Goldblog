@@ -1,27 +1,29 @@
-export const navList = {
+import { css } from "emotion";
+
+export const navList = css({
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-between",
     listStyle: "none",
     padding: 0,
-};
+});
 
-export const article = {
+export const article = css({
     margin: 0,
     padding: 0,
-};
+});
 
-export const info = {
+export const info = css({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-};
+});
 
-export const download = {
+export const download = css({
     display: "flex",
     alignItems: "center",
-};
+});
 
-export const downloadMessage = {
+export const downloadMessage = css({
     paddingLeft: "0.5rem",
-};
+});
