@@ -12,10 +12,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
 
     return (
         <Layout>
-            <SEO
-                description={description || post.excerpt}
-                title={title}
-            />
+            <SEO description={description || post.excerpt} title={title} />
 
             <article style={styles.article}>
                 <header>
@@ -24,8 +21,10 @@ const BlogPostTemplate = ({ data, pageContext }) => {
                         <span>{date}</span>
                         {download && (
                             <span style={styles.download}>
-                                <span aria-label="download icon" role="img"> 💾 </span>
-                                {' '}
+                                <span aria-label="download icon" role="img">
+                                    {" "}
+                                    💾{" "}
+                                </span>{" "}
                                 <a
                                     href={download}
                                     rel="noopener noreferrer"
@@ -57,7 +56,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
                             {next && (
                                 <Link to={next.fields.slug} rel="next">
                                     {next.frontmatter.title} →
-                                    </Link>
+                                </Link>
                             )}
                         </li>
                     </ul>
@@ -65,7 +64,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
             )}
         </Layout>
     );
-}
+};
 
 export default BlogPostTemplate;
 

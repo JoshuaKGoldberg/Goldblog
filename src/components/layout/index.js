@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 
 import Bio from "./bio";
-import Footer from './footer';
+import Footer from "./footer";
 import * as styles from "./styles";
 
 const Layout = ({ children, title = "Goldblog" }) => {

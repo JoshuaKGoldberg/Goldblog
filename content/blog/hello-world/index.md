@@ -33,15 +33,15 @@ Meaning: you write your website template and content with React, and it handles 
 
 This site you're on has the following written out manually:
 
-* React components and accompanying styles for the page layout
-* Markdown files for blog articles
-* That PrismJS plugin, as an npm dependency
+-   React components and accompanying styles for the page layout
+-   Markdown files for blog articles
+-   That PrismJS plugin, as an npm dependency
 
 Gatsby manages the rest of the site:
 
-* Super duper fast Webpack rebuilds
-* Server-side rendering of pages, including SEO workings
-* Integrating plugins such as PrismJS and fancy image loading
+-   Super duper fast Webpack rebuilds
+-   Server-side rendering of pages, including SEO workings
+-   Integrating plugins such as PrismJS and fancy image loading
 
 It's pretty nifty.
 I'm going to transfer my old Medium blog posts over to this new format,

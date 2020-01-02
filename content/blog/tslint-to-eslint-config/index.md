@@ -29,12 +29,11 @@ This basic TSLint `tslint.json` configuration file...
 ```json
 // tslint.json
 {
-    "rules": {
-        "align": true,
-        "array-type": true,
-        "arrow-parens": true,
-        // ...
-    }
+    "rules": {
+        "align": true,
+        "array-type": true,
+        "arrow-parens": true // ...
+    }
 }
 ```
 
@@ -43,12 +42,11 @@ This basic TSLint `tslint.json` configuration file...
 ```json
 //eslintrc.json
 {
-    "rules": {
-        "@typescript-eslint/indent": "error",
-        "@typescript-eslint/array-type": "error",
-        "arrow-parens": ["error", "as-needed"],
-        // ...
-    }
+    "rules": {
+        "@typescript-eslint/indent": "error",
+        "@typescript-eslint/array-type": "error",
+        "arrow-parens": ["error", "as-needed"] // ...
+    }
 }
 ```
 
@@ -58,13 +56,12 @@ These converters take in the rule arguments for the TSLint rule and output the e
 
 ```ts
 /**
- * Keys TSLint rule names to their ESLint rule converters.
- */
-const converters = new Map([
-    ["align", convertAlign],
-    ["array-type", convertArrayType],
-    ["arrow-parens", convertArrowParens],
-    // ...
+ * Keys TSLint rule names to their ESLint rule converters.
+ */
+const converters = new Map([
+    ["align", convertAlign],
+    ["array-type", convertArrayType],
+    ["arrow-parens", convertArrowParens], // ...
 ]);
 ```
 
@@ -72,14 +69,14 @@ The `no-construct` rule, for example, doesn't care what configuration the TSLint
 It always indicates to use the equivalent `no-new-wrappers` ESLint rule:
 
 ```ts
-const convertNoConstruct = () => {
-    return {
-        rules: [
-            {
-                ruleName: "no-new-wrappers",
-            },
-        ],
-    };
+const convertNoConstruct = () => {
+    return {
+        rules: [
+            {
+                ruleName: "no-new-wrappers",
+            },
+        ],
+    };
 };
 ```
 
@@ -88,7 +85,7 @@ If you started with this TSLint `rules` configuration...
 ```json
 // tslint.json
 {
-    "no-construct": true
+    "no-construct": true
 }
 ```
 
@@ -97,7 +94,7 @@ If you started with this TSLint `rules` configuration...
 ```json
 // .eslintrc.json
 {
-    "no-new-wrappers": "error"
+    "no-new-wrappers": "error"
 }
 ```
 
@@ -106,25 +103,27 @@ If you started with this TSLint `rules` configuration...
 Many lint rules take in some configuration settings, a.k.a. rule options, a.k.a. rule arguments, that modify the behavior of the rules in some known way.
 TSLint's [`prefer-readonly`](https://palantir.github.io/tslint/rules/prefer-readonly) rule is a rule that uses a single option:
 
-* When configured as `prefer-readonly: true`, it ensures _all_ `private` class members whose values are never modified after initialization are declared with the `private` modifier
-* When configured as `prefer-readonly: [true, "only-inline-lambdas"]`, it will only check members initialized as `() => {}` lambdas in-place
+-   When configured as `prefer-readonly: true`, it ensures _all_ `private` class members whose values are never modified after initialization are declared with the `private` modifier
+-   When configured as `prefer-readonly: [true, "only-inline-lambdas"]`, it will only check members initialized as `() => {}` lambdas in-place
 
 The ESLint equivalent of `prefer-readonly` is `@typescript-eslint/prefer-readonly`.
 It _also_ takes in an optional rule argument - but as an object like `{ onlyInlineLambdas: true }`.
 The `prefer-readonly` converter in tslint-to-eslint, therefore, needs to read in the original TSLint rule arguments and adjust its output accordingly:
 
 ```ts
-const convertPreferReadonly = tslintRule => {
-    return {
-        rules: [
-            {
-                ...(tslintRule.ruleArguments.includes("only-inline-lambdas") && {
-                    ruleArguments: [{ onlyInlineLambdas: true }],
-                }),
-                ruleName: "@typescript-eslint/prefer-readonly",
-            },
-        ],
-    };
+const convertPreferReadonly = tslintRule => {
+    return {
+        rules: [
+            {
+                ...(tslintRule.ruleArguments.includes(
+                    "only-inline-lambdas"
+                ) && {
+                    ruleArguments: [{ onlyInlineLambdas: true }],
+                }),
+                ruleName: "@typescript-eslint/prefer-readonly",
+            },
+        ],
+    };
 };
 ```
 
@@ -163,18 +162,20 @@ Thus, we really can't _completely_ switch from TSLint to ESLint and keep our ori
 Rule converters in tslint-to-eslint-config are allowed to output a `notices: string[]` detailing any unavoidable behavior changes in the new rules:
 
 ```ts
-const convertOneVariablePerDeclaration = tslintRule => {
-    return {
-        rules: [
-            {
-                ...(!tslintRule.ruleArguments.includes("ignore-for-loop") && {
-                    notices: ["Variables declared in for loops will no longer be checked."],
-                }),
-                ruleArguments: ["never"],
-                ruleName: "one-var",
-            },
-        ],
-    };
+const convertOneVariablePerDeclaration = tslintRule => {
+    return {
+        rules: [
+            {
+                ...(!tslintRule.ruleArguments.includes("ignore-for-loop") && {
+                    notices: [
+                        "Variables declared in for loops will no longer be checked.",
+                    ],
+                }),
+                ruleArguments: ["never"],
+                ruleName: "one-var",
+            },
+        ],
+    };
 };
 ```
 
@@ -199,7 +200,10 @@ Each of these cases is dealt with a "merge" on the tslint-to-eslint-config side,
 const mergers = new Map([
     ["@typescript-eslint/ban-types", mergeBanTypes],
     ["@typescript-eslint/indent", mergeIndent],
-    ["@typescript-eslint/no-unnecessary-type-assertion", mergeNoUnnecessaryTypeAssertion],
+    [
+        "@typescript-eslint/no-unnecessary-type-assertion",
+        mergeNoUnnecessaryTypeAssertion,
+    ],
     // ...
 ]);
 ```
@@ -239,17 +243,17 @@ This package gives you an ESLint rule named `@typescript-eslint/tslint/config` t
 ```json
 // eslintrc.json
 {
-  "rules": {
-    "great-converted-rule": "error",
-    "@typescript-eslint/tslint/config": [
-      "error",
-      {
-        "rules": {
-          "fancy-schmancy-custom-rule": [true, "x", "y", "z"]
-        }
-      }
-    ]
-  }
+    "rules": {
+        "great-converted-rule": "error",
+        "@typescript-eslint/tslint/config": [
+            "error",
+            {
+                "rules": {
+                    "fancy-schmancy-custom-rule": [true, "x", "y", "z"]
+                }
+            }
+        ]
+    }
 }
 ```
 
@@ -262,7 +266,7 @@ We heard you like linters, so we put a linter in your linter...
 ## Plugins
 
 Some TSLint rule equivalents are only available in community-added plugins.
-Rules are allowed to add a `plugins: string[]` to their output to indicate you should also include and install them with your ESLint configuration. 
+Rules are allowed to add a `plugins: string[]` to their output to indicate you should also include and install them with your ESLint configuration.
 
 TSLint's `deprecation` rule is so far most closely represented by the `import/no-deprecated` rule in [`eslint-plugin-import`](https://github.com/benmosher/eslint-plugin-import).
 Its converter indicates to use the `eslint-plugin-import` package:
@@ -316,10 +320,10 @@ Adding to the complication: both ESLint and TSLint can extend from community rul
 
 This all means tslint-to-eslint-config needs to respect whatever ESLint configuration file exists on disk. There can now be at least _four_ sources of information for what goes into your ESLint configuration:
 
-* ESLint rules enabled directly in an existing ESLint configuration
-* ESLint rules enabled via an extended ruleset
-* TSLint rules enabled directly in an existing TSLint configuration
-* TSLint rules enabled via an extended ruleset
+-   ESLint rules enabled directly in an existing ESLint configuration
+-   ESLint rules enabled via an extended ruleset
+-   TSLint rules enabled directly in an existing TSLint configuration
+-   TSLint rules enabled via an extended ruleset
 
 _(even worse, a few ESLint environment or parser settings are also read from your `package.json` and/or `tsconfig.json` if available... yikes!)_
 
@@ -340,14 +344,14 @@ _Accepting PRs!_
 ESLint and TSLint both support a `--print-config` flag to print the flattened configuration including extended rulesets.
 tslint-to-eslint-config uses that flag to split ESLint and TSLint configuration settings into two categories:
 
-* **Full** configurations: ones enabled in any way by the user _or_ via an extended ruleset
-* **Raw** configurations: ones directly enabled in the user's file(s) on disk
+-   **Full** configurations: ones enabled in any way by the user _or_ via an extended ruleset
+-   **Raw** configurations: ones directly enabled in the user's file(s) on disk
 
 _Full_ configurations are used to generate most output ESLint file contents, including rules.
 _Raw_ configurations are used to populate the output ESLint `extends` _(list of extended ESLint rulesets)_ and `globals` _(list of globally available variables to never consider undeclared)_.
 
-* `extends` itself should respect the raw list from your configuration.
-* We have to respect the _raw_ configuration for `globals` because ESLint resolves it to a _massive_ list of global variables that you wouldn't want to explicitly write out in your configuration.
+-   `extends` itself should respect the raw list from your configuration.
+-   We have to respect the _raw_ configuration for `globals` because ESLint resolves it to a _massive_ list of global variables that you wouldn't want to explicitly write out in your configuration.
 
 These definitions break down somewhat for users who have multiple of their own ESLint and/or TSLint configuration files extending from each other...
 If you want to help build a better system, please do contribute on GitHub!

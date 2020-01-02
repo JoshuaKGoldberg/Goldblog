@@ -12,10 +12,10 @@ description: "Now that TSLint is being deprecated, let's look at the history of 
 
 Before we talk about today's solutions for linters, let's talk a bit about the necessary vocabulary.
 
-* **JavaScript** (**JS**) is our favorite dynamic, quasi-functional, quasi-object-oriented language of the web.
-* **ECMAScript** (**ES**) is the specification upon which JavaScript is based... so really, it's a fancy way of saying JavaScript.
-* **TypeScript** (**TS**) is a superset of JavaScript that adds types.
-* **Linters** are programs that scan source code for common logic and style complaints.
+-   **JavaScript** (**JS**) is our favorite dynamic, quasi-functional, quasi-object-oriented language of the web.
+-   **ECMAScript** (**ES**) is the specification upon which JavaScript is based... so really, it's a fancy way of saying JavaScript.
+-   **TypeScript** (**TS**) is a superset of JavaScript that adds types.
+-   **Linters** are programs that scan source code for common logic and style complaints.
 
 ## Linters
 
