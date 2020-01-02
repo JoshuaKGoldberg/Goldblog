@@ -5,7 +5,7 @@ const ArticlePreview = ({ node }) => {
     const title = node.frontmatter.title || node.fields.slug;
 
     const link = node.link ? (
-        <a href={node.link} target="_blank">
+        <a href={node.link} rel="noopener noreferrer" target="_blank">
             {title}
         </a>
     ) : (
@@ -15,7 +15,7 @@ const ArticlePreview = ({ node }) => {
     return (
         <article>
             <header>
-                <h2>{link}}</h2>
+                <h2>{link}</h2>
                 <small>{node.frontmatter.date}</small>
             </header>
             <section>
