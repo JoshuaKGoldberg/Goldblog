@@ -14,13 +14,13 @@ const BlogPostTemplate = ({ data, pageContext }) => {
         <Layout>
             <SEO description={description || post.excerpt} title={title} />
 
-            <article style={styles.article}>
+            <article className={styles.article}>
                 <header>
                     <h2>{title}</h2>
-                    <p style={styles.info}>
+                    <p className={styles.info}>
                         <span>{date}</span>
                         {download && (
-                            <span style={styles.download}>
+                            <span className={styles.download}>
                                 <span aria-label="download icon" role="img">
                                     {" "}
                                     💾{" "}
@@ -28,7 +28,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
                                 <a
                                     href={download}
                                     rel="noopener noreferrer"
-                                    style={styles.downloadMessage}
+                                    className={styles.downloadMessage}
                                     target="_blank"
                                 >
                                     Download the slides here!
@@ -44,7 +44,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
 
             {(previous || next) && (
                 <nav>
-                    <ul style={styles.navList}>
+                    <ul className={styles.navList}>
                         <li>
                             {previous && (
                                 <Link to={previous.fields.slug} rel="prev">

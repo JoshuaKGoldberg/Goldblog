@@ -24,21 +24,21 @@ const Bio = () => {
     `);
 
     return (
-        <div style={styles.bio}>
+        <div className={styles.bio}>
             <Image
                 fixed={data.avatar.childImageSharp.fixed}
-                imgStyle={{
+                imgclassName={{
                     borderRadius: `50%`,
                 }}
-                style={styles.face}
+                className={styles.face}
             />
-            <div style={styles.details}>
-                <div style={styles.links}>
+            <div className={styles.details}>
+                <div className={styles.links}>
                     {links.map(([text, url]) => (
                         <a
                             key={text}
                             href={`https://${url}`}
-                            style={styles.link}
+                            className={styles.link}
                         >
                             {text}
                         </a>
