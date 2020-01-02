@@ -37,7 +37,7 @@ This is invalid TypeScript syntax:
 ```ts
 enum HasIssue {
     Nope: 'Wat',
-    //  ~ 
+    //  ~
     // ',' expected.
 }
 ```
@@ -65,8 +65,9 @@ I ran a text search in `parser.ts` for `_0_expected` and found several instances
 The first one, within a function named `parseExpected`, seemed the most relevant - the others were mostly in functions that either referred to JSDoc parsing or unrelated syntax areas.
 
 `parseExpected`'s contents looked to be pretty minimal:
-* If `token()` _(the function that gets the next token to be parsed)_ returns the expected kind of token, all is well, hooray!
-* If not, per its comment: _"Report specific message if provided with one. Otherwise, report generic fallback message."_
+
+-   If `token()` _(the function that gets the next token to be parsed)_ returns the expected kind of token, all is well, hooray!
+-   If not, per its comment: _"Report specific message if provided with one. Otherwise, report generic fallback message."_
 
 I added a `console.log("wat", diagnosticMessage);` to `parseExpected` and ran TypeScript on the above `HasIssue` syntax error example code.
 The resultant logs were a little surprising:
@@ -245,5 +246,5 @@ I guess it's probably better for end users that the pull request was minimal and
 
 ### Takeaways
 
-* Issue age does not necessarily reflect solution complexity - old issues might be low hanging fruit too!
-* Think carefully about your error messages, especially when balancing specificity and usefulness.
+-   Issue age does not necessarily reflect solution complexity - old issues might be low hanging fruit too!
+-   Think carefully about your error messages, especially when balancing specificity and usefulness.

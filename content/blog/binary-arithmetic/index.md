@@ -25,8 +25,9 @@ type Movie = {
 ```
 
 We're declaring in the TypeScript type system that all "Movie" objects must have two properties:
-* A `name` property of type `string`
-* A `rating` property of type `number`
+
+-   A `name` property of type `string`
+-   A `rating` property of type `number`
 
 This TypeScript snippet contains JavaScript code declaring the creation of a `movie` variable and type system code declaring the type of that variable to be `Movie`:
 
@@ -52,7 +53,7 @@ In this snippet, the `id` variable is happy as either of those:
 let id: RawId;
 
 id = 123;
-id = 'abc';
+id = "abc";
 ```
 
 ...but if we give it something else, the type system complains:
@@ -81,7 +82,7 @@ To start:
 type Bit = 0 | 1;
 ```
 
-Variables of type `Bit` can be *either* the number `0` or the number `1`.
+Variables of type `Bit` can be _either_ the number `0` or the number `1`.
 
 Given a `myBit` variable declared of type `Bit`, these values are fine:
 
@@ -127,8 +128,9 @@ type BitFlip<T> = T extends 0 ? 1 : 0;
 ```
 
 This `BitFlip` type is a _generic_, or _templated_ type.
-* If the original type `T` is `0`, then the new type is `1`.
-* Otherwise, the new type is `0`.
+
+-   If the original type `T` is `0`, then the new type is `1`.
+-   Otherwise, the new type is `0`.
 
 We'll use "extends" as a sort-of-equal operator.
 _(It's more of a "can be described by" operator.)_
@@ -195,10 +197,7 @@ Each is allowed its own `extends` clause.
 Even better, we can perform operations such as `extends` on "tuple" types, which arefixed-length arrays containing types at specific indices:
 
 ```ts
-type BitAnd<A extends Bit, B extends Bit> =
-    [A, B] extends [1, 1]
-        ? 1
-        : 0;
+type BitAnd<A extends Bit, B extends Bit> = [A, B] extends [1, 1] ? 1 : 0;
 ```
 
 In other words, the `BitAnd` type takes in two bits: `A` and `B`.
@@ -207,9 +206,7 @@ In any other case the resultant type is `0`.
 
 ```ts
 function BitAnd(A: Bit, B: Bit) {
-    return (A === 1 && B === 1)
-        ? 1
-        : 0;
+    return A === 1 && B === 1 ? 1 : 0;
 }
 ```
 
@@ -220,19 +217,19 @@ In _other_ other words, the returned type is `1` if both `A` and `B` are, and `0
 We're getting closer to binary arithmetic!
 First: how do you add two bits (`0 | 1`)?
 
-* If both are `0`, the sum is `0`.
-* If one is `0` and the other is `1`, the sum is `1`.
-* If both are `1`, the sum is `0`, with a `1` carried over to the next bit.
+-   If both are `0`, the sum is `0`.
+-   If one is `0` and the other is `1`, the sum is `1`.
+-   If both are `1`, the sum is `0`, with a `1` carried over to the next bit.
 
 Let's show that in code:
 
 ```ts
 // Output: [Sum, Carry]
-type BitAdd<A extends Bit, B extends Bit> =
-    [A, B] extends [0, 0] ? [0, 0] :
-    [A, B] extends [1, 0] | [0, 1] ? [1, 0] :
-    [0, 1]
-;
+type BitAdd<A extends Bit, B extends Bit> = [A, B] extends [0, 0]
+    ? [0, 0]
+    : [A, B] extends [1, 0] | [0, 1]
+    ? [1, 0]
+    : [0, 1];
 ```
 
 Wowee.
@@ -254,11 +251,11 @@ An “eight bit integer” is an integer value represented using... eight bits!
 
 The value of an `Int8` is the sum of its bits, where each bit contributes twice as much as the previous to the total.
 
-* If all bits are `0`, the value is `0`.
-* If the first bit is `1`, the value is `1`.
-* If the second bit is `1`, the value is `2`.
-* If the first and second bits are `1`, the value is `1+2 = 3`.
-* If the third bit is `1`, the value is `4`.
+-   If all bits are `0`, the value is `0`.
+-   If the first bit is `1`, the value is `1`.
+-   If the second bit is `1`, the value is `2`.
+-   If the first and second bits are `1`, the value is `1+2 = 3`.
+-   If the third bit is `1`, the value is `4`.
 
 ```ts
 type Int8 = [Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit];
@@ -267,11 +264,11 @@ type Int8 = [Bit, Bit, Bit, Bit, Bit, Bit, Bit, Bit];
 Tada! 🎉
 
 ```ts
-type Zero  = [0, 0, 0, 0, 0, 0, 0, 0];
-type One   = [1, 0, 0, 0, 0, 0, 0, 0];
-type Two   = [0, 1, 0, 0, 0, 0, 0, 0];
+type Zero = [0, 0, 0, 0, 0, 0, 0, 0];
+type One = [1, 0, 0, 0, 0, 0, 0, 0];
+type Two = [0, 1, 0, 0, 0, 0, 0, 0];
 type Three = [1, 1, 0, 0, 0, 0, 0, 0];
-type Four  = [0, 0, 1, 0, 0, 0, 0, 0];
+type Four = [0, 0, 1, 0, 0, 0, 0, 0];
 // ...and so on...
 ```
 
@@ -306,14 +303,10 @@ Taking mapped types one step further, we can replace just a subset of an origina
 This mapped type uses conditional logic to swap out some bits from an original, input array of bits.
 
 ```ts
-type ReplaceBits<
-    Bits extends Bit[],
-    Replacements extends Bit[]
-> = {
-    [Index in keyof Bits]:
-        Index extends keyof Replacements
-            ? Replacements[Index]
-            : Bits[Index]
+type ReplaceBits<Bits extends Bit[], Replacements extends Bit[]> = {
+    [Index in keyof Bits]: Index extends keyof Replacements
+        ? Replacements[Index]
+        : Bits[Index];
 };
 ```
 
@@ -326,18 +319,15 @@ Running through the logic in order:
     2. If not, use the original value under `Bits[Index]`
 
 ```ts
-type One = ReplaceBits<Zero, [1]>;      // [1, 0, 0, 0, 0, 0, 0, 0]
-type Two = ReplaceBits<Zero, [0, 1]>;   // [0, 1, 0, 0, 0, 0, 0, 0]
+type One = ReplaceBits<Zero, [1]>; // [1, 0, 0, 0, 0, 0, 0, 0]
+type Two = ReplaceBits<Zero, [0, 1]>; // [0, 1, 0, 0, 0, 0, 0, 0]
 type Three = ReplaceBits<Zero, [1, 1]>; // [1, 1, 0, 0, 0, 0, 0, 0]
 ```
 
 In JavaScript:
 
 ```js
-function ReplaceBits(
-    Bits: Bit[],
-    Replacements: Bit[]
-) {
+function ReplaceBits(Bits: Bit[], Replacements: Bit[]) {
     return Bits.map((Original, Index) => {
         return Index in Object.keys(Replacements)
             ? Replacements[Index]
@@ -353,10 +343,10 @@ Since this is binary, you can overflow a 1.
 
 Suppose you wanted to add `110` to `111`.
 
-* The smallest bit (index 0) is `0 + 1 = 1`, with nothing carried over
-* The index 1 bit is `1 + 1 = 0`, with `1` carried over
-* The index 2 bit is `1 + 1 + 1` because of that `1` carried over, making it `1` with another `1` carried over
-* The index 3 bit is `1` from being carried over
+-   The smallest bit (index 0) is `0 + 1 = 1`, with nothing carried over
+-   The index 1 bit is `1 + 1 = 0`, with `1` carried over
+-   The index 2 bit is `1 + 1 + 1` because of that `1` carried over, making it `1` with another `1` carried over
+-   The index 3 bit is `1` from being carried over
 
 `110 + 111 = 1101`.
 
@@ -364,25 +354,37 @@ Representing each column's three bits of addition in the type system:
 
 ```ts
 // Output: [Sum, Carry]
-type BitAddThree<A extends Bit, B extends Bit, C extends Bit> =
-    [A, B, C] extends [0, 0, 0] ? [0, 0] :
-    [A, B, C] extends [1, 0, 0] | [0, 1, 0] | [0, 0, 1] ? [1, 0] :
-    [A, B, C] extends [1, 1, 0] | [1, 0, 1] | [0, 1, 1] ? [0, 1] :
-    [1, 1]
-;
+type BitAddThree<A extends Bit, B extends Bit, C extends Bit> = [
+    A,
+    B,
+    C
+] extends [0, 0, 0]
+    ? [0, 0]
+    : [A, B, C] extends [1, 0, 0] | [0, 1, 0] | [0, 0, 1]
+    ? [1, 0]
+    : [A, B, C] extends [1, 1, 0] | [1, 0, 1] | [0, 1, 1]
+    ? [0, 1]
+    : [1, 1];
 ```
 
 If you think that's a mouthful, take a look at the JavaScript equivalent:
 
 ```js
-function BitAddThree(A: Bit, B: Bit, C: Bit) {
-    if (A === 0 && B === 0 && C === 0)
-        return [0, 0];
-    if ((A === 1 && B === 0 && C === 0) || (A === 0 && B === 1 && C === 0) || (A === 0 && B === 0 && C === 1))
-        return [1, 0];
-    if ((A === 1 && B === 1 && C === 0) || (A === 1 && B === 0 && C === 1) || (A === 0 && B === 1 && C === 1))
-        return [0, 1];
-    return [1, 1];
+function BitAddThree(A: Bit, B: Bit, C: Bit) {
+    if (A === 0 && B === 0 && C === 0) return [0, 0];
+    if (
+        (A === 1 && B === 0 && C === 0) ||
+        (A === 0 && B === 1 && C === 0) ||
+        (A === 0 && B === 0 && C === 1)
+    )
+        return [1, 0];
+    if (
+        (A === 1 && B === 1 && C === 0) ||
+        (A === 1 && B === 0 && C === 1) ||
+        (A === 0 && B === 1 && C === 1)
+    )
+        return [0, 1];
+    return [1, 1];
 }
 ```
 
@@ -408,10 +410,8 @@ type BitAdds<A extends Int8, B extends Int8> = {
 Seeing this in JavaScript, it's a little cleaner:
 
 ```js
-function BitAdds(A: Int8, B: Int8) {
-    return [0, 1, 2, 3, 4, 5, 6, 7, 8].map(
-        (P) => BitAdd(A[P], B[P])
-    );
+function BitAdds(A: Int8, B: Int8) {
+    return [0, 1, 2, 3, 4, 5, 6, 7, 8].map(P => BitAdd(A[P], B[P]));
 }
 ```
 
@@ -426,13 +426,13 @@ type ContrivedExample<
     A extends Bit,
     B extends Bit,
     C extends BitAnd<A, B> = BitAnd<A, B>
-> = [A, B, C];
+> = [A, B, C];
 ```
 
 The `C` generic is the equivalent of a variable:
 
-* We restrict it to the `BitAnd<A, B>` type with `extends`
-* and if not provided, it defaults to `BitAnd<A, B>` with `=`
+-   We restrict it to the `BitAnd<A, B>` type with `extends`
+-   and if not provided, it defaults to `BitAnd<A, B>` with `=`
 
 Tl;dr: `C = BitAnd<A, B>`.
 
@@ -444,20 +444,20 @@ We're _almost_ ready to implement 8 bit integer additions in the type system.
 Before we get into the TypeScript implementation, here's the JavaScript equivalent for reference:
 
 ```js
-function Int8Add(A: Int8, B: Int8) {
+function Int8Add(A: Int8, B: Int8) {
     // Grab the Sum and Carry for the result's first bit
-    const At0 = BitAdd(A[0], B[0]);
+    const At0 = BitAdd(A[0], B[0]);
 
     // The result at each index is the Sum from that index + the previous Carry.
-    const At1 = BitAddThree(A[1], B[1], At0[1]);
-    const At2 = BitAddThree(A[2], B[2], At1[1]);
-    const At3 = BitAddThree(A[3], B[3], At2[1]);
-    const At4 = BitAddThree(A[4], B[4], At3[1]);
-    const At5 = BitAddThree(A[5], B[5], At4[1]);
-    const At6 = BitAddThree(A[6], B[6], At5[1]);
-    const At7 = BitAddThree(A[7], B[7], At6[1]);
+    const At1 = BitAddThree(A[1], B[1], At0[1]);
+    const At2 = BitAddThree(A[2], B[2], At1[1]);
+    const At3 = BitAddThree(A[3], B[3], At2[1]);
+    const At4 = BitAddThree(A[4], B[4], At3[1]);
+    const At5 = BitAddThree(A[5], B[5], At4[1]);
+    const At6 = BitAddThree(A[6], B[6], At5[1]);
+    const At7 = BitAddThree(A[7], B[7], At6[1]);
 
-    return [At0[0], At1[0], At2[0], At3[0], At4[0], At5[0], At6[0], At7[0]];
+    return [At0[0], At1[0], At2[0], At3[0], At4[0], At5[0], At6[0], At7[0]];
 }
 ```
 
@@ -467,18 +467,44 @@ function Int8Add(A: Int8, B: Int8) {
 type Int8Add<
     A extends Int8,
     B extends Int8,
-
     // Grab the Sum and Carry for the result's first bit
     At0 extends BitAdd<A[0], B[0]> = BitAdd<A[0], B[0]>,
-
     // The result at each index is the Sum from that index + the previous Carry.
-    At1 extends BitAddThree<A[1], B[1], At0[1]> = BitAddThree<A[1], B[1], At0[1]>,
-    At2 extends BitAddThree<A[2], B[2], At1[1]> = BitAddThree<A[2], B[2], At1[1]>,
-    At3 extends BitAddThree<A[3], B[3], At2[1]> = BitAddThree<A[3], B[3], At2[1]>,
-    At4 extends BitAddThree<A[4], B[4], At3[1]> = BitAddThree<A[4], B[4], At3[1]>,
-    At5 extends BitAddThree<A[5], B[5], At4[1]> = BitAddThree<A[5], B[5], At4[1]>,
-    At6 extends BitAddThree<A[6], B[6], At5[1]> = BitAddThree<A[6], B[6], At5[1]>,
-    At7 extends BitAddThree<A[7], B[7], At6[1]> = BitAddThree<A[7], B[7], At6[1]>,
+    At1 extends BitAddThree<A[1], B[1], At0[1]> = BitAddThree<
+        A[1],
+        B[1],
+        At0[1]
+    >,
+    At2 extends BitAddThree<A[2], B[2], At1[1]> = BitAddThree<
+        A[2],
+        B[2],
+        At1[1]
+    >,
+    At3 extends BitAddThree<A[3], B[3], At2[1]> = BitAddThree<
+        A[3],
+        B[3],
+        At2[1]
+    >,
+    At4 extends BitAddThree<A[4], B[4], At3[1]> = BitAddThree<
+        A[4],
+        B[4],
+        At3[1]
+    >,
+    At5 extends BitAddThree<A[5], B[5], At4[1]> = BitAddThree<
+        A[5],
+        B[5],
+        At4[1]
+    >,
+    At6 extends BitAddThree<A[6], B[6], At5[1]> = BitAddThree<
+        A[6],
+        B[6],
+        At5[1]
+    >,
+    At7 extends BitAddThree<A[7], B[7], At6[1]> = BitAddThree<
+        A[7],
+        B[7],
+        At6[1]
+    >
 > = [At0[0], At1[0], At2[0], At3[0], At4[0], At5[0], At6[0], At7[0]];
 ```
 
@@ -488,12 +514,12 @@ We did it!
 
 Extra credit: what else can you make with this?
 
-* `BitSubtract`?
-* `Int8Multiply`? 
+-   `BitSubtract`?
+-   `Int8Multiply`?
 
 Even better, use your knowledge for good: contribute to [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/)!
 
-* Is your library missing? Add it?
-* Are your types wrong? Fix them!
+-   Is your library missing? Add it?
+-   Are your types wrong? Fix them!
 
 Thanks for reading!

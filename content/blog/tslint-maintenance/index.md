@@ -68,10 +68,10 @@ I'm eternally grateful to the folks in and out of TSLint's maintenance team for 
 I would highly recommend doing maintenance work in open source if you ever get the chance.
 At the very least, it helped teach me:
 
-* How to document long-term architectural decisions and goals when project ownership isn't clear...
-* How to file clear, understandable issues for newcomers with little-to-no project context...
-* The importance of lowering barriers to entry for contribution: e.g. autoformatters, tests-as-documentation, and getting started guides...
-* The true, incredible power of requiring filled-out issue and pull request templates...
+-   How to document long-term architectural decisions and goals when project ownership isn't clear...
+-   How to file clear, understandable issues for newcomers with little-to-no project context...
+-   The importance of lowering barriers to entry for contribution: e.g. autoformatters, tests-as-documentation, and getting started guides...
+-   The true, incredible power of requiring filled-out issue and pull request templates...
 
 ...and most importantly, that open source management is a two-way exchange.
 Managing a project needs empathy and understanding from both ends.
@@ -95,11 +95,11 @@ This meme usage is inaccurate: it's really that people have the best intentions,
 
 I'll admit I made mistakes and was the "asshole" plenty of times throughout my maintenance tenure:
 
-* I [merged a PR that duplicated another person's work](https://github.com/palantir/tslint/pull/3992#issuecomment-436633059).
-* I got into debates [without explaining my context](https://github.com/palantir/tslint/issues/975#issuecomment-435640297) or [over unnecessary esoteric features](https://github.com/palantir/tslint/issues/1306).
-* I [closed issues prematurely](https://github.com/palantir/tslint/issues/1489#issuecomment-460655323).
-* I [added rules and features without documenting them well](https://github.com/palantir/tslint/issues/4117), causing headaches for beginner and advanced users.
-* I [indicated a big refactor would be accepted]() even though we didn't have the maintenance staffing to support it.
+-   I [merged a PR that duplicated another person's work](https://github.com/palantir/tslint/pull/3992#issuecomment-436633059).
+-   I got into debates [without explaining my context](https://github.com/palantir/tslint/issues/975#issuecomment-435640297) or [over unnecessary esoteric features](https://github.com/palantir/tslint/issues/1306).
+-   I [closed issues prematurely](https://github.com/palantir/tslint/issues/1489#issuecomment-460655323).
+-   I [added rules and features without documenting them well](https://github.com/palantir/tslint/issues/4117), causing headaches for beginner and advanced users.
+-   I [indicated a big refactor would be accepted]() even though we didn't have the maintenance staffing to support it.
 
 Taking on maintenance for a project _(hopefully)_ means you care about where it goes: you want it and its users to be made more productive by the time you spend on it.
 I took on a real emotional weight by committing to spending personal time on TSLint.
