@@ -1,7 +1,8 @@
+import { Link } from "gatsby";
 import React from "react";
 
 import ReadingTime from "../readingtime";
-import { Article, Heading, LinkHeading } from './elements';
+import * as styles from "./styles";
 
 const ArticlePreview = ({ node }) => {
     const title = node.frontmatter.title || node.fields.slug;
@@ -12,22 +13,22 @@ const ArticlePreview = ({ node }) => {
             {title}
         </a>
     ) : (
-        <Heading to={node.fields.slug}>
+        <Link css={styles.heading} to={node.fields.slug}>
             {title}
-        </Heading>
+        </Link>
     );
 
     return (
-        <Article>
+        <article css={styles.article}>
             <header>
-                <LinkHeading>{link}</LinkHeading>
+                <h2 css={styles.linkHeading}>{link}</h2>
                 <small>{node.frontmatter.date}</small>
                 <ReadingTime minutes={minutes} />
             </header>
             <section>
                 <p>{node.frontmatter.description || node.excerpt}</p>
             </section>
-        </Article>
+        </article>
     );
 };
 

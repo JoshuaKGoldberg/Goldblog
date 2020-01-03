@@ -1,6 +1,3 @@
-import { Link } from "gatsby";
-import styled from "styled-components";
-
 import {
     lightGreen,
     lightBlue,
@@ -10,23 +7,23 @@ import {
     phoneMediumMax,
 } from "../../styleConstants";
 
-export const LayoutContainer = styled.div({
+export const layout = {
     fontFamily: openSansRegular,
     margin: "auto",
     maxWidth: "calc(630px + 1rem)",
     padding: "0 1rem",
-});
+};
 
-export const Header = styled.header({
+export const header = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
     flexWrap: "wrap",
     marginTop: "1.5rem",
-});
+};
 
-export const Heading = styled.h1({
+export const heading = {
     background: `linear-gradient(to right, ${lightGreen} 0%, ${lightBlue} 100%)`,
     fontFamily: latoRegular,
     padding: "0.5rem",
@@ -34,14 +31,14 @@ export const Heading = styled.h1({
     [phoneMediumMin]: {
         marginRight: "2rem",
     },
-});
+};
 
-export const HeadingLink = styled(Link)({
+export const headingLink = {
     color: "black",
     textDecoration: "none",
-});
+};
 
-export const Main = styled.main({
+export const main = {
     borderTop: "1px solid #ccc",
     flexGrow: 1,
     fontSize: "1.05rem",
@@ -56,4 +53,4 @@ export const Main = styled.main({
     [phoneMediumMin]: {
         marginTop: "1.5rem",
     },
-});
+};

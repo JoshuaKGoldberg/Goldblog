@@ -1,11 +1,11 @@
 import React from "react";
 
-import { Footer, Strong } from "./elements";
+import * as styles from "./styles";
 
 const Bio = () => {
     return (
-        <Footer>
-            <Strong>Josh Goldberg</Strong>
+        <footer css={styles.footer}>
+            <strong css={styles.strong}>Josh Goldberg</strong>
             Hi! I'm a frontend developer from New York. This is my blog about
             JavaScript, TypeScript, and scaling web application development.
             <br />
@@ -18,7 +18,7 @@ const Bio = () => {
                 open source on GitHub
             </a>
             . Found a problem? File an issue!
-        </Footer>
+        </footer>
     );
 };
 
