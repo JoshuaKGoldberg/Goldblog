@@ -17,6 +17,7 @@ export const Info = styled.p({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
+    overflow: "hidden",
 });
 
 export const Download = styled.span({
