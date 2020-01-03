@@ -1,6 +1,11 @@
 import { css } from "emotion";
 
-import { darkGray, latoRegular, phoneMediumMax, phoneMediumMin } from "../../../styleConstants";
+import {
+    darkGray,
+    latoRegular,
+    phoneMediumMax,
+    phoneMediumMin,
+} from "../../../styleConstants";
 
 export const bio = css({
     alignItems: "center",
@@ -13,6 +18,9 @@ export const bio = css({
 });
 
 export const face = css({
+    [phoneMediumMin]: {
+        marginRight: "0.5rem",
+    },
     [phoneMediumMax]: {
         marginBottom: "1rem",
     },
