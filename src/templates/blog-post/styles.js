@@ -25,5 +25,12 @@ export const download = css({
 });
 
 export const downloadMessage = css({
-    paddingLeft: "0.5rem",
+    fontWeight: 'normal',
+    marginRight: "-0.5rem",
+    padding: "0 0.5rem",
+    transition: '350ms margin',
+
+    '&:focus': {
+        marginLeft: '0.5rem',
+    },
 });

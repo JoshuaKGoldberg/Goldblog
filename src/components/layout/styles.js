@@ -5,12 +5,14 @@ import {
     lightBlue,
     latoRegular,
     openSansRegular,
+    phoneMediumMin,
+    phoneMediumMax,
 } from "../../styleConstants";
 
 export const layout = css({
     fontFamily: openSansRegular,
     margin: "auto",
-    maxWidth: "calc(700px + 1rem)",
+    maxWidth: "calc(630px + 1rem)",
     padding: "0 1rem",
 });
 
@@ -26,8 +28,11 @@ export const header = css({
 export const heading = css({
     background: `linear-gradient(to right, ${lightGreen} 0%, ${lightBlue} 100%)`,
     fontFamily: latoRegular,
-    marginRight: "2rem",
     padding: "0.5rem",
+
+    [phoneMediumMin]: {
+        marginRight: "2rem",
+    },
 });
 
 export const headingLink = css({
@@ -38,5 +43,16 @@ export const headingLink = css({
 export const main = css({
     borderTop: "1px solid #ccc",
     flexGrow: 1,
-    marginTop: "1.5rem",
+    fontSize: "1.05rem",
+    letterSpacing: "-0.01rem",
+    lineHeight: "1.75rem",
+    marginTop: "3rem",
+
+    [phoneMediumMax]: {
+        paddingTop: "1rem",
+    },
+
+    [phoneMediumMin]: {
+        marginTop: "1.5rem",
+    },
 });

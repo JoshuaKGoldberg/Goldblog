@@ -69,7 +69,7 @@ The first one, within a function named `parseExpected`, seemed the most relevant
 -   If `token()` _(the function that gets the next token to be parsed)_ returns the expected kind of token, all is well, hooray!
 -   If not, per its comment: _"Report specific message if provided with one. Otherwise, report generic fallback message."_
 
-I added a `console.log("wat", diagnosticMessage);` to `parseExpected` and ran TypeScript on the above `HasIssue` syntax error example code.
+I added a `console.log('wat', diagnosticMessage);` to `parseExpected` and ran TypeScript on the above `HasIssue` syntax error example code.
 The resultant logs were a little surprising:
 
 ```

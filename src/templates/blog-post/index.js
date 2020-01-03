@@ -1,9 +1,10 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 
 import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 import * as styles from "./styles";
+import NavItem from "../../components/navitem";
 
 const BlogPostTemplate = ({ data, pageContext }) => {
     const post = data.markdownRemark;
@@ -42,26 +43,14 @@ const BlogPostTemplate = ({ data, pageContext }) => {
 
             <br />
 
-            {(previous || next) && (
-                <nav>
-                    <ul className={styles.navList}>
-                        <li>
-                            {previous && (
-                                <Link to={previous.fields.slug} rel="prev">
-                                    ← {previous.frontmatter.title}
-                                </Link>
-                            )}
-                        </li>
-                        <li>
-                            {next && (
-                                <Link to={next.fields.slug} rel="next">
-                                    {next.frontmatter.title} →
-                                </Link>
-                            )}
-                        </li>
-                    </ul>
-                </nav>
-            )}
+            <nav>
+                <ul className={styles.navList}>
+                    {previous && (
+                        <NavItem arrow="←" page={previous} rel="prev" />
+                    )}
+                    {next && <NavItem arrow="→" page={next} rel="next" />}
+                </ul>
+            </nav>
         </Layout>
     );
 };

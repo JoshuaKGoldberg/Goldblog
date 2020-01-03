@@ -1,14 +1,21 @@
 import { css } from "emotion";
 
-import { latoRegular, darkGray } from "../../../styleConstants";
+import { darkGray, latoRegular, phoneMediumMax, phoneMediumMin } from "../../../styleConstants";
 
 export const bio = css({
+    alignItems: "center",
     display: "flex",
+    flexDirection: "column",
+
+    [phoneMediumMin]: {
+        flexDirection: "row",
+    },
 });
 
 export const face = css({
-    borderRadius: "100%",
-    minWidth: "100px",
+    [phoneMediumMax]: {
+        marginBottom: "1rem",
+    },
 });
 
 export const details = css({
@@ -16,7 +23,7 @@ export const details = css({
     display: "inline-flex",
     flexDirection: "column",
     justifyContent: "center",
-    paddingLeft: "2rem",
+    paddingLeft: "1rem",
 });
 
 export const links = css({
