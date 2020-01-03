@@ -23,7 +23,7 @@ I was very wrong.
 I was incredibly, obviously, plainly wrong.
 
 Despite the technical hurdles, the full TypeScript type checker works within ESLint -- the relevant maintainer teams would be able to resolve the [assorted](https://github.com/typescript-eslint/typescript-eslint/issues/1132) [structural](https://github.com/typescript-eslint/typescript-eslint/issues/1126) [performance](https://github.com/typescript-eslint/typescript-eslint/issues/1079) **[issues](https://github.com/typescript-eslint/typescript-eslint/issues/1040)**.
-TypeScript team would eventually choose to support the open source project already commonplace in the rest of the JavaScript ecosystem.
+The TypeScript team would eventually choose to support the open source project already commonplace in the rest of the JavaScript ecosystem.
 There was incredible work done by the TypeScript, ESLint, and typescript-eslint teams in molding together multiple fundamentally different systems.
 We all owe them a _massive_ debt of gratitude for their work to solidify our linting practices.
 
@@ -157,4 +157,4 @@ Sometimes I wonder what it would be like to have worked with [**Ashwin R**](http
 
 I'm sad we won't be able to work on tslint-microsoft-contrib more.
 Much of my maintenance style in TSLint was developed in tslint-microsoft-contrib.
-For every way that the TSLint itself was formalized and made for community standards, tslint-microsoft-contrib was the fun side plaything.
+For every way that TSLint itself was formalized and made for community standards, tslint-microsoft-contrib was the fun side plaything.
