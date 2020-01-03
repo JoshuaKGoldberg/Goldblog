@@ -1,8 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import Image from "gatsby-image";
 
-import * as styles from "./styles";
+import { BioContainer, Face, Details, TopLinks, TopLink } from "./elements";
 
 const links = [
     ["GitHub", "github.com/joshuakgoldberg"],
@@ -24,28 +23,23 @@ const Bio = () => {
     `);
 
     return (
-        <div className={styles.bio}>
-            <Image
+        <BioContainer>
+            <Face
                 fixed={data.avatar.childImageSharp.fixed}
                 imgStyle={{
                     borderRadius: `50%`,
                 }}
-                className={styles.face}
             />
-            <div className={styles.details}>
-                <div className={styles.links}>
+            <Details>
+                <TopLinks>
                     {links.map(([text, url]) => (
-                        <a
-                            key={text}
-                            href={`https://${url}`}
-                            className={styles.link}
-                        >
+                        <TopLink key={text} href={`https://${url}`}>
                             {text}
-                        </a>
+                        </TopLink>
                     ))}
-                </div>
-            </div>
-        </div>
+                </TopLinks>
+            </Details>
+        </BioContainer>
     );
 };
 

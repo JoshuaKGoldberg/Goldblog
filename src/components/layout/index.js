@@ -1,24 +1,27 @@
 import React from "react";
-import { Link } from "gatsby";
 
 import Bio from "./bio";
 import Footer from "./footer";
-import * as styles from "./styles";
+import {
+    Header,
+    Heading,
+    HeadingLink,
+    LayoutContainer,
+    Main,
+} from "./elements";
 
 const Layout = ({ children, title = "Goldblog" }) => {
     return (
-        <div className={styles.layout}>
-            <header className={styles.header}>
-                <h1 className={styles.heading}>
-                    <Link className={styles.headingLink} to={`/`}>
-                        {title}
-                    </Link>
-                </h1>
+        <LayoutContainer>
+            <Header>
+                <Heading>
+                    <HeadingLink to={`/`}>{title}</HeadingLink>
+                </Heading>
                 <Bio />
-            </header>
-            <main className={styles.main}>{children}</main>
+            </Header>
+            <Main>{children}</Main>
             <Footer />
-        </div>
+        </LayoutContainer>
     );
 };
 

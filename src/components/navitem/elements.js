@@ -1,21 +1,14 @@
-import { css } from "emotion";
+import { Link } from "gatsby";
+import styled from "styled-components";
 
-export const navList = css({
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
-    listStyle: "none",
-    padding: 0,
-});
-
-export const navItem = css({
+export const NavItemContainer = styled.li({
     "&:first-of-type + &:nth-of-type(2)": {
         marginTop: "2rem",
     },
 });
 
-export const navLink = rel =>
-    css({
+export const CreateNavLink = rel =>
+    styled(Link)({
         alignItems: "center",
         display: "flex",
         ...(rel === "next" && { textAlign: "right" }),
@@ -26,7 +19,7 @@ export const navLink = rel =>
         textDecoration: "none",
     });
 
-export const navArrow = rel =>
-    css({
+export const CreateNavArrow = rel =>
+    styled.span({
         [rel === "prev" ? "paddingRight" : "paddingLeft"]: "1rem",
     });
