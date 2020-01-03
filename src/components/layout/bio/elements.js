@@ -1,4 +1,5 @@
-import { css } from "emotion";
+import Image from "gatsby-image";
+import styled from "styled-components";
 
 import {
     darkGray,
@@ -7,17 +8,17 @@ import {
     phoneMediumMin,
 } from "../../../styleConstants";
 
-export const bio = css({
-    alignItems: "center",
-    display: "flex",
-    flexDirection: "column",
+export const BioContainer = styled.div({
+           alignItems: "center",
+           display: "flex",
+           flexDirection: "column",
 
-    [phoneMediumMin]: {
-        flexDirection: "row",
-    },
-});
+           [phoneMediumMin]: {
+               flexDirection: "row",
+           },
+       });
 
-export const face = css({
+export const Face = styled(Image)({
     [phoneMediumMin]: {
         marginRight: "0.5rem",
     },
@@ -26,7 +27,7 @@ export const face = css({
     },
 });
 
-export const details = css({
+export const Details = styled.div({
     alignItems: "left",
     display: "inline-flex",
     flexDirection: "column",
@@ -34,12 +35,12 @@ export const details = css({
     paddingLeft: "1rem",
 });
 
-export const links = css({
+export const TopLinks = styled.div({
     alignItems: "center",
     display: "flex",
 });
 
-export const link = css({
+export const TopLink = styled.a({
     fontFamily: latoRegular,
     fontSize: "1.4rem",
     fontWeight: "bold",

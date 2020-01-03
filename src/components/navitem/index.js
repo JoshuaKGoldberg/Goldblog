@@ -1,20 +1,18 @@
-import { Link } from "gatsby";
 import React from "react";
 
-import * as styles from "./styles";
+import { NavItemContainer, CreateNavLink, CreateNavArrow } from "./elements";
 
 const NavItem = ({ arrow, page, rel }) => {
+    const NavArrow = CreateNavArrow(rel);
+    const NavLink = CreateNavLink(rel);
+
     return (
-        <li className={styles.navItem}>
-            <Link
-                className={styles.navLink(rel)}
-                to={page.fields.slug}
-                rel={rel}
-            >
-                <span className={styles.navArrow(rel)}>{arrow}</span>{" "}
+        <NavItemContainer>
+            <NavLink to={page.fields.slug} rel={rel}>
+                <NavArrow>{arrow}</NavArrow>{" "}
                 <span>{page.frontmatter.title}</span>
-            </Link>
-        </li>
+            </NavLink>
+        </NavItemContainer>
     );
 };
 

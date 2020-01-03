@@ -1,4 +1,5 @@
-import { css } from "emotion";
+import { Link } from "gatsby";
+import styled from "styled-components";
 
 import {
     lightGreen,
@@ -9,14 +10,14 @@ import {
     phoneMediumMax,
 } from "../../styleConstants";
 
-export const layout = css({
+export const LayoutContainer = styled.div({
     fontFamily: openSansRegular,
     margin: "auto",
     maxWidth: "calc(630px + 1rem)",
     padding: "0 1rem",
 });
 
-export const header = css({
+export const Header = styled.header({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -25,7 +26,7 @@ export const header = css({
     marginTop: "1.5rem",
 });
 
-export const heading = css({
+export const Heading = styled.h1({
     background: `linear-gradient(to right, ${lightGreen} 0%, ${lightBlue} 100%)`,
     fontFamily: latoRegular,
     padding: "0.5rem",
@@ -35,12 +36,12 @@ export const heading = css({
     },
 });
 
-export const headingLink = css({
+export const HeadingLink = styled(Link)({
     color: "black",
     textDecoration: "none",
 });
 
-export const main = css({
+export const Main = styled.main({
     borderTop: "1px solid #ccc",
     flexGrow: 1,
     fontSize: "1.05rem",

@@ -3,8 +3,8 @@ import { graphql } from "gatsby";
 
 import Layout from "../../components/layout";
 import SEO from "../../components/seo";
-import * as styles from "./styles";
 import NavItem from "../../components/navitem";
+import { NavList, Article, Info, Download, DownloadMessage } from "./elements";
 
 const BlogPostTemplate = ({ data, pageContext }) => {
     const post = data.markdownRemark;
@@ -15,41 +15,40 @@ const BlogPostTemplate = ({ data, pageContext }) => {
         <Layout>
             <SEO description={description || post.excerpt} title={title} />
 
-            <article className={styles.article}>
+            <Article>
                 <header>
                     <h2>{title}</h2>
-                    <p className={styles.info}>
+                    <Info>
                         <span>{date}</span>
                         {download && (
-                            <span className={styles.download}>
+                            <Download>
                                 <span aria-label="download icon" role="img">
                                     {" "}
                                     💾{" "}
                                 </span>{" "}
-                                <a
+                                <DownloadMessage
                                     href={download}
                                     rel="noopener noreferrer"
-                                    className={styles.downloadMessage}
                                     target="_blank"
                                 >
                                     Download the slides here!
-                                </a>
-                            </span>
+                                </DownloadMessage>
+                            </Download>
                         )}
-                    </p>
+                    </Info>
                 </header>
                 <section dangerouslySetInnerHTML={{ __html: post.html }} />
-            </article>
+            </Article>
 
             <br />
 
             <nav>
-                <ul className={styles.navList}>
+                <NavList>
                     {previous && (
                         <NavItem arrow="←" page={previous} rel="prev" />
                     )}
                     {next && <NavItem arrow="→" page={next} rel="next" />}
-                </ul>
+                </NavList>
             </nav>
         </Layout>
     );

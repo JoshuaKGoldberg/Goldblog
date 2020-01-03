@@ -1,6 +1,6 @@
-import { css } from "emotion";
+import styled from "styled-components";
 
-export const navList = css({
+export const NavList = styled.ul({
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-between",
@@ -8,29 +8,29 @@ export const navList = css({
     padding: 0,
 });
 
-export const article = css({
+export const Article = styled.article({
     margin: 0,
     padding: 0,
 });
 
-export const info = css({
+export const Info = styled.p({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
 });
 
-export const download = css({
+export const Download = styled.span({
     display: "flex",
     alignItems: "center",
 });
 
-export const downloadMessage = css({
-    fontWeight: 'normal',
+export const DownloadMessage = styled.a({
+    fontWeight: "normal",
     marginRight: "-0.5rem",
     padding: "0 0.5rem",
-    transition: '350ms margin',
+    transition: "350ms margin",
 
-    '&:focus': {
-        marginLeft: '0.5rem',
+    "&:focus": {
+        marginLeft: "0.5rem",
     },
 });
