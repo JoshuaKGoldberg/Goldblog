@@ -6,6 +6,7 @@ import * as styles from "./styles";
 
 const ArticlePreview = ({ node }) => {
     const title = node.frontmatter.title || node.fields.slug;
+    const { minutes } = node.fields.readingTime;
 
     const link = node.link ? (
         <a href={node.link} rel="noopener noreferrer" target="_blank">
@@ -22,7 +23,7 @@ const ArticlePreview = ({ node }) => {
             <header>
                 <h2 className={styles.linkHeading}>{link}</h2>
                 <small>{node.frontmatter.date}</small>
-                <ReadingTime time={node.fields.readingTime.text} />
+                <ReadingTime minutes={minutes} />
             </header>
             <section>
                 <p>{node.frontmatter.description || node.excerpt}</p>
