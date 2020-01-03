@@ -27,7 +27,7 @@ const Bio = () => {
         <div className={styles.bio}>
             <Image
                 fixed={data.avatar.childImageSharp.fixed}
-                imgclassName={{
+                imgStyle={{
                     borderRadius: `50%`,
                 }}
                 className={styles.face}
