@@ -1,31 +1,29 @@
-import styled from "styled-components";
-
-export const NavList = styled.ul({
+export const navList = {
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-between",
     listStyle: "none",
     padding: 0,
-});
+};
 
-export const Article = styled.article({
+export const article = {
     margin: 0,
     padding: 0,
-});
+};
 
-export const Info = styled.p({
+export const info = {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     overflow: "hidden",
-});
+};
 
-export const Download = styled.span({
+export const download = {
     display: "flex",
     alignItems: "center",
-});
+};
 
-export const DownloadMessage = styled.a({
+export const downloadMessage = {
     fontWeight: "normal",
     marginRight: "-0.5rem",
     padding: "0 0.5rem",
@@ -34,4 +32,4 @@ export const DownloadMessage = styled.a({
     "&:focus": {
         marginLeft: "0.5rem",
     },
-});
+};

@@ -1,18 +1,18 @@
 import React from "react";
 
-import { ReadingTimeContainer, Time } from "./elements";
+import * as styles from "./styles";
 
 const ReadingTime = ({ minutes }) => {
     const minutesRoundedUp =
         minutes < 5 ? Math.ceil(minutes) : Math.ceil(minutes / 5) * 5;
 
     return (
-        <ReadingTimeContainer>
+        <small css={styles.readingTime}>
             <span aria-label="Reading time" role="img">
                 📖
             </span>
-            <Time>{minutesRoundedUp} minute read</Time>
-        </ReadingTimeContainer>
+            <span css={styles.time}>{minutesRoundedUp} minute read</span>
+        </small>
     );
 };
 
