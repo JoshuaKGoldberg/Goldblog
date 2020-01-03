@@ -33,6 +33,9 @@ export const pageQuery = graphql`
                 node {
                     excerpt
                     fields {
+                        readingTime {
+                            text
+                        }
                         slug
                     }
                     frontmatter {

@@ -1,6 +1,7 @@
 import { Link } from "gatsby";
 import React from "react";
 
+import ReadingTime from "../readingtime";
 import * as styles from "./styles";
 
 const ArticlePreview = ({ node }) => {
@@ -21,6 +22,7 @@ const ArticlePreview = ({ node }) => {
             <header>
                 <h2 className={styles.linkHeading}>{link}</h2>
                 <small>{node.frontmatter.date}</small>
+                <ReadingTime time={node.fields.readingTime.text} />
             </header>
             <section>
                 <p>{node.frontmatter.description || node.excerpt}</p>
