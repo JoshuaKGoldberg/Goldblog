@@ -2,10 +2,10 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
-import ArticlePreview from "../components/preview";
+import ArticlePreview from "../components/articlepreview";
 import SEO from "../components/seo";
 
-const BlogIndex = ({ data, location }) => {
+const BlogIndex = ({ data }) => {
     const siteTitle = data.site.siteMetadata.title;
     const posts = data.allMarkdownRemark.edges;
 
@@ -40,8 +40,12 @@ export const pageQuery = graphql`
                     }
                     frontmatter {
                         date(formatString: "MMMM DD, YYYY")
-                        title
                         description
+                        link {
+                            title
+                            url
+                        }
+                        title
                     }
                 }
             }

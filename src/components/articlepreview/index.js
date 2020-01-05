@@ -5,11 +5,15 @@ import ReadingTime from "../readingtime";
 import * as styles from "./styles";
 
 const ArticlePreview = ({ node }) => {
-    const title = node.frontmatter.title || node.fields.slug;
+    const { link, title } = node.frontmatter;
     const { minutes } = node.fields.readingTime;
 
-    const link = node.link ? (
-        <a href={node.link} rel="noopener noreferrer" target="_blank">
+    const linkTitle = link ? (
+        <a
+            href={link.url}
+            rel="noopener noreferrer"
+            target="_blank"
+        >
             {title}
         </a>
     ) : (
@@ -21,7 +25,7 @@ const ArticlePreview = ({ node }) => {
     return (
         <article css={styles.article}>
             <header>
-                <h2 css={styles.linkHeading}>{link}</h2>
+                <h2 css={styles.linkHeading}>{linkTitle}</h2>
                 <small>{node.frontmatter.date}</small>
                 <ReadingTime minutes={minutes} />
             </header>
