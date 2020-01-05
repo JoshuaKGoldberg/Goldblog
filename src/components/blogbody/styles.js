@@ -1,11 +1,3 @@
-export const navList = {
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
-    listStyle: "none",
-    padding: 0,
-};
-
 export const article = {
     margin: 0,
     padding: 0,
