@@ -35,7 +35,7 @@
     "react-helmet": "5.2.1"
   },
   "devDependencies": {
-    "prettier": "1.19.1"
+    "prettier": "2.0.0"
   },
   "homepage": "https://github.com/JoshuaKGoldberg/goldblog#readme",
   "keywords": [
