@@ -10,7 +10,7 @@
     "@emotion/core": "10.0.28",
     "@emotion/styled": "10.0.27",
     "emotion": "10.0.27",
-    "gatsby": "2.20.31",
+    "gatsby": "2.20.32",
     "gatsby-image": "2.3.5",
     "gatsby-plugin-emotion": "4.2.3",
     "gatsby-plugin-feed": "2.4.4",
