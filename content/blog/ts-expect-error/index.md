@@ -4,10 +4,8 @@ date: "2020-03-21T12:34:56.117Z"
 description: "Adding a new comment directive to the TypeScript compiler."
 ---
 
-![Clever caption](./clever-image.jpg)
-
 <em style="display:block;margin-bottom:2rem;text-align:center;">
-Some quote about those who expect errors and those who don't expect them are both perpetually dissapointed
+“To expect the unexpected shows a thoroughly modern intellect.” - Oscar Wilde
 <br />
 <small>
 File copied from Wikipedia under the Creative Commons Attribution 2.0 Generic license. [<a href="https://en.wikipedia.org/wiki/SOURCE"  rel="noopener noreferrer"target="_blank">source</a>]
@@ -20,36 +18,54 @@ These blog posts are documentation of the steps I took to figure out what to do 
 If you're thinking of contributing to TypeScript or other large open source libraries, I hope seeing how to delve into a giant foreign monolith is of some help!
 </em>
 
+_This post is a bit more dry than my others and I don't think it's [pedagogically](https://en.wikipedia.org/wiki/Pedagogy) sound._
+_I just wanted to get this info out of my brain and into the world._
+_Sorry not sorry!_
+
 _Previous post: [Improved Syntax Error for Enum Member Colons](http://blog.joshuakgoldberg.com/enum-commas)_
 
 ## Backing Context
 
-For several years, TypeScript has included a few built-in _comment directives_: comments that tell the compiler to behave differently for the next line or current file.
+For several years, TypeScript has included a few built-in _coatmment directives_: comments that tell the compiler to behave differently for the next line or current file.
 
 One popular comment directive is `// @ts-ignore`, which tells the TypeScript compiler to ignore any error from the following line.
 It's meant to be a last-ditch flag only used in the rare circumstances where TypeScript's errors are incorrect - which anecdotally should almost always from a soon-to-be-fixed bug in the compiler or legacy code that's too dynamic to fit into a type system.
 
 ```ts
-if (false) {
-    // @ts-ignore
-    console.log("nope");
-}
+// @ts-ignore
+const wrong: number = "nope";
 ```
 
-TypeScript's [issue #29394](https://github.com/microsoft/TypeScript/issues/29394) requested that either `@ts-ignore` or an new `@ts-expect-error` equivalent should itself cause an error if the next line doesn't have an error.
-This would be similar to ESLint's [`--report-unused-disable-directives](https://eslint.org/docs/user-guide/command-line-interface#--report-unused-disable-directives), which lets you know about any disable directives that are no longer necessary.
-I'm a big fan of this behavior: it's good to not keep around code (even comments) that's no longer necessary.
+TypeScript's [issue #29394](https://github.com/microsoft/TypeScript/issues/29394) requested either `@ts-ignore` or an new `@ts-expect-error` equivalent should cause an error if the next line doesn't have an error.
+This would be similar to ESLint's [`--report-unused-disable-directives`](https://eslint.org/docs/user-guide/command-line-interface#--report-unused-disable-directives), which lets you know about any disable directives that are no longer necessary.
+I'm a fan of the general idea of notkeeping around code (even comments) that's no longer necessary.
 
-The TypeScript team indicated they would want the new `@ts-expect-error` directive, to maintain compatibility with `@ts-ignore`.
+The TypeScript team [indicated](https://github.com/microsoft/TypeScript/issues/29394#issuecomment-522789325) they would want the new `@ts-expect-error` directive, to maintain compatibility with `@ts-ignore`.
 Super.
 Time to dive into the compiler!
+🚀
 
 ## Initial Investigation
 
 Before adding any new comment directive I needed to understand how the existing ones work.
+I figured I'd want to understand:
+
+1. Where does TypeScript read `@ts-ignore` or other comment directives?
+2. How does TypeScript change its reporting logic for those comment directives?
+
+### Reading Comment Directives
+
 I first ran a search in TypeScript's `src/` for `// @ts-ignore`.
 
-The most relevant looking result was on the comments desribing a [`shouldReportDiagnostic`](https://github.com/Microsoft/TypeScript/blob/b9c0999a2a4139b8803829503a3e9f64baacdff3/src/compiler/program.ts#L17750) function.
+The most relevant looking result was on the comments desribing a [`shouldReportDiagnostic`](https://github.com/Microsoft/TypeScript/blob/b9c0999a2a4139b8803829503a3e9f64baacdff3/src/compiler/program.ts#L1775) function.
+
+```ts
+/**
+ * Skip errors if previous line start with '// @ts-ignore' comment, not counting non-empty non-comment lines
+ */
+function shouldReportDiagnostic(diagnostic: Diagnostic) {
+```
+
 That function takes in a diagnostic _(read: potential error message)_ and roughly:
 
 1. Computes the line and character position of the diagnostic using the appropriately named `computeLineAndCharacterOfPosition`
@@ -120,7 +136,7 @@ if (commentText.includes("@ts-expect-error")) {
 ```
 
 Running the local `tsc.js` on some sample code showed positive results for finding comments with the directives.
-Looks like I was on the right track
+Looks like I was on the right track!
 
 ### Parsing Directives From Comments
 
@@ -132,7 +148,7 @@ A more proper solution to filtering directive-containing comments would be a reg
 4. `\s*`: Any amount of whitespace
 5. `@(ts-expect-error|ts-ignore)`: Either `@ts-expect-error` or `@ts-ignore`
 
-That last step is a _matching group_, meaning the contents inside the parenthesis would be stored in the resultant array from `commentDirectiveRegEx.exec(text);`.
+That last step is a _matching group_, meaning the contents inside the parenthesis would be stored in the resultant array from `commentDirectiveRegEx.exec(text)`.
 
 ```ts
 const commentDirectiveRegEx = /^\s*\/\/\/?\s*@(ts-expect-error|ts-ignore)/;
@@ -159,7 +175,7 @@ function getDirectiveFromComment(text: string) {
 }
 ```
 
-...where `CommentDirectiveType` was a small new `enum` storing just those two values.
+...where `CommentDirectiveType` was a small new `enum` for just those two values.
 
 ```ts
 enum CommentDirectiveType {
@@ -171,7 +187,9 @@ enum CommentDirectiveType {
 ### Storing Comment Directives
 
 Now that the code could figure out what type of directive stored in a comment, it was time to store those comment directives somewhere.
-I wasn't really sure where the best place to add something to a source file was so I looked around to find where scanners are actually created.
+Question: where was the right place to add something to a source file?
+
+I figured scanners probably had some initial state that I could add to, so I looked around to find where scanners are created.
 A search for `: Scanner =` found a `scanner` variable at the top of scanner's `createScanner` function, preceded by a bunch of stateful variables referring to position, node type, and so on.
 Seems legit!
 
@@ -290,7 +308,7 @@ If you've taken any kind of intensive developer interview training or gone throu
 >
 > -   O(1) means the operation always takes the same amount of time (most of the time that's very fast).
 >
-> -   O(log(N)) means the operation gets a little bit slower as you add more elements; specifically, at a rate equal to log based 10 of the number of elements (N).
+> -   O(log(N)) means the operation gets slower as you add more elements, but gets terrible less quickly as you add more elements _(technically, it's the number of times you need to square a number -normally 2- to get to your N)_.
 
 The built-in `Object`s, `Map`s, and `Set`s in JavaScript are both generally hash table data structures with O(1) insertions and lookups. _[[map](https://tc39.es/ecma262/#sec-map-objects) and [set](https://tc39.es/ecma262/#sec-set-objects) specification references]_
 
@@ -314,15 +332,11 @@ const usedLines = createMap<boolean>();
 I also needed the function to map from line numbers to the contained directives.
 Next in `src/compiler/core.ts` was [`createMapFromEntries`](https://github.com/Microsoft/TypeScript/blob/5144330c98ebbbe031d40c2cdd240c49a0bcadc1/src/compiler/core.ts#L13): a utility to create a new `Map<T>` from array of pairs.
 
+<!-- prettier-ignore -->
 ```ts
 const directivesByLine = createMapFromEntries(
-    commentDirectives.map(commentDirective => [
-        `${
-            getLineAndCharacterOfPosition(
-                sourceFile,
-                commentDirective.range.pos
-            ).line
-        }`,
+    commentDirectives.map((commentDirective) => [
+        `${getLineAndCharacterOfPosition(sourceFile,commentDirective.range.pos).line}`,
         commentDirective,
     ])
 );
@@ -375,7 +389,7 @@ if (!sourceFile.commentDirectives?.length) {
 // This will modify the directives map by marking "used" ones with a corresponding diagnostic
 const directives = createCommentDirectivesMap(sourceFile, commentDirectives);
 const diagnostics = diagnostics.filter(
-    diagnostic =>
+    (diagnostic) =>
         markPrecedingCommentDirectiveLine(diagnostic, directives) === -1
 );
 
