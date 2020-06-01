@@ -7,38 +7,31 @@ description: "Adding a new comment directive to the TypeScript compiler."
 <em style="display:block;margin-bottom:2rem;text-align:center;">
 “To expect the unexpected shows a thoroughly modern intellect.” - Oscar Wilde
 <br />
-<small>
-File copied from Wikipedia under the Creative Commons Attribution 2.0 Generic license. [<a href="https://en.wikipedia.org/wiki/SOURCE"  rel="noopener noreferrer"target="_blank">source</a>]
-</small>
 </em>
-
-<em>
-I've been contributing to TypeScript, working my way up from small error reporting nitpicks to real syntactic and control flow improvements.
-These blog posts are documentation of the steps I took to figure out what to do for these contributions & then do them. 
-If you're thinking of contributing to TypeScript or other large open source libraries, I hope seeing how to delve into a giant foreign monolith is of some help!
-</em>
-
-_This post is a bit more dry than my others and I don't think it's [pedagogically](https://en.wikipedia.org/wiki/Pedagogy) sound._
-_I just wanted to get this info out of my brain and into the world._
-_Sorry not sorry!_
 
 _Previous post: [Improved Syntax Error for Enum Member Colons](http://blog.joshuakgoldberg.com/enum-commas)_
 
+This post is a bit more dry than my others and I don't think it's [pedagogically](https://en.wikipedia.org/wiki/Pedagogy) sound.
+I just wanted to get this info out of my brain and into the world.
+Sorry not sorry!
+
+You can refer to the [TypeScript pull request](https://github.com/microsoft/TypeScript/pull/38228) as a technical reference.
+
 ## Backing Context
 
-For several years, TypeScript has included a few built-in _coatmment directives_: comments that tell the compiler to behave differently for the next line or current file.
+For several years, TypeScript has included a few built-in _comment directives_: comments that tell the compiler to behave differently for the next line or current file.
 
 One popular comment directive is `// @ts-ignore`, which tells the TypeScript compiler to ignore any error from the following line.
-It's meant to be a last-ditch flag only used in the rare circumstances where TypeScript's errors are incorrect - which anecdotally should almost always from a soon-to-be-fixed bug in the compiler or legacy code that's too dynamic to fit into a type system.
+It's meant to be a last-ditch flag only used in the rare circumstances where TypeScript's errors are incorrect.
 
 ```ts
 // @ts-ignore
 const wrong: number = "nope";
 ```
 
-TypeScript's [issue #29394](https://github.com/microsoft/TypeScript/issues/29394) requested either `@ts-ignore` or an new `@ts-expect-error` equivalent should cause an error if the next line doesn't have an error.
+TypeScript's [issue #29394](https://github.com/microsoft/TypeScript/issues/29394) requested either `@ts-ignore` or an new `@ts-expect-error` equivalent cause an error if the next line doesn't have an error.
 This would be similar to ESLint's [`--report-unused-disable-directives`](https://eslint.org/docs/user-guide/command-line-interface#--report-unused-disable-directives), which lets you know about any disable directives that are no longer necessary.
-I'm a fan of the general idea of notkeeping around code (even comments) that's no longer necessary.
+I'm a fan of the general idea of not keeping around code (even comments) that are no longer necessary.
 
 The TypeScript team [indicated](https://github.com/microsoft/TypeScript/issues/29394#issuecomment-522789325) they would want the new `@ts-expect-error` directive, to maintain compatibility with `@ts-ignore`.
 Super.
@@ -56,7 +49,6 @@ I figured I'd want to understand:
 ### Reading Comment Directives
 
 I first ran a search in TypeScript's `src/` for `// @ts-ignore`.
-
 The most relevant looking result was on the comments desribing a [`shouldReportDiagnostic`](https://github.com/Microsoft/TypeScript/blob/b9c0999a2a4139b8803829503a3e9f64baacdff3/src/compiler/program.ts#L1775) function.
 
 ```ts
@@ -66,12 +58,12 @@ The most relevant looking result was on the comments desribing a [`shouldReportD
 function shouldReportDiagnostic(diagnostic: Diagnostic) {
 ```
 
-That function takes in a diagnostic _(read: potential error message)_ and roughly:
+That function took in a diagnostic _(read: potential error message)_ and roughly:
 
-1. Computes the line and character position of the diagnostic using the appropriately named `computeLineAndCharacterOfPosition`
-2. Captures the previous line's text
-3. Checks if a complicated looking `ignoreDiagnosticCommentRegEx` regular expression matched the text
-4. Repeats steps 2-3 for preceding lines if the line was blank
+1. Computed the line and character position of the diagnostic using the appropriately named `computeLineAndCharacterOfPosition`
+2. Captured the preceding line's text
+3. Checked if a complicated looking `ignoreDiagnosticCommentRegEx` regular expression matched the text
+4. Repeated steps 2-3 for preceding lines if the line was blank
 
 Its regular expression notably had a `@ts-ignore` after a bunch of convoluted whitespace and backslash checking:
 
@@ -87,7 +79,7 @@ Now we understand how TypeScript was accounting for `@ts-ignore` comment directi
 TypeScript's previous `shouldReportDiagnostic` logic went from _diagnostic_ to _comment_ using line numbers.
 TypeScript didn't have to remember where comments were originally parsed to adjust its output diagnostics for comment directives; it just had to check preceding lines before each comment directive.
 
-Now we'd have to make new logic that went the other way around: from _comment_ to _diagnostic_.
+With my changes, we'd have to make new logic for the other way around: from _comment_ to _diagnostic_.
 TypeScript would have to be made to remember the comment directives of a file so that it could determine which `@ts-expect-error`s in a file didn't match to a diagnostic.
 Per the [TypeScript Compiler Internals](https://basarat.gitbook.io/typescript/overview), there would be roughly two places that comments would be need to be interacted with:
 
@@ -104,7 +96,7 @@ I figured there were two things the code would need to do to remember the commen
 ### Retrieving Comment Directives
 
 TypeScript's `parser.ts` was [previously known to me](../enum-commas) as the place that parses raw text into AST nodes.
-I ran a searches for `scanComment`, `scanSingleLine`, `scan(.*)omment`, and similar comment-related things but didn't find anything useful.
+I ran searches for `scanComment`, `scanSingleLine`, `scan(.*)omment`, and similar comment-related things but didn't find anything useful.
 The closest `comment`-related search result I could find was `processCommentPragmas`, but that didn't look like it was related to any prior `@ts-ignore` logic.
 Looks like nothing was explicitly handling the single line comments.
 
@@ -123,8 +115,8 @@ Excellent.
 
 Looking closer at the logic in `scan`:
 
--   `tokenPos` is the _starting_ position from scanning the new token
--   `pos` is the _ending_ position, or where the scanner would scan next
+-   `tokenPos` was the _starting_ position from scanning the new token
+-   `pos` was the _ending_ position, or where the scanner would scan next
 
 I added a basic test to check whether a comment matched one of the two comment directives:
 
@@ -191,7 +183,7 @@ Question: where was the right place to add something to a source file?
 
 I figured scanners probably had some initial state that I could add to, so I looked around to find where scanners are created.
 A search for `: Scanner =` found a `scanner` variable at the top of scanner's `createScanner` function, preceded by a bunch of stateful variables referring to position, node type, and so on.
-Seems legit!
+Seemed legit!
 
 ```ts
 // ...
@@ -234,7 +226,7 @@ if (type !== undefined) {
 ```
 
 > In case you're wondering, `append` is a commonly used function in TypeScript's source code for dealing with potentially undefined arrays.
-> It'll create a new array if the existing one doesn't already exist.
+> It creates a new array if the existing one doesn't already exist.
 
 ### State Clearing
 
@@ -308,14 +300,14 @@ If you've taken any kind of intensive developer interview training or gone throu
 >
 > -   O(1) means the operation always takes the same amount of time (most of the time that's very fast).
 >
-> -   O(log(N)) means the operation gets slower as you add more elements, but gets terrible less quickly as you add more elements _(technically, it's the number of times you need to square a number -normally 2- to get to your N)_.
+> -   O(log(N)) is the number of times you need to square a number -normally 2- to get to your N... meaning, it gets worse less quickly as you add more elements.
 
 The built-in `Object`s, `Map`s, and `Set`s in JavaScript are both generally hash table data structures with O(1) insertions and lookups. _[[map](https://tc39.es/ecma262/#sec-map-objects) and [set](https://tc39.es/ecma262/#sec-set-objects) specification references]_
 
 #### Map Logic
 
 Anyway, the first part of the map to add was the marking of lines that were used: a relatively simple storage of which lines were already seen.
-Normally I'd use a `Set<number>`, but searching for `new Set`, `createSet`, and similar terms didn't show anything.
+Normally I'd use a `Set<number>`, but searching for `new Set`, `createSet`, and similar terms in the TypeScript source didn't show anything I could use.
 
 On the other hand, searching for `new Map` showed a [`createMap`](https://github.com/Microsoft/TypeScript/blob/5144330c98ebbbe031d40c2cdd240c49a0bcadc1/src/compiler/core.ts#L8) at the very beginning of `src/compiler/core.ts` for creating a blank `Map<T>`.
 
@@ -332,11 +324,15 @@ const usedLines = createMap<boolean>();
 I also needed the function to map from line numbers to the contained directives.
 Next in `src/compiler/core.ts` was [`createMapFromEntries`](https://github.com/Microsoft/TypeScript/blob/5144330c98ebbbe031d40c2cdd240c49a0bcadc1/src/compiler/core.ts#L13): a utility to create a new `Map<T>` from array of pairs.
 
-<!-- prettier-ignore -->
 ```ts
 const directivesByLine = createMapFromEntries(
     commentDirectives.map((commentDirective) => [
-        `${getLineAndCharacterOfPosition(sourceFile,commentDirective.range.pos).line}`,
+        `${
+            getLineAndCharacterOfPosition(
+                sourceFile,
+                commentDirective.range.pos
+            ).line
+        }`,
         commentDirective,
     ])
 );
