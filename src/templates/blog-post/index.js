@@ -5,12 +5,17 @@ import BlogNav from "../../components/blognav";
 import BlogBody from "../../components/blogbody";
 import BlogLink from "../../components/bloglink";
 import Layout from "../../components/layout";
+import SEO from "../../components/seo";
 
 const BlogPostTemplate = ({ data, pageContext }) => {
     const post = data.markdownRemark;
 
     return (
         <Layout>
+            <SEO
+                description={post.frontmatter.description}
+                title={post.title}
+            />
             {post.frontmatter.link ? (
                 <BlogLink link={post.frontmatter.link} />
             ) : (
@@ -44,6 +49,7 @@ export const pageQuery = graphql`
                     title
                     url
                 }
+                title
             }
         }
     }
