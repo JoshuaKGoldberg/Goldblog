@@ -1,6 +1,6 @@
 ---
 title: "TypeScript Contribution Diary: // @ts-expect-error"
-date: "2020-03-21T12:34:56.117Z"
+date: "2020-07-21T12:34:56.117Z"
 description: "Adding a new comment directive to the TypeScript compiler."
 ---
 
@@ -13,7 +13,7 @@ _Previous post: [Improved Syntax Error for Enum Member Colons](http://blog.joshu
 
 This post is a bit more dry than my others and I don't think it's [pedagogically](https://en.wikipedia.org/wiki/Pedagogy) sound.
 I just wanted to get this info out of my brain and into the world.
-Sorry not sorry!
+It's probably most useful if you're trying to understand this area of the TypeScript code base and want to see a reference for how the system was set up.
 
 You can refer to the [TypeScript pull request](https://github.com/microsoft/TypeScript/pull/38228) as a technical reference.
 
