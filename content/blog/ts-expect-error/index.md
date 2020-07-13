@@ -1,6 +1,6 @@
 ---
 title: "TypeScript Contribution Diary: // @ts-expect-error"
-date: "2020-07-21T12:34:56.117Z"
+date: "2020-07-12T12:34:56.117Z"
 description: "Adding a new comment directive to the TypeScript compiler."
 ---
 
