@@ -14,6 +14,7 @@ _Previous post: [Improved Syntax Error for Enum Member Colons](http://blog.joshu
 This post is a bit more dry than my others and I don't think it's [pedagogically](https://en.wikipedia.org/wiki/Pedagogy) sound.
 I just wanted to get this info out of my brain and into the world.
 It's probably most useful if you're trying to understand this area of the TypeScript code base and want to see a reference for how the system was set up.
+Sorry not sorry! 😄
 
 You can refer to the [TypeScript pull request](https://github.com/microsoft/TypeScript/pull/38228) as a technical reference.
 
@@ -502,3 +503,10 @@ My followup [pull request to allow comment directives to be multiline](https://g
 I had some trouble understanding how the incremental parser unit tests were set up, then some code churn around which forms of comments should or shouldn't be allowed.
 The pull request was merged _just_ in time to make it into the final 3.9 release.
 Phew!
+
+## In Closing
+
+When I first set up these TypeScript diary posts, I had an inner drive to make some kind of _core_, _intensive_ contribution to the "cool" parts of TypeScript.
+I think this contribution finally scratched that itch.
+
+Thanks for making it this far through the post - I hope it was useful to you in some way!
