@@ -480,7 +480,7 @@ Did you know this was the standard way to write `// @ts-ignore` comments prior t
 ```tsx
 {/*
 // @ts-ignore */}
-<MyOtherComponent prop={123} />
+<MissingRequiredProp />
 ```
 
 Bizarre, right?
@@ -497,7 +497,7 @@ My followup [pull request to allow comment directives to be multiline](https://g
 <!-- prettier-ignore -->
 ```tsx
 {/* @ts-ignore */}
-<MyOtherComponent prop={123} />
+<MissingRequiredProp />
 ```
 
 I had some trouble understanding how the incremental parser unit tests were set up, then some code churn around which forms of comments should or shouldn't be allowed.
