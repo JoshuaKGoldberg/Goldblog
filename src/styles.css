@@ -1,10 +1,10 @@
 a {
     color: #565656;
-    font-weight: bold;    
+    font-weight: bold;
 }
 
 a:focus {
-    background: linear-gradient(to right,#e7fff5 0%,#e7f5ff 100%);
+    background: linear-gradient(to right, #e7fff5 0%, #e7f5ff 100%);
     color: black;
 }
 
@@ -24,6 +24,18 @@ li {
 p {
     max-width: 100%;
     overflow-x: auto;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    text-align: left;
+}
+
+td {
+    font-size: 0.9rem;
 }
 
 .autolink {
