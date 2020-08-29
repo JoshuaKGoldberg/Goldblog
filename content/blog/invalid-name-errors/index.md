@@ -19,14 +19,14 @@ File copied from Wikipedia under the Creative Commons Attribution 2.0 Generic li
 Reading through error messages emitted by TypeScript can sometimes feel like the old [_"Who's on First?"_ routine](https://en.wikipedia.org/wiki/Who%27s_on_First%3F), where every word has two meanings and you can never be sure exactly what any particular phrase refers to.
 
 One example complaint is [issue #19352, Improve wrong usage of `case` compile errors](https://github.com/microsoft/TypeScript/issues/19352), first filed in 2017.
-Without reading it, can you guess what the error message for this line of code should be?
+Without reading it, can you guess what a reasonable error message for this line of code should be?
 
 ```ts
 const case = "123";
 ```
 
 If you guessed something like _`'case' is not allowed as a variable declaration name`_, then congrats, you win!
-If not, that's ok, because TypeScript <4.1 emits three instances of the same, less useful error message:
+If not, that's ok, because TypeScript <4.1 emits three instances of not-so-informative error message:
 
 ```ts
 const case = 123;
@@ -35,16 +35,14 @@ const case = 123;
 //           ~~~ Variable declaration expected.
 ```
 
-🤔 That's not very helpful.
+🤔 That's rather unclear.
 
 This post describes what I did to improve this particular error.
 Let's dig in!
 
 ## But Why?
 
-> Why is TypeScript doing this to us?
-
-As with any TypeScript error message improvement investigation, I started by searching on the emitted error.
+As with any TypeScript error message improvement investigation, I started by searching on how the original emitted error is achieved.
 I found exactly one usage of it, in [`src/compiler/parser.ts`](https://github.com/microsoft/TypeScript/blob/4dd9f69866a1a99053f229828c7e10250d2c1d49/src/compiler/parser.ts#L2379):
 
 ```ts
@@ -95,7 +93,9 @@ To verify, I checked what a few different JavaScript engines emit for the `const
 -   Firefox: `SyntaxError: missing variable name`
 -   Internet Explorer: `The use of a keyword for an identifier is invalid`
 
-Wow, I never thought I'd see the day when the _Internet Explorer_ error message is better than Firefox's.
+Wow.
+I never thought I'd see the day when the _Internet Explorer_ error message is better than both Chrome's and Firefox's. 😂
+
 Anyway, none of these gave me any particular inspiration, so I added `'{0}' is not allowed as a variable declaration name.` as a new diagnostic to `diagnosticMessages.json`.
 
 ## Changing the Parser
@@ -137,7 +137,7 @@ Skimming through them, there seemd to be a few common cases of errors...
     //          ~
     ```
 
-    `/[]/` is a complete regular expression; saying a declaration is expected after it is a bit to the truth than complaining about a name.
+    `/[]/` is a complete regular expression; saying a declaration is expected after it is a bit closer to the truth than complaining about a name.
 
 ## Making Changes
 
@@ -174,8 +174,8 @@ case ParsingContext.VariableDeclarations:
 ### Messaging Token Names
 
 Problem: although `parsingContextErrors` was now returning the correct diagnostic for invalid tokens, it wasn't returning the `tokenString` to be used in it.
-It seemed a little wasteful to change `parseErrorAtCurrentToken` to call `tokenToString(token())` again.
 
+It seemed wasteful to change `parseErrorAtCurrentToken` to call `tokenToString(token())` again.
 Instead, I changed `parsingContextErrors` to return a tuple (array) containing at least the diagnostic, and optionally a string to add to it:
 
 ```ts
@@ -225,21 +225,16 @@ Making changes to the parser's behavior around list abortions would require chan
 
 I've learned the hard way that changes to emitted JavaScript take much longer to get approved _(ahem, still waiting on [#29374](https://github.com/microsoft/TypeScript/pull/29374) and [#33337](https://github.com/microsoft/TypeScript/pull/33337)...)_.
 Improving parser tolerance on invalid identifiers would have to wait for another day.
-Just improving the first error would have to do for now.
 
 ## Pull Request Review
 
-I cleaned up the code as-is, updated the now-failing baseline tests, and sent it out for review: [
+I cleaned up the code changes, updated now-failing baseline tests, and sent it out for review: [
 Specified error diagnostic for invalid variable names #40105](https://github.com/microsoft/TypeScript/pull/40105).
 It came back later that day _(speedy!)_ with a few requested changes...
 
 ### `isKeyword`
 
-> [Comment](https://github.com/microsoft/TypeScript/pull/40105#issuecomment-675258614):
->
-> > This only happens when the attempted variable name starts with a `\w+` character,
->
-> Why not just test whether the token is a keyword? i.e. use `isKeyword`
+> [Comment](https://github.com/microsoft/TypeScript/pull/40105#issuecomment-675258614): Why not just test whether the token is a keyword? i.e. use `isKeyword`
 
 Aha!
 So there _is_ a utility to do what I wanted!
@@ -261,7 +256,7 @@ case ParsingContext.VariableDeclarations:
 
 Reasonable! Creating and spreading arrays is admittedly a somewhat odd thing to do here.
 
-I also noticed `parsingContextErrors` is only ever called by `abortParsingListOrMoveToNextToken` so I had it directly call `parseErrorAtCurrentToken` instead of a callback.
+I also noticed `parsingContextErrors` is only ever called by `abortParsingListOrMoveToNextToken`, so I had it directly call `parseErrorAtCurrentToken` instead of a callback.
 
 ```ts
 case ParsingContext.VariableDeclarations:
@@ -280,12 +275,16 @@ function abortParsingListOrMoveToNextToken(kind: ParsingContext) {
 
 > [Comment](https://github.com/microsoft/TypeScript/pull/40105#issuecomment-675258119): Does this also fix [#11648](https://github.com/microsoft/TypeScript/issues/11648). If not, that's okay, keep the change separate.
 
-Correct, this change does not
+Correct, this change does not affect other forms of intolerant parser weirdness.
 
-## Next Steps
+## Wrapping up
 
 I sent up the code changes as a commit, responded to the comments, and was happy to see the PR merged later that week.
 Yay! 🙌
+
+You can now experience these slightly improved error messages in the nightly builds of TypeScript and any subsequent version >=4.1.
+
+### Next Steps
 
 I still want to make list parsing more tolerant of invalid identifiers, so I filed [#40317](https://github.com/microsoft/TypeScript/issues/40317).
 Hopefully we'll get to have a sequel to this post discussing the resolution of that issue!
