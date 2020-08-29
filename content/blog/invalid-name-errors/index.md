@@ -1,6 +1,6 @@
 ---
 title: "TypeScript Contribution Diary: Improved Errors on Invalid Variable Names"
-date: "2020-09-07T12:34:56.117Z"
+date: "2020-09-01T12:34:56.117Z"
 description: "Improving the first error message emitted for invalid variable identifiers."
 ---
 
@@ -18,14 +18,14 @@ File copied from Wikipedia under the Creative Commons Attribution 2.0 Generic li
 
 Reading through error messages emitted by TypeScript can sometimes feel like the old [_"Who's on First?"_ routine](https://en.wikipedia.org/wiki/Who%27s_on_First%3F), where every word has two meanings and you can never be sure exactly what any particular phrase refers to.
 
-One example complaint is [issue #19352, Improve wrong usage of `case` compile errors](https://github.com/microsoft/TypeScript/issues/19352), first filed in 2017.
+One example complaint is [Improve wrong usage of `case` compile errors #19352](https://github.com/microsoft/TypeScript/issues/19352), first filed in 2017.
 Without reading it, can you guess what a reasonable error message for this line of code should be?
 
 ```ts
 const case = "123";
 ```
 
-If you guessed something like _`'case' is not allowed as a variable declaration name`_, then congrats, you win!
+If your guess focused on the `case` keyword not being allowed as a variable name and was anything like _`'case' is not allowed as a variable declaration name`_, then congrats, you win!
 If not, that's ok, because TypeScript <4.1 emits three instances of not-so-informative error message:
 
 ```ts
@@ -35,9 +35,9 @@ const case = 123;
 //           ~~~ Variable declaration expected.
 ```
 
-🤔 That's rather unclear.
+🤔 Not the most useful error message in the world.
 
-This post describes what I did to improve this particular error.
+This post describes what I did to improve that error to be more understandable.
 Let's dig in!
 
 ## But Why?
@@ -54,7 +54,7 @@ function parsingContextErrors(context: ParsingContext): DiagnosticMessage {
         // ...(a bunch of similar looking cases)
 ```
 
-I manually added a `console.log(new Error())` to the `ParsingContext.VariableDeclaration` code locally and re-ran to grab the full stack of where this code gets called:
+I added a `console.log(new Error())` to the `ParsingContext.VariableDeclaration` code locally and re-ran to grab the full stack of where this code gets called on a file containing `const case = 123`:
 
 ```
 Error
@@ -84,7 +84,7 @@ Reasonable.
 
 ## New Messaging
 
-Now that I knew where the error message comes from, I wanted to understand what the new message should be.
+Now that I knew where the error message comes from, I needed to decide on a new message.
 The _`'case' is not allowed as a variable declaration name`_ suggestion from above seemed like a pretty reasonable first guess.
 
 To verify, I checked what a few different JavaScript engines emit for the `const case = 123` snippet:
@@ -96,48 +96,53 @@ To verify, I checked what a few different JavaScript engines emit for the `const
 Wow.
 I never thought I'd see the day when the _Internet Explorer_ error message is better than both Chrome's and Firefox's. 😂
 
-Anyway, none of these gave me any particular inspiration, so I added `'{0}' is not allowed as a variable declaration name.` as a new diagnostic to `diagnosticMessages.json`.
+Anyway, none of these were particularly better than what I was thinking of, so I added `'{0}' is not allowed as a variable declaration name.` as a new diagnostic to `diagnosticMessages.json`.
 
 ## Changing the Parser
 
-The first thought that came to mind was to use a more specific error message in all places.
-Maybe something like `'{0}' is not an allowed variable name.`?
-Would all the possible reasons to emit this error benefit from mentioning the offending token?
+The first thought that came to mind was to use the new error message in all places.
+Would all the possible cases of invalid identifiers in variable declaration lists benefit from mentioning the offending token?
 
 To check, I searched for `Variable declaration expected` in test cases.
 There were a _lot_.
-Skimming through them, there seemd to be a few common cases of errors...
+Skimming through them, there seemed to be a few common cases of errors...
 
--   Clear improvements, such as in `bitwiseNotOperatorInvalidOperations.ts`:
+### Clear Improvements
 
-    ```ts
-    var mul = ~[1, 2, "abc"], "";
-    //                        ~~
-    ```
+Such as in `bitwiseNotOperatorInvalidOperations.ts`:
 
-    `'""' is not an allowed variable name.` would be a reasonable diagnostic.
+```ts
+var mul = ~[1, 2, "abc"], "";
+//                        ~~
+```
 
--   Debatably equivalent messages, such as in `expressionTypeNodeShouldError.ts`:
+`'""' is not an allowed variable name.` would be a reasonable diagnostic.
 
-    ```ts
-    class C3 {
-        foo() {
-            const x: false.typeof(this.foo);
-    //                     ~~~~~~
-        }
+### Debatably Equivalent Messages
+
+Such as in `expressionTypeNodeShouldError.ts`:
+
+```ts
+class C3 {
+    foo() {
+        const x: false.typeof(this.foo);
+//                     ~~~~~~
     }
-    ```
+}
+```
 
-    `'typeof' is not an allowed variable name.` is maybe equally confusing as `Variable declaration expected.`? Unclear.
+`'typeof' is not an allowed variable name.` is maybe equally confusing as `Variable declaration expected.`? Unclear.
 
--   Arguably worse improvements, such as in `getJavaScriptSyntacticDiagnostics02.ts`:
+### Arguably Degraded Quality
 
-    ```ts
-    var v = /[]/]/
-    //          ~
-    ```
+Such as in `getJavaScriptSyntacticDiagnostics02.ts`:
 
-    `/[]/` is a complete regular expression; saying a declaration is expected after it is a bit closer to the truth than complaining about a name.
+```ts
+var v = /[]/]/
+//          ~
+```
+
+`/[]/` is a complete regular expression; saying a declaration is expected after it is a bit closer to the truth than complaining about a name.
 
 ## Making Changes
 
@@ -155,7 +160,7 @@ Is there a specific `SyntaxKind` range, or pre-existing utility, or...?
 
 I knew to start that it wouldn't be easy to set up an allowlist of ok `SyntaxKind` members, as that list would huge: `BreakKeyword`, `CaseKeyword`, `ClassKeyword`, ...
 
-I ran a few cursor searches for regular expression terms like `/is.*valid.*identifier/` but didn't find any good utilities.
+I ran a few searches for regular expression terms like `/is.*valid.*identifier/` but didn't find any good utilities.
 Fortunately, the cases we're looking for are uniformly those where an English keyword (e.g. `case`) is the culprit, so... maybe we could filter on tokens that start with a valid `a-Z` letter?
 
 A little bit of searching for `/string.*token/` and `/token.*string/` found a `tokenToString` utility for converting a token to its string.
@@ -237,7 +242,7 @@ It came back later that day _(speedy!)_ with a few requested changes...
 > [Comment](https://github.com/microsoft/TypeScript/pull/40105#issuecomment-675258614): Why not just test whether the token is a keyword? i.e. use `isKeyword`
 
 Aha!
-So there _is_ a utility to do what I wanted!
+So there _is_ a utility to check whether a token is a keyword!
 Super.
 
 ```diff
@@ -254,15 +259,17 @@ case ParsingContext.VariableDeclarations:
 
 > [Comment](https://github.com/microsoft/TypeScript/pull/40105#discussion_r471921411): Nit: I kinda dislike allocating an array on each of these, but maybe it's fine. I would have just made it take the error-reporting callback.
 
-Reasonable! Creating and spreading arrays is admittedly a somewhat odd thing to do here.
+Reasonable! Creating and spreading arrays is admittedly an odd thing to do here.
 
-I also noticed `parsingContextErrors` is only ever called by `abortParsingListOrMoveToNextToken`, so I had it directly call `parseErrorAtCurrentToken` instead of a callback.
+`parsingContextErrors` is only ever called by `abortParsingListOrMoveToNextToken`, so I had it directly call `parseErrorAtCurrentToken` instead of a callback.
 
-```ts
+```diff
 case ParsingContext.VariableDeclarations:
     return isKeyword(token())
-        ? parseErrorAtCurrentToken(Diagnostics._0_is_not_allowed_as_a_variable_declaration_name, tokenToString(token()))
-        : parseErrorAtCurrentToken(Diagnostics.Variable_declaration_expected);
+-       ? [Diagnostics._0_is_not_allowed_as_a_variable_declaration_name, tokenString, tokenToString(token())]
+-       : [Diagnostics.Variable_declaration_expected];
++       ? parseErrorAtCurrentToken(Diagnostics._0_is_not_allowed_as_a_variable_declaration_name, tokenToString(token()))
++       : parseErrorAtCurrentToken(Diagnostics.Variable_declaration_expected);
 ```
 
 ```diff
@@ -287,7 +294,7 @@ You can now experience these slightly improved error messages in the nightly bui
 ### Next Steps
 
 I still want to make list parsing more tolerant of invalid identifiers, so I filed [#40317](https://github.com/microsoft/TypeScript/issues/40317).
-Hopefully we'll get to have a sequel to this post discussing the resolution of that issue!
+Hopefully we'll get to have a sequel to this post discussing resolving that followup!
 
 Lastly, many thanks to [@DanielRossenwaser](https://github.com/DanielRosenwasser) for the quick & informative PR reviews.
 Much appreciated!
