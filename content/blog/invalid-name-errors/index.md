@@ -1,6 +1,6 @@
 ---
 title: "TypeScript Contribution Diary: Improved Errors on Invalid Variable Names"
-date: "2020-09-01T12:34:56.117Z"
+date: "2020-09-04T12:34:56.117Z"
 description: "Improving the first error message emitted for invalid variable identifiers."
 ---
 
