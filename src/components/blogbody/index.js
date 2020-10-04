@@ -2,9 +2,12 @@ import React from "react";
 
 import SEO from "../seo";
 import * as styles from "./styles";
+import usePausableGifs from "./usePausableGifs";
 
 const BlogBody = ({ post }) => {
     const { date, description, download, title } = post.frontmatter;
+
+    usePausableGifs();
 
     return (
         <>

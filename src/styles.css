@@ -38,7 +38,30 @@ td {
     font-size: 0.9rem;
 }
 
+nav {
+    padding-top: 2rem;
+}
+
 .autolink {
     padding-left: 4px;
     margin-left: -28px;
+}
+
+img[src*='.gif'] {
+    cursor: pointer;
+}
+
+img[src*='.gif'][tabIndex]:focus,
+img[src*='.gif'][tabIndex]:hover {
+    box-shadow: 0 0 0 1px black, 0 0 0 2px black;
+    outline: none;
+    opacity: 1;
+}
+
+.ff-container {
+    margin-bottom: 0.5rem;
+}
+
+.ff-container.ff-loading-icon::before {
+    display: none;
 }
