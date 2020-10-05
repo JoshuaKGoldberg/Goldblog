@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import SEO from "../seo";
 import * as styles from "./styles";
 
 const BlogBody = ({ post }) => {
     const { date, description, download, title } = post.frontmatter;
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            import("./makeGifsPausable").then(makeGifsPausable => makeGifsPausable.default());
+        }
+    })
 
     return (
         <>
