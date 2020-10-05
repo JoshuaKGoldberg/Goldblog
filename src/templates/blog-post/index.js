@@ -14,7 +14,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
         <Layout>
             <SEO
                 description={post.frontmatter.description}
-                title={post.title}
+                title={post.frontmatter.title}
             />
             {post.frontmatter.link ? (
                 <BlogLink link={post.frontmatter.link} />

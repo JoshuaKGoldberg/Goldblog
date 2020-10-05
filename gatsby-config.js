@@ -2,8 +2,9 @@ module.exports = {
     siteMetadata: {
         author: `Josh Goldberg`,
         description: `Personal blog for Josh Goldberg. It's mostly TypeScript things!`,
-        siteUrl: `https://blog.joshuakgoldberg.com/`,
+        siteUrl: `https://blog.joshuakgoldberg.com`,
         title: `Goldblog`,
+        thumbnail: `/thumbnail.jpg`,
     },
     plugins: [
         {

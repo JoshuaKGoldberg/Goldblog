@@ -12,6 +12,7 @@ function SEO({ description, lang, meta, title }) {
                         author
                         description
                         title
+                        thumbnail
                     }
                 }
             }
@@ -51,6 +52,10 @@ function SEO({ description, lang, meta, title }) {
                 {
                     name: `twitter:creator`,
                     content: site.siteMetadata.author,
+                },
+                {
+                    name: `twitter:image`,
+                    content: site.siteMetadata.thumbnail,
                 },
                 {
                     name: `twitter:title`,
