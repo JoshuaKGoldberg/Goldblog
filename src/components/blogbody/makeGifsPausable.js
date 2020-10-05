@@ -1,5 +1,4 @@
 import Freezeframe from "freezeframe";
-import { useEffect } from "react";
 
 const isActivationEvent = ({ keyCode }) => [13, 32].includes(keyCode)
 
@@ -39,13 +38,10 @@ const prepareToBePausable = (image) => {
     image.setAttribute("tabIndex", 0);
 };
 
-const usePausableGifs = () => {
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            [...document.querySelectorAll("img[src*='.gif']")]
-                .forEach(prepareToBePausable);
-        }
-    }, []);
+const makeGifsPausable = () => {
+    [...document.querySelectorAll("img[src*='.gif']")].forEach(
+        prepareToBePausable
+    );
 };
 
-export default usePausableGifs;
+export default makeGifsPausable;

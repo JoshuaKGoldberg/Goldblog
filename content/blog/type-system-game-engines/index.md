@@ -5,6 +5,13 @@ description: "Just for fun, what if we represented binary values purely within T
 download: https://1drv.ms/p/s!AvUc1cvPrJnWvtEWI5Fd_5Va4n3ggg?e=XnppFL
 ---
 
+<span style="display:block;margin-bottom:2rem;text-align:center;">
+<img alt="Smiling cat receiving head scratches next to a laptop showing VS Code" src="./brad.jpg" />
+<small>
+Here's a cute photo of a cat to start the blog post off right.
+</small>
+</span>
+
 ## Preamble
 
 This is the companion blog post for my [TSConf 2020](https://tsconf.io) talk.
@@ -63,7 +70,8 @@ That's a description of how a player's Rock choice in a game of Tic Tac Toe work
 If the opponent is a `'Rock'`:
 
 ```ts
-type Result = RockMatchup<'Rock'>; // 'Draw'
+type Result = RockMatchup<'Rock'>;
+// 'Draw'
 ```
 
 ...then the result is a `'Draw'`.
@@ -145,7 +153,6 @@ type Result = RockPaperScissors<'Paper', 'Scissors'>; // 'Loss'
 ```
 
 The `extends` keyword in `RockPaperScissors` is important: it tells the type system that the generic type parameter must be that particular type, or a more specific version of it.
-
 
 <span style="display:block;margin-bottom:2rem;text-align:center;">
 <img alt="Patrick Star riding a sea horse machine" src="./riding.gif" />
@@ -267,7 +274,8 @@ type StartingBoard = [
     [' ', ' ', ' '],
 ];
 
-type WinAtStart = Victory<'X', StartingBoard>;// false
+type WinAtStart = Victory<'X', StartingBoard>;
+// false
 ```
 
 If we add a few pieces and include a diagonal victory for the checked piece, however, our result becomes true.
@@ -281,7 +289,8 @@ type HowAboutNow = Victory<
         ['X', 'O', ' '],
         [' ', 'X', 'O'],
     ]
->; // true
+>;
+// true
 ```
 
 Taking our conditionals one step higher, we can check which player –if either– wins by seeing whether the board satisfies the victory condition for either of our known players.
@@ -438,7 +447,6 @@ type AfterAllMoves = [
     [' ', ' ', 'O'],
 ];
 ```
-
 
 TypeScript's type system is closer to a _functional_ language (or even a _logical_) one, which is to say nothing can be modified after creation, and all inferences must be made based on already defined truths.
 
@@ -672,7 +680,6 @@ type CollectParsedRawMoves<RawMoves extends string[], Collected extends Move[], 
             >;
 ```
 
-
 It's kind of big, so here's a version with inline comments:
 
 ```ts
@@ -757,7 +764,6 @@ If you use any JavaScript libraries that aren't (yet?) written in TypeScript, ap
 
 <span style="display:block;margin-bottom:2rem;text-align:center;">
 <img alt="Screen capture of DefinitelyTyped on GitHub" src="./definitely-typed.png" />
-<br />
 <small>
 This post's release month is even <a href="http://hacktoberfest.digitalocean.com">Hacktoberfest</a>, a promotion wherein you get a free shirt for sending pull requests on GitHub.
 It's perfect! 💯
@@ -766,8 +772,8 @@ It's perfect! 💯
 
 ## Closing Thoughts
 
-I'd love to see what advances in this game engine you come up with.
-[@ me](https://twitter.com/JoshuaKGoldberg) with your results!
+I'd love to see what fun advances in this game engine exploration you come up with.
+Please, [tag me @JoshuaKGoldberg](https://twitter.com/JoshuaKGoldberg) with your results!
 A few starting suggestions might be:
 
 * A win/loss calculator for a list of game strings?
