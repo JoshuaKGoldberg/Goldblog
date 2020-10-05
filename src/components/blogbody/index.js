@@ -10,7 +10,7 @@ const BlogBody = ({ post }) => {
         if (typeof window !== "undefined") {
             import("./makeGifsPausable").then(makeGifsPausable => makeGifsPausable.default());
         }
-    })
+    }, []);
 
     return (
         <>
