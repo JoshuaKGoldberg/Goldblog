@@ -2,9 +2,11 @@ import React, { useEffect } from "react";
 
 import SEO from "../seo";
 import * as styles from "./styles";
-
+import { setupTwoslashHovers } from "shiki-twoslash/dist/dom";
+ 
 const BlogBody = ({ post }) => {
     const { date, description, download, title } = post.frontmatter;
+    useEffect(setupTwoslashHovers, [])
 
     useEffect(() => {
         if (typeof window !== "undefined") {

@@ -1,4 +1,5 @@
-module.exports = {
+/** @type {import("gatsby").GatsbyConfig} */
+const config = {
     siteMetadata: {
         author: `Josh Goldberg`,
         description: `Personal blog for Josh Goldberg. It's mostly TypeScript things!`,
@@ -37,7 +38,12 @@ module.exports = {
                             wrapperStyle: `margin-bottom: 1.0725rem`,
                         },
                     },
-                    `gatsby-remark-prismjs`,
+                    {
+                        resolve: "gatsby-remark-shiki-twoslash",
+                        options: {
+                            theme: "./node_modules/shiki-themes/data/vscode/light_plus.json"
+                        }
+                    },
                     `gatsby-remark-reading-time`,
                     `gatsby-remark-copy-linked-files`,
                     `gatsby-remark-smartypants`,
@@ -47,7 +53,6 @@ module.exports = {
                             className: `autolink`,
                         },
                     },
-                    `gatsby-remark-prismjs`,
                 ],
             },
         },
@@ -77,3 +82,5 @@ module.exports = {
         `gatsby-plugin-react-helmet`,
     ],
 };
+
+module.exports = config
