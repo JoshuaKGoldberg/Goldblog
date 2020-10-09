@@ -56,7 +56,7 @@ Conditional types _take in other types_ and spit out new types based on the orig
 
 Take a look at this type:
 
-```ts
+```ts twoslash
 type RockMatchup<Opponent> =
     Opponent extends 'Rock'
         ? 'Draw'
@@ -80,7 +80,7 @@ If the opponent is `'Paper'`, the player's Rock loses; if the opponent is anythi
 Fun fact: types may receive more than one generic.
 In this next snippet, we define the matchups for two players, with a bunch of nested checks for each of the nine possible results.
 
-```ts
+```ts twoslash
 type RockPaperScissors<Player, Opponent> = 
     // Player is Rock
     Player extends 'Rock'
@@ -119,7 +119,7 @@ When a type is known to be a key of another type, you can use it to retrieve the
 
 We can use `keyof` to declare our Tic Tac Toe matchups as a big type system object and index into it to find the matchups for our player and opponent:
 
-```ts
+```ts twoslash
 type Matchups = {
     Rock: {
         Paper: 'Loss',
@@ -174,7 +174,7 @@ We'll be able to use these to declare full-on game boards: not just single-use l
 
 First, let's declare a couple of types:
 
-```ts
+```ts twoslash
 type Cell = ' ' | 'X' | 'O';
 
 type TicTacToeBoard = [
@@ -193,7 +193,55 @@ In other words, we now have a 3x3 board of cells! 🚀
 
 Using `Cell` and `TicTacToeBoard` as bases, we can create a conditional `Victory` type in the type system that takes in a board and returns a new type representing whether that board any of the three possible victory conditions for that board: three-in-a-row diagonally, horizontally, or vertically.
 
-```ts
+```ts twoslash
+
+type DiagonalVictory<Player> = 
+    | {
+       0: { 0: Player, 1: any, 2: any },
+       1: { 0: any, 1: Player, 2: any },
+       2: { 0: any, 1: any, 2: Player },
+    }
+    | {
+       0: { 0: any, 1: any, 2: Player },
+       1: { 0: any, 1: Player, 2: any },
+       2: { 0: Player, 1: any, 2: any },
+    }
+
+type HorizontalVictory<Player> =
+    | {
+       0: { 0: Player, 1: Player, 2: Player },
+       1: { 0: any, 1: any, 2: any },
+       2: { 0: any, 1: any, 2: any },
+    }
+    | {
+       0: { 0: any, 1: any, 2: any },
+       1: { 0: Player, 1: Player, 2: Player },
+       2: { 0: any, 1: any, 2: any },
+    }
+    | {
+       0: { 0: any, 1: any, 2: any },
+       1: { 0: any, 1: any, 2: any },
+       2: { 0: Player, 1: Player, 2: Player },
+    }
+
+type VerticalVictory<Player> =
+    | {
+       0: { 0: Player, 1: any, 2: any },
+       1: { 0: Player, 1: any, 2: any },
+       2: { 0: Player, 1: any, 2: any },
+    }
+    | {
+       0: { 0: any, 1: Player, 2: any },
+       1: { 0: any, 1: Player, 2: any },
+       2: { 0: any, 1: Player, 2: any },
+    }
+    | {
+       0: { 0: any, 1: any, 2: Player },
+       1: { 0: any, 1: any, 2: Player },
+       2: { 0: any, 1: any, 2: Player },
+    }
+
+// ---cut---
 type Victory<Player, Board> =
     Board extends WinningBoard<Player>
         ? true
@@ -208,7 +256,7 @@ type WinningBoard<Player> =
 The diagonal win condition for a player is hit when either of the diagonal lines on the board can only be that player's pieces.
 The Cell spots can be filled with anything, but the Player spots must be filled with only the player's pieces.
 
-```ts
+```ts twoslash
 type DiagonalVictory<Player> = 
     | [
         [Player, any, any],
@@ -224,7 +272,7 @@ type DiagonalVictory<Player> =
 
 Similarly, the horizontal victory check is satisfied only when one of the three rows in the board are known to contain only the player's pieces.
 
-```ts
+```ts twoslash
 type HorizontalVictory<Player> =
     | [
         [Player, Player, Player],
@@ -245,7 +293,7 @@ type HorizontalVictory<Player> =
 
 Same with the vertical victory check and the board's columns.
 
-```ts
+```ts twoslash
 type VerticalVictory<Player> =
     | [
         [Player, any, any],
@@ -267,7 +315,64 @@ type VerticalVictory<Player> =
 Making use of the WinningBoard type, we can see that a WinAtStart check for a board comprised entirely of blanks is false.
 None of the 8 win conditions are satisfied by that board.
 
-```ts
+```ts twoslash
+
+type DiagonalVictory<Player> = 
+    | {
+       0: { 0: Player, 1: any, 2: any },
+       1: { 0: any, 1: Player, 2: any },
+       2: { 0: any, 1: any, 2: Player },
+    }
+    | {
+       0: { 0: any, 1: any, 2: Player },
+       1: { 0: any, 1: Player, 2: any },
+       2: { 0: Player, 1: any, 2: any },
+    }
+
+type HorizontalVictory<Player> =
+    | {
+       0: { 0: Player, 1: Player, 2: Player },
+       1: { 0: any, 1: any, 2: any },
+       2: { 0: any, 1: any, 2: any },
+    }
+    | {
+       0: { 0: any, 1: any, 2: any },
+       1: { 0: Player, 1: Player, 2: Player },
+       2: { 0: any, 1: any, 2: any },
+    }
+    | {
+       0: { 0: any, 1: any, 2: any },
+       1: { 0: any, 1: any, 2: any },
+       2: { 0: Player, 1: Player, 2: Player },
+    }
+
+type VerticalVictory<Player> =
+    | {
+       0: { 0: Player, 1: any, 2: any },
+       1: { 0: Player, 1: any, 2: any },
+       2: { 0: Player, 1: any, 2: any },
+    }
+    | {
+       0: { 0: any, 1: Player, 2: any },
+       1: { 0: any, 1: Player, 2: any },
+       2: { 0: any, 1: Player, 2: any },
+    }
+    | {
+       0: { 0: any, 1: any, 2: Player },
+       1: { 0: any, 1: any, 2: Player },
+       2: { 0: any, 1: any, 2: Player },
+    }
+
+type Victory<Player, Board> =
+    Board extends WinningBoard<Player>
+        ? true
+        : false;
+
+type WinningBoard<Player> = 
+    | DiagonalVictory<Player>
+    | HorizontalVictory<Player>
+    | VerticalVictory<Player>;
+// ---cut---
 type StartingBoard = [
     [' ', ' ', ' '],
     [' ', ' ', ' '],
@@ -275,13 +380,70 @@ type StartingBoard = [
 ];
 
 type WinAtStart = Victory<'X', StartingBoard>;
-// false
+//   ^?
 ```
 
 If we add a few pieces and include a diagonal victory for the checked piece, however, our result becomes true.
 Success!
 
-```ts
+```ts twoslash
+
+type DiagonalVictory<Player> = 
+    | {
+       0: { 0: Player, 1: any, 2: any },
+       1: { 0: any, 1: Player, 2: any },
+       2: { 0: any, 1: any, 2: Player },
+    }
+    | {
+       0: { 0: any, 1: any, 2: Player },
+       1: { 0: any, 1: Player, 2: any },
+       2: { 0: Player, 1: any, 2: any },
+    }
+
+type HorizontalVictory<Player> =
+    | {
+       0: { 0: Player, 1: Player, 2: Player },
+       1: { 0: any, 1: any, 2: any },
+       2: { 0: any, 1: any, 2: any },
+    }
+    | {
+       0: { 0: any, 1: any, 2: any },
+       1: { 0: Player, 1: Player, 2: Player },
+       2: { 0: any, 1: any, 2: any },
+    }
+    | {
+       0: { 0: any, 1: any, 2: any },
+       1: { 0: any, 1: any, 2: any },
+       2: { 0: Player, 1: Player, 2: Player },
+    }
+
+type VerticalVictory<Player> =
+    | {
+       0: { 0: Player, 1: any, 2: any },
+       1: { 0: Player, 1: any, 2: any },
+       2: { 0: Player, 1: any, 2: any },
+    }
+    | {
+       0: { 0: any, 1: Player, 2: any },
+       1: { 0: any, 1: Player, 2: any },
+       2: { 0: any, 1: Player, 2: any },
+    }
+    | {
+       0: { 0: any, 1: any, 2: Player },
+       1: { 0: any, 1: any, 2: Player },
+       2: { 0: any, 1: any, 2: Player },
+    }
+
+type Victory<Player, Board> =
+    Board extends WinningBoard<Player>
+        ? true
+        : false;
+
+type WinningBoard<Player> = 
+    | DiagonalVictory<Player>
+    | HorizontalVictory<Player>
+    | VerticalVictory<Player>;
+// ---cut---
 type HowAboutNow = Victory<
     'O',
     [
@@ -295,7 +457,70 @@ type HowAboutNow = Victory<
 
 Taking our conditionals one step higher, we can check which player –if either– wins by seeing whether the board satisfies the victory condition for either of our known players.
 
-```ts
+```ts twoslash
+
+type DiagonalVictory<Player> = 
+    | {
+       0: { 0: Player, 1: any, 2: any },
+       1: { 0: any, 1: Player, 2: any },
+       2: { 0: any, 1: any, 2: Player },
+    }
+    | {
+       0: { 0: any, 1: any, 2: Player },
+       1: { 0: any, 1: Player, 2: any },
+       2: { 0: Player, 1: any, 2: any },
+    }
+
+type HorizontalVictory<Player> =
+    | {
+       0: { 0: Player, 1: Player, 2: Player },
+       1: { 0: any, 1: any, 2: any },
+       2: { 0: any, 1: any, 2: any },
+    }
+    | {
+       0: { 0: any, 1: any, 2: any },
+       1: { 0: Player, 1: Player, 2: Player },
+       2: { 0: any, 1: any, 2: any },
+    }
+    | {
+       0: { 0: any, 1: any, 2: any },
+       1: { 0: any, 1: any, 2: any },
+       2: { 0: Player, 1: Player, 2: Player },
+    }
+
+type VerticalVictory<Player> =
+    | {
+       0: { 0: Player, 1: any, 2: any },
+       1: { 0: Player, 1: any, 2: any },
+       2: { 0: Player, 1: any, 2: any },
+    }
+    | {
+       0: { 0: any, 1: Player, 2: any },
+       1: { 0: any, 1: Player, 2: any },
+       2: { 0: any, 1: Player, 2: any },
+    }
+    | {
+       0: { 0: any, 1: any, 2: Player },
+       1: { 0: any, 1: any, 2: Player },
+       2: { 0: any, 1: any, 2: Player },
+    }
+
+type Victory<Player, Board> =
+    Board extends WinningBoard<Player>
+        ? true
+        : false;
+
+type WinningBoard<Player> = 
+    | DiagonalVictory<Player>
+    | HorizontalVictory<Player>
+    | VerticalVictory<Player>;
+
+type StartingBoard = [
+    [' ', ' ', ' '],
+    [' ', ' ', ' '],
+    [' ', ' ', ' '],
+];
+// ---cut---
 type Winner<Board> = 
     Victory<'X', Board> extends true
         ? 'X'
@@ -336,7 +561,9 @@ Mapped types take in a list of keys, such as from a keyof operator, and create n
 
 For example, we can use mapped types to declare a Tic Tac Toe board in a bit more dynamic of a manner:
 
-```ts
+```ts twoslash
+type Cell = ' ' | 'X' | 'O';
+// ---cut---
 type TicTacToeBoard = {
     [Row in 0 | 1 | 2]: {
         [Column in 0 | 1 | 2]: Cell;
@@ -363,7 +590,7 @@ In fact, this particular type is no longer describing an array, so checking for 
 Now that we know how to map all members of a type into a new type, we should be able to apply that technique to placing pieces on a Tic Tac Toe board.
 Given our starting board from before and a desire to place 'X' at row 0 / column 1, we should be able to use conditional mapped types to take in our board tuples and output a modified board.
 
-```ts
+```ts twoslash
 type FirstMove = ['X', 0, 1];
 
 type AfterFirstMove = [
@@ -375,7 +602,15 @@ type AfterFirstMove = [
 
 This is how we can accomplish such a move in the type system:
 
-```ts
+```ts twoslash
+type Cell = ' ' | 'X' | 'O';
+
+type TicTacToeBoard = [
+    [Cell, Cell, Cell],
+    [Cell, Cell, Cell],
+    [Cell, Cell, Cell],
+];
+// ---cut---
 type ReplaceInBoard<
     Board extends TicTacToeBoard,
     Replacement extends Cell,
@@ -435,7 +670,7 @@ This'll let us simulate a full-on game of Tic Tac Toe based on the move inputs.
 This is difficult because there's no 'for loop' operator in the type system.
 We can't set up a type and imperatively modify it the way we would in, say, JavaScript.
 
-```ts
+```ts twoslash
 type AllMoves = [
     ['X', 0, 1],
     ['O', 2, 2],
@@ -454,7 +689,31 @@ TypeScript's type system is closer to a _functional_ language (or even a _logica
 
 If we were working in runtime code, we'd tackle this functional problem recursively.
 
-```ts
+```ts twoslash
+// @noImplicitAny: false
+type Cell = ' ' | 'X' | 'O';
+
+type TicTacToeBoard = [
+    [Cell, Cell, Cell],
+    [Cell, Cell, Cell],
+    [Cell, Cell, Cell],
+];
+
+type ReplaceInBoard<
+    Board extends TicTacToeBoard,
+    Replacement extends Cell,
+    RowPlace extends 0 | 1 | 2,
+    ColumnPlace extends 0 | 1 | 2,
+> = {
+    [Row in 0 | 1 | 2]: {
+        [Column in 0 | 1 | 2]:
+            [Row, Column] extends [RowPlace, ColumnPlace]
+                ? Replacement
+                : Board[Row][Column];
+    }
+};
+declare function replaceInBoard(board: TicTacToeBoard, move:Move): TicTacToeBoard
+// ---cut---
 type Move = [Cell, 0 | 1 | 2, 0 | 1 | 2];
 
 // There are two possibilities when calling our applyMoves function:
