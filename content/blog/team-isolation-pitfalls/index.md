@@ -101,9 +101,9 @@ At what point does adding early tech debt for the sake of speed no longer worth 
 I have heard many justifications for the fast pace: proving a team's value; acquiring early user experience data to inform later experiments; critical business needs...
 These are all theoretically valid, but in practice I have come to 
 
-What does an "aggressive" goal imply to you?
+What does an "aggressive" goal imply?
 Were teams not striving for high velocity before?
-Assuming we're doing our best, what are we sacrificing to obtain this "aggressive" adjective?
+Assuming teams were already trying to perform their best, what would they sacrifice to obtain the "aggressive" adjective?
 
 In my experience, referring to team goals as "aggressive" implies pushing the team beyond what it would normally be comfortable achieving.
 This is not healthy.
