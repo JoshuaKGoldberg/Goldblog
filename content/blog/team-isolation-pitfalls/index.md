@@ -95,7 +95,7 @@ The new developers can bring in new proposals from the outside and work with the
 > Anecdote: a new team worked with upper management to propose what could be created in a year given company priorities.
 > Management created business goals and OKRs based on a very optimistic version of that timeline, referring to them as "aggressive goals" internally.
 > The team opted to start product work quickly instead of writing RFCs or laying groundwork with platform owners.
-> Additions to existing code were made quickly and added a good deal of tech debt, cleanups for which were added to the team backlog but not started on before launch.
+> Additions to existing code were made quickly and added an above expected amount of tech debt, the cleanups for which were added to the team backlog but not started on before launch.
 
 At what point does adding early tech debt for the sake of speed no longer worth it?
 Tech debt can be costly immediately when added to shared code areas, not just as an afterthought following a project's first launch.
