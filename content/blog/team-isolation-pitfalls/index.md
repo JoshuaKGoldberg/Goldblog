@@ -103,6 +103,8 @@ I have heard many justifications for the fast pace: proving a team's value; acqu
 These are all theoretically valid, but in practice I have developed a deep suspicion towards the frequency with which they're used.
 I've been burned too many times by a _perceived_ urgent need for release followed by long periods of inactivity.
 
+TODO: THIS IS NOT WELL SUPPORTED
+
 Furthermore, let's dive in: what does an "aggressive" goal imply?
 Were teams not striving for high velocity before?
 Assuming teams were already trying to perform their best, what would they sacrifice to obtain the "aggressive" adjective?
