@@ -98,16 +98,17 @@ The new developers can bring in new proposals from the outside and work with the
 > Additions to existing code were made quickly and added a good deal of tech debt, cleanups for which were added to the team backlog but not started on before launch.
 
 At what point does adding early tech debt for the sake of speed no longer worth it?
+Tech debt can be costly immediately when added to shared code areas, not just as an afterthought following a project's first launch.
 I have heard many justifications for the fast pace: proving a team's value; acquiring early user experience data to inform later experiments; critical business needs...
-These are all theoretically valid, but in practice I have come to 
+These are all theoretically valid, but in practice I have developed a deep suspicion towards the frequency with which they're used.
+I've been burned too many times by a _perceived_ urgent need for release followed by long periods of inactivity.
 
-What does an "aggressive" goal imply?
+Furthermore, let's dive in: what does an "aggressive" goal imply?
 Were teams not striving for high velocity before?
 Assuming teams were already trying to perform their best, what would they sacrifice to obtain the "aggressive" adjective?
 
 In my experience, referring to team goals as "aggressive" implies pushing the team beyond what it would normally be comfortable achieving.
 This is not healthy.
-Tech debt can be costly immediately when added to shared code areas, not just as an afterthought following a project's first launch.
 
 > If these statements interest you, I would highly recommend reading _[Slack](https://www.penguinrandomhouse.com/books/39276/slack-by-tom-demarco)_ by Tom DeMarco, which includes excellent points on how and overly aggressive goals contribute to inefficiency and team burnout.
 
