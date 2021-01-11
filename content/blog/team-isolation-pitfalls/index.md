@@ -1,6 +1,6 @@
 ---
 title: "Team Construction Pitfalls"
-date: "2021-01-01T01:01:01.117Z"
+date: "2021-01-11T11:11:11.117Z"
 description: "How misbalanced or poorly positioned teams hurt themselves technically in both the short and long term."
 ---
 
@@ -11,52 +11,54 @@ description: "How misbalanced or poorly positioned teams hurt themselves technic
 <br />
 </em>
 
-Why is it that fresh new teams seem to always create tech debt before their first release?
+How does it happen that a fresh new product team can sometimes create tech debt before its first release?
 
 I'm not talking about the normal growing pains of expanding a small area of code; I mean the really divergent patterns that make existing developers think _"this is so off; why didn't they talk to us?"_.
-Maybe this isn't an issue you've experienced, but for me, it's been a consistent pain point with new product teams I've been on or partnered with over the last few years.
+Maybe this isn't an issue you've experienced, but for me, it's been a consistent pain point with new product teams I've been on or partnered with over the last near-decade.
 
-In this blog post, I will provide vague anecdotal observations rail against and  to support the following three tenants:
+In this blog post, I will provide vague anecdotal observations and associated reasoninng to support the following three tenants:
 
 1. Don't deprive junior developers of senior developers _(or vice versa)_
 2. Don't deprive new developers of area experts
-3. Don't lie to yourself about timelines
+3. Don't undervalue tech debt in long term planning
 
-> Each anecdote is a real occurence I observed or participated in, though anonymized and slightly obfuscated.
+> Each anecdote is a real occurence I have repeatedly observed and/or participated in, though anonymized and obfuscated.
 
 ## Preamble: Junior verses Senior
 
 **TODO: IMAGE**
 
 When does someone become a junior developer after learning to code?
-When do they become mid-range, or senior, or staff, or principle, or whatever else?
+When do they become mid-range, or senior, or staff, or principal, or whatever else?
 What counts as "experience", and how do you measure it?
 
-I don't fully understand the answers to any of those questions.
+There is no one-size-fits-all answer to any of those questions.
 If you've started to learn to code, you're a developer.
-For the sake of this easier writing, let's consider "junior" to be people who haven't yet gained repeat experience effectively performing the tasks described below, and "senior" to be those who have.
+For the sake of easier writing, let's consider "junior" to be people who haven't yet gained repeat experience effectively performing the tasks described below, and "senior" to be those who have.
 
 ## 1. Overstocking Junior Developers
 
 **TODO: IMAGE**
 
-> Anecdote: an intern and a junior developer on a relatively new team were tasked with creating a new variation of an existing, tech-debt-heavy page.
-> They gave an initial estimate of about a week, started working on code, and quickly realized they'd need help.
-> They met with an experienced developer who gave advice on splitting components and code reuse.
-> Under perceived pressure to complete the asignment, however, they copy&pasted several folders of legacy code and edited them for the new page variant. 
+> Anecdote: two junior developers on a relatively new team were tasked with creating a new variation of an existing, tech-debt-heavy page.
+> They gave an initial dev estimate, started working on code, and quickly realized they'd need help to overcome a greater-than-expected amount of existing tech debt.
+> They met with an experienced developer who gave advice on how to overcome that debt.
+> Under perceived pressure to complete the assignment, however, they copy&pasted several folders of legacy code and edited them for the new page variant.
 
-Some requirements of developer project planned are inherently difficult when you haven't already planned multiple projects.
+Some requirements of developer project planning are inherently difficult when you haven't already planned multiple projects.
 Writing RFCs, accounting for existing technical debt, updating stakeholders -- you want to give people help when doing these for the first time.
 A healthy development team should pair its junior and senior developers together on advanced tasks such as project planning and architecture changes.
 Only a fool would "blame" the intern or junior developer from the anecdote.
 
+> Amusingly, every time I've seen this happen, the developers went above and beyond their role in attempting the rewrites, and deserved commendedation for their efforts!
+
 I'm not saying junior developers shouldn't participate in or even help lead major new investments -- practical experience is a great way to build seniority.
 Nor am I saying junior developers _can't_ build big things -- they can and should.
-I'm saying they ideally shouldn't do it _on their own_.
+I'm saying they no developer, regardless of experience, should be given challenging tasks _without an active support network_.
 
-Time and time again I've seen junior developers asked to do advanced tasks without adequate support, struggle to output as effectively as a senior, then blame themselves for reduced output.
+Time and time again I've seen new developers given advanced tasks without adequate support, struggle to meet unrealistic goals, then blame themselves.
 What an effective way to burn out your new developers!
-At the _very least_, when tackling larger tasks, they should be paired from the start with a more experienced developer who can assure them the assignment should be treated as a safe learning exercise.
+At the _very least_, when tackling larger tasks, new developers should be paired from the start with a more experienced developer who can assure them the assignment should be treated as a safe learning exercise.
 
 ### Understocking Junior Developers
 
@@ -73,44 +75,40 @@ If you don't think you need them, or if you don't think your teams have time for
 
 > Anecdote: an existing team onboarded a set of contractors to help them create a more advanced version of their existing pages.
 > The contractors were given a large, discrete chunk of the project.
-> After their code started to land into land into the main branch, other teams noticed it didn't use the existing design system components or recommended logical patterns.
+> After their code started to land into the main branch, other teams noticed it didn't use existing design system components or recommended logical patterns.
 > Eventually the project was scrapped and code deleted for being too difficult to integrate with existing areas.
 
 There is no such thing as a ["Greenfield project"](https://en.wikipedia.org/wiki/Greenfield_project) in software development.
 In an existing organization, there should be established precedences and guidelines around how to structure code.
-Even in a brand new organization there are existing areas of familiarity for developers that should inform what to use.
+Even in a brand new organization, the first developers already have existing areas of familiarity that should inform early technical decisions.
 
-When an organization adds new developers, it is unhealthy to ask them to create code without onboarding them onto the existing guidelines and ongoing pushes of the team.
-To truly onboard an engineer onto a team's code takes months or more of having them work in the existing codebases with the existing engineers.
+When an organization adds new developers, it is unhealthy to ask them to create code before onboarding them onto the existing guidelines and structures of the team.
+To truly onboard an developer onto a team takes months or more of having them work in the existing codebases with the existing developers.
 Thus, it is unhealthy to spin off a new team solely with new team members, regardless of their general experience level.
 
 When you match area experts with developers new to the organization, both sides benefit.
 Area experts can inform the new developers on existing areas of investment and/or tech debt that should be factored into their work, along with why structures were set up that way.
-The new developers can bring in new proposals from the outside and work with the area experts to introduce new ideas to the team.
+New developers can bring fresh ideas and a healthy set of scepticism to a project, then work with the area experts in improving code accordingly.
 
 ## 3. "Aggressive Goals"
 
 **TODO: IMAGE**
 
 > Anecdote: a new team worked with upper management to propose what could be created in a year given company priorities.
-> Management created business goals and OKRs based on a very optimistic version of that timeline, referring to them as "aggressive goals" internally.
+> Resultant business goals and OKRs were based on a very optimistic version of that timeline, referring to internally as "aggressive goals".
 > The team opted to start product work quickly instead of writing RFCs or laying groundwork with platform owners.
 > Additions to existing code were made quickly and added an above expected amount of tech debt, the cleanups for which were added to the team backlog but not started on before launch.
 
-At what point does adding early tech debt for the sake of speed no longer worth it?
-Tech debt can be costly immediately when added to shared code areas, not just as an afterthought following a project's first launch.
-I have heard many justifications for the fast pace: proving a team's value; acquiring early user experience data to inform later experiments; critical business needs...
-These are all theoretically valid, but in practice I have developed a deep suspicion towards the frequency with which they're used.
+Deadlines can be useful for getting a team to hustle effort and prioritize effectively.
+There are certainly many good justifications for a fast pace: critical business needs; proving a team's value; acquiring early user experience data to inform later experiments; ...
+But at what point does adding early tech debt for the sake of speed no longer worth it?
+
+Introduced tech debt can be costly immediately after or even during a project.
+The earlier an archicture is rushed together or a "temporary" measure introduced, and the longer until it is cleaned up, the longer it affects the system around it.
+
+In my experience, referring to team goals as "aggressive" _sometimes_ implies pushing the team beyond what it would normally be comfortable achieving.
 I've been burned too many times by a _perceived_ urgent need for release followed by long periods of inactivity.
-
-TODO: THIS IS NOT WELL SUPPORTED
-
-Furthermore, let's dive in: what does an "aggressive" goal imply?
-Were teams not striving for high velocity before?
-Assuming teams were already trying to perform their best, what would they sacrifice to obtain the "aggressive" adjective?
-
-In my experience, referring to team goals as "aggressive" implies pushing the team beyond what it would normally be comfortable achieving.
-This is not healthy.
+Over time, this is not healthy.
 
 > If these statements interest you, I would highly recommend reading _[Slack](https://www.penguinrandomhouse.com/books/39276/slack-by-tom-demarco)_ by Tom DeMarco, which includes excellent points on how and overly aggressive goals contribute to inefficiency and team burnout.
 
@@ -123,6 +121,6 @@ I hope you can be well equipped to predict and mitigate some common pitfalls aft
 
 1. Don't deprive junior developers of senior developers _(or vice versa)_
 2. Don't deprive new developers of area experts
-3. Don't lie to yourself about timelines
+3. Don't undervalue tech debt in long term planning
 
 In conclusion: if you're setting up a product team, make sure it have a healthy mix of junior and senior developers, a healthy mix of fresh faces and area experts, and realistic timelines to strive for.
