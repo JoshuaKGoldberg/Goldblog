@@ -1,7 +1,7 @@
 ---
 title: "Team Construction Pitfalls"
 date: "2021-01-11T11:11:11.117Z"
-description: "How misbalanced or poorly positioned teams hurt themselves technically in both the short and long term."
+description: "How misbalanced or poorly positioned teams restrict their developers in both the short and long term."
 ---
 
 **TODO: IMAGE**
@@ -22,7 +22,8 @@ In this blog post, I will provide vague anecdotal observations and associated re
 2. Don't deprive new developers of area experts
 3. Don't undervalue tech debt in long term planning
 
-> Each anecdote is a real occurence I have repeatedly observed and/or participated in, though anonymized and obfuscated.
+My intent is to describe how unfortunate situations and timing can force developers to make unfortunate choices they otherwise wouldn't have made.
+Each anecdote is an anonymized amalgamation of real occurences I've repeatedly observed and/or participated in.
 
 ## Preamble: Junior verses Senior
 
@@ -50,11 +51,11 @@ Writing RFCs, accounting for existing technical debt, updating stakeholders -- y
 A healthy development team should pair its junior and senior developers together on advanced tasks such as project planning and architecture changes.
 Only a fool would "blame" the intern or junior developer from the anecdote.
 
-> Amusingly, every time I've seen this happen, the developers went above and beyond their role in attempting the rewrites, and deserved commendedation for their efforts!
+> Amusingly, every time I've seen this happen, the developers went above and beyond their role in attempting the rewrites, and deserved commendation for their efforts!
 
 I'm not saying junior developers shouldn't participate in or even help lead major new investments -- practical experience is a great way to build seniority.
 Nor am I saying junior developers _can't_ build big things -- they can and should.
-I'm saying they no developer, regardless of experience, should be given challenging tasks _without an active support network_.
+I'm saying no developer, regardless of experience, should be given challenging tasks _without an active support network_.
 
 Time and time again I've seen new developers given advanced tasks without adequate support, struggle to meet unrealistic goals, then blame themselves.
 What an effective way to burn out your new developers!
@@ -104,15 +105,15 @@ There are certainly many good justifications for a fast pace: critical business 
 But at what point does adding early tech debt for the sake of speed no longer worth it?
 
 Introduced tech debt can be costly immediately after or even during a project.
-The earlier an archicture is rushed together or a "temporary" measure introduced, and the longer until it is cleaned up, the longer it affects the system around it.
+The earlier an archicture is rushed together or a "temporary" measure introduced, and the longer until it is cleaned up, the longer it negatively affects the system around it.
 
 In my experience, referring to team goals as "aggressive" _sometimes_ implies pushing the team beyond what it would normally be comfortable achieving.
 I've been burned too many times by a _perceived_ urgent need for release followed by long periods of inactivity.
 Over time, this is not healthy.
 
-> If these statements interest you, I would highly recommend reading _[Slack](https://www.penguinrandomhouse.com/books/39276/slack-by-tom-demarco)_ by Tom DeMarco, which includes excellent points on how and overly aggressive goals contribute to inefficiency and team burnout.
+> If these statements interest you, I would highly recommend reading _[Slack](https://www.penguinrandomhouse.com/books/39276/slack-by-tom-demarco)_ by Tom DeMarco, which includes excellent points on how overly aggressive goals contribute to inefficiency and team burnout.
 
-## In Conclusion
+## Conclusion
 
 **TODO: IMAGE**
 
