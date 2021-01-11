@@ -16,7 +16,7 @@ How does it happen that a fresh new product team can sometimes create tech debt 
 I'm not talking about the normal growing pains of expanding a small area of code; I mean the really divergent patterns that make existing developers think _"this is so off; why didn't they talk to us?"_.
 Maybe this isn't an issue you've experienced, but for me, it's been a consistent pain point with new product teams I've been on or partnered with over the last near-decade.
 
-In this blog post, I will provide vague anecdotal observations and associated reasoninng to support the following three tenants:
+In this blog post, I will provide vague anecdotal observations and associated reasoning to support the following three tenants:
 
 1. Don't deprive junior developers of senior developers _(or vice versa)_
 2. Don't deprive new developers of area experts
@@ -125,3 +125,6 @@ I hope you can be well equipped to predict and mitigate some common pitfalls aft
 3. Don't undervalue tech debt in long term planning
 
 In conclusion: if you're setting up a product team, make sure it have a healthy mix of junior and senior developers, a healthy mix of fresh faces and area experts, and realistic timelines to strive for.
+
+> Many thanks to the excellent [Johnny Reilly](https://twitter.com/johnny_reilly) for proofreading and discussions in the creation of this blog post, as well as my esteemed Codecademy coworkers: in particular [Calla Feucht](https://twitter.com/callacalla_) and [Matt Schiller](https://github.com/MattSchiller). 
+> You can see the full discussions on this [pull request](https://github.com/joshuakgoldberg/goldblog/pull/291).
