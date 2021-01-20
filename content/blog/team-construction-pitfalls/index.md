@@ -4,7 +4,13 @@ date: "2021-01-11T11:11:11.117Z"
 description: "How misbalanced or poorly positioned teams restrict their developers in both the short and long term."
 ---
 
-**TODO: IMAGE**
+<span style="display:block;margin-bottom:2rem;text-align:center;">
+<img alt="The Death of Socrates (painting)" src="./socrates.jpg" />
+<br />
+<small>
+The Death of Socrates: the "gadfly" of Athens [<a aria-label="The Death of Socrates Wikipedia source" href="https://en.wikipedia.org/wiki/File:David_-_The_Death_of_Socrates.jpg">source</a>]
+</small>
+</span>
 
 <em style="display:block;margin-bottom:2rem;text-align:center;">
 “I know that I know nothing.” - Socrates, paraphrased by Plato, paraphrased
@@ -27,8 +33,6 @@ Each anecdote is an anonymized amalgamation of real occurences I've repeatedly o
 
 ## Preamble: Junior verses Senior
 
-**TODO: IMAGE**
-
 When does someone become a junior developer after learning to code?
 When do they become mid-range, or senior, or staff, or principal, or whatever else?
 What counts as "experience", and how do you measure it?
@@ -39,7 +43,13 @@ For the sake of easier writing, let's consider "junior" to be people who haven't
 
 ## 1. Overstocking Junior Developers
 
-**TODO: IMAGE**
+<span style="display:block;margin-bottom:2rem;text-align:center;">
+<img alt="Hamsters swarming" src="./hamsters.gif" />
+<br />
+<small>
+Despite the context, these are not implied to be junior developers. They're <em>frontend</em> developers being shown a new framework. [<a aria-label="Hamsters swarming (source)" href="https://giphy.com/gifs/running-hamster-11Ss9q3F4zf5VC">source</a>]
+</small>
+</span>
 
 > Anecdote: two junior developers on a relatively new team were tasked with creating a new variation of an existing, tech-debt-heavy page.
 > They gave an initial dev estimate, started working on code, and quickly realized they'd need help to overcome a greater-than-expected amount of existing tech debt.
@@ -72,8 +82,6 @@ If you don't think you need them, or if you don't think your teams have time for
 
 ## 2. Understocking Area Experts
 
-**TODO: IMAGE**
-
 > Anecdote: an existing team onboarded a set of contractors to help them create a more advanced version of their existing pages.
 > The contractors were given a large, discrete chunk of the project.
 > After their code started to land into the main branch, other teams noticed it didn't use existing design system components or recommended logical patterns.
@@ -86,6 +94,14 @@ Even in a brand new organization, the first developers already have existing are
 When an organization adds new developers, it is unhealthy to ask them to create code before onboarding them onto the existing guidelines and structures of the team.
 To truly onboard an developer onto a team takes months or more of having them work in the existing codebases with the existing developers.
 Thus, it is unhealthy to spin off a new team solely with new team members, regardless of their general experience level.
+
+<span style="display:block;margin:3rem 2rem 2rem;text-align:center;">
+<img alt="Aladdin and Jasmine on the flying carpet" src="./aladdin.gif" />
+<br />
+<small>
+How "senior" developers feel explaining why their opinions are best. [<a aria-label="Aladdin and Jasmine on the flying carpet (source)" href="https://giphy.com/gifs/disney-aladdin-princess-jasmine-a-whole-new-world-WUu9EGdSEImJy">source</a>]
+</small>
+</span>
 
 When you match area experts with developers new to the organization, both sides benefit.
 Area experts can inform the new developers on existing areas of investment and/or tech debt that should be factored into their work, along with why structures were set up that way.
@@ -115,8 +131,6 @@ Over time, this is not healthy.
 
 ## Conclusion
 
-**TODO: IMAGE**
-
 Mistakes in organizing large groups of people, developers or otherwise, are inevitable.
 I hope you can be well equipped to predict and mitigate some common pitfalls after reading this blog post:
 
@@ -126,5 +140,5 @@ I hope you can be well equipped to predict and mitigate some common pitfalls aft
 
 In conclusion: if you're setting up a product team, make sure it have a healthy mix of junior and senior developers, a healthy mix of fresh faces and area experts, and realistic timelines to strive for.
 
-> Many thanks to the excellent [Johnny Reilly](https://twitter.com/johnny_reilly) for proofreading and discussions in the creation of this blog post, as well as my esteemed Codecademy coworkers: in particular [Calla Feucht](https://twitter.com/callacalla_) and [Matt Schiller](https://github.com/MattSchiller). 
+> Many thanks to the excellent [Johnny Reilly](https://twitter.com/johnny_reilly) for proofreading and discussions in the creation of this blog post, as well as my esteemed Codecademy coworkers: in particular [Calla Feucht](https://twitter.com/callacalla_) and [Matt Schiller](https://github.com/MattSchiller).
 > You can see the full discussions on this [pull request](https://github.com/joshuakgoldberg/goldblog/pull/291).
