@@ -8,7 +8,9 @@ const BlogBody = ({ post }) => {
 
     useEffect(() => {
         if (typeof window !== "undefined") {
-            import("./makeGifsPausable").then(makeGifsPausable => makeGifsPausable.default());
+            import("./makeGifsPausable").then((makeGifsPausable) =>
+                makeGifsPausable.default()
+            );
         }
     }, []);
 
@@ -39,7 +41,10 @@ const BlogBody = ({ post }) => {
                         )}
                     </p>
                 </header>
-                <section dangerouslySetInnerHTML={{ __html: post.html }} />
+                <section
+                    dangerouslySetInnerHTML={{ __html: post.html }}
+                    css={styles.section}
+                />
             </article>
         </>
     );

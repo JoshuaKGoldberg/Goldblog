@@ -1,22 +1,3 @@
-a {
-    color: #565656;
-    font-weight: bold;
-}
-
-a:focus {
-    background: linear-gradient(to right, #e7fff5 0%, #e7f5ff 100%);
-    color: black;
-}
-
-blockquote {
-    border-left: 3px solid gray;
-    color: #212121;
-    font-style: italic;
-    letter-spacing: -0.02rem;
-    margin: 2rem 0;
-    padding-left: 1rem;
-}
-
 li {
     margin-bottom: 0.5rem;
 }
@@ -45,23 +26,4 @@ nav {
 .autolink {
     padding-left: 4px;
     margin-left: -28px;
-}
-
-img[src*='.gif'] {
-    cursor: pointer;
-}
-
-img[src*='.gif'][tabIndex]:focus,
-img[src*='.gif'][tabIndex]:hover {
-    box-shadow: 0 0 0 1px black, 0 0 0 2px black;
-    outline: none;
-    opacity: 1;
-}
-
-.ff-container {
-    margin-bottom: 0.5rem;
-}
-
-.ff-container.ff-loading-icon::before {
-    display: none;
 }

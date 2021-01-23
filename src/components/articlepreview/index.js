@@ -10,6 +10,7 @@ const ArticlePreview = ({ node }) => {
 
     const linkTitle = link ? (
         <a
+            css={styles.heading}
             href={link.url}
             rel="noopener noreferrer"
             target="_blank"
