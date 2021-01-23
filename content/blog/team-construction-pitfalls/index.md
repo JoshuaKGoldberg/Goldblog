@@ -1,6 +1,6 @@
 ---
 title: "Team Construction Pitfalls"
-date: "2021-01-11T11:11:11.117Z"
+date: "2021-01-23T12:15:15.117Z"
 description: "How misbalanced or poorly positioned teams restrict their developers in both the short and long term."
 ---
 
@@ -46,7 +46,7 @@ For the sake of easier writing, let's consider "junior" to be people who haven't
 <span style="display:block;margin-bottom:2rem;text-align:center;">
 <img alt="Hamsters swarming" src="./hamsters.gif" />
 <br />
-<small>
+<small style="line-height:1;">
 Despite the context, these are not implied to be junior developers. They're <em>frontend</em> developers being shown a new framework. [<a aria-label="Hamsters swarming (source)" href="https://giphy.com/gifs/running-hamster-11Ss9q3F4zf5VC">source</a>]
 </small>
 </span>
@@ -108,8 +108,6 @@ Area experts can inform the new developers on existing areas of investment and/o
 New developers can bring fresh ideas and a healthy set of scepticism to a project, then work with the area experts in improving code accordingly.
 
 ## 3. "Aggressive Goals"
-
-**TODO: IMAGE**
 
 > Anecdote: a new team worked with upper management to propose what could be created in a year given company priorities.
 > Resultant business goals and OKRs were based on a very optimistic version of that timeline, referring to internally as "aggressive goals".
