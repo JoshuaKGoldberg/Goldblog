@@ -20,7 +20,7 @@ const BlogBody = ({ post }) => {
 
             <article css={styles.article}>
                 <header>
-                    <h2>{title}</h2>
+                    <h1>{title}</h1>
                     <p css={styles.info}>
                         <span>{date}</span>
                         {download && (
