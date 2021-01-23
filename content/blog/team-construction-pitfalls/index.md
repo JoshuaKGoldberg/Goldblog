@@ -138,5 +138,5 @@ I hope you can be well equipped to predict and mitigate some common pitfalls aft
 
 In conclusion: if you're setting up a product team, make sure it have a healthy mix of junior and senior developers, a healthy mix of fresh faces and area experts, and realistic timelines to strive for.
 
-> Many thanks to the excellent [Johnny Reilly](https://twitter.com/johnny_reilly) for proofreading and discussions in the creation of this blog post, as well as my esteemed Codecademy coworkers: in particular [Calla Feucht](https://twitter.com/callacalla_) and [Matt Schiller](https://github.com/MattSchiller).
+> Many thanks to the excellent [John Reilly](https://twitter.com/johnny_reilly) for proofreading and discussions in the creation of this blog post, as well as my esteemed Codecademy coworkers: in particular [Calla Feucht](https://twitter.com/callacalla_) and [Matt Schiller](https://github.com/MattSchiller).
 > You can see the full discussions on this [pull request](https://github.com/joshuakgoldberg/goldblog/pull/291).
