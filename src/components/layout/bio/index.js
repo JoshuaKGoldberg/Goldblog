@@ -35,7 +35,12 @@ const Bio = () => {
             <div css={styles.details}>
                 <div css={styles.links}>
                     {links.map(([text, url]) => (
-                        <a key={text} href={`https://${url}`} css={styles.link}>
+                        <a
+                            css={styles.link}
+                            href={`https://${url}`}
+                            key={text}
+                            target="_blank"
+                        >
                             {text}
                         </a>
                     ))}
