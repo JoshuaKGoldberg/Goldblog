@@ -119,7 +119,7 @@ There are certainly many good justifications for a fast pace: critical business 
 But at what point does adding early tech debt for the sake of speed no longer worth it?
 
 Introduced tech debt can be costly immediately after or even during a project.
-The earlier an archicture is rushed together or a "temporary" measure introduced, and the longer until it is cleaned up, the longer it negatively affects the system around it.
+The earlier an architecture is rushed together or a "temporary" measure introduced, and the longer until it is cleaned up, the longer it negatively affects the system around it.
 
 In my experience, referring to team goals as "aggressive" _sometimes_ implies pushing the team beyond what it would normally be comfortable achieving.
 I've been burned too many times by a _perceived_ urgent need for release followed by long periods of inactivity.
