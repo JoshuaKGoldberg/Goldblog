@@ -56,7 +56,7 @@ function parsingContextErrors(context: ParsingContext): DiagnosticMessage {
 
 I added a `console.log(new Error())` to the `ParsingContext.VariableDeclaration` code locally and re-ran to grab the full stack of where this code gets called on a file containing `const case = 123`:
 
-```
+```text
 Error
     at parsingContextErrors (C:\Code\temp\node_modules\typescript\lib\tsc.js:16677:33)
     at abortParsingListOrMoveToNextToken (C:\Code\temp\node_modules\typescript\lib\tsc.js:16657:38)
@@ -207,7 +207,7 @@ Super!
 I built these changes locally and ran `built/local/tsc.js` on a file containing `const case = 123;`.
 The errors were... somewhat encouraging!
 
-```
+```text
 index.ts:6:7 - error TS1389: 'case' is not allowed as a variable declaration name.
 
 6 const case = 123;

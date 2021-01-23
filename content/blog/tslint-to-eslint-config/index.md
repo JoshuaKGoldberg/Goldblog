@@ -111,7 +111,7 @@ It _also_ takes in an optional rule argument - but as an object like `{ onlyInli
 The `prefer-readonly` converter in tslint-to-eslint, therefore, needs to read in the original TSLint rule arguments and adjust its output accordingly:
 
 ```ts
-const convertPreferReadonly = tslintRule => {
+const convertPreferReadonly = (tslintRule) => {
     return {
         rules: [
             {
@@ -129,7 +129,7 @@ const convertPreferReadonly = tslintRule => {
 
 Running `npx tslnit-to-eslint-config` with a `tslint.json` file containing just the one rule will create the equivalent `.eslintrc.json`.
 
-```
+```text
 $ npx tslint-to-eslint-config
 ✨ 1 rule replaced with its ESLint equivalent. ✨
 ✅ All is well! ✅
@@ -162,7 +162,7 @@ Thus, we really can't _completely_ switch from TSLint to ESLint and keep our ori
 Rule converters in tslint-to-eslint-config are allowed to output a `notices: string[]` detailing any unavoidable behavior changes in the new rules:
 
 ```ts
-const convertOneVariablePerDeclaration = tslintRule => {
+const convertOneVariablePerDeclaration = (tslintRule) => {
     return {
         rules: [
             {
@@ -181,7 +181,7 @@ const convertOneVariablePerDeclaration = tslintRule => {
 
 Conversion runs will print any notices to the console:
 
-```
+```text
 $ npx tslint-to-eslint-config
 ✨ 1 rule replaced with its ESLint equivalent. ✨
 📢 1 ESLint rule behaves differently from their TSLint counterparts: 📢
@@ -287,7 +287,7 @@ const convertDeprecation = () => {
 
 As a result, tslint-to-eslint-config knows to tell the user to install the imported package...
 
-```
+```text
 $ npx tslint-to-eslint-config
 ✨ 1 rule replaced with its ESLint equivalent. ✨
 ⚡ 1 package is required for new ESLint rules. ⚡
