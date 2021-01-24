@@ -16,7 +16,7 @@ import {
     textColorDull,
 } from "../../styles/variables";
 
-export const global = (darkMode) => css`
+export const global = (darkMode, isMounted) => css`
     html {
         ${cssVar(backgroundColor)}: ${darkMode ? nearBlack : "white"};
         ${cssVar(darkInversion)}: ${darkMode
@@ -27,7 +27,7 @@ export const global = (darkMode) => css`
 
         background: ${backgroundColor};
         color: ${textColor};
-        transition: ${medium} background, ${medium} color;
+        ${isMounted && `transition: ${medium} background, ${medium} color;`}
     }
 
     a {

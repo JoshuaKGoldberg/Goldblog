@@ -1,6 +1,6 @@
 import { Global } from "@emotion/react";
 import React from "react";
-import { useLocalStorage } from "react-use";
+import { useLocalStorage, useMountedState } from "react-use";
 
 import DarkMode from "../../context/darkMode";
 import Footer from "./footer";
@@ -12,10 +12,11 @@ const Layout = ({ children }) => {
         "goldblog-dark-mode",
         false
     );
+    const isMounted = useMountedState();
 
     return (
         <DarkMode.Provider value={{ darkMode, setDarkMode }}>
-            <Global styles={styles.global(darkMode)} />
+            <Global styles={styles.global(darkMode, isMounted())} />
             <div css={styles.layout}>
                 <Header />
                 <main css={styles.main}>{children}</main>
