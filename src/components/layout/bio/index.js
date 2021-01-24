@@ -39,6 +39,7 @@ const Bio = () => {
                             css={styles.link}
                             href={`https://${url}`}
                             key={text}
+                            rel="noreferrer"
                             target="_blank"
                         >
                             {text}

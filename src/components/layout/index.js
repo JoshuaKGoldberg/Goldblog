@@ -1,24 +1,27 @@
+import { Global } from "@emotion/react";
 import React from "react";
-import { Link } from "gatsby";
+import { useLocalStorage } from "react-use";
 
-import Bio from "./bio";
+import DarkMode from "../../context/darkMode";
 import Footer from "./footer";
+import Header from "./header";
 import * as styles from "./styles";
 
-const Layout = ({ children, title = "Goldblog" }) => {
+const Layout = ({ children }) => {
+    const [darkMode, setDarkMode] = useLocalStorage(
+        "goldblog-dark-mode",
+        false
+    );
+
     return (
-        <div css={styles.layout}>
-            <header css={styles.header}>
-                <h1 css={styles.heading}>
-                    <Link css={styles.headingLink} to={`/`}>
-                        {title}
-                    </Link>
-                </h1>
-                <Bio />
-            </header>
-            <main css={styles.main}>{children}</main>
-            <Footer />
-        </div>
+        <DarkMode.Provider value={{ darkMode, setDarkMode }}>
+            <Global styles={styles.global(darkMode)} />
+            <div css={styles.layout}>
+                <Header />
+                <main css={styles.main}>{children}</main>
+                <Footer />
+            </div>
+        </DarkMode.Provider>
     );
 };
 

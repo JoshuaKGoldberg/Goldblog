@@ -1,9 +1,9 @@
 import {
-    darkGray,
     latoRegular,
     phoneMediumMax,
     phoneMediumMin,
-} from "../../../styleConstants";
+} from "../../../styles/constants";
+import { textColorDull } from "../../../styles/variables";
 
 export const bio = {
     alignItems: "center",
@@ -43,5 +43,5 @@ export const link = {
     fontWeight: "bold",
     marginRight: "0.5rem",
     textDecoration: "none",
-    color: darkGray,
+    color: textColorDull,
 };

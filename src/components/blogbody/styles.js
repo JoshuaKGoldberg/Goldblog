@@ -1,3 +1,10 @@
+import { medium } from "../../styles/constants";
+import {
+    darkInversion,
+    textColor,
+    textColorDull,
+} from "../../styles/variables";
+
 export const article = {
     margin: 0,
     padding: 0,
@@ -19,9 +26,42 @@ export const downloadMessage = {
     fontWeight: "normal",
     marginRight: "-0.5rem",
     padding: "0 0.5rem",
-    transition: "350ms margin",
+    transition: `${medium} margin`,
 
     "&:focus": {
         marginLeft: "0.5rem",
+    },
+};
+
+export const section = {
+    "& code": {
+        background: "none",
+        filter: darkInversion,
+        transition: `${medium} filter`,
+    },
+
+    "& pre": {
+        background: "none",
+        border: `1px solid ${textColorDull}`,
+        transition: `${medium} border`,
+    },
+
+    '& img[src*="gif"]': {
+        cursor: "pointer",
+        transition: `${medium} box-shadow`,
+
+        "&[tabIndex]:focus, &[tabIndex]:hover": {
+            boxShadow: `0 0 0 1px ${textColor}, 0 0 2px ${textColor}`,
+            outline: "none",
+            opacity: 1,
+        },
+    },
+
+    "& .ff-container": {
+        marginBottom: "0.5rem",
+
+        "&.ff-loading-icon::before": {
+            display: "none",
+        },
     },
 };
