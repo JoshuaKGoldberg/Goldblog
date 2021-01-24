@@ -6,7 +6,6 @@ description: "How misbalanced or poorly positioned teams restrict their develope
 
 <span style="display:block;margin-bottom:2rem;text-align:center;">
 <img alt="The Death of Socrates (painting)" src="./socrates.jpg" />
-<br />
 <small>
 The Death of Socrates: the "gadfly" of Athens [<a aria-label="The Death of Socrates Wikipedia source" href="https://en.wikipedia.org/wiki/File:David_-_The_Death_of_Socrates.jpg">source</a>]
 </small>
