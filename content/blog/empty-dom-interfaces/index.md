@@ -10,7 +10,7 @@ description: "Glorious hardcoding of a better error message if someone forgets t
 The Library of the Palais Bourbon in Paris
 <br />
 <small>
-File copied from Wikipedia under the Creative Commons Attribution 2.0 Generic license. [<a href="https://en.wikipedia.org/wiki/File:01_Petit_verdot.jpg"  rel="noopener noreferrer"target="_blank">source</a>]
+File copied from Wikipedia under the Creative Commons Attribution 2.0 Generic license. [<a href="https://en.wikipedia.org/wiki/File:Biblioth%C3%A8que_de_l%27Assembl%C3%A9e_Nationale_(Lunon).jpg"  rel="noopener noreferrer"target="_blank">source</a>]
 </small>
 </em>
 
@@ -27,8 +27,9 @@ You might, for example, ask to have all _es2018_ global types included:
 }
 ```
 
-These get a little tricky though: if you don't include `"dom"` in the list, type definitions for global DOM elements such as `HTMLElement` won't be included.
-`"dom"` is included in the default settings if you don't specify your own `"lib"`, but not if you specify a custom one without it.
+These get a little tricky though: `"dom"` is included in the default settings when you don't specify your own `"lib"`, but not if you specify a custom one without it.
+If you don't include `"dom"` in the list, type definitions for global DOM elements such as `HTMLElement` won't be included.
+Most projects for code that run in the browser will generally want to include `"dom"`:
 
 ```json
 {
@@ -41,7 +42,7 @@ These get a little tricky though: if you don't include `"dom"` in the list, type
 _Not_ including `"dom"` makes sense for projects that execute in a context without the DOM, such as Deno or Node.
 You wouldn't want someone thinking they have access to global values such as `document` if they might not exist.
 
-Some library types -including the ever-popular `@types/react`- include stub interfaces so that they can be included in non-DOM projects and still refer to those element types.
+Some library typings -including the ever-popular `@types/react`- include stub interfaces so that they can be included in non-DOM projects and still refer to those element types.
 
 ```ts
 interface Element {}
@@ -100,13 +101,16 @@ element.textContent;
 Looks like it already worked great!
 Thanks Kyle!
 
-The main changes requested on the original PR were around that `isEmptyDomInterface` function:
+### Prior Feedback
+
+Kyle's PR had been given feedback but never addressed it before aging away.
+The main changes requested were around that `isEmptyDomInterface` function:
 
 -   Rewriting to not use a regular expression
 -   Using `type.symbol.escapedName` instead of the more expensive `typeToString`
 
-That PR had aged away and I really wanted this error message improvement.
-Time for me to dig in!
+I really wanted this error message improvement.
+Time for me to dig in! 💪
 
 ## A New PR
 
@@ -117,7 +121,8 @@ I figured it'd be a good idea to add in logic to restrict the new error message 
 
 Question: how to check compiler options in `checker.ts`?
 
-I ran a text search for _`compiler.*options`_ in the file and found a bunch of references to a `compilerOptions` object. Nice and easy.
+I ran a text search for _`compiler.*options`_ in the file and found a bunch of references to a `compilerOptions` object.
+Good good.
 
 ```ts
 function isEmptyDomInterface(type: Type): boolean {
@@ -154,6 +159,8 @@ function everyContainedType(type: Type, f: (t: Type) => boolean): boolean {
         : f(type);
 }
 ```
+
+Now that I was testing against individual type names, I simplified the regular expression a bit:
 
 ```ts
 function containerSeemstoBeEmptyDomElement(containingType: Type): boolean {
@@ -194,15 +201,15 @@ The first review feedback I got was pretty easy to resolve.
 Do you see the difference?
 
 ```diff
-- const diagnostic = containerSeemstoBeEmptyDomElement(containingType)
-+ const diagnostic = containerSeemsToBeEmptyDomElement(containingType)
+- containerSeemstoBeEmptyDomElement(containingType)
++ containerSeemsToBeEmptyDomElement(containingType)
 ```
 
 🤦.
 
 ### Getting Answers
 
-The [answers](https://github.com/microsoft/TypeScript/pull/43007/files/3e595a5f6baac097780e6ecb3d23ec9869d6dd4d#r598024356) to my questions were pretty straightforward:
+The [responses](https://github.com/microsoft/TypeScript/pull/43007/files/3e595a5f6baac097780e6ecb3d23ec9869d6dd4d#r598024356) to my questions were pretty straightforward:
 
 -   Using a regular expression is fine; the original PR's one was just a bit more complicated than it needed to be
 -   `isEmptyObjectType` is the right way in this situation to check for an empty object type
@@ -239,13 +246,13 @@ function containerSeemsToBeEmptyDomElement(containingType: Type) {
 
 ### Diagnostic Messages Quotes
 
-The original proposed diagnostic message looked like this:
+The original proposed diagnostic message addition looked like this:
 
 ```json
 "... Try changing the `lib` compiler option to include 'dom'."
 ```
 
-A [piece of feedback](https://github.com/microsoft/TypeScript/pull/43007/files/3e595a5f6baac097780e6ecb3d23ec9869d6dd4d#r585149336) requested using a consistent quoting style.
+One [piece of feedback](https://github.com/microsoft/TypeScript/pull/43007/files/3e595a5f6baac097780e6ecb3d23ec9869d6dd4d#r585149336) requested using a consistent quoting style.
 It was noted that other diagnostic messages don't have a consistent style; for now, we went with single quotes consistently.
 
 ```json
@@ -260,7 +267,9 @@ I pushed the requested adjustments in the PR and re-requested review.
 It was merged in within a day.
 Yay! 🎉
 
-Thanks to [@kylejlin](https://github.com/kylejlin) for sending the first version of the PR and to [@DanielRosenwasser](https://github.com/DanielRosenwasser) and [@sandersn](https://github.com/sandersn) for the PR reviews (as well as introducing me to the phrase _"Ultimate Correctness"_)!
+Thanks to [@kylejlin](https://github.com/kylejlin) for sending the first version of the PR and to [@DanielRosenwasser](https://github.com/DanielRosenwasser) and [@sandersn](https://github.com/sandersn) for the PR reviews (as well as introducing me to the excellent phrase _"Ultimate Correctness"_)!
+
+---
 
 ## Regular Expressions, Explained
 
@@ -276,7 +285,7 @@ I liked the [MDN Regular Expressions article](https://developer.mozilla.org/en-U
 
 First off, `^` indicates the _beginning_ of a string and `$` indicates the _end_ of a string.
 Using them at the beginning and end of the regular expression means this will only match an _entire_ string: not a partial subset.
-Names like `BlaBlaBlaNodeBlahBlahBla` don't match, but `Node` does.
+Strings like `BlaBlaBlaNodeBlahBlahBla` don't match, but `Node` does.
 
 Next, this regular expression shows off [groups and ranges](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges).
 The `|` pipes indicate that the content must be _any_ of:
@@ -290,6 +299,8 @@ That last one is what matches `Element`, `HTMLElement`, and all other names such
 -   `[a-zA-Z]` indicates we can have any character in the alphabet between `a-z` or `A-Z`
 -   `*` indicates we want the previous character _(here, the alphabet ones)_ to be allowed to repeat >=0 times
 -   The `?` in that last option means anything before it is optional
+
+Putting them all together, this regular expression is another way of testing that the type `EventTarget`, `Node`, `Element`, `HTMLElement`, or `HTML` + (some alphabet characters) + `Element`.
 
 ### The Original Regular Expression
 
