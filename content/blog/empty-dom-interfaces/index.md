@@ -1,6 +1,6 @@
 ---
 title: "TypeScript Contribution Diary: Improved errors for empty DOM interfaces"
-date: "2021-06-07T12:34:56.117Z"
+date: "2021-06-22T12:34:56.117Z"
 description: "Glorious hardcoding of a better error message if someone forgets to include the 'dom' lib option."
 ---
 
