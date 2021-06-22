@@ -291,7 +291,7 @@ Thanks to [@kylejlin](https://github.com/kylejlin) for sending the first version
 Regular expressions can be tough to read if you're not familiar with the syntax!
 A regular expression, or "regexp" for short, is a description of what characters to check for, in order, from a string.
 
-I like the [MDN Regular Expressions article](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions); the [Codecademy Learn the Basics of Regular Expressions course](https://www.codecademy.com/learn/introduction-to-regular-expressions) a solid intro if you want to be more hands-on and guided.
+I like the [MDN Regular Expressions article](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions); the [Codecademy Learn the Basics of Regular Expressions course](https://www.codecademy.com/learn/introduction-to-regular-expressions) is a solid intro if you want to be more hands-on and guided.
 
 ### My Regular Expression
 
