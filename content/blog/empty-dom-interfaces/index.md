@@ -289,8 +289,9 @@ Thanks to [@kylejlin](https://github.com/kylejlin) for sending the first version
 ## Regular Expressions, Explained
 
 Regular expressions can be tough to read if you're not familiar with the syntax!
-A regular expression is a description of what characters to check for, in order, from a string.
-I liked the [MDN Regular Expressions article](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions); the [Codecademy Learn the Basics of Regular Expressions course](https://www.codecademy.com/learn/introduction-to-regular-expressions) a solid intro if you want to be more hands-on and guided.
+A regular expression, or "regexp" for short, is a description of what characters to check for, in order, from a string.
+
+I like the [MDN Regular Expressions article](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions); the [Codecademy Learn the Basics of Regular Expressions course](https://www.codecademy.com/learn/introduction-to-regular-expressions) a solid intro if you want to be more hands-on and guided.
 
 ### My Regular Expression
 
@@ -300,7 +301,7 @@ I liked the [MDN Regular Expressions article](https://developer.mozilla.org/en-U
 
 First off, `^` indicates the _beginning_ of a string and `$` indicates the _end_ of a string.
 Using them at the beginning and end of the regular expression means this will only match an _entire_ string: not a partial subset.
-Strings like `BlaBlaBlaNodeBlahBlahBla` don't match, but `Node` does.
+For this regexp or a simpler one like `^Node$`, `BlahNodeBlah` doesn't match but `Node` does.
 
 Next, this regular expression shows off [groups and ranges](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges).
 The `|` pipes indicate that the content must be _any_ of:
@@ -315,7 +316,7 @@ That last one is what matches `Element`, `HTMLElement`, and all other names such
 -   `*` indicates we want the previous character _(here, the alphabet ones)_ to be allowed to repeat >=0 times
 -   The `?` in that last option means anything before it is optional
 
-Putting them all together, this regular expression is another way of testing that the type `EventTarget`, `Node`, `Element`, `HTMLElement`, or `HTML` + (some alphabet characters) + `Element`.
+Putting them all together, this regular expression is another way of testing for the name `EventTarget`, `Node`, `Element`, `HTMLElement`, or `HTML` + (some alphabet characters) + `Element`.
 
 ### The Original Regular Expression
 
