@@ -10,11 +10,11 @@ After installing [Node >=10](https://nodejs.org/en/download), set up the reposit
 ```shell
 git clone https://github.com/JoshuaKGoldberg/goldblog
 cd goldblog
-npm i
+yarn
 ```
 
 Start the Gatsby local development server:
 
 ```shell
-gatsby develop
+yarn start
 ```
