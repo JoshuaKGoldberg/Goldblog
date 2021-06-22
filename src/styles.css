@@ -23,7 +23,20 @@ nav {
     padding-top: 2rem;
 }
 
+hr {
+    border-color: #aaa;
+    border-width: 0 0 1px 0;
+    margin: 4.5rem auto;
+    width: 50%;
+}
+
 .autolink {
     padding-left: 4px;
     margin-left: -28px;
+}
+
+@media screen and (min-width: 700px) {
+    .gatsby-highlight {
+        margin: 0 -1rem;
+    }
 }
