@@ -17,19 +17,19 @@ File copied from Wikipedia under the Creative Commons Attribution 2.0 Generic li
 ## Problem Statement
 
 TypeScript's `tsconfig.json` compiler options allow us to specify what global type definitions to compile with.
-You might, for example, ask to have all _es2018_ global types included:
+They default to the built-in `"dom"` typings as well as whatever your `"target"` compiler option specifies:
 
 ```json
 {
     "compilerOptions": {
-        "lib": ["es2018"]
+        // implicit:
+        // "lib": ["dom", "es2018"],
+        "target": "es2018"
     }
 }
 ```
 
-These get a little tricky though: `"dom"` is included in the default settings when you don't specify your own `"lib"`, but not if you specify a custom one without it.
-If you don't include `"dom"` in the list, type definitions for global DOM elements such as `HTMLElement` won't be included.
-Most projects for code that run in the browser will generally want to include `"dom"`:
+You might, for example, ask to have `"dom"` and `"es2018"` global types included regardless of your _target_:
 
 ```json
 {
@@ -39,6 +39,20 @@ Most projects for code that run in the browser will generally want to include `"
 }
 ```
 
+These get a little tricky.
+`"dom"` is included in the default settings when you don't specify your own `"lib"`, but not if you specify a custom one without it.
+If you don't include `"dom"` in the list, type definitions for global DOM elements such as `HTMLElement` won't be included.
+
+```json
+{
+    "compilerOptions": {
+        // DOM types won't be included by default now!
+        "lib": ["es2018"]
+    }
+}
+```
+
+Most projects for code that run in the browser will generally want to include `"dom"`.
 _Not_ including `"dom"` makes sense for projects that execute in a context without the DOM, such as Deno or Node.
 You wouldn't want someone thinking they have access to global values such as `document` if they might not exist.
 
@@ -136,7 +150,8 @@ function isEmptyDomInterface(type: Type): boolean {
 
 ### Union and Intersection Types
 
-The original PR used a `typeToString` method to convert the original container type's name to a usable string, but didn't account for union and intersection types.
+The original PR used a `typeToString` method to convert the original container type's name to a usable string, but
+I was worried that that strategy was inefficient and/or didn't work at all for union and intersection types.
 For example, this type should still trigger the complaint, even though its name string is complex:
 
 ```ts
@@ -150,7 +165,7 @@ element.textContent;
 ```
 
 I ran some text searches for names like _`every.*type`_ and didn't see any existing utility function to check that every contained type in a union or intersection matches a function.
-So I wrote my own!
+So I wrote my own:
 
 ```ts
 function everyContainedType(type: Type, f: (t: Type) => boolean): boolean {
@@ -189,7 +204,7 @@ Comparing my notes to how the original PR implemented empty element detection, I
 The original PR used `isEmptyObjectType` but I'd previously seen a `getPropertiesOfType` function and used it in my own function.
 
 I also didn't understand the request to not use a regular expression.
-It seemed reasonable to me that we'd use some kind of string-based logic for names like `HTML*Element`.
+It seemed reasonable to me that we'd use some kind of string-based logic to detect names matching `HTML*Element`.
 
 I [sent a new PR](https://github.com/microsoft/TypeScript/pull/43007) and [asked about the regular expressions and empty object detection](https://github.com/microsoft/TypeScript/pull/43007#discussion_r584429414).
 
@@ -224,7 +239,7 @@ I used `unescapeLeadingUnderscores` for Ultimate Correctness to sanitize that st
 Applying all the feedback:
 
 ```ts
-function containerSeemsToBeEmptyDomElement(containingType: Type) {
+function containerSeemsToBeEmptyDomElement(containingType: Type): boolean {
     return (
         compilerOptions.lib &&
         !compilerOptions.lib.includes("dom") &&
