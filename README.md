@@ -5,7 +5,7 @@ Hooray!
 
 ## 🚀 Development
 
-After installing [Node >=10](https://nodejs.org/en/download), set up the repository locally with:
+After installing [Node >=14](https://nodejs.org/en/download), set up the repository locally with:
 
 ```shell
 git clone https://github.com/JoshuaKGoldberg/goldblog
