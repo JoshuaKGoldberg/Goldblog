@@ -72,7 +72,7 @@ The first one, within a function named `parseExpected`, seemed the most relevant
 I added a `console.log('wat', diagnosticMessage);` to `parseExpected` and ran TypeScript on the above `HasIssue` syntax error example code.
 The resultant logs were a little surprising:
 
-```
+```text
 wat undefined
 wat undefined
 wat undefined
@@ -107,7 +107,7 @@ After fumbling around with more console logs to no success, I gave up for the ni
 
 Only the next day did I think to add `sourceFile.fileName` to the logs:
 
-```
+```text
 wat undefined C:/Code/tsdevtest/node_modules/@types/node/child_process.d.ts
 wat undefined C:/Code/tsdevtest/node_modules/@types/node/child_process.d.ts
 wat undefined C:/Code/tsdevtest/node_modules/@types/node/child_process.d.ts
@@ -140,7 +140,7 @@ Amusing.
 
 Those typings were only there from some old playing around I'd done in that `tsdevtest` directory before, so I removed them and re-ran TypeScript:
 
-```
+```text
 wat undefined
 index.ts:2:9 - error TS1005: ',' expected.
 
@@ -159,7 +159,7 @@ Next up was to figure out who was calling `parseExpected`, so that I could chang
 
 Since I [still haven't figured out VS Code debugging](https://medium.com/@joshuakgoldberg/typescript-contribution-diary-errors-for-identifiers-after-numeric-literals-130e3d77a1df#a8a0), I added `new Error().stack` to the log:
 
-```
+```text
 wat undefined index.ts Error
     at parseExpected (C:\Code\typescript\built\local\tsc.js:18106:51)
     at parseDelimitedList (C:\Code\typescript\built\local\tsc.js:18890:21)
@@ -207,7 +207,7 @@ function getExpectedCommaDiagnostic(kind: ParsingContext) {
 
 Running this new TypeScript version without the debugger log produced the exact right output:
 
-```
+```text
 index.ts:2:9 - error TS1357: An enum member name must be followed by a ',' or '='.
 
 2     Nope: 'Wat',
@@ -226,7 +226,7 @@ The feedback was generally positive, with a suggestion to also mention the closi
 
 I made the change, pushed it to the pull request, and was pleased to see the pull request approved and merged a couple hours later.
 
-```
+```text
 index.ts:2:9 - error TS1357: An enum member name must be followed by a ',', '=', or '}'.
 
 2     Nope: 'Wat',
