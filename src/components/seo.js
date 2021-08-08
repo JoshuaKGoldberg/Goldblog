@@ -28,45 +28,49 @@ function SEO({ description, lang, meta, title }) {
             }}
             title={title}
             titleTemplate={`%s | ${site.siteMetadata.title}`}
-            meta={[
+        >
+            {[
                 {
+                    content: metaDescription,
                     name: `description`,
-                    content: metaDescription,
                 },
                 {
+                    content: title,
                     property: `og:title`,
-                    content: title,
                 },
                 {
+                    content: metaDescription,
                     property: `og:description`,
-                    content: metaDescription,
                 },
                 {
-                    property: `og:type`,
                     content: `website`,
+                    property: `og:type`,
                 },
                 {
-                    name: `twitter:card`,
                     content: `summary`,
+                    name: `twitter:card`,
                 },
                 {
-                    name: `twitter:creator`,
                     content: site.siteMetadata.author,
+                    name: `twitter:creator`,
                 },
                 {
-                    name: `twitter:image`,
                     content: site.siteMetadata.thumbnail,
+                    name: `twitter:image`,
                 },
                 {
-                    name: `twitter:title`,
                     content: title,
+                    name: `twitter:title`,
                 },
                 {
-                    name: `twitter:description`,
                     content: metaDescription,
+                    name: `twitter:description`,
                 },
-            ].concat(meta)}
-        />
+                ...meta,
+            ].map((data) => (
+                <meta key={[data.content, data.name].join("/")} {...data} />
+            ))}
+        </Helmet>
     );
 }
 
