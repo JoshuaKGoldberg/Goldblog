@@ -17,16 +17,37 @@ As a realist I can tell you that that over the years, with business goals and de
 
 ## Don't Write Bad Code: A Mantra
 
-I, an annoyingly passionate 22-year-old, came away from the project with a mantra that I would _never write bad code again_.
+I, an annoyingly passionate 22-year-old, came away from the legacy code project with a mantra that I would _never write bad code again_.
 I was very proud of that mantra.
 It has few nuances I've honed over the years that I'm excited to go over here.
 With those nuances I think it might be better phrased as _**"don't allow yourself to write bad code"**_ but that doesn't quite roll off the tongue as well.
 
-> Actually, the mantra originally used a four-letter word more vulgar than "bad" (I was very angsty back then).
+> The mantra originally used a four-letter word more vulgar than "bad" (I was very angsty).
 > For SEO and approachability purposes I've toned it down.
 
-The main drive of the mantra is that I want to always be put in a situation where I can make my best work.
+The mantra's main drive is that I want to always be put in a situation where I can make my best work.
 I don't want to be continuously forced to stunt my learning or write sub-optimal code.
+
+### Ground Rules
+
+What even are "bad" and "good" code anyway?
+
+I don't know.
+Nobody _really_ knows how to define code quality.
+We can look at a pull request and suggest alternate ways to accomplish some results, but such reviews are always subjective and sometimes wrong.
+
+I fear that someone could read blog posts such as this one and come away with a drive to write perfect code and naysay all other code as inferior.
+Please don't do that.
+
+This blog post's context is that **"bad" code makes it harder to accomplish tasks well**.
+Common violating patterns and their results include:
+
+-   **Copy & pasting many files instead of DRYing**: as updates to the code later on would have to involve repeated work
+-   **Creating DRY abstractions too early in development**: as it locks code into a pattern that likely will not scale
+-   **Using a framework with patterns it recommends against**: as it adds the burden of actively fighting the framework, is a common source of bugs, and makes onboarding new team members more difficult
+
+Still, every tech stack is different, and every project uses its stack differently.
+[YMMV](https://en.wiktionary.org/wiki/your_mileage_may_vary#Phrase).
 
 ### Growth Mindset
 
@@ -101,7 +122,14 @@ Sometimes you have to break your rules.
 As with a Jewish doctor performing life saving surgeries during Shabbos, or a firefighter breaking down a stranger's door to save their life, all reasonably written rules contain escape hatches for emergencies.
 In my much less critical case I broke my _"Don't Write Bad Code"_ rule because the business opportunity far outweighed the downsides of the added tech debt.
 
-I still like to "punish" myself when I break the rules, though: not because I have to but because programmer's penance is cathartic.
+I still like to "punish" myself when I break the rules, though: not because I have to, but because programmer's penance is cathartic.
 When I cause a bug on production I like to fix it and another few bugs.
-When I add tech debt I like to clean it and/or other existing tech debt after.
-This month, I notified stakeholders and technical owners that the systems needed to be overhauled soon, then made sure ownership handoffs preserved that information.
+When I add tech debt I like to clean it and other existing tech debt after.
+
+This past month I notified stakeholders and technical owners that the systems needed to be overhauled soon, then made sure ownership handoffs preserved that information.
+I also dedicated time to fixing adjacent bugs and removing a few deprecated components.
+
+When was the last time you wrote something that you knew was truly _not_ the right solution?
+Why did you do that?
+Was it justified?
+What did you do to make up for it?
