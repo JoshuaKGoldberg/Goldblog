@@ -1,6 +1,6 @@
 ---
 title: Don't Write Bad Code
-date: "2021-08-09T12:34:56.117Z"
+date: "2021-08-19T12:34:56.117Z"
 description: "A mantra for constantly learning to keep myself writing at my best."
 ---
 
@@ -8,7 +8,8 @@ My first experience working with legacy software was on a large business product
 Although I'd worked on teams during internships and in student projects before and started my own side projects, prior to then I'd never touched something with years and years of accumulated technical debt.
 That experience would shape my career for years to come and helped inform my personal most cherished programming rule: _"Don't Write Bad Code"_.
 
-At the time (and to the credit of the engineering team, I believe this is generally no longer the case), large swathes of the project were Frankensteinian mismatches of various technical efforts over the years.
+At the time, large swathes of the project were Frankensteinian mismatches of various technical efforts over the years.
+(To the credit of the engineering team, I believe this is generally no longer the case.)
 Any given engineering task had a non-trivial probability of being unexpectedly nigh impossible without either a major cleanup & refactor or an excruciating addition of even more technical debt.
 
 As a software developer or adjacent reading this post I hope your reaction contains hope the team often chose the cleanup & refactor.
@@ -16,25 +17,32 @@ As a realist I can tell you that that over the years, with business goals and de
 
 ## Don't Write Bad Code: A Mantra
 
-I, an annoyingly passionate 22-year-old, came away from the project with a mantra that I would never write bad code again.
+I, an annoyingly passionate 22-year-old, came away from the project with a mantra that I would _never write bad code again_.
 I was very proud of that mantra.
 It has few nuances I've honed over the years that I'm excited to go over here.
 With those nuances I think it might be better phrased as _**"don't allow yourself to write bad code"**_ but that doesn't quite roll off the tongue as well.
 
-> Actually, the mantra originally used a four-letter word considerably more vulgar than "bad" (I was very angsty back then).
+> Actually, the mantra originally used a four-letter word more vulgar than "bad" (I was very angsty back then).
 > For SEO and approachability purposes I've toned it down.
+
+The main drive of the mantra is that I want to always be put in a situation where I can make my best work.
+I don't want to be continuously forced to stunt my learning or write sub-optimal code.
 
 ### Growth Mindset
 
-To consider yourself finished learning a topic is to say that you have accumulated all knowledge that could ever help you with that topic, including ideas that haven't been learned yet.
+To consider yourself finished learning a topic is to say that you have accumulated all its information, including ideas that haven't been learned yet.
 That's rather arrogant, don't you think?
 
 [Carol Dweck](https://en.wikipedia.org/wiki/Carol_Dweck)'s research into mindsets created one of the few buzzphrases I actually respect: [growth mindset](https://en.wikipedia.org/wiki/Mindset#Fixed_and_growth_mindset).
 No matter your situation, you generally can and should adopt the resources around you to learn from.
 
 I was once adjacent to a React project that paired several relatively senior backend engineers with several relatively junior frontend engineers.
-One backend engineer took it on themself to enforce what they saw as proper backend programming principles in the frontend React code and stubbornly refused to accept inputs from the other developers that doing so was leading the codebase down the wrong path.
-It was a pity: the perceived backend practices did not apply to React, the rejected frontend inputs actually were canonically correct React best practices, and the team suffered from the conflict.
+One backend engineer took it on themself to enforce what they saw as proper backend programming principles in the frontend React code.
+They stubbornly refused to accept inputs from the other developers that doing so was leading the codebase down the wrong path.
+It was a pity.
+The perceived backend practices did not apply to React.
+The rejected frontend inputs actually were canonically correct React best practices
+The team suffered from the conflict.
 
 ### Learn Before Committing
 
@@ -56,23 +64,22 @@ What was considered a good practice at the start of a project may be considered 
 Part of not writing bad code is paying attention to the major trends of projects I'm working on.
 I am a frontend developer, so my areas of code are undergoing frequent and rapid changes in best practices.
 
-???
+I want to always be on a team that gives me time to explore new ideas from the greater industry.
+It should allow team members to introduce those ideas to a supportive environment.
+If the ideas are worth adoption, the team should be willing to seriously make an effort.
 
 ### Leave If Necessary
 
 Nobody likes leaving a team.
 After putting months or years of thought and time into an area of code and group of people, it can feel like you're abandoning both the code and the people.
 
-Personal growth is one of the most important parts of a healthy career though.
-Learning how to [work effectively with legacy code](https://www.oreilly.com/library/view/working-effectively-with/0131177052) is only one of many very valid areas to learn as a programmer.
-A good programming team should display an ability and desire to help you grow in healthy development practices.
-
-At the end of the day, either your team is helping you learn how to write "good" code (whatever that means for your area of programming) or it is not.
+At the end of the day, though, either your team is helping you learn how to write "good" code (whatever that means for your area of programming) or it is not.
 If it is not, or is but at a slower rate than you are likely to get elsewhere, consider whether you are at a stage in your career where you are ok with not learning.
 
-I left the team with all the legacy code even though I liked many of the people on it and still could have learned a great deal from them.
-The business unit in question had many talented developers who were saddled with years, or in some cases even _decades_ (!), of previous technical indebtitude.
-I wanted to grow not in wrangling with them but instead in understanding modern programming techniques and a more modern tech stack.
+I left the team with all the legacy code.
+I liked many of the people on it and still could have learned a great deal from them.
+The team just wasn't the right fit for me.
+I wanted to grow not in [work effectively with legacy code](https://www.oreilly.com/library/view/working-effectively-with/0131177052) with them but instead in understanding modern programming techniques and a more modern tech stack.
 It was the right decision for me.
 
 ## You Can Break the Rules
