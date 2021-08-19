@@ -47,6 +47,7 @@ Common violating patterns and their results include:
 -   **Using a framework with patterns it recommends against**: as it adds the burden of actively fighting the framework, is a common source of bugs, and makes onboarding new team members more difficult
 
 Still, every tech stack is different, and every project uses its stack differently.
+Sometimes it's reasonable to use one of those violating patterns or others, such as copy and pasting code in a project slated to be deprecated.
 [YMMV](https://en.wiktionary.org/wiki/your_mileage_may_vary#Phrase).
 
 ### Growth Mindset
