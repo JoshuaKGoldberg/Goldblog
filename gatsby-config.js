@@ -1,4 +1,5 @@
 module.exports = {
+    flags: { PRESERVE_WEBPACK_CACHE: true },
     siteMetadata: {
         author: `Josh Goldberg`,
         description: `Personal blog for Josh Goldberg. It's mostly TypeScript things!`,
