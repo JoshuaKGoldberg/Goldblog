@@ -12,7 +12,7 @@ _(updated 10/19 with typo fixes)_
 Throughout the tech stacks and projects you could work on, the idea of a _language_ is constant.
 Language describes how reality should be.
 
-JavaScript, describes how to create objects and manipulate them in an environment such as a browser, Node, or Deno.
+JavaScript describes how to create objects and manipulate them in an environment such as a browser, Node, or Deno.
 TypeScript contains that JavaScript language _and_ a types language to describe the shapes your objects an be.
 
 Take this `Movie` description:
@@ -411,7 +411,7 @@ Seeing this in JavaScript, it's a little cleaner:
 
 ```js
 function BitAdds(A: Int8, B: Int8) {
-    return [0, 1, 2, 3, 4, 5, 6, 7, 8].map(P => BitAdd(A[P], B[P]));
+    return [0, 1, 2, 3, 4, 5, 6, 7, 8].map((P) => BitAdd(A[P], B[P]));
 }
 ```
 
