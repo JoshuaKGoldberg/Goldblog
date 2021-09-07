@@ -11,6 +11,7 @@ function SEO({ description, lang, meta, title }) {
                     siteMetadata {
                         author
                         description
+                        siteUrl
                         title
                         thumbnail
                     }
@@ -55,7 +56,7 @@ function SEO({ description, lang, meta, title }) {
                     name: `twitter:creator`,
                 },
                 {
-                    content: `${site.metadata.siteUrl}${site.siteMetadata.thumbnail}`,
+                    content: `${site.siteMetadata.siteUrl}${site.siteMetadata.thumbnail}`,
                     name: `twitter:image`,
                 },
                 {
