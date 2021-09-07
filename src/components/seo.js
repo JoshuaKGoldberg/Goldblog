@@ -55,8 +55,12 @@ function SEO({ description, lang, meta, title }) {
                     name: `twitter:creator`,
                 },
                 {
-                    content: site.siteMetadata.thumbnail,
+                    content: `${site.metadata.siteUrl}${site.siteMetadata.thumbnail}`,
                     name: `twitter:image`,
+                },
+                {
+                    content: `Goldblog`,
+                    name: `twitter:site`,
                 },
                 {
                     content: title,
