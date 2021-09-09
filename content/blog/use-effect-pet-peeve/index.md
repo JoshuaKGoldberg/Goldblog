@@ -224,7 +224,7 @@ function MyComponent({ value }) {
 ### Understand Your Effects
 
 Built-in React hook APIs such as `useEffect` are intentionally flexible and can be used in a variety of ways.
-Unerstanding how they work can greatly help you avoid common pitfalls and bugs when using them.
+Undgit aderstanding how they work can greatly help you avoid common pitfalls and bugs when using them.
 
 I hope this post was useful to you in at least showing one of the ways `useEffect` can blow up.
 [Let me know on Twitter](https://www.twitter.com/JoshuaKGoldberg)!
