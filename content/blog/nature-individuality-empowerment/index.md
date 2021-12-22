@@ -53,12 +53,14 @@ _(I'm slightly manipulating the chapter's intent and ignoring many interpretatio
 ### Black Boxes
 
 I see a parallel between those different worldviews and how professionals -software developers in particular- grow in their career.
-Early stage developers might not fully understand how the systems they interact with work.
-Referring to APIs, functions, and other systems as [black boxes](https://en.wikipedia.org/wiki/Black_box) helps control that mysticism: it lets us skip understanding systems we don't need to.
+Early stage developers often don't fully understand the APIs, functions, and other system they interact with.
+They use the concept of [black boxes](https://en.wikipedia.org/wiki/Black_box) to skip understanding those systems deeply.
+No shade against black boxes -- without them, the cognitive complexity of any task would be boundless.
 
-One downside of thinking in terms of black boxes is that it can get you in the habit of avoiding understanding a new system.
+One downside of thinking in terms of black boxes, though, is that it can get you in the _habit_ of avoiding understanding a new system.
 One of the most common mistake I see developers make is avoid trying to understand a new area of code adjacent to what they're working on.
-Instead of understanding the system as a whole, they isolate their changes
+Instead of understanding the system as a whole, they isolate their changes to just the areas they understand.
+They then are at risk of missing crucial context contained in those surrounding areas.
 
 As an extreme example, I once came across a section of a project where a moderately complex set of code logic had [convergently evolved](https://en.wikipedia.org/wiki/Convergent_evolution) in almost identical lines of code across several functions.
 That violation of [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) wouldn't be so bad on its own -- expect the functions were directly calling each other, making all but one of the sets redundant!
@@ -115,8 +117,8 @@ I would much rather work with a developer who's pretty good at coding and pretty
 
 ## Classifying Developer Levels
 
-I'll finish with one last thanks to _A Letter in the Scroll_.
-Thanks to _The Idea of Man_, I think I can finally articulate a succinct, easily explainable perspective on the differences between software developer job titles.
+I'll finish with one last credit to _A Letter in the Scroll_.
+From reading _The Idea of Man_, I think I can finally articulate a succinct, easily explainable perspective on the differences between software developer job titles.
 In order:
 
 1. Junior developers: are getting their start understanding the forces of nature
