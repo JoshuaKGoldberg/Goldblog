@@ -104,8 +104,7 @@ I would much rather work with a developer who's pretty good at coding and pretty
 ## Classifying Developer Levels
 
 I'll finish with one last thanks to _A Letter in the Scroll_.
-Thanks to _The Idea of Man_, I was able to articulate my first succinct, easily explainable perspective on the differences between software developer job titles.
-Developers start as pawns of the forces of nature and end as power players.
+Thanks to _The Idea of Man_, I think I can finally articulate a succinct, easily explainable perspective on the differences between software developer job titles.
 In order:
 
 1. Junior developers: are getting their start understanding the forces of nature
