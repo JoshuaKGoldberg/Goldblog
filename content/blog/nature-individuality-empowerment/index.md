@@ -35,8 +35,8 @@ Contrast that with its description of Abrahamic religions:
 >
 > **We can imagine and act on the basis of our imagination.**
 
-In other words (and slightly manipulating the intent), ancient western religions saw us as pawns at the whim of gods, while Abrahamic religions see us as players at the table but still beholden to an influencing higher power.
-_(This is inaccurate in many interpretations of the monotheistic God; for a real religious discussion, go read the book!)_
+In other words, ancient western religions saw us as pawns at the whim of gods, while Abrahamic religions see us as players at the table but still beholden to an influencing higher power.
+_(I'm slightly manipulating the chapter's intent and ignoring many interpretations of the monotheistic God to make a more narrow point; for a real religious discussion, go read the book!)_
 
 ### Black Boxes
 
