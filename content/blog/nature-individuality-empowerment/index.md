@@ -69,6 +69,8 @@ When asked why they hadn't moved or reused existing code, each developer who'd c
 Each had treated other areas _within the same section of the codebase_ as a black box.
 
 Black boxes are a useful technique for simplifying designs in thought, but make sure you don't use it to the point of not understanding the systems at play.
+Remember you're a human and can do more than react to stimuli.
+There are no natural forces or magical impossibilities in programming.
 
 ### Systems of People
 
