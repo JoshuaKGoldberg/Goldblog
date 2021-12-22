@@ -114,4 +114,5 @@ In order:
 4. Staff developers: are competent, perhaps confident, in manipulating those scientific rules
 
 "Forces of nature" means both the _programming_ forces -APIs, frameworks, IDEs, languages, etc.- and _organizational_ -data, OKRs people, teams, etc.-.
+To truly master your domain, you need to be comfortable treating areas as a black box or diving in questioningly as needed.
 I became a staff developer not when I first demonstrated high competence at building projects in TypeScript but when I later demonstrated high competence at working with and creating systems of people to empower others to do the same.
