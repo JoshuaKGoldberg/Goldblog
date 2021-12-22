@@ -79,7 +79,7 @@ When you first join an organization, though, it can be hard to feel that it's an
 Assignments are given to you from the forces that be -a black box of decision-making- and expected to grow the project in a pre-ordained way.
 Who are you, a cog in the machine, to question the powers around you?
 
-The ability for developers to be inquisitive the assignments and general organizational decision-making around themselves is crucial for at least two reasons:
+The ability for developers to be inquisitive on assignments and general organizational decision-making around themselves is crucial for at least two reasons:
 
 -   Without understanding goals, you're not likely to execute tasks correctly
 -   It's exceedingly difficult to positively influence the organization around you if you never question, let alone attempt to manipulate it
