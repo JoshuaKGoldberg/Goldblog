@@ -19,6 +19,18 @@ Code is described by programming languages.
 If you understand a programming language, given enough time, you can read a program's code and understand how it works.
 There is no magic in programming.
 
+Yet, when you're new to programming, it _feels_ like there's magic everywhere.
+Programs do weird things and it's hard to understand why.
+Even after you've mastered one area of an application, the rest of it may still feel like a daunting shadow of uncertainty.
+
+I'd like to use this blog post to make the following three points:
+
+-   We shouldn't let fear of the unknown stop ourselves from digging into code
+-   Organizations are understandable, learnable systems too
+-   Stifling fear and being assertive -both with code and people- is an important part of gaining seniority
+
+To help provide context on those points, I'm going to bring in an example from an unusual source: a book on religious thought.
+
 ## A Letter in the Scroll
 
 I'm midway through reading _A Letter in the Scroll_ by the late great Rabbi Lord Jonathan Sacks.
@@ -46,7 +58,7 @@ Referring to APIs, functions, and other systems as [black boxes](https://en.wiki
 
 One downside of thinking in terms of black boxes is that it can get you in the habit of avoiding understanding a new system.
 One of the most common mistake I see developers make is avoid trying to understand a new area of code adjacent to what they're working on.
-Instead of understanding he system as a whole, they isolate their changes
+Instead of understanding the system as a whole, they isolate their changes
 
 As an extreme example, I once came across a section of a project where a moderately complex set of code logic had [convergently evolved](https://en.wikipedia.org/wiki/Convergent_evolution) in almost identical lines of code across several functions.
 That violation of [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) wouldn't be so bad on its own -- expect the functions were directly calling each other, making all but one of the sets redundant!
