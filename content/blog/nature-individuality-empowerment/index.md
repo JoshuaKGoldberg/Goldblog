@@ -27,7 +27,7 @@ I'd like to use this blog post to make the following three points:
 
 -   We shouldn't let fear of the unknown stop ourselves from digging into code
 -   Organizations are understandable, learnable systems too
--   Stifling fear and being assertive -both with code and people- is an important part of gaining seniority
+-   Stifling fear and being inquisitive is an important part of gaining seniority
 
 To help provide context on those points, I'm going to bring in an example from an unusual source: a book on religious thought.
 
@@ -70,6 +70,7 @@ Each had treated other areas _within the same section of the codebase_ as a blac
 
 Black boxes are a useful technique for simplifying designs in thought, but make sure you don't use it to the point of not understanding the systems at play.
 Remember you're a human and can do more than react to stimuli.
+You can investigate and learn inner workings.
 There are no natural forces or magical impossibilities in programming.
 
 ### Systems of People
