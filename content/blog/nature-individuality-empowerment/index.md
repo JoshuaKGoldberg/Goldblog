@@ -19,6 +19,18 @@ Code is described by programming languages.
 If you understand a programming language, given enough time, you can read a program's code and understand how it works.
 There is no magic in programming.
 
+Yet, when you're new to programming, it _feels_ like there's magic everywhere.
+Programs do weird things and it's hard to understand why.
+Even after you've mastered one area of an application, the rest of it may still feel like a daunting shadow of uncertainty.
+
+I'd like to use this blog post to make the following three points:
+
+-   We shouldn't let fear of the unknown stop ourselves from digging into code
+-   Organizations are understandable, learnable systems too
+-   Stifling fear and being assertive -both with code and people- is an important part of gaining seniority
+
+To help provide context on those points, I'm going to bring in an example from an unusual source: a book on religious thought.
+
 ## A Letter in the Scroll
 
 I'm midway through reading _A Letter in the Scroll_ by the late great Rabbi Lord Jonathan Sacks.
@@ -35,18 +47,20 @@ Contrast that with its description of Abrahamic religions:
 >
 > **We can imagine and act on the basis of our imagination.**
 
-In other words (and slightly manipulating the intent), ancient western religions saw us as pawns at the whim of gods, while Abrahamic religions see us as players at the table but still beholden to an influencing higher power.
-_(This is inaccurate in many interpretations of the monotheistic God; for a real religious discussion, go read the book!)_
+In other words, ancient western religions saw us as pawns at the whim of gods, while Abrahamic religions see us as players at the table but still beholden to an influencing higher power.
+_(I'm slightly manipulating the chapter's intent and ignoring many interpretations of the monotheistic God to make a more narrow point; for a real religious discussion, go read the book!)_
 
 ### Black Boxes
 
 I see a parallel between those different worldviews and how professionals -software developers in particular- grow in their career.
-Early stage developers might not fully understand how the systems they interact with work.
-Referring to APIs, functions, and other systems as [black boxes](https://en.wikipedia.org/wiki/Black_box) helps control that mysticism: it lets us skip understanding systems we don't need to.
+Early stage developers often don't fully understand the APIs, functions, and other system they interact with.
+They use the concept of [black boxes](https://en.wikipedia.org/wiki/Black_box) to skip understanding those systems deeply.
+No shade against black boxes -- without them, the cognitive complexity of any task would be boundless.
 
-One downside of thinking in terms of black boxes is that it can get you in the habit of avoiding understanding a new system.
+One downside of thinking in terms of black boxes, though, is that it can get you in the _habit_ of avoiding understanding a new system.
 One of the most common mistake I see developers make is avoid trying to understand a new area of code adjacent to what they're working on.
-Instead of understanding he system as a whole, they isolate their changes
+Instead of understanding the system as a whole, they isolate their changes to just the areas they understand.
+They then are at risk of missing crucial context contained in those surrounding areas.
 
 As an extreme example, I once came across a section of a project where a moderately complex set of code logic had [convergently evolved](https://en.wikipedia.org/wiki/Convergent_evolution) in almost identical lines of code across several functions.
 That violation of [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) wouldn't be so bad on its own -- expect the functions were directly calling each other, making all but one of the sets redundant!
@@ -55,6 +69,8 @@ When asked why they hadn't moved or reused existing code, each developer who'd c
 Each had treated other areas _within the same section of the codebase_ as a black box.
 
 Black boxes are a useful technique for simplifying designs in thought, but make sure you don't use it to the point of not understanding the systems at play.
+Remember you're a human and can do more than react to stimuli.
+There are no natural forces or magical impossibilities in programming.
 
 ### Systems of People
 
@@ -65,7 +81,7 @@ When you first join an organization, though, it can be hard to feel that it's an
 Assignments are given to you from the forces that be -a black box of decision-making- and expected to grow the project in a pre-ordained way.
 Who are you, a cog in the machine, to question the powers around you?
 
-The ability for developers to be inquisitive the assignments and general organizational decision-making around themselves is crucial for at least two reasons:
+The ability for developers to be inquisitive on assignments and general organizational decision-making around themselves is crucial for at least two reasons:
 
 -   Without understanding goals, you're not likely to execute tasks correctly
 -   It's exceedingly difficult to positively influence the organization around you if you never question, let alone attempt to manipulate it
@@ -103,9 +119,8 @@ I would much rather work with a developer who's pretty good at coding and pretty
 
 ## Classifying Developer Levels
 
-I'll finish with one last thanks to _A Letter in the Scroll_.
-Thanks to _The Idea of Man_, I was able to articulate my first succinct, easily explainable perspective on the differences between software developer job titles.
-Developers start as pawns of the forces of nature and end as power players.
+I'll finish with one last credit to _A Letter in the Scroll_.
+From reading _The Idea of Man_, I think I can finally articulate a succinct, easily explainable perspective on the differences between software developer job titles.
 In order:
 
 1. Junior developers: are getting their start understanding the forces of nature
@@ -114,4 +129,9 @@ In order:
 4. Staff developers: are competent, perhaps confident, in manipulating those scientific rules
 
 "Forces of nature" means both the _programming_ forces -APIs, frameworks, IDEs, languages, etc.- and _organizational_ -data, OKRs people, teams, etc.-.
+To truly master your domain, you need to be comfortable treating areas as a black box or diving in questioningly as needed.
 I became a staff developer not when I first demonstrated high competence at building projects in TypeScript but when I later demonstrated high competence at working with and creating systems of people to empower others to do the same.
+
+I don't know if this is a particularly accurate or scalable judge of seniority.
+But I'm going to try using it as a frame of reference for a while.
+What do you think?
