@@ -27,7 +27,7 @@ I'd like to use this blog post to make the following three points:
 
 -   We shouldn't let fear of the unknown stop ourselves from digging into code
 -   Organizations are understandable, learnable systems too
--   Stifling fear and being assertive -both with code and people- is an important part of gaining seniority
+-   Stifling fear and being inquisitive is an important part of gaining seniority
 
 To help provide context on those points, I'm going to bring in an example from an unusual source: a book on religious thought.
 
