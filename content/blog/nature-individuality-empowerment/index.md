@@ -100,14 +100,14 @@ Who are you, a cog in the machine, to question the powers around you?
 The ability for developers to be inquisitive on assignments and general organizational decision-making around themselves is crucial for at least two reasons:
 
 -   Without understanding goals, you're unlikely to execute tasks correctly
--   It's exceedingly difficult to positively influence the organization around you if you never question, let alone attempt to manipulate it
+-   It's exceedingly difficult to positively influence the organization around you if you never question, let alone attempt to manipulate, it
 
 ### Understanding Goals
 
 Tasks are not given in isolation: there is always underlying context and tasks generally support a larger team or business goal.
 Developers all too often aim to to satisfy the exact criteria given to them instead of thinking deeply on the best way to satisfy the backing context.
 
-If a ticket is written asking for a cache to improve performance calling a slow endpoint, it's tempting to dive into implementing a cache.
+If a ticket is written requesting a cache to improve performance calling a slow endpoint, it's tempting to take that request and dive in to implement a cache without further analysis.
 But maybe the endpoint's performance should be improved?
 Maybe you should use an existing technique such as edge caching instead of re-implementing your own?
 Is that endpoint even called in a hot path, or if it is, can it be lazy-loaded to not be a blocker?
