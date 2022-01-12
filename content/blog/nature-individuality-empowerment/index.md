@@ -21,13 +21,13 @@ There is no magic in programming.
 
 Yet, when you're new to programming, it _feels_ like there's magic everywhere.
 Programs do weird things and it's hard to understand why.
-Even after you've mastered one area of an application, the rest of it may still feel like a daunting shadow of uncertainty.
+Even after you've mastered one area of an application, the rest of it may still feel like a looming shadow of uncertainty.
 
-I'd like to use this blog post to make the following three points:
+I'd like to use this blog post to make the following three arguments:
 
--   We shouldn't let fear of the unknown stop ourselves from digging into code
--   Organizations are understandable, learnable systems too
--   Stifling fear and being inquisitive is an important part of gaining seniority
+-   We shouldn't let fear of the unknown stop ourselves from understanding code
+-   Organizations are learnable systems we can understand and work with too
+-   Stifling fear and being inquisitive are important parts of gaining seniority
 
 To help provide context on those points, I'm going to bring in an example from an unusual source: a book on religious thought.
 
@@ -47,17 +47,18 @@ Contrast that with its description of Abrahamic religions:
 >
 > **We can imagine and act on the basis of our imagination.**
 
-In other words, ancient western religions saw us as pawns at the whim of gods, while Abrahamic religions see us as players at the table but still beholden to an influencing higher power.
-_(I'm slightly manipulating the chapter's intent and ignoring many interpretations of the monotheistic God to make a more narrow point; for a real religious discussion, go read the book!)_
+In other words, some ancient civilizations saw us as pawns at the whim of gods, while Abrahamic religions see us as players at the table, though still beholden to an influencing higher power.
+_(I'm slightly manipulating the chapter's intent and ignoring many interpretations of the monotheistic God to make a more narrow point. For a real religious discussion, go read the book!)_
 
 ### Black Boxes
 
-I see a parallel between those different worldviews and how professionals -software developers in particular- grow in their career.
+There is a parallel between those different worldviews and how professionals -software developers in particular- grow in their careers.
 Early stage developers often don't fully understand the APIs, functions, and other system they interact with.
 They use the concept of [black boxes](https://en.wikipedia.org/wiki/Black_box) to skip understanding those systems deeply.
 No shade against black boxes -- without them, the cognitive complexity of any task would be boundless.
+I often use the concept in my day-to-day programming.
 
-One downside of thinking in terms of black boxes, though, is that it can get you in the _habit_ of avoiding understanding a new system.
+One downside of thinking in terms of black boxes, though, is that it can get you in the _habit_ of avoiding understanding systems.
 One of the most common mistake I see developers make is avoid trying to understand a new area of code adjacent to what they're working on.
 Instead of understanding the system as a whole, they isolate their changes to just the areas they understand.
 They then are at risk of missing crucial context contained in those surrounding areas.
@@ -70,12 +71,27 @@ Each had treated other areas _within the same section of the codebase_ as a blac
 
 Black boxes are a useful technique for simplifying designs in thought, but make sure you don't use it to the point of not understanding the systems at play.
 Remember you're a human and can do more than react to stimuli.
+You can investigate and learn inner workings.
 There are no natural forces or magical impossibilities in programming.
 
-### Systems of People
+### Classifying Developer Levels
+
+From reading _The Idea of Man_, I think I can finally articulate a succinct, easily explainable perspective on the differences between software developer job titles.
+In order:
+
+1. Junior developers: are getting their start understanding the "forces of nature" around them
+2. Mid-range developers: are competent, perhaps confident, in manipulating those forces of nature
+3. Senior developers: have seen through the facade and can work with the systems behind those forces of nature
+4. Staff developers: are competent, perhaps confident, in manipulating those systems
+
+To truly master your domain, you need to be comfortable treating areas as a black box or diving in questioningly as needed.
+I don't know if this is a particularly accurate or scalable judge of seniority.
+But I'm going to try using it as a frame of reference for a while.
+
+## Systems of People
 
 Organizations of people are systems too.
-Rules governing their behavior and processes exist that hopefully are generally followed.
+Rules governing their behavior and processes exist that are generally followed.
 
 When you first join an organization, though, it can be hard to feel that it's an understandable system.
 Assignments are given to you from the forces that be -a black box of decision-making- and expected to grow the project in a pre-ordained way.
@@ -83,12 +99,12 @@ Who are you, a cog in the machine, to question the powers around you?
 
 The ability for developers to be inquisitive on assignments and general organizational decision-making around themselves is crucial for at least two reasons:
 
--   Without understanding goals, you're not likely to execute tasks correctly
+-   Without understanding goals, you're unlikely to execute tasks correctly
 -   It's exceedingly difficult to positively influence the organization around you if you never question, let alone attempt to manipulate it
 
-#### Understanding Goals
+### Understanding Goals
 
-Tasks are not given in isolation: there is always some underlying context.
+Tasks are not given in isolation: there is always underlying context and tasks generally support a larger team or business goal.
 Developers all too often aim to to satisfy the exact criteria given to them instead of thinking deeply on the best way to satisfy the backing context.
 
 If a ticket is written asking for a cache to improve performance calling a slow endpoint, it's tempting to dive into implementing a cache.
@@ -100,11 +116,11 @@ There is an old joke that developers would prefer hours of trial and error than 
 The same holds true for understanding requirements.
 A few minutes thinking deeply about the right solution can save hours implementing the wrong one.
 
-#### Speaking Up
+### Speaking Up
 
 Systems of people are just that: _systems_ of _people_.
 A system has well-defined inputs and outputs.
-A team makes decisions because it's been given a set of goals to hit and resources to work with.
+A team makes decisions because it's been given a set of goals to reach and resources to work with.
 Each person on that team is motivated by their own career incentives, personal goals, and past experiences.
 
 When a team process gives a result you don't agree with -a feature backlogged; an investigation cut short; whatever- that doesn't have to be the end of the story.
@@ -115,23 +131,14 @@ Apply [Five Whys](https://en.wikipedia.org/wiki/Five_whys).
 If you think you have information that wasn't considered, counterpoint with it.
 I've seen far too many silly decisions persist because a team member heard an incorrect decision and didn't question it.
 
+## In Summary
+
+Treating systems you don't understand as "black boxes" is a useful tool, but shouldn't be overused to the point of avoiding understanding the systems around you.
+"Systems" means both the _programming_ systems -APIs, frameworks, IDEs, languages, etc.- and _organizational_ -data, OKRs, people, teams, etc.-.
+Collaborating with others and working as a team are core competencies developers must progress in.
+
 I would much rather work with a developer who's pretty good at coding and pretty good at providing feedback on my pull requests, RFCs, and team planning than a developer who is amazing at coding and quiet on the rest.
 
-## Classifying Developer Levels
+What about you?
 
-I'll finish with one last credit to _A Letter in the Scroll_.
-From reading _The Idea of Man_, I think I can finally articulate a succinct, easily explainable perspective on the differences between software developer job titles.
-In order:
-
-1. Junior developers: are getting their start understanding the forces of nature
-2. Mid-range developers: are competent, perhaps confident, in manipulating those forces of nature
-3. Senior developers: have seen through the facade and can work with the scientific rules behind nature
-4. Staff developers: are competent, perhaps confident, in manipulating those scientific rules
-
-"Forces of nature" means both the _programming_ forces -APIs, frameworks, IDEs, languages, etc.- and _organizational_ -data, OKRs people, teams, etc.-.
-To truly master your domain, you need to be comfortable treating areas as a black box or diving in questioningly as needed.
-I became a staff developer not when I first demonstrated high competence at building projects in TypeScript but when I later demonstrated high competence at working with and creating systems of people to empower others to do the same.
-
-I don't know if this is a particularly accurate or scalable judge of seniority.
-But I'm going to try using it as a frame of reference for a while.
-What do you think?
+> Many thanks to my excellent coworkers [Rebecca](https://twitter.com/borisonr) and [Sanam](https://twitter.com/sanzi_sun) for [invaluable feedback and suggestions](https://github.com/JoshuaKGoldberg/Goldblog/pull/318) on this blog post! 🙏
