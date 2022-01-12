@@ -94,7 +94,7 @@ Organizations of people are systems, too.
 Rules governing their behavior and processes exist that are generally followed.
 
 When you first join an organization, though, it can be hard to feel that it's an understandable system.
-Assignments are given to you from the forces that be -a black box of decision-making- and expected to grow the project in a pre-ordained way.
+Assignments are given to you from the forces that be -a black box of decision-making- and are expected to improve the product in a pre-ordained way.
 Who are you, a cog in the machine, to question the powers around you?
 
 The ability for developers to be inquisitive on assignments and general organizational decision-making around themselves is crucial for at least two reasons:
