@@ -35,7 +35,7 @@ To help provide context on those points, I'm going to bring in an example from a
 
 I'm midway through reading _A Letter in the Scroll_ by the late great Rabbi Lord Jonathan Sacks.
 It's a magnificent read regardless of your personal spirituality -I'm an atheist myself, raised Jewish- and I'd highly recommend it in that context.
-Its _The Idea of Man_ chapter was particularly interesting to me as a developer in how it links ancient humans' lack of power over nature with how they developed worldviews:
+The chapter titled "The Idea of Man" was particularly interesting to me as a developer in how it links ancient humans' lack of power over nature with how they developed worldviews:
 
 > There have been cultures--ancient Greece is the supreme example--that saw the world in terms of vast impersonal forces...
 > Seen in this perspective, the forces that govern the world are ... not addressed to us.
@@ -64,7 +64,7 @@ Instead of understanding the system as a whole, they isolate their changes to ju
 They then are at risk of missing crucial context contained in those surrounding areas.
 
 As an extreme example, I once came across a section of a project where a moderately complex set of code logic had [convergently evolved](https://en.wikipedia.org/wiki/Convergent_evolution) in almost identical lines of code across several functions.
-That violation of [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) wouldn't be so bad on its own -- expect the functions were directly calling each other, making all but one of the sets redundant!
+That violation of [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) wouldn't be so bad on its own -- except the functions were directly calling each other, making all but one of the sets redundant!
 
 When asked why they hadn't moved or reused existing code, each developer who'd contributed to the duplication indicated they hadn't looked deeper into the call stack.
 Each had treated other areas _within the same section of the codebase_ as a black box.
@@ -112,7 +112,7 @@ But maybe the endpoint's performance could be improved, eliminating the need for
 Maybe you should use an existing technique such as edge caching instead of (re-)implementing your own?
 Is that endpoint even called in a hot path, and if it is, can it be lazy-loaded to not be a blocker?
 
-There is an old joke that developers would prefer hours of trial and error than a few minutes reading the docs.
+There is an old joke that developers would prefer hours of trial and error over a few minutes reading documentation.
 The same holds true for understanding requirements.
 A few minutes thinking deeply about the right solution can save hours implementing the wrong one.
 
