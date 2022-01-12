@@ -90,7 +90,7 @@ But I'm going to try using it as a frame of reference for a while.
 
 ## Systems of People
 
-Organizations of people are systems too.
+Organizations of people are systems, too.
 Rules governing their behavior and processes exist that are generally followed.
 
 When you first join an organization, though, it can be hard to feel that it's an understandable system.
@@ -108,9 +108,9 @@ Tasks are not given in isolation: there is always underlying context and tasks g
 Developers all too often aim to to satisfy the exact criteria given to them instead of thinking deeply on the best way to satisfy the backing context.
 
 If a ticket is written requesting a cache to improve performance calling a slow endpoint, it's tempting to take that request and dive in to implement a cache without further analysis.
-But maybe the endpoint's performance should be improved?
+But maybe the endpoint's performance could be improved, eliminating the need for a cache?
 Maybe you should use an existing technique such as edge caching instead of re-implementing your own?
-Is that endpoint even called in a hot path, or if it is, can it be lazy-loaded to not be a blocker?
+Is that endpoint even called in a hot path, and if it is, can it be lazy-loaded to not be a blocker?
 
 There is an old joke that developers would prefer hours of trial and error than a few minutes reading the docs.
 The same holds true for understanding requirements.
