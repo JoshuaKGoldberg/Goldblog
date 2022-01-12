@@ -109,7 +109,7 @@ Developers all too often aim to to satisfy the exact criteria given to them inst
 
 If a ticket is written requesting a cache to improve performance calling a slow endpoint, it's tempting to take that request and dive in to implement a cache without further analysis.
 But maybe the endpoint's performance could be improved, eliminating the need for a cache?
-Maybe you should use an existing technique such as edge caching instead of re-implementing your own?
+Maybe you should use an existing technique such as edge caching instead of (re-)implementing your own?
 Is that endpoint even called in a hot path, and if it is, can it be lazy-loaded to not be a blocker?
 
 There is an old joke that developers would prefer hours of trial and error than a few minutes reading the docs.
