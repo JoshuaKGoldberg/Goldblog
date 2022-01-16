@@ -44,6 +44,7 @@ Other times that's on a bigger project with multiple other maintainers
 ### Because it's fun
 
 That's my primary motivation.
+My dream since I've learned to code was to spend my days working on interesting projects and growing myself as a developer.
 I'm doing this because I want to and I've accumulated enough financial stability -seven years of overpaid tech work and a spouse with great medical insurance- to not worry about not making any money pursuing my passion.
 
 ### Because it's good for me
@@ -63,7 +64,7 @@ I love it!
 ### Because the software world will keep breaking until we fix open source
 
 Remember [Log4Shell](https://en.wikipedia.org/wiki/Log4Shell)?
-[Marak's liberty commits](https://gizmodo.com/an-open-source-developer-just-caused-a-whole-lot-of-cha-1848331944)?
+[Color & Faker's liberty commits](https://gizmodo.com/an-open-source-developer-just-caused-a-whole-lot-of-cha-1848331944)?
 The [xkcd Dependency comic](https://xkcd.com/2347)?
 
 The way we fund open source software today is partially broken.
@@ -103,6 +104,7 @@ If you want to sponsor me I'd greatly appreciate it. 💝
 
 My first company-based sponsorship starting in March will be $4000/month from Codecademy (10 hours a week, $100/hour) to work on open source projects its frontend teams use.
 That's a excellent gig and I'm tremendously grateful to have it.
+You can track the projects we're working on in my [Codecademy Consulting Notion doc](https://www.notion.so/Codecademy-Consulting-919960606f1f40788c97aab6c4326c35).
 
 I'm also writing an [O'Reilly _Learning TypeScript_ book](https://www.oreilly.com/library/view/learning-typescript/9781098110321) set to publish the middle of this year and working with O'Reilly on more TypeScript content.
 
@@ -125,6 +127,6 @@ Awkward timing.
 
 ...if I did, I wouldn't continue to work with them! 😉
 
-Codecademy's engineering was -and still is- a wonderful place to work.
+Codecademy's engineering department was -and still is- a wonderful place to work.
 I'm still recommending people apply to join my old team, Web Platform.
 Let me know if you're interested!
