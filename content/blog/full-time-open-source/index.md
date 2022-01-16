@@ -87,7 +87,7 @@ These projects are the ones I'm hoping to focus on:
 -   [**TypeScript**](https://typescriptlang.org): Contributing any way I can. You can see more under _"TypeScript Contribution Diary"_ posts on [my blog](https://blog.joshuakgoldberg.com).
 -   [**TypeScript ESLint**](https://typescript-eslint.io): Monorepo for all the tooling which enables ESLint to support TypeScript. I joined on as a maintainer recently.
 -   [**TypeStat**](https://github.com/JoshuaKGoldberg/TypeStat): Converts JavaScript to TypeScript and TypeScript to better TypeScript. Once I nail down common bugs and crashes I think this is going to be a great engine.
--   [**eslint-plugin-expect-type**](https://github.com/JoshuaKGoldberg/eslint-plugin-expect-type): ESLint plugin with $ExpectType, $ExpectError and $ExpectTypeSnapshot type assertions. I'd love to make the story of testing Typescript types _good_ in 2022.
+-   [**eslint-plugin-expect-type**](https://github.com/JoshuaKGoldberg/eslint-plugin-expect-type): ESLint plugin with $ExpectType, $ExpectError, and $ExpectTypeSnapshot type assertions. I'd love to make the story of testing Typescript types _good_ in 2022.
 
 ### Side Projects
 
