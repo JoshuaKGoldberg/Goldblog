@@ -53,7 +53,7 @@ _(I'm slightly manipulating the chapter's intent and ignoring many interpretatio
 ### Black Boxes
 
 There is a parallel between those different worldviews and how professionals -software developers in particular- grow in their careers.
-Early stage developers often don't fully understand the APIs, functions, and other system they interact with.
+Early stage developers often don't fully understand the API's, functions, and other systems they interact with.
 They use the concept of [black boxes](https://en.wikipedia.org/wiki/Black_box) to skip understanding those systems deeply.
 No shade against black boxes -- without them, the cognitive complexity of any task would be boundless.
 I often use the concept in my day-to-day programming.
