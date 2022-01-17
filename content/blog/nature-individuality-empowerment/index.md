@@ -137,7 +137,6 @@ Treating systems you don't understand as "black boxes" is a useful tool, but sho
 Remember that there is no magic in programming: it's all governed by logical systems.
 "Systems" means both the _programming_ systems -APIs, frameworks, IDEs, languages, etc.- and _organizational_ -data, OKRs, people, teams, etc.-.
 
-Collaborating with others and working as a team are core competencies developers must progress in.
 I would much rather work with a developer who's pretty good at coding and pretty good at providing feedback on my pull requests, RFCs, and team planning than a developer who is amazing at coding and quiet on the rest.
 
 What about you?
