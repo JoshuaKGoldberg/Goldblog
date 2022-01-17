@@ -10,7 +10,7 @@ description: "Applying learnings about how humans perceive forces of nature to h
 The Thinker in The Gates of Hell
 <br />
 <small>
-File copied from Wikipedia under the Creative Commons Attribution 2.0 Generic license. [<a href="https://commons.wikimedia.org/wiki/File:Le_penseur_de_la_Porte_de_lEnfer_(mus%C3%A9e_Rodin)_(4528252054).jpg"  rel="noopener noreferrer"target="_blank">source</a>]
+File copied from Wikipedia under the Creative Commons Attribution 2.0 Generic license. [<a href="https://commons.wikimedia.org/wiki/File:Le_penseur_de_la_Porte_de_lEnfer_(mus%C3%A9e_Rodin)_(4528252054).jpg" rel="noopener noreferrer" target="_blank">source</a>]
 </small>
 </em>
 
@@ -59,7 +59,7 @@ No shade against black boxes -- without them, the cognitive complexity of any ta
 I often use the concept in my day-to-day programming.
 
 One downside of thinking in terms of black boxes, though, is that it can get you in the _habit_ of avoiding understanding systems.
-One of the most common mistake I see developers make is avoid trying to understand a new area of code adjacent to what they're working on.
+One of the most common mistake I see developers make is avoiding trying to understand a new area of code adjacent to what they're working on.
 Instead of understanding the system as a whole, they isolate their changes to just the areas they understand.
 They then are at risk of missing crucial context contained in those surrounding areas.
 

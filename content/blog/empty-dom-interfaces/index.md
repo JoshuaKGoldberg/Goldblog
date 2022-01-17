@@ -10,7 +10,7 @@ description: "Glorious hardcoding of a better error message if someone forgets t
 The Library of the Palais Bourbon in Paris
 <br />
 <small>
-File copied from Wikipedia under the Creative Commons Attribution 2.0 Generic license. [<a href="https://en.wikipedia.org/wiki/File:Biblioth%C3%A8que_de_l%27Assembl%C3%A9e_Nationale_(Lunon).jpg"  rel="noopener noreferrer"target="_blank">source</a>]
+File copied from Wikipedia under the Creative Commons Attribution 2.0 Generic license. [<a href="https://en.wikipedia.org/wiki/File:Biblioth%C3%A8que_de_l%27Assembl%C3%A9e_Nationale_(Lunon).jpg" rel="noopener noreferrer" target="_blank">source</a>]
 </small>
 </em>
 

@@ -10,7 +10,7 @@ description: "A quick syntax parsing improvement for incorrectly formatted enums
 "Petit verdot", or "Colon", French grapes. Get it? Ha...
 <br />
 <small>
-File copied from Wikipedia under the Creative Commons Attribution 2.0 Generic license. [<a href="https://en.wikipedia.org/wiki/File:01_Petit_verdot.jpg"  rel="noopener noreferrer"target="_blank">source</a>]
+File copied from Wikipedia under the Creative Commons Attribution 2.0 Generic license. [<a href="https://en.wikipedia.org/wiki/File:01_Petit_verdot.jpg" rel="noopener noreferrer" target="_blank">source</a>]
 </small>
 </em>
 
