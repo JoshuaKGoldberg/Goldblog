@@ -76,7 +76,7 @@ There are no natural forces or magical impossibilities in programming.
 
 ### Classifying Developer Levels
 
-From reading _The Idea of Man_, I think I can finally articulate a succinct, easily explainable perspective on the differences between software developer job titles.
+From reading "The Idea of Man", I think I can finally articulate a succinct, easily explainable perspective on the differences between software developer job titles.
 In order:
 
 1. Junior developers: are getting their start understanding the "forces of nature" around them
@@ -121,7 +121,7 @@ A few minutes thinking deeply about the right solution can save hours implementi
 Systems of people are just that: _systems_ of _people_.
 A system has well-defined inputs and outputs.
 A team makes decisions because it's been given a set of goals to reach and resources to work with.
-Each person on that team is motivated by their own career incentives, personal goals, and past experiences.
+Each person on that team is motivated by their own career incentives, goals to reach, and past experiences.
 
 When a team process gives a result you don't agree with -a feature backlogged; an investigation cut short; whatever- that doesn't have to be the end of the story.
 Talk to the people involved in the process to learn why they came to that conclusion.
@@ -133,12 +133,13 @@ I've seen far too many silly decisions persist because a team member heard an in
 
 ## In Summary
 
-Treating systems you don't understand as "black boxes" is a useful tool, but shouldn't be overused to the point of avoiding understanding the systems around you.
+Treating systems you don't understand as "black boxes" is a useful tool, but shouldn't be overused to the point of avoiding understanding what's around you.
+Remember that there is no magic in programming: it's all governed by logical systems.
 "Systems" means both the _programming_ systems -APIs, frameworks, IDEs, languages, etc.- and _organizational_ -data, OKRs, people, teams, etc.-.
-Collaborating with others and working as a team are core competencies developers must progress in.
 
+Collaborating with others and working as a team are core competencies developers must progress in.
 I would much rather work with a developer who's pretty good at coding and pretty good at providing feedback on my pull requests, RFCs, and team planning than a developer who is amazing at coding and quiet on the rest.
 
 What about you?
 
-> Many thanks to my excellent coworkers [Rebecca](https://twitter.com/borisonr) and [Sanam](https://twitter.com/sanzi_sun) for [invaluable feedback and suggestions](https://github.com/JoshuaKGoldberg/Goldblog/pull/318) on this blog post! 🙏
+> Many thanks to my excellent coworkers [Rebecca Borison](https://twitter.com/borisonr) and [Sanam Aghdaey](https://twitter.com/sanzi_sun) for [invaluable feedback and suggestions](https://github.com/JoshuaKGoldberg/Goldblog/pull/318) on this blog post! 🙏
