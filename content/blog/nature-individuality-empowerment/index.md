@@ -1,6 +1,6 @@
 ---
 title: "Nature, Individuality, and Developer Empowerment"
-date: "2021-12-23T12:34:56.117Z"
+date: "2022-01-18T12:34:56.117Z"
 description: "Applying learnings about how humans perceive forces of nature to how we understand code and organizations."
 ---
 
