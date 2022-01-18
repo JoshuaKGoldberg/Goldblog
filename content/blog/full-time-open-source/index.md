@@ -70,7 +70,7 @@ I plan on working on a mix of projects that are useful to others and/or fun for 
 My core most valuable open source contributions have mostly been around web static analysis -- the art of scrutinizing code for information or potential issues without running it.
 These projects are the ones I'm hoping to focus on:
 
--   [**TypeScript**](https://typescriptlang.org): Contributing any way I can. You can see more under _"TypeScript Contribution Diary"_ posts on [my blog](https://blog.joshuakgoldberg.com).
+-   [**TypeScript**](https://typescriptlang.org): Contributing any way I can. You can see more under _"TypeScript Contribution Diary"_ posts on [elsewhere on my blog](https://blog.joshuakgoldberg.com).
 -   [**TypeScript ESLint**](https://typescript-eslint.io): Monorepo for all the tooling which enables ESLint to support TypeScript. I joined on as a maintainer recently.
 -   [**TypeStat**](https://github.com/JoshuaKGoldberg/TypeStat): Converts JavaScript to TypeScript and TypeScript to better TypeScript. Once I nail down common bugs and crashes I think this is going to be a wonderful tool for many projects.
 -   [**eslint-plugin-expect-type**](https://github.com/JoshuaKGoldberg/eslint-plugin-expect-type): ESLint plugin with $ExpectType, $ExpectError, and $ExpectTypeSnapshot type assertions. I'd love to make the story of testing Typescript types _good_ in 2022.
@@ -128,7 +128,7 @@ Sometimes that's as small as the sole developer on a project who writes and rele
 They might review filed requests (often in the form of GitHub issues) and submitted code contributions ("pull requests") from other developers who happen to use the project.
 
 Other times that's on a bigger project with multiple other maintainers.
-Maintainers of those projects have to coordinate releases, steer the project in the right direction, and generally do documentation and publicity work to make the project appealing to the mass audience using it.
+Maintainers of those projects have to coordinate releases, steer the project in the right direction, and generally do documentation and developer support work for the project.
 
 ### Why fund me?
 
