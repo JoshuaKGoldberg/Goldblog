@@ -110,12 +110,6 @@ I'm also writing an [O'Reilly _Learning TypeScript_ book](https://www.oreilly.co
 
 ## FAQs
 
-### Why Fund Me?
-
-In general, sponsoring me to work on open source will keep me advancing the tooling for web developers worldwide. 🌐
-
-You can see the specific tiers on [my GitHub sponsors page](https://github.com/sponsors/joshuakgoldberg), such as supporting your company or project in using web tooling.
-
 ### Is this related to Skillsoft acquiring Codecademy?
 
 Nope.
@@ -130,3 +124,36 @@ Awkward timing.
 Codecademy's engineering department was -and still is- a wonderful place to work.
 I'm still recommending people apply to join my old team, Web Platform.
 Let me know if you're interested!
+
+### Why fund me?
+
+In general, sponsoring me to work on open source will keep me advancing the tooling for web developers worldwide. 🌐
+
+You can see the specific tiers on [my GitHub sponsors page](https://github.com/sponsors/joshuakgoldberg), such as supporting your company or project in using web tooling.
+
+### How long will you be an open source maintainer?
+
+At least 3 months, and hopefully for at least 6 months if I don't really dislike it.
+Otherwise I don't know.
+
+### Why not go part time at a company and still do open source?
+
+I'm exhausted, mentally and physically.
+My privilege in life has gotten me to the point where I don't have to work if I don't want to.
+So I'm going for it.
+
+### What will you do next?
+
+I don't know.
+
+### What do you think of companies profiting off of open source for free?
+
+What a big question!
+I think it's a much more difficult question than most people give it credit for.
+I want to put a lot of thought into this in 2022 and network with other open source people to learn from them.
+
+At the very least, there are three layers of issues I think we'll have to get through:
+
+1. Today, many companies make tons of money off open source without contributing back. That's morally wrong and foolish architecturally: profitable companies should give back to the projects that enabled their success.
+2. Company sponsorship is an injection of capitalism -cash- into a world that prides itself on being open and free. We'll need to set up systems to prevent bad actors from, say, influencing projects unduly or spamming _Sponsored By_ advertisements everywhere.
+3. The trust model of taking dependencies on unvetted open source software and being encouraged to update dependencies frequently is broken. We need much more intelligent automations and security scanning.
