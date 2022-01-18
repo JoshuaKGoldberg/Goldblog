@@ -10,7 +10,7 @@ description: "Improving the first error message emitted for invalid variable ide
 Photo of Bud Abbott and Lou Costello from their NBC Radio program.
 <br />
 <small>
-File copied from Wikipedia under the Creative Commons Attribution 2.0 Generic license. [<a href="https://en.wikipedia.org/wiki/Abbott_and_Costello#/media/File:Abbott_and_Costello_circa_1940s.JPG"  rel="noopener noreferrer"target="_blank">source</a>]
+File copied from Wikipedia under the Creative Commons Attribution 2.0 Generic license. [<a href="https://en.wikipedia.org/wiki/Abbott_and_Costello#/media/File:Abbott_and_Costello_circa_1940s.JPG" rel="noopener noreferrer" target="_blank">source</a>]
 </small>
 </em>
 
