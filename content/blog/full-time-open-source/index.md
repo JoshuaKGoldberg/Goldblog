@@ -176,3 +176,5 @@ I'm hopeful I get to make a real positive impact in the open source world and li
 <img alt="Frodo happily running with the caption 'I'm going on an adventure!'" src="./going-on-an-adventure.gif" />
 <div>[<a aria-label="Frodo adventure gif source" href="https://giphy.com/gifs/hobbit-xKeqcRfET8be">source</a>]</div>
 </small>
+
+Let me know on [my email](mailto:opensource@joshuakgoldberg.com) or [@JoshuaKGoldberg on Twitter](https://github.com/JoshuaKGoldberg) or if you want to chat open source or have projects for me!
