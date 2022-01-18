@@ -1,8 +1,8 @@
 import { medium } from "../../styles/constants";
 import {
+    borderColorDull,
     darkInversion,
     textColor,
-    textColorDull,
 } from "../../styles/variables";
 
 export const article = {
@@ -42,7 +42,7 @@ export const section = {
 
     "& pre": {
         background: "none",
-        border: `1px solid ${textColorDull}`,
+        border: `1px solid ${borderColorDull}`,
         transition: `${medium} border`,
     },
 

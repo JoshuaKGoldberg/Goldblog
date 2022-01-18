@@ -10,6 +10,7 @@ import {
 } from "../../styles/constants";
 import {
     backgroundColor,
+    borderColorDull,
     cssVar,
     darkInversion,
     textColor,
@@ -19,6 +20,7 @@ import {
 export const global = (darkMode, isMounted) => css`
     html {
         ${cssVar(backgroundColor)}: ${darkMode ? nearBlack : "white"};
+        ${cssVar(borderColorDull)}: ${darkMode ? darkGray : lightGray};
         ${cssVar(darkInversion)}: ${darkMode
             ? "invert(100%) hue-rotate(175deg)"
             : "none"};
@@ -55,7 +57,7 @@ export const global = (darkMode, isMounted) => css`
 export const layout = {
     fontFamily: openSansRegular,
     margin: "auto",
-    maxWidth: "calc(630px + 1rem)",
+    maxWidth: "calc(700px + 1rem)",
     padding: "0 1rem",
 };
 
