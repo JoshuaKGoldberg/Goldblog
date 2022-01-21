@@ -1,6 +1,6 @@
 ---
 title: "Full Time Open Source"
-date: "2022-01-21T12:34:56.117Z"
+date: "2022-01-22T12:34:56.117Z"
 description: "I'm quitting my job to become a full time open source maintainer"
 ---
 
@@ -19,19 +19,19 @@ That's why **I'm quitting my job to become a full time open source maintainer**.
 My last day at Codecademy will be January 28th, 2022.
 I'm taking February partially off to relax, then fully starting in March I'll be dedicating work time to contributing to open source software projects.
 
+> Skip down to [What is open source software?](http://localhost:8000/full-time-open-source/#what-is-open-source-software-oss) below if you don't know what that all means.
+
 <small style="display:block;margin-bottom:2rem;text-align:center;">
 <img alt="Spongebob suavely backing out of a room with the caption 'So Long!'" src="./so-long.gif" />
 <div>[<a aria-label="Spongebob gif source" href="https://giphy.com/gifs/spongebob-squarepants-leave-smooth-48FhEMYGWji8">source</a>]</div>
 </small>
-
-> Skip down to [What is open source software?](http://localhost:8000/full-time-open-source/#what-is-open-source-software-oss) below if you don't know what that means.
 
 ## Why Be an Open Source Maintainer?
 
 ### Because it's fun
 
 My dream since I've learned to code was to spend my days working on interesting projects and growing myself as a developer.
-I'm doing this because I want to and I've accumulated enough financial stability -seven years of overpaid tech work and a spouse with great medical insurance- to not worry about not making any money pursuing my passion.
+I'm doing this because I want to and I've accumulated enough financial stability to not worry about not making money while pursuing my passion.
 
 ### Because it's good for me
 
@@ -70,9 +70,9 @@ I plan on working on a mix of projects that are useful to others and/or fun for 
 My core most valuable open source contributions have mostly been around web static analysis -- the art of scrutinizing code for information or potential issues without running it.
 These projects are the ones I'm hoping to focus on:
 
--   [**TypeScript**](https://typescriptlang.org): Contributing any way I can. You can see more under _"TypeScript Contribution Diary"_ posts on [elsewhere on my blog](https://blog.joshuakgoldberg.com).
+-   [**TypeScript**](https://typescriptlang.org): Contributing any way I can. You can see more under _"TypeScript Contribution Diary"_ posts [elsewhere on my blog](https://blog.joshuakgoldberg.com).
 -   [**TypeScript ESLint**](https://typescript-eslint.io): Monorepo for all the tooling which enables ESLint to support TypeScript. I joined on as a maintainer recently.
--   [**TypeStat**](https://github.com/JoshuaKGoldberg/TypeStat): Converts JavaScript to TypeScript and TypeScript to better TypeScript. Once I nail down common bugs and crashes I think this is going to be a wonderful tool for many projects.
+-   [**TypeStat**](https://github.com/JoshuaKGoldberg/TypeStat): Converts JavaScript to TypeScript and TypeScript to better TypeScript. Once I nail down common bugs I think this is going to be a wonderful tool for many projects.
 -   [**eslint-plugin-expect-type**](https://github.com/JoshuaKGoldberg/eslint-plugin-expect-type): ESLint plugin with $ExpectType, $ExpectError, and $ExpectTypeSnapshot type assertions. I'd love to make the story of testing Typescript types _good_ in 2022.
 
 ### Side Projects
@@ -81,7 +81,7 @@ These projects I do because I think they're fascinating and/or fun, if not parti
 
 -   [**EightBittr**](https://github.com/FullScreenShenanigans/EightBittr): Bare-bones, highly modular game engine for 2D 8-bit games. I want to finally make it performant and have a good level editor & random map generation support as first party modules.
 -   [**Budgie**](https://github.com/budgielang/budgie): A unified syntax that compiles into your favorite OOP languages. I want to finish writing it in itself ("dogfooding"), then make a really great docs site to show it off.
--   [**Emojisplosion**](https://github.com/JoshuaKGoldberg/emojisplosion): 💥Blasts 😄emoji😊 like 🎆fireworks🎇 all up in your 💻HTML 📄page. 😚😍. A cute little project I want to add more demos on, update for the latest emoji specs, and create more integrations around such as the also-very-cute [Konamimojisplosion](https://github.com/Codecademy/konamimojisplosion).
+-   [**Emojisplosion**](https://github.com/JoshuaKGoldberg/emojisplosion): 💥Blasts 😄emoji😊 like 🎆fireworks🎇 all up in your 💻HTML 📄page. 😚😍. A cute little project I want to update for the latest emoji specs and create more integrations around such as the also-very-cute [Konamimojisplosion](https://github.com/Codecademy/konamimojisplosion).
 
 ## Expected Funding
 
@@ -93,6 +93,8 @@ That's a excellent gig and I'm tremendously grateful to have it.
 You can track the projects we're working on in my [Codecademy Consulting Notion doc](https://www.notion.so/Codecademy-Consulting-919960606f1f40788c97aab6c4326c35).
 
 I'm also writing an [O'Reilly _Learning TypeScript_ book](https://www.oreilly.com/library/view/learning-typescript/9781098110321) set to publish the middle of this year and working with O'Reilly on more TypeScript content.
+
+---
 
 ## FAQs
 
@@ -116,8 +118,8 @@ Let me know if you're interested!
 Software whose source code anybody can see.
 Commonly associated with free open source software (FOSS), and a superset of projects anybody can contribute to.
 
-The vast majority of software today is built primarily on free open source software, including most popular programming languages languages (Go, Ruby, TypeScript, ...) and platforms (Next.js, Rails, ...).
-The Codecademy blog has a great article on it: [Understanding open source software: A Q&A](https://www.codecademy.com/resources/blog/what-is-open-source).
+The vast majority of software today is built primarily on free open source software, including most popular programming languages (Go, Ruby, TypeScript, ...) and platforms (Next.js, Rails, ...).
+Codecademy's blog has a great article on it: [Understanding open source software: A Q&A](https://www.codecademy.com/resources/blog/what-is-open-source).
 I'd also highly recommend _Working in Public_ by [Nadia Eghbal](https://nadia.xyz) for a deeper dive on its history, importance, and many of the problems it faces today.
 
 ### What is an open source maintainer?
@@ -125,7 +127,7 @@ I'd also highly recommend _Working in Public_ by [Nadia Eghbal](https://nadia.xy
 Someone who helps run an open source project.
 
 Sometimes that's as small as the sole developer on a project who writes and releases all the code on their own.
-They might review filed requests (often in the form of GitHub issues) and submitted code contributions ("pull requests") from other developers who happen to use the project.
+They might review filed requests (often in the form of GitHub issues) and submitted code contributions ("pull requests") from other developers who use the project.
 
 Other times that's on a bigger project with multiple other maintainers.
 Maintainers of those projects have to coordinate releases, steer the project in the right direction, and generally do documentation and developer support work for the project.
@@ -159,7 +161,7 @@ I want to put a lot of thought into this in 2022 and network with other open sou
 
 At the very least, there are three layers of issues I think we'll have to get through:
 
-1. Today, many companies make tons of money off open source without contributing back. That's morally wrong and architecturally risky: profitable companies should support the projects that enabled their success, especially when the projects are run by overworked volunteers.
+1. Companies profit off open source without contributing back. That's morally wrong and architecturally risky: profitable companies should support the projects that enabled their success, especially when the projects are run by overworked volunteers.
 2. Company sponsorship is an injection of capitalism _-cash!-_ into a world that prides itself on being open and free. We'll need to set up systems to prevent bad actors from, say, influencing projects unduly or spamming _Sponsored By_ advertisements everywhere.
 3. The trust model of taking dependencies on unvetted open source software and being encouraged to update dependencies frequently is broken. We need much more intelligent automations and security scanning.
 
