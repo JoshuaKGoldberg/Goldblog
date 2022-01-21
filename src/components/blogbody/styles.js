@@ -46,6 +46,10 @@ export const section = {
         transition: `${medium} border`,
     },
 
+    "& img": {
+        maxWidth: "100%",
+    },
+
     '& img[src*="gif"]': {
         cursor: "pointer",
         transition: `${medium} box-shadow`,
