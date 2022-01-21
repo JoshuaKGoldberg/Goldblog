@@ -19,7 +19,7 @@ That's why **I'm quitting my job to become a full time open source maintainer**.
 My last day at Codecademy will be January 28th, 2022.
 I'm taking February partially off to relax, then fully starting in March I'll be dedicating work time to contributing to open source software projects.
 
-> Skip down to [What is open source software?](http://localhost:8000/full-time-open-source/#what-is-open-source-software-oss) below if you don't know what that all means.
+> Skip down to [What is open source software?](#what-is-open-source-software-oss) below if you don't know what that all means.
 
 <small style="display:block;margin-bottom:2rem;text-align:center;">
 <img alt="Spongebob suavely backing out of a room with the caption 'So Long!'" src="./so-long.gif" />
