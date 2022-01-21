@@ -7,7 +7,7 @@ const Bio = () => {
         <footer css={styles.footer}>
             <strong css={styles.strong}>Josh Goldberg</strong>
             Hi! I'm a frontend developer from New York. This is my blog about
-            JavaScript, TypeScript, and scaling web application development.
+            JavaScript, TypeScript, and open source web development.
             <br />
             This site's{" "}
             <a
