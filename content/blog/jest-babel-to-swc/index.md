@@ -147,7 +147,7 @@ Look at that speed improvement!
 It's much more pronounced in the faster dev-time version, but even a 10% improvement in test time is a success if you ask me.
 
 One interesting note is that even with the significantly faster SWC transpiler, the standalone `jest` command still took more than 10 seconds for its remaining 60-70% time.
-We can probably deduce that much of that time is spent by Jest setting up and tearing down Node environments (which it does for each test file to keep tests isolated).
+We can probably deduce that much of that time is spent by Jest setting up and tearing down Node environments (which it does for each test file to keep tests isolated) and running tests.
 
 ### Dependencies Size
 
@@ -182,6 +182,10 @@ du -sh node_modules/@swc/*
 
 Interestingly, running `rm -rf node_modules/@swc/core-linux-x64-musl` didn't prevent subsequent tests from passing.
 78M of 152.5MB -more than half!- of the `@swc/core` package install is totally unused on my system.
+
+I filed [
+Both gnu and musl core distributions installed for Ubuntu Linux
+](https://github.com/swc-project/swc/issues/3652) as an issue on the SWC project about the duplicate architecture package.
 
 > As of February 2022, an [npm RFC for package distributions](https://github.com/npm/rfcs/pull/519) is in review now that would allow for solving this issue.
 
