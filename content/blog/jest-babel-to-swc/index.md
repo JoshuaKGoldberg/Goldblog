@@ -4,7 +4,8 @@ description: "Speeding up and simplifying the transpiler configuration for a Jes
 title: "Switching a Jest Project from Babel to SWC"
 ---
 
-There's been a lot of buzz on frontend dev Twitter over the last year about the next wave of JavaScript tooling: tools such as [Speedy Web Compiler (SWC)](https://swc.rs) that use lower-level languages such as Rust to transpile JavaScript much more quickly than older tools such as Babel.
+There's been a lot of buzz on frontend dev Twitter over the last year about the next wave of JavaScript tooling.
+Tools such as [Speedy Web Compiler (SWC)](https://swc.rs) use lower-level languages such as Rust to transpile JavaScript much more quickly than older tools such as Babel.
 I've been wanting to try them out for a while, so this past weekend I migrated the [tslint-to-eslint-config](https://github.com/typescript-eslint/tslint-to-eslint-config) project from [babel-jest](https://www.npmjs.com/package/babel-jest) to [@swc/jest](https://www.npmjs.com/package/@swc/jest).
 
 > Spoilers: if you just want to see code, check the [final pull request's file changes](https://github.com/typescript-eslint/tslint-to-eslint-config/pull/1367/file).
@@ -147,7 +148,7 @@ Look at that speed improvement!
 It's much more pronounced in the faster dev-time version, but even a 10% improvement in test time is a success if you ask me.
 
 One interesting note is that even with the significantly faster SWC transpiler, the standalone `jest` command still took more than 10 seconds for its remaining 60-70% time.
-We can probably deduce that much of that time is spent by Jest setting up and tearing down Node environments (which it does for each test file to keep tests isolated) and running tests.
+Much of that time is spent by Jest setting up and tearing down Node environments (which it does for each test file to keep tests isolated) and running tests.
 
 ### Dependencies Size
 
@@ -160,9 +161,9 @@ The larger and more numerous a project's dependencies, the longer it will take t
 I'd been optimistic about the `node_modules` folder size changes from switching to SWC because the project `package-lock.json` had shrunk by about 2,000 lines.
 Running `du -sh node_modules` to check the size of my package dependencies crushed my heart:
 
-| Command                          | Babel Size | SWC Size | (old - new) / old x 100% |
-| -------------------------------- | ---------- | -------- | ------------------------ |
-| `jest --coverage --maxWorkers=2` | 186M       | 330M     | **77%** larger           |
+| Babel Size | SWC Size | (old - new) / old x 100% |
+| ---------- | -------- | ------------------------ |
+| 186M       | 330M     | **77%** larger           |
 
 😢.
 
