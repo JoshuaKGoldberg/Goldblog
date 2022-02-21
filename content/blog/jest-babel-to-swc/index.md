@@ -184,9 +184,7 @@ du -sh node_modules/@swc/*
 Interestingly, running `rm -rf node_modules/@swc/core-linux-x64-musl` didn't prevent subsequent tests from passing.
 78M of 152.5MB -more than half!- of the `@swc/core` package install is totally unused on my system.
 
-I filed [
-Both gnu and musl core distributions installed for Ubuntu Linux
-](https://github.com/swc-project/swc/issues/3652) as an issue on the SWC project about the duplicate architecture package.
+I filed [Both gnu and musl core distributions installed for Ubuntu Linux](https://github.com/swc-project/swc/issues/3652) as an issue on the SWC project about the duplicate architecture package.
 
 > As of February 2022, an [npm RFC for package distributions](https://github.com/npm/rfcs/pull/519) is in review now that would allow for solving this issue.
 
