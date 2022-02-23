@@ -10,6 +10,14 @@ export const lightGreen = "#e7fff5";
 
 export const lightBlue = "#e7f5ff";
 
+export const emphasizedBlueDark = "#92bedf";
+
+export const emphasizedBlueLight = "#e7f5ff";
+
+export const emphasizedGreenDark = "#90ddbb";
+
+export const emphasizedGreenLight = "#e7fff5";
+
 export const openSansRegular = "Open Sans Regular";
 
 export const latoRegular = "Lato Regular";

@@ -1,6 +1,10 @@
 import { css } from "@emotion/react";
 import {
     darkGray,
+    emphasizedBlueDark,
+    emphasizedBlueLight,
+    emphasizedGreenDark,
+    emphasizedGreenLight,
     lightGray,
     medium,
     nearBlack,
@@ -13,6 +17,8 @@ import {
     borderColorDull,
     cssVar,
     darkInversion,
+    gradientBegin,
+    gradientEnd,
     textColor,
     textColorDull,
 } from "../../styles/variables";
@@ -24,6 +30,12 @@ export const global = (darkMode, isMounted) => css`
         ${cssVar(darkInversion)}: ${darkMode
             ? "invert(100%) hue-rotate(175deg)"
             : "none"};
+        ${cssVar(gradientBegin)}: ${darkMode
+            ? emphasizedBlueDark
+            : emphasizedBlueLight};
+        ${cssVar(gradientEnd)}: ${darkMode
+            ? emphasizedGreenDark
+            : emphasizedGreenLight};
         ${cssVar(textColor)}: ${darkMode ? lightGray : "black"};
         ${cssVar(textColorDull)}: ${darkMode ? lightGray : darkGray};
 
@@ -43,14 +55,27 @@ export const global = (darkMode, isMounted) => css`
     }
 
     blockquote {
-        border-left: 3px solid ${textColorDull};
         color: ${textColorDull};
         font-style: italic;
         letter-spacing: -0.02rem;
         margin: 2rem 0;
         padding-left: 1rem;
-
+        position: relative;
         transition: ${medium} border-left, ${medium} color;
+    }
+
+    blockquote:before {
+        color: ${gradientBegin};
+        background: linear-gradient(
+            to bottom,
+            ${gradientBegin} 0,
+            ${gradientEnd} 100%
+        );
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        width: 5px;
     }
 `;
 
