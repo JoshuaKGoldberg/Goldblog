@@ -1,7 +1,7 @@
 ---
 title: Type System Game Engines
 date: "2020-10-05T08:23:45.117Z"
-description: "Just for fun, what if we represented binary values purely within TypeScript's logical type system?"
+description: "Just for fun, what if we crafted a board game purely within TypeScript's logical type system?"
 download: https://1drv.ms/p/s!AvUc1cvPrJnWvtEWI5Fd_5Va4n3ggg?e=XnppFL
 ---
 
@@ -57,12 +57,11 @@ Conditional types _take in other types_ and spit out new types based on the orig
 Take a look at this type:
 
 ```ts
-type RockMatchup<Opponent> =
-    Opponent extends 'Rock'
-        ? 'Draw'
-        : Opponent extends 'Paper'
-            ? 'Loss'
-            : 'Win'
+type RockMatchup<Opponent> = Opponent extends "Rock"
+    ? "Draw"
+    : Opponent extends "Paper"
+    ? "Loss"
+    : "Win";
 ```
 
 That's a description of how a player's Rock choice in a game of Tic Tac Toe works against its possible opponents.
@@ -70,7 +69,7 @@ That's a description of how a player's Rock choice in a game of Tic Tac Toe work
 If the opponent is a `'Rock'`:
 
 ```ts
-type Result = RockMatchup<'Rock'>;
+type Result = RockMatchup<"Rock">;
 // 'Draw'
 ```
 
@@ -81,27 +80,27 @@ Fun fact: types may receive more than one generic.
 In this next snippet, we define the matchups for two players, with a bunch of nested checks for each of the nine possible results.
 
 ```ts
-type RockPaperScissors<Player, Opponent> = 
+type RockPaperScissors<Player, Opponent> =
     // Player is Rock
-    Player extends 'Rock'
-        ? Opponent extends 'Rock'
-            ? 'Draw'
-            : Opponent extends 'Paper'
-                ? 'Loss'
-                : 'Win'
-        // Player is Paper
-        : Player extends 'Paper'
-            ? Opponent extends 'Rock'
-                ? 'Win'
-                : Opponent extends 'Paper'
-                    ? 'Draw'
-                    : 'Loss'
-            // Player is Scissors
-            : Opponent extends 'Rock'
-                ? 'Loss'
-                : Opponent extends 'Paper'
-                    ? 'Win'
-                    : 'Draw';
+    Player extends "Rock"
+        ? Opponent extends "Rock"
+            ? "Draw"
+            : Opponent extends "Paper"
+            ? "Loss"
+            : "Win"
+        : // Player is Paper
+        Player extends "Paper"
+        ? Opponent extends "Rock"
+            ? "Win"
+            : Opponent extends "Paper"
+            ? "Draw"
+            : "Loss"
+        : // Player is Scissors
+        Opponent extends "Rock"
+        ? "Loss"
+        : Opponent extends "Paper"
+        ? "Win"
+        : "Draw";
 ```
 
 Amusing.
@@ -122,34 +121,34 @@ We can use `keyof` to declare our Tic Tac Toe matchups as a big type system obje
 ```ts
 type Matchups = {
     Rock: {
-        Paper: 'Loss',
-        Scissors: 'Win',
-    },
+        Paper: "Loss";
+        Scissors: "Win";
+    };
     Paper: {
-        Rock: 'Win',
-        Scissors: 'Loss',
-    },
+        Rock: "Win";
+        Scissors: "Loss";
+    };
     Scissors: {
-        Rocker: 'Loss',
-        Paper: 'Win',
-    },
+        Rocker: "Loss";
+        Paper: "Win";
+    };
 };
 
 type RockPaperScissors<
     Player extends keyof Matchups,
-    Opponent extends keyof Matchups,
-> =
-    Opponent extends keyof Matchups[Player]
-        ? Matchups[Player][Opponent]
-        : 'Draw';
+    Opponent extends keyof Matchups
+> = Opponent extends keyof Matchups[Player]
+    ? Matchups[Player][Opponent]
+    : "Draw";
 ```
 
 That new and enhanced `RockPaperScissors` type takes in a `Player` and an `Opponent`, both of which must be one of the keys of `Matchups`: i.e. `'Rock'`, `'Paper'`, or `'Scissors'`.
-* If the `Opponent` type is one of the members of the `Matchup`'s listing under the Player, we go with that value.
-* Otherwise, we assume it's a `'Draw'`.
+
+-   If the `Opponent` type is one of the members of the `Matchup`'s listing under the Player, we go with that value.
+-   Otherwise, we assume it's a `'Draw'`.
 
 ```ts
-type Result = RockPaperScissors<'Paper', 'Scissors'>; // 'Loss'
+type Result = RockPaperScissors<"Paper", "Scissors">; // 'Loss'
 ```
 
 The `extends` keyword in `RockPaperScissors` is important: it tells the type system that the generic type parameter must be that particular type, or a more specific version of it.
@@ -175,17 +174,17 @@ We'll be able to use these to declare full-on game boards: not just single-use l
 First, let's declare a couple of types:
 
 ```ts
-type Cell = ' ' | 'X' | 'O';
+type Cell = " " | "X" | "O";
 
 type TicTacToeBoard = [
     [Cell, Cell, Cell],
     [Cell, Cell, Cell],
-    [Cell, Cell, Cell],
+    [Cell, Cell, Cell]
 ];
 ```
 
-* `Cell` is the content of any slot on our game board: either the empty string (not yet placed), an `'X'`, or an '`O'`.
-* `TicTacToeBoard` is a tuple of tuples, representing a grid of spots on a 3x3 board.
+-   `Cell` is the content of any slot on our game board: either the empty string (not yet placed), an `'X'`, or an '`O'`.
+-   `TicTacToeBoard` is a tuple of tuples, representing a grid of spots on a 3x3 board.
 
 In other words, we now have a 3x3 board of cells! 🚀
 
@@ -194,12 +193,9 @@ In other words, we now have a 3x3 board of cells! 🚀
 Using `Cell` and `TicTacToeBoard` as bases, we can create a conditional `Victory` type in the type system that takes in a board and returns a new type representing whether that board any of the three possible victory conditions for that board: three-in-a-row diagonally, horizontally, or vertically.
 
 ```ts
-type Victory<Player, Board> =
-    Board extends WinningBoard<Player>
-        ? true
-        : false;
+type Victory<Player, Board> = Board extends WinningBoard<Player> ? true : false;
 
-type WinningBoard<Player> = 
+type WinningBoard<Player> =
     | DiagonalVictory<Player>
     | HorizontalVictory<Player>
     | VerticalVictory<Player>;
@@ -209,72 +205,36 @@ The diagonal win condition for a player is hit when either of the diagonal lines
 The Cell spots can be filled with anything, but the Player spots must be filled with only the player's pieces.
 
 ```ts
-type DiagonalVictory<Player> = 
-    | [
-        [Player, any, any],
-        [any, Player, any],
-        [any, any, Player],
-    ]
-    | [
-        [any, any, Player],
-        [any, Player, any],
-        [Player, any, any],
-    ];
+type DiagonalVictory<Player> =
+    | [[Player, any, any], [any, Player, any], [any, any, Player]]
+    | [[any, any, Player], [any, Player, any], [Player, any, any]];
 ```
 
 Similarly, the horizontal victory check is satisfied only when one of the three rows in the board are known to contain only the player's pieces.
 
 ```ts
 type HorizontalVictory<Player> =
-    | [
-        [Player, Player, Player],
-        [any, any, any],
-        [any, any, any],
-    ]
-    | [
-        [any, any, any],
-        [Player, Player, Player],
-        [any, any, any],
-    ]
-    | [
-        [any, any, any],
-        [any, any, any],
-        [Player, Player, Player],
-    ];
+    | [[Player, Player, Player], [any, any, any], [any, any, any]]
+    | [[any, any, any], [Player, Player, Player], [any, any, any]]
+    | [[any, any, any], [any, any, any], [Player, Player, Player]];
 ```
 
 Same with the vertical victory check and the board's columns.
 
 ```ts
 type VerticalVictory<Player> =
-    | [
-        [Player, any, any],
-        [Player, any, any],
-        [Player, any, any],
-    ]
-    | [
-        [any, Player, any],
-        [any, Player, any],
-        [any, Player, any],
-    ]
-    | [
-        [any, any, Player],
-        [any, any, Player],
-        [any, any, Player],
-    ];
+    | [[Player, any, any], [Player, any, any], [Player, any, any]]
+    | [[any, Player, any], [any, Player, any], [any, Player, any]]
+    | [[any, any, Player], [any, any, Player], [any, any, Player]];
 ```
 
 Making use of the WinningBoard type, we can see that a WinAtStart check for a board comprised entirely of blanks is false.
 None of the 8 win conditions are satisfied by that board.
 
 ```ts
-type StartingBoard = [
-    [' ', ' ', ' '],
-    [' ', ' ', ' '],
-    [' ', ' ', ' '],
-];
+type StartingBoard = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]];
 
-type WinAtStart = Victory<'X', StartingBoard>;
+type WinAtStart = Victory<"X", StartingBoard>;
 // false
 ```
 
@@ -283,12 +243,8 @@ Success!
 
 ```ts
 type HowAboutNow = Victory<
-    'O',
-    [
-        ['O', ' ', 'X'],
-        ['X', 'O', ' '],
-        [' ', 'X', 'O'],
-    ]
+    "O",
+    [["O", " ", "X"], ["X", "O", " "], [" ", "X", "O"]]
 >;
 // true
 ```
@@ -296,21 +252,16 @@ type HowAboutNow = Victory<
 Taking our conditionals one step higher, we can check which player –if either– wins by seeing whether the board satisfies the victory condition for either of our known players.
 
 ```ts
-type Winner<Board> = 
-    Victory<'X', Board> extends true
-        ? 'X'
-        : Victory<'O', Board> extends true
-            ? 'O'
-            : ' ';
+type Winner<Board> = Victory<"X", Board> extends true
+    ? "X"
+    : Victory<"O", Board> extends true
+    ? "O"
+    : " ";
 
 type StartingWinner = Winner<StartingBoard>;
 // ' '
 
-type WinnerNow = Winner<[
-    ['O', ' ', 'X'],
-    ['X', 'O', ' '],
-    [' ', 'X', 'O'],
-]>;
+type WinnerNow = Winner<[["O", " ", "X"], ["X", "O", " "], [" ", "X", "O"]]>;
 // 'O'
 ```
 
@@ -364,13 +315,9 @@ Now that we know how to map all members of a type into a new type, we should be 
 Given our starting board from before and a desire to place 'X' at row 0 / column 1, we should be able to use conditional mapped types to take in our board tuples and output a modified board.
 
 ```ts
-type FirstMove = ['X', 0, 1];
+type FirstMove = ["X", 0, 1];
 
-type AfterFirstMove = [
-    [' ', 'X', ' '],
-    [' ', ' ', ' '],
-    [' ', ' ', ' '],
-];
+type AfterFirstMove = [[" ", "X", " "], [" ", " ", " "], [" ", " ", " "]];
 ```
 
 This is how we can accomplish such a move in the type system:
@@ -380,32 +327,33 @@ type ReplaceInBoard<
     Board extends TicTacToeBoard,
     Replacement extends Cell,
     RowPlace extends 0 | 1 | 2,
-    ColumnPlace extends 0 | 1 | 2,
+    ColumnPlace extends 0 | 1 | 2
 > = {
     [Row in 0 | 1 | 2]: {
-        [Column in 0 | 1 | 2]:
-            [Row, Column] extends [RowPlace, ColumnPlace]
-                ? Replacement
-                : Board[Row][Column];
-    }
+        [Column in 0 | 1 | 2]: [Row, Column] extends [RowPlace, ColumnPlace]
+            ? Replacement
+            : Board[Row][Column];
+    };
 };
 ```
 
 `ReplaceInBoard` takes in four type inputs:
-* `Board`: original board to work on
-* `Replacement`: new piece on the board
-* `RowPlace`: row index to place at
-* `ColumnPlace`: column index to place at
+
+-   `Board`: original board to work on
+-   `Replacement`: new piece on the board
+-   `RowPlace`: row index to place at
+-   `ColumnPlace`: column index to place at
 
 It output a new object type where, for each member under rows 0-2 and columns 0-2, checking whether that's the same row and column to replace at:
-* If yes: use the new piece
-* If no: use the original board's piece
+
+-   If yes: use the new piece
+-   If no: use the original board's piece
 
 I'll also note here that although our ReplaceInBoard type works, it's pushing the boundaries of what the type system is really intended for, so it loses just a little bit of clarity.
-TypeScript sees the resultant type as an object with number keys. 
+TypeScript sees the resultant type as an object with number keys.
 
 ```ts
-type AfterFirstMoveMap = ReplaceInBoard<StartingBoard, 'X', 0, 1>;
+type AfterFirstMoveMap = ReplaceInBoard<StartingBoard, "X", 0, 1>;
 // {
 //     0: { 0: " "; 1: "X"; 2: " "; };
 //     1: { 0: " "; 1: " "; 2: " "; };
@@ -436,16 +384,9 @@ This is difficult because there's no 'for loop' operator in the type system.
 We can't set up a type and imperatively modify it the way we would in, say, JavaScript.
 
 ```ts
-type AllMoves = [
-    ['X', 0, 1],
-    ['O', 2, 2],
-];
+type AllMoves = [["X", 0, 1], ["O", 2, 2]];
 
-type AfterAllMoves = [
-    [' ', 'X', ' '],
-    [' ', ' ', ' '],
-    [' ', ' ', 'O'],
-];
+type AfterAllMoves = [[" ", "X", " "], [" ", " ", " "], [" ", " ", "O"]];
 ```
 
 TypeScript's type system is closer to a _functional_ language (or even a _logical_) one, which is to say nothing can be modified after creation, and all inferences must be made based on already defined truths.
@@ -461,7 +402,7 @@ type Move = [Cell, 0 | 1 | 2, 0 | 1 | 2];
 function applyMoves(board: TicTacToeBoard, moves: Move[]) {
     // 1. If the remaining moves are empty, we can return the board as-is
     if (moves.length === 0) {
-        return board
+        return board;
     }
 
     // 2. If there's at least one move to apply, we apply it,
@@ -483,41 +424,31 @@ type Move = [Cell, 0 | 1 | 2, 0 | 1 | 2];
 type ApplyMoves<
     Board extends TicTacToeBoard,
     Moves extends Move[]
-> =
-    Moves extends []
-        ? Board
-        : ApplyMoves<
-            ReplaceInBoard<Board, Moves[0][0], Moves[0][1], Moves[0][2]>,
-            DropFirst<Moves>
-        >;
+> = Moves extends []
+    ? Board
+    : ApplyMoves<
+          ReplaceInBoard<Board, Moves[0][0], Moves[0][1], Moves[0][2]>,
+          DropFirst<Moves>
+      >;
 ```
 
-* First, if the moves extends the empty array (so, if there are no more moves), the resultant type is the board itself.
-* Otherwise, we return a resultant type from `ApplyMoves`. That recursive type system call to `ApplyMoves` takes in the result of applying our first move to the board for a board, and all but the first move from our moves as its array of moves.
+-   First, if the moves extends the empty array (so, if there are no more moves), the resultant type is the board itself.
+-   Otherwise, we return a resultant type from `ApplyMoves`. That recursive type system call to `ApplyMoves` takes in the result of applying our first move to the board for a board, and all but the first move from our moves as its array of moves.
 
 The remaining moves are calculated using a `DropFirst` type that shows off why we just learned about inferred types.
 
 ```ts
-type DropFirst<T extends unknown[]> =
-    T extends [any, ...infer U]
-        ? U
-        : [];
+type DropFirst<T extends unknown[]> = T extends [any, ...infer U] ? U : [];
 ```
 
 DropFirst takes in a `T` that must be an array, then checks if it's possible for a remaining array (using the `...`, or spread, operator) to be inferred from all but the first list member.
 If that array is possible, it's the resultant type.
 If not, an empty array is returned.
 
-If we run our ApplyMoves type on our blank StartingBoard and an array type containing a couple of moves, we get back an output type with those two moves applied. 
+If we run our ApplyMoves type on our blank StartingBoard and an array type containing a couple of moves, we get back an output type with those two moves applied.
 
 ```ts
-type TwoAppliedMoves = ApplyMoves<
-    StartingBoard,
-    [
-        ['X', 0, 1],
-        ['O', 2, 2],
-    ]
->;
+type TwoAppliedMoves = ApplyMoves<StartingBoard, [["X", 0, 1], ["O", 2, 2]]>;
 /*
 {
     0: { 0: " "; 1: "X"; 2: " "; };
@@ -573,13 +504,9 @@ Keeping the type system's functional/logical nature in mind, here's my proposal 
 Here's how that type will look:
 
 ```ts
-type TicTacToe<Moves extends string>
-    = Winner<
-        ApplyMoves<
-            StartingBoard,
-            ParseRawMoves<Moves>
-        >
-    >;
+type TicTacToe<Moves extends string> = Winner<
+    ApplyMoves<StartingBoard, ParseRawMoves<Moves>>
+>;
 ```
 
 We'll need to write that `ParseRawMoves` type.
@@ -592,12 +519,11 @@ In order to convert the raw moves list into an array of `Move`s, we'll need to u
 2. Filter those move lines into an array of usable `Move` tuples
 
 ```ts
-type ParseRawMoves<Moves extends string> =
-    CollectParsedRawMoves<
-        Split<Moves, '\n'>,
-        [],
-        'X'
-    >;
+type ParseRawMoves<Moves extends string> = CollectParsedRawMoves<
+    Split<Moves, "\n">,
+    [],
+    "X"
+>;
 ```
 
 That introduces _two_ types we'll need to implement.
@@ -607,12 +533,11 @@ That introduces _two_ types we'll need to implement.
 Finally, we get a real example in this blog post of using template literal types:
 
 ```ts
-type Split<Text extends string, Splitter extends string> =
-    Text extends ''
-        ? []
-        : Text extends `${infer Prefix}${Splitter}${infer Suffix}`
-            ? [Prefix, ...Split<Suffix, Splitter>]
-            : [Text];
+type Split<Text extends string, Splitter extends string> = Text extends ""
+    ? []
+    : Text extends `${infer Prefix}${Splitter}${infer Suffix}`
+    ? [Prefix, ...Split<Suffix, Splitter>]
+    : [Text];
 ```
 
 Our `Split` type takes in a `Text` string and a `Splitter` string.
@@ -634,28 +559,28 @@ The full `CollectParsedRawMoves` type is a little hairy so I've split out a few 
 
 ```ts
 // Given a turn, switch to the next (other possible) turn
-type NextTurn<Turn> = Turn extends 'X'
-    ? 'O'
-    : 'X';
+type NextTurn<Turn> = Turn extends "X" ? "O" : "X";
 ```
 
 ```ts
 // Given a string description of a move, give back the number (int) equivalent
 // (useful because the inputs are raw strings, but outputs are numbers...)
-type IntToString<Int> = 
-    Int extends '0'
-        ? 0
-        : Int extends '1'
-            ? 1
-            : Int extends '2'
-                ? 2
-                : never;
+type IntToString<Int> = Int extends "0"
+    ? 0
+    : Int extends "1"
+    ? 1
+    : Int extends "2"
+    ? 2
+    : never;
 ```
 
 ```ts
 // Applies the two above types to parse an input line like 'X 1 2'
-type ParseRawMove<Turn, RawRow, RawColumn> =
-    [Turn, IntToString<RawRow>, IntToString<RawColumn>];
+type ParseRawMove<Turn, RawRow, RawColumn> = [
+    Turn,
+    IntToString<RawRow>,
+    IntToString<RawColumn>
+];
 ```
 
 Ok dokie!
@@ -664,26 +589,24 @@ Here it is!
 A type that recursively goes through an array of raw move strings and turns them into our nice Move tuple types:
 
 ```ts
-type CollectParsedRawMoves<RawMoves extends string[], Collected extends Move[], Turn extends 'X' | 'O'>
-    = RawMoves extends []
-        ? Collected
-        : RawMoves[0] extends `${infer Pre}${Turn} ${infer RawRow} ${infer RawColumn}${infer Post}`
-            ? CollectParsedRawMoves<
-                DropFirst<RawMoves>,
-                [...Collected, ParseRawMove<Turn, RawRow, RawColumn>],
-                NextTurn<Turn>
-            >
-            : CollectParsedRawMoves<
-                DropFirst<RawMoves>,
-                Collected,
-                Turn
-            >;
+type CollectParsedRawMoves<
+    RawMoves extends string[],
+    Collected extends Move[],
+    Turn extends "X" | "O"
+> = RawMoves extends []
+    ? Collected
+    : RawMoves[0] extends `${infer Pre}${Turn} ${infer RawRow} ${infer RawColumn}${infer Post}`
+    ? CollectParsedRawMoves<
+          DropFirst<RawMoves>,
+          [...Collected, ParseRawMove<Turn, RawRow, RawColumn>],
+          NextTurn<Turn>
+      >
+    : CollectParsedRawMoves<DropFirst<RawMoves>, Collected, Turn>;
 ```
 
 It's kind of big, so here's a version with inline comments:
 
 ```ts
-
 // Our CollectParsedRawMoves type takes in:
 type CollectParsedRawMoves<
     // * the array of raw moves,
@@ -691,41 +614,37 @@ type CollectParsedRawMoves<
     // * the collected moves thus far,
     Collected extends Move[],
     // * and a current turn to parse out of the next raw move.
-    Turn extends 'X' | 'O'
->
-
+    Turn extends "X" | "O"
+> =
     // If there are no more raw moves to parse out, it's done, hooray!...
-    = RawMoves extends []
-        // ...we can exit early by returning an empty array.
-        ? Collected
-
-        // If there is a next move to parse in our list of raw moves,
+    RawMoves extends []
+        ? // ...we can exit early by returning an empty array.
+          Collected
+        : // If there is a next move to parse in our list of raw moves,
         // it checks whether that move matches a usable pattern.
         // There can be any amount of Pre text before the Turn string,
         // followed by a space, the row, another space, the column,
         // then any amount of Post text.
-        : RawMoves[0] extends `${infer Pre}${Turn} ${infer RawRow} ${infer RawColumn}${infer Post}`
-
-            // If it did match, we can recursively continue with:
-            ? CollectParsedRawMoves<
-                // * remaining moves yet to be parsed,
-                DropFirst<RawMoves>,
-                // * the previous collected moves, followed by this new move
-                //   (as parsed by our ParseRawMove helper),
-                [...Collected, ParseRawMove<Turn, RawRow, RawColumn>],
-                // * and the next turn.
-                NextTurn<Turn>
-            >
-
-            // If our raw move doesn't match the template, then we recurse:
-            : CollectParsedRawMoves<
-                // * still with the rest of the raw moves, but
-                DropFirst<RawMoves>,
-                // * the same collected moves list (no added one), and
-                Collected,
-                // * we retry the same move again.
-                Turn
-            >;
+        RawMoves[0] extends `${infer Pre}${Turn} ${infer RawRow} ${infer RawColumn}${infer Post}`
+        ? // If it did match, we can recursively continue with:
+          CollectParsedRawMoves<
+              // * remaining moves yet to be parsed,
+              DropFirst<RawMoves>,
+              // * the previous collected moves, followed by this new move
+              //   (as parsed by our ParseRawMove helper),
+              [...Collected, ParseRawMove<Turn, RawRow, RawColumn>],
+              // * and the next turn.
+              NextTurn<Turn>
+          >
+        : // If our raw move doesn't match the template, then we recurse:
+          CollectParsedRawMoves<
+              // * still with the rest of the raw moves, but
+              DropFirst<RawMoves>,
+              // * the same collected moves list (no added one), and
+              Collected,
+              // * we retry the same move again.
+              Turn
+          >;
 ```
 
 ...tada! 🎊
@@ -753,7 +672,7 @@ Patrick Star trying to grasp template literal types. [<a aria-label="Patrick Sta
 By now, you have at the very least a healthy appreciation for the power of TypeScript's type system, and ideally a better understanding of how to use it to boot.
 
 If you want to grow your type system chops a bit, the [Type Challenges](https://github.com/type-challenges/type-challenges) repository is a great place to up your game.
-It presents a series of increasingly difficult tasks in the type system for you to play with. 
+It presents a series of increasingly difficult tasks in the type system for you to play with.
 
 ### DefinitelyTyped
 
@@ -776,10 +695,10 @@ I'd love to see what fun advances in this game engine exploration you come up wi
 Please, [tag me @JoshuaKGoldberg](https://twitter.com/JoshuaKGoldberg) with your results!
 A few starting suggestions might be:
 
-* A win/loss calculator for a list of game strings?
-* Game AI to generate a next move?
-* Expanding to games like Connect Four, Checkers, Chess, or Boggle?
-* Ignoring whatever I say and doing something completely different!?
+-   A win/loss calculator for a list of game strings?
+-   Game AI to generate a next move?
+-   Expanding to games like Connect Four, Checkers, Chess, or Boggle?
+-   Ignoring whatever I say and doing something completely different!?
 
 Thanks for making it this far in the blog post.
 I hope it served some use to you in exploring the TypeScript type system!
