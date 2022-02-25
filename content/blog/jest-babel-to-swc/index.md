@@ -101,6 +101,9 @@ module.exports = {
 
 ...and filed [Consider defaulting jsc target to the current Node version's supported level](https://github.com/swc-project/jest/issues/74) as an issue on the [swc-project/jest](https://github.com/swc-project/jest) GitHub repo.
 
+> **Edit 2/24/2022**: Versions 0.2.18 of `@swc/jest` will auto-detect the highest supported `jsc.target` on your system now.
+> Hooray!
+
 At this point, all my tests passed (yay!), but the code coverage calculation was slightly lower than expected. 😕
 
 ### Code Coverage Differences
