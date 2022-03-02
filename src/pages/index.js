@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import ArticlePreview from "../components/articlepreview";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 const BlogIndex = ({ data }) => {
     const siteTitle = data.site.siteMetadata.title;
@@ -11,7 +11,7 @@ const BlogIndex = ({ data }) => {
 
     return (
         <Layout title={siteTitle}>
-            <SEO title="All posts" />
+            <Seo title="All posts" />
             {posts.map(({ node }) => {
                 return <ArticlePreview key={node.fields.slug} node={node} />;
             })}
