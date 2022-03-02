@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import SEO from "../seo";
+import Seo from "../seo";
 import * as styles from "./styles";
 
 const BlogBody = ({ post }) => {
@@ -16,7 +16,7 @@ const BlogBody = ({ post }) => {
 
     return (
         <>
-            <SEO description={description || post.excerpt} title={title} />
+            <Seo description={description || post.excerpt} title={title} />
 
             <article css={styles.article}>
                 <header>

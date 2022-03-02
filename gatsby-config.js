@@ -1,5 +1,5 @@
 module.exports = {
-    flags: { PRESERVE_WEBPACK_CACHE: true },
+    flags: { FAST_DEV: true },
     siteMetadata: {
         author: `Josh Goldberg`,
         description: `Personal blog for Josh Goldberg. It's mostly TypeScript things!`,
@@ -54,7 +54,6 @@ module.exports = {
         },
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
-        `gatsby-plugin-feed`,
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
