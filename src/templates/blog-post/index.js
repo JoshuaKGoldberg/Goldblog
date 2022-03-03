@@ -5,23 +5,14 @@ import BlogNav from "../../components/blognav";
 import BlogBody from "../../components/blogbody";
 import BlogLink from "../../components/bloglink";
 import Layout from "../../components/layout";
-import Seo from "../../components/seo";
 
 const BlogPostTemplate = ({ data, pageContext }) => {
     const post = data.markdownRemark;
+    const BodyComponent = post.frontmatter.link ? BlogLink : BlogBody;
 
     return (
         <Layout>
-            <Seo
-                description={post.frontmatter.description}
-                title={post.frontmatter.title}
-            />
-            {post.frontmatter.link ? (
-                <BlogLink link={post.frontmatter.link} />
-            ) : (
-                <BlogBody post={post} />
-            )}
-
+            <BodyComponent post={post} />
             <BlogNav pageContext={pageContext} />
         </Layout>
     );
@@ -45,6 +36,9 @@ export const pageQuery = graphql`
                 date(formatString: "MMMM DD, YYYY")
                 description
                 download
+                image {
+                    base
+                }
                 link {
                     title
                     url
