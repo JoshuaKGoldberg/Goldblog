@@ -2,6 +2,7 @@
 title: "Full Time Open Source"
 date: "2022-01-22T12:34:56.117Z"
 description: "I'm quitting my job to become a full time open source maintainer"
+image: so-long.gif
 ---
 
 I love coding.

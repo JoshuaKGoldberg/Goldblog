@@ -1,10 +1,19 @@
 import React from "react";
 
+import Seo from "../seo";
 import * as styles from "./styles";
 
-const BlogLink = ({ link: { url, title } }) => {
+const BlogLink = ({
+    post: {
+        frontmatter: {
+            description,
+            link: { url, title },
+        },
+    },
+}) => {
     return (
         <>
+            <Seo description={description} title={title} />
             <h2 css={styles.hiddenTitle}>{title}</h2>
             <a
                 css={styles.externalLink}

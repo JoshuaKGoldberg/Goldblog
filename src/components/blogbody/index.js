@@ -4,7 +4,7 @@ import Seo from "../seo";
 import * as styles from "./styles";
 
 const BlogBody = ({ post }) => {
-    const { date, description, download, title } = post.frontmatter;
+    const { date, description, download, image, title } = post.frontmatter;
 
     useEffect(() => {
         if (typeof window !== "undefined") {
@@ -16,7 +16,11 @@ const BlogBody = ({ post }) => {
 
     return (
         <>
-            <Seo description={description || post.excerpt} title={title} />
+            <Seo
+                description={description || post.excerpt}
+                image={image ? `/images/${image.base}` : undefined}
+                title={title}
+            />
 
             <article css={styles.article}>
                 <header>
