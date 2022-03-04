@@ -362,7 +362,7 @@ TypeScript's code emit works by passing each input file's AST through a series o
 You can see the impacted transformers in the [pull request](https://github.com/microsoft/TypeScript/pull/29374/files) under `src/transformers`.
 They're coordinated by a [`getScriptTransformers` in `src/compiler/transformer.ts`](https://github.com/Microsoft/TypeScript/blob/39ff1568e9676d40cf545477e9fd04077eff9b78/src/compiler/transformer.ts#L41).
 
-The transformers relevant to this PR are, in order:
+The transformers relevant to this pull request are, in order:
 
 1. `transformTypeScript`: Removes type system specific syntax, leaving pure glorious JavaScript
 2. `transformClassFields`: Massages class fields such as class properties and parameter properties into their JavaScript equivalents
@@ -548,12 +548,13 @@ The transformer code has to include a few extra function calls to properly massa
 > Me too!
 > Please upvote [#47573: Remove older emit support over time](https://github.com/microsoft/TypeScript/issues/47573) to make it more likely we'll no longer need to support ES5 eventually! 💖
 
-## "Why Did This PR Take So Long?"
+## "Why Did This Pull Request Take So Long?"
 
 ⚠ TODO: I'm going to ask a contact on the TS team about this section if I can -- just want to make sure I'm not putting words in anybody's mouth...
 
-One question that has inevitably cropped up many times around the PR's work is around _why_ it took three years to get this change in.
-I want to be very clear in this blog post that I don't "blame" the TypeScript team for taking a while to get to it.
+One question that inevitably cropped up many times around the pull request is around _why_ it took three years to merge.
+I want to be very clear in this blog post that there are no hard feelings.
+I don't "blame" the TypeScript team for taking a while to get to it.
 Most of my issues and pull requests to TypeScript are reviewed relatively quickly.
 This one was a sharp outlier.
 
@@ -574,9 +575,10 @@ I probably won't try to contribute something quite so extensive to TypeScript ag
 
 ## Final Thanks
 
-I'd like to extend a sincere heartfelt thanks to the several developers who reviewed the pull request over the years:
+I'd like to extend a sincere heartfelt thanks to the several developers who reviewed the pull request over the years.
+In order of review:
 
--   [Klaus Meinhardt (ajafff)](https://github.com/ajafff): An all-around knowledgeable developer who has previously created a linter ([fimbullinter/wotan](https://github.com/fimbullinter/wotan)), helped maintain TSLint, and gave helpful pointers early in the pull request -- all as a fellow external contributor.
+-   [Klaus Meinhardt (ajafff)](https://github.com/ajafff): An all-around knowledgeable developer who has previously created a linter ([fimbullinter/wotan](https://github.com/fimbullinter/wotan)) and gave helpful pointers early in the pull request -- all as a fellow external contributor.
 -   [Wesley Wigham (@weswigham)](https://twitter.com/WesleyWigham): For giving the pull request a helpful review and its first approval back in 2020.
 -   [Ron Buckton (@rbuckton)](https://twitter.com/rbuckton): For an intensely thorough set of reviews containing deep insights into the wild and wacky world of JavaScript and TypeScript classes, along with the final approval in 2022.
 
