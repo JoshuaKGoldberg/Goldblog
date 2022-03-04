@@ -20,10 +20,9 @@ I ended up eating an unhealthy amount of the cake myself.
 It asks for more leniency in allowing code before a `super()` call inside a class constructor.
 Back in 2019, I thought it'd be a fun medium-sized challenge to fix the issue.
 
-I was so wrong.
+I was right that it'd be fun, but wrong about the scope of the challenge.
 Very, very wrong.
-
-It took three years (albeit mostly waiting for pull request review) and a micro-viral tweet about sending the TypeScript team a cake to get this fix merged.
+It took three years (albeit mostly waiting for pull request review) and a micro-viral tweet about sending the TypeScript team a cake to get a fix merged.
 
 ✨ [#29374: Allowed non-this, non-super code before super call in derived classes with property initializers](https://github.com/microsoft/TypeScript/pull/29374) ✨
 
@@ -548,6 +547,30 @@ The transformer code has to include a few extra function calls to properly massa
 > Bewildered at that high-level walkthrough?
 > Me too!
 > Please upvote [#47573: Remove older emit support over time](https://github.com/microsoft/TypeScript/issues/47573) to make it more likely we'll no longer need to support ES5 eventually! 💖
+
+## "Why Did This PR Take So Long?"
+
+⚠ TODO: I'm going to ask a contact on the TS team about this section if I can -- just want to make sure I'm not putting words in anybody's mouth...
+
+One question that has inevitably cropped up many times around the PR's work is around _why_ it took three years to get this change in.
+I want to be very clear in this blog post that I don't "blame" the TypeScript team for taking a while to get to it.
+Most of my issues and pull requests to TypeScript are reviewed relatively quickly.
+This one was a sharp outlier.
+
+To start, keep in mind that TypeScript is a software project like any other: it has deliverables, a set of team priorities, and a finite list of human resources to work with.
+The TypeScript team does a tremendous amount of work to support an open source issue tracker and pull requests.
+Larger pull requests such as mine cause an unusually high amount of work for the team to coordinate around, review, QA in beta, and so on.
+
+This particular pull request also touched an area that needs unusually thorough review -- on top of the already thorough reviews the TypeScript team performs on any pull request.
+You can scan through the review comments left through the life of the pull request to see just how absurdly difficult it is to account for all of JavaScript's class constructor behaviors.
+
+My pull request additionally happened to target an area of code (ES2015 class transformers) that relatively fewer people -even within the TypeScript team- have deep expertise on.
+Very few humans on this planet can keep a full understanding of JavaScript class constructors fresh in their brain.
+I certainly don't, and I authored the pull request!
+Repeatedly coordinating an expert to look at an external contributor's large, tricky pull request is a tough ask.
+
+Looking back on this pull request, I'm glad I sent it and was able to get it reviewed & shipped.
+I probably won't try to contribute something quite so extensive to TypeScript again unless I'm actively coordinating with a member of the TypeScript team.
 
 ## Final Thanks
 
