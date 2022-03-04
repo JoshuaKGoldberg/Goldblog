@@ -16,15 +16,16 @@ I ended up eating an unhealthy amount of the cake myself.
 </small>
 </em>
 
-One of TypeScript's oldest issues -dating back to 2016- is [#8277: Always allow code before super call when it does not use "this"](https://github.com/microsoft/TypeScript/issues/8277).
-Back in 2019, I thought it'd be a fun medium-sized challenge to finally tackle that issue once-and-for-all.
+[#8277: Always allow code before super call when it does not use "this"](https://github.com/microsoft/TypeScript/issues/8277) is one of TypeScript's oldest highly-upvoted issues.
+It asks for more leniency in allowing code before a `super(...)` call inside a class constructor.
+Back in 2019, I thought it'd be a fun medium-sized challenge to fix the issue.
 
 I was so wrong.
 Very, very wrong.
 
-It took three years (albeit mostly waiting for pull request review) and a micro-viral tweet about sending the TypeScript team a cake to get the fix merged.
+It took three years (albeit mostly waiting for pull request review) and a micro-viral tweet about sending the TypeScript team a cake to get this fix merged.
 
-[#29374: Allowed non-this, non-super code before super call in derived classes with property initializers](https://github.com/microsoft/TypeScript/pull/29374)
+✨ [#29374: Allowed non-this, non-super code before super call in derived classes with property initializers](https://github.com/microsoft/TypeScript/pull/29374) ✨
 
 My previous _TypeScript Contribution Diary_ posts were structured as stories explaining the timeline of how those changes made it in.
 This entry's pull request had 159 comments over three years -- far too many for that format.
@@ -40,10 +41,11 @@ Let's dig in! 🍰
 ## Problem Statement
 
 One quirk of classes in many languages, including JavaScript, is that inside the constructor of a _derived_ class (one that `extends` a _base_ class), trying to access `super` or `this` before calling the base constructor with `super(...)` causes a runtime error.
+Languages typically prevent those accesses because they want to enforce a guarantee that the base class constructor will have finished setting up the class instance before any derived class logic reads from the instance.
 
 Trying to evaluate this snippet in JavaScript will result in an error:
 
-```ts
+```js
 class Base {}
 class Derived extends Base {
     constructor() {
@@ -58,9 +60,9 @@ new Derived();
 ```
 
 Statically determining whether a constructor is going to cause that runtime error is a nigh-impossible job.
-Constructors can have immediately-called functions, loops, objects, and all sorts of wacky runtime shenanigans that make it hard to tell whether a `super(...)` call will definitely be run.
+Constructors can have immediately-called functions, loops, objects, and other runtime shenanigans that make it hard to tell whether a `super(...)` call will always be run.
 
-This constructor always calls its base constructor but would be very difficult for a static type system such as TypeScript's to know that:
+This constructor does always call its base constructor, but that would be very difficult for a static type system such as TypeScript's to know:
 
 ```ts
 class Base {}
@@ -80,10 +82,27 @@ class Derived extends Base {
 }
 ```
 
-Instead of trying to figure out those complicated constructor cases, early versions of TypeScript just made sure that in classes containing properties, the first logical line of code in a constructor was a `super(...)` call.
-Containing properties is an important consideration because when using traditional TypeScript compiler options, initial values for those properties are assigned immediately after the `super(...)` call.
+Early versions of TypeScript didn't attempt to figure out those complicated constructor cases.
+They instead only made sure that in classes containing properties, the first logical line of code in a constructor was a `super(...)` call.
 
-This class seems to run `console.log("2️⃣")` after its `super()`...
+TypeScript's type checker would report an error on the previous snippet's `this`:
+
+```ts
+class Base {}
+class Derived extends Base {
+    constructor() {
+        console.log(this);
+        //          ~~~~
+        // Error: 'super' must be called before accessing
+        // 'this' in the constructor of a derived class.
+        super();
+    }
+}
+```
+
+Containing properties is an important consideration because in the output compiled JavaScript, initial values for those properties are assigned immediately after the `super(...)` call.
+
+This class seems to run `console.log("2️⃣")` after its `super()`:
 
 ```ts
 class Base {}
@@ -128,16 +147,28 @@ class Base {}
 class Derived extends Base {
     property = true;
 
-    // Type error: A 'super' call must be the first statement in the constructor when a
-    // class contains initialized properties, parameter properties, or private identifiers.
     constructor() {
         console.log("🥺");
+        // ~~~~~~~~~~~~~~~
+        // Type error: A 'super' call must be the first statement in
+        // the constructor when a class contains initialized
+        // properties, parameter properties, or private identifiers.
         super();
     }
 }
 ```
 
-What a juicy problem!
+I'd previously been inconvenienced by that limitation when working in OOP-style projects in TypeScript.
+This issue seemed like it'd be both a good way to challenge my understanding of TypeScript and solve a real user-issue hit by many users.
+
+### Project Scope
+
+There ended up being two areas of source code I had to change:
+
+-   [Updating the Type Checker](#updating-the-type-checker): Adjusting TypeScript's type errors to be more lenient
+-   [Updating Transformers](#updating-transformers): Adjusting output JavaScript for more varieties of constructors
+
+---
 
 ## Updating the Type Checker
 
@@ -150,10 +181,12 @@ Instead of requiring the `super(...)` call be the _first_ expression in the cons
 -   It would need to be a _root-level_ expression: meaning it couldn't be contained in a block such as an `if` or `for`
 -   Runtime uses of `this` and `super` keywords would not be allowed before that root-level expression
 
-These changes ended up being the most pleasant part of the pull request.
-You can see them in the pull request's [`src/compiler/checker.ts` file view](https://github.com/microsoft/TypeScript/pull/29374/files#diff-d9ab6589e714c71e657f601cf30ff51dfc607fc98419bf72e04f6b0fa92cc4b8).
+You can see the changes in the pull request's [`src/compiler/checker.ts` file view](https://github.com/microsoft/TypeScript/pull/29374/files#diff-d9ab6589e714c71e657f601cf30ff51dfc607fc98419bf72e04f6b0fa92cc4b8).
+These next two blog post sections will give a high-level overview of them.
 
 ### Checking for a Root Level `super(...)`
+
+> [src/compiler/checker.ts#34739](https://github.com/microsoft/TypeScript/pull/29374/files#diff-d9ab6589e714c71e657f601cf30ff51dfc607fc98419bf72e04f6b0fa92cc4b8R34739)
 
 TypeScript's type checker already found the first `super(...)` call in a constructor with a call to a `findFirstSuperCall` function:
 
@@ -161,7 +194,7 @@ TypeScript's type checker already found the first `super(...)` call in a constru
 const superCall = findFirstSuperCall(node.body!);
 ```
 
-That function recursively searches through the constructor, returning the first node that matches `isSuperCall` and skipping any function boundary:
+That function returns the first node that matches `isSuperCall`, skipping any function boundary and recursively searching through all other child nodes:
 
 ```ts
 function findFirstSuperCall(node: Node): SuperCall | undefined {
@@ -173,9 +206,9 @@ function findFirstSuperCall(node: Node): SuperCall | undefined {
 }
 ```
 
-I didn't need to change `findFirstSuperCall` for my changes.
+I fortunately didn't need to change `findFirstSuperCall` for my changes.
 
-I used the existing `superCall` variable for a check to make sure it was root level:
+I used the existing `superCall` variable for a check to make sure it was root level with a new `superCallIsRootLevelInConstructor` function:
 
 ```ts
 if (!superCallIsRootLevelInConstructor(superCall, node.body!)) {
@@ -186,7 +219,7 @@ if (!superCallIsRootLevelInConstructor(superCall, node.body!)) {
 }
 ```
 
-`superCallIsRootLevelInConstructor` is a function I wrote in the pull request that checks whether a `super(...)` _call expression_'s parent _expression statement_ is in the body of a constructor:
+`superCallIsRootLevelInConstructor` checks whether a `super(...)` _call expression_'s parent _expression statement_ is in the body of a constructor:
 
 ```ts
 function superCallIsRootLevelInConstructor(superCall: Node, body: Block) {
@@ -198,8 +231,15 @@ function superCallIsRootLevelInConstructor(superCall: Node, body: Block) {
 }
 ```
 
-To gloss over a summary of TypeScript's AST behavior around calls, each child of a block is a _statement_ that can contain children such as _expression statements_, _for statements_, _if statements_.
-I find it easier to remember the distinction by recalling that statements may optionally have a semicolon.
+To recap TypeScript's AST behavior around call statements:
+
+-   **Block**: Area containing lines of code, commonly surrounded by `{}`
+-   **Statement**: Line of code, commonly a child of a _block_
+    -   Examples include _expression statements_, _for statements_, and _if statements_
+    -   **Expression Statement**: Contains a _call expression_ as its child expression
+-   **Call Expression**: A call to a function
+
+I find it easier to remember the distinction by recalling that _statements_ may optionally have a semicolon.
 In codebases that include semicolons, expression statements contain a child such as a _binary expression_ or _call expression_ plus one character for a semicolon:
 
 ```plaintext
@@ -209,6 +249,8 @@ super();
 ```
 
 ### Checking Constructor Statement Order
+
+> [src/compiler/checker.ts#34754](https://github.com/microsoft/TypeScript/pull/29374/files#diff-d9ab6589e714c71e657f601cf30ff51dfc607fc98419bf72e04f6b0fa92cc4b8R34754)
 
 Next up was making sure nothing in the constructor accessed `super` or `this` before the `super(...)` call.
 I did that with a for loop over the statements in the constructor.
@@ -311,7 +353,7 @@ With these approximate type checker changes, the type checker allows for code be
 
 That leaves us with making TypeScript's code emit properly output JavaScript for these new constructor variants.
 
-## Updating the Transformer
+## Updating Transformers
 
 TypeScript's code emit works by passing each input file's AST through a series of transformers.
 You can see the impacted transformers in the [pull request](https://github.com/microsoft/TypeScript/pull/29374/files) under `src/transformers`.
@@ -326,8 +368,11 @@ The transformers relevant to this PR are, in order:
     - For example, if the configured output language version is `es2019`, then as of TypeScript 4.6 the transformers to be run would be: `transformESNext`, `transformES2021`, and `transformES2020`
 
 Transformers generally recursively crawl through the nodes in the file's AST, applying transformations to specific node types as they find them.
+These next three blog post sections will give a high-level overview of each of the changed transformers.
 
 ### `transformTypeScript`
+
+> [`src/compiler/transformers/ts.ts](https://github.com/microsoft/TypeScript/pull/29374/files#diff-434a48997b788187774ea0573dd60688d07638fc89e809acf9bb3f455c816027)
 
 `transformTypeScript` includes a `transformConstructorBody` function to turn any parameter properties into assignments within the constructor.
 
@@ -341,7 +386,7 @@ class HasParameterProperty {
 }
 ```
 
-...would become this JavaScript class (or the equivalent `Object.defineProperty` if `useDefineForClassFields` is enabled):
+...would become this JavaScript class (or the equivalent with `Object.defineProperty` if `useDefineForClassFields` is enabled):
 
 ```ts
 class HasParameterProperty {
@@ -370,6 +415,8 @@ Using those two variables, this is the order the code now takes to create the tr
 
 ### `transformClassFields`
 
+> [`src/compiler/transformers/classFields.ts](https://github.com/microsoft/TypeScript/pull/29374/files#diff-2f470e1718434e5dfb841136a11eda3b4f46e9a2b3d14e0401c64f304da2b87e)
+
 `transformClassFields` also contains a `transformConstructorBody` function.
 This time it's used to turn class properties into assignments within the constructor.
 
@@ -384,7 +431,7 @@ class HasClassProperty {
 }
 ```
 
-...would become this JavaScript class (or the equivalent `Object.defineProperty` if `useDefineForClassFields` is enabled):
+...would become this JavaScript class (or the equivalent with `Object.defineProperty` if `useDefineForClassFields` is enabled):
 
 ```ts
 class HasClassProperty {
@@ -396,7 +443,8 @@ class HasClassProperty {
 ```
 
 This `transformConstructorBody` also inserts a "synthetic" `super(...arguments)` if the class is a derived one with a property initializer and without its own constructor.
-For example, this class:
+
+For example, this TypeScript class:
 
 ```ts
 class HasJustClassProperty {
