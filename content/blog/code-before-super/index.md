@@ -1,6 +1,6 @@
 ---
 date: "2022-03-07T12:34:56.117Z"
-description: "Allowing derived classes with properties to include code before `super()` that doesn't touch `this`. A grand pull request three years in the making -- with cake!"
+description: "Allowing derived classes with properties to include code before `super()` call that doesn't touch `this`. A grand pull request three years in the making -- with cake!"
 image: cake.jpg
 title: "TypeScript Contribution Diary: Allowing Code in Constructors Before `super()`"
 ---
@@ -8,7 +8,7 @@ title: "TypeScript Contribution Diary: Allowing Code in Constructors Before `sup
 ![Fancy blue and white circular cake with text "Happy 3rd Birthday, #293374" and "Bump for PR review please!" above the TypeScript logo](./cake.jpg)
 
 <em style="display:block;margin-bottom:2rem;text-align:center;">
-A cake I ordered to commemorate the pull request being open for three years.
+A cake I ordered to commemorate the pull request being open for three years. [<a href="https://twitter.com/JoshuaKGoldberg/status/1481654056422567944" title="Cake tweet">tweet</a>]
 <br />
 <small>
 I'd wanted to send it to the TypeScript team, but Daniel Rosenwasser informed me the team was still remote for COVID in January of 2022.
@@ -17,7 +17,7 @@ I ended up eating an unhealthy amount of the cake myself.
 </em>
 
 [#8277: Always allow code before super call when it does not use "this"](https://github.com/microsoft/TypeScript/issues/8277) is one of TypeScript's oldest highly-upvoted issues.
-It asks for more leniency in allowing code before a `super(...)` call inside a class constructor.
+It asks for more leniency in allowing code before a `super()` call inside a class constructor.
 Back in 2019, I thought it'd be a fun medium-sized challenge to fix the issue.
 
 I was so wrong.
@@ -32,7 +32,7 @@ This entry's pull request had 159 comments over three years -- far too many for 
 
 Instead, I'll give a high-level overview of the backing issue's context, the pull request's strategy, and general code changes.
 
-Let's dig in! 🍰
+Let's dig in! 🎂
 
 > This contribution diary post assumes you've read through previous entries and/or are already familiar with how JavaScript compilers and type checkers work.
 > If that's not the case, no worries!
@@ -40,7 +40,7 @@ Let's dig in! 🍰
 
 ## Problem Statement
 
-One quirk of classes in many languages, including JavaScript, is that inside the constructor of a _derived_ class (one that `extends` a _base_ class), trying to access `super` or `this` before calling the base constructor with `super(...)` causes a runtime error.
+One quirk of classes in many languages, including JavaScript, is that inside the constructor of a _derived_ class (one that `extends` a _base_ class), trying to access `super` or `this` before calling the base constructor with `super()` call causes a runtime error.
 Languages typically prevent those accesses because they want to enforce a guarantee that the base class constructor will have finished setting up the class instance before any derived class logic reads from the instance.
 
 Trying to evaluate this snippet in JavaScript will result in an error:
@@ -60,7 +60,7 @@ new Derived();
 ```
 
 Statically determining whether a constructor is going to cause that runtime error is a nigh-impossible job.
-Constructors can have immediately-called functions, loops, objects, and other runtime shenanigans that make it hard to tell whether a `super(...)` call will always be run.
+Constructors can have immediately-called functions, loops, objects, and other runtime shenanigans that make it hard to tell whether a `super()` call will always be run.
 
 This constructor does always call its base constructor, but that would be very difficult for a static type system such as TypeScript's to know:
 
@@ -83,7 +83,7 @@ class Derived extends Base {
 ```
 
 Early versions of TypeScript didn't attempt to figure out those complicated constructor cases.
-They instead only made sure that in classes containing properties, the first logical line of code in a constructor was a `super(...)` call.
+They instead only made sure that in classes containing properties, the first logical line of code in a constructor was a `super()` call.
 
 TypeScript's type checker would report an error on the previous snippet's `this`:
 
@@ -100,7 +100,7 @@ class Derived extends Base {
 }
 ```
 
-Containing properties is an important consideration because in the output compiled JavaScript, initial values for those properties are assigned immediately after the `super(...)` call.
+Containing properties is an important consideration because in the output compiled JavaScript, initial values for those properties are assigned immediately after the `super()` call.
 
 This class seems to run `console.log("2️⃣")` after its `super()`:
 
@@ -137,7 +137,7 @@ class Derived extends Base {
 > TypeScript's [`useDefineForClassFields`](https://www.typescriptlang.org/tsconfig/#useDefineForClassFields) compiler option changes that output.
 > Differences in class fields emit is a whole other can of worms I won't get into here.
 
-Enforcing the first line of the constructor be the `super(...)` call was much more straightforward for TypeScript to enforce than trying to understand advanced code logic.
+Enforcing the first line of the constructor be the `super()` call was much more straightforward for TypeScript to enforce than trying to understand advanced code logic.
 Unfortunately, it came at a cost: even lines of code that don't create logical blocks or reference `super` or `this` were still flagged as invalid.
 
 This snippet was considered invalid in the type system even though all it wanted to do was `console.log` before calling `super()`:
@@ -168,15 +168,19 @@ There ended up being two areas of source code I had to change:
 -   [Updating the Type Checker](#updating-the-type-checker): Adjusting TypeScript's type errors to be more lenient
 -   [Updating Transformers](#updating-transformers): Adjusting output JavaScript for more varieties of constructors
 
+I'll give a high-level overview for each.
+I'd strongly recommend referring back to the pull request in your local editor to understand the flow of code.
+
 ---
 
 ## Updating the Type Checker
 
 Most use cases for including non`-this`, non-`super` code in the constructor of a derived class are fairly small.
-The ones I'd seen in the wild were generally about logging and/or creating a temporary variable to be passed as an argument to the `super(...)` call.
+The ones I'd seen in the wild were generally about logging and/or creating a temporary variable to be passed as an argument to the `super()` call.
+I also didn't want to spend a great deal of time to handle complicated logical cases.
 
 Thus, I thought it'd be best to tweak TypeScript's type system logic without overhauling it.
-Instead of requiring the `super(...)` call be the _first_ expression in the constructor, I would make two requirements:
+Instead of requiring the `super()` call be the _first_ expression in the constructor, I would make two requirements:
 
 -   It would need to be a _root-level_ expression: meaning it couldn't be contained in a block such as an `if` or `for`
 -   Runtime uses of `this` and `super` keywords would not be allowed before that root-level expression
@@ -184,11 +188,11 @@ Instead of requiring the `super(...)` call be the _first_ expression in the cons
 You can see the changes in the pull request's [`src/compiler/checker.ts` file view](https://github.com/microsoft/TypeScript/pull/29374/files#diff-d9ab6589e714c71e657f601cf30ff51dfc607fc98419bf72e04f6b0fa92cc4b8).
 These next two blog post sections will give a high-level overview of them.
 
-### Checking for a Root Level `super(...)`
+### Checking for a Root Level `super()`
 
 > [src/compiler/checker.ts#34739](https://github.com/microsoft/TypeScript/pull/29374/files#diff-d9ab6589e714c71e657f601cf30ff51dfc607fc98419bf72e04f6b0fa92cc4b8R34739)
 
-TypeScript's type checker already found the first `super(...)` call in a constructor with a call to a `findFirstSuperCall` function:
+TypeScript's type checker already found the first `super()` call in a constructor with a call to a `findFirstSuperCall` function:
 
 ```ts
 const superCall = findFirstSuperCall(node.body!);
@@ -219,7 +223,7 @@ if (!superCallIsRootLevelInConstructor(superCall, node.body!)) {
 }
 ```
 
-`superCallIsRootLevelInConstructor` checks whether a `super(...)` _call expression_'s parent _expression statement_ is in the body of a constructor:
+`superCallIsRootLevelInConstructor` checks whether a `super()` call _call expression_'s parent _expression statement_ is in the body of a constructor:
 
 ```ts
 function superCallIsRootLevelInConstructor(superCall: Node, body: Block) {
@@ -252,15 +256,15 @@ super();
 
 > [src/compiler/checker.ts#34754](https://github.com/microsoft/TypeScript/pull/29374/files#diff-d9ab6589e714c71e657f601cf30ff51dfc607fc98419bf72e04f6b0fa92cc4b8R34754)
 
-Next up was making sure nothing in the constructor accessed `super` or `this` before the `super(...)` call.
+Next up was making sure nothing in the constructor accessed `super` or `this` before the `super()` call.
 I did that with a for loop over the statements in the constructor.
 For each statement:
 
-1. If the statement is an expression statement that contains a `super(...)` call, mark that we found it and break the loop
+1. If the statement is an expression statement that contains a `super()` call, mark that we found it and break the loop
 2. If the statement is a "prologue directive", continue
 3. If the statement "immediately" references `super` or `this`, break the loop
 
-At the end of the loop, if we hadn't found the `super(...)` call, issue a type error for failing to find it.
+At the end of the loop, if we hadn't found the `super()` call, issue a type error for failing to find it.
 
 #### Prologue Directives
 
@@ -349,7 +353,7 @@ export function isThisContainerOrFunctionBlock(node: Node): boolean {
 }
 ```
 
-With these approximate type checker changes, the type checker allows for code before the `super(...)` so long as it doesn't immediately reference `super` or `this`.
+With these approximate type checker changes, the type checker allows for code before the `super()` call so long as it doesn't immediately reference `super` or `this`.
 
 That leaves us with making TypeScript's code emit properly output JavaScript for these new constructor variants.
 
@@ -403,7 +407,7 @@ It did so with a function named `addPrologueDirectivesAndInitialSuperCall` that 
 I replaced that function with code that computed two important variables:
 
 1. `indexAfterLastPrologueStatement`: After copying any prologue statements, the index of the node just after them
-2. `superStatementIndex`: Index of the first found `super(...)` call after prologue statements, or `-1` if not found
+2. `superStatementIndex`: Index of the first found `super()` call after prologue statements, or `-1` if not found
 
 Using those two variables, this is the order the code now takes to create the transformed constructor's body in the proper order:
 
@@ -465,9 +469,9 @@ class HasJustClassProperty {
 
 In order to account for code being emitted before any class properties and any constructor, a surface-level explanation of the logic could be:
 
-1. Map any prologue directives and explicit `super(...)` call into the new constructor
-2. If there was a `super(...)` call, splice any statements preceding it after the prologue statements and before the `super(...)` call
-3. Later depending on whether a `super(...)` call was found:
+1. Map any prologue directives and explicit `super()` call into the new constructor
+2. If there was a `super()` call, splice any statements preceding it after the prologue statements and before the `super()` call
+3. Later depending on whether a `super()` call was found:
     - If it was, add parameter properties immediately after it
     - If it wasn't but a synthetic `super(...arguments)` was added, add those parameter properties just after it
     - If neither is the case, add those parameter properties to the top of the constructor
@@ -479,7 +483,71 @@ I don't remember where else they're handled but I do remember that when I didn't
 
 ### `transformES2015`
 
-...you can do it, Josh! 😩
+> [src/transformers/es2015.ts](https://github.com/microsoft/TypeScript/pull/29374/files#diff-dcd4349c3d05901caf249656675e87a417abb13c0c678026b823e8a259442c34)
+
+The ES2015-to-ES5 transformer is the largest of TypeScript's transformers and contains more lines of code than all the other ECMAScript transformers combined.
+I suggested in [#47573: Remove older emit support over time](https://github.com/microsoft/TypeScript/issues/47573) that TypeScript no longer target ECMAScript versions older than what any realistically used runtime environment needs...
+but until dropping pre-ES2020 happens some years in the future (🙏), ES2015 classes still need to be transformed into function `prototype` equivalents in TypeScript's compiled output JavaScript.
+
+This TypeScript class:
+
+```ts
+class HasPropertyAndLog {
+    message = "world";
+
+    constructor() {
+        console.log("Hello", this.message);
+    }
+}
+```
+
+...becomes roughly this output JavaScript:
+
+```js
+var HasPropertyAndLog = /** @class */ (function () {
+    function HasPropertyAndLog() {
+        this.message = "world";
+        console.log("Hello", this.message);
+    }
+    return HasPropertyAndLog;
+})();
+```
+
+`transformES2015`'s `transformConstructorBody` keeps track of two arrays of statement nodes:
+
+-   `prologue`: Any existing prologue directives, as well as any nodes added during transformation meant to be added just after them
+-   `statements`: The rest of the statements output for the function body
+
+My change started off by adding three pieces of logic:
+
+1. Captures any previously existing prologue directives in an `existingPrologue` array
+2. Find the `super()` call, storing it in a `superCall` and its statement index in `superStatementIndex`
+    - This is done with a new `findSuperCallAndStatementIndex` that loops through constructor body statements after those in `existingPrologue`
+3. Create a `postSuperStatementsStart` variable to determine where post-`er(...)` nodes are meant to be placed:
+    - If a `super()` call wasn't found, place them just after `existingPrologue`
+    - If a `super()` call was found, place them just after `superStatementIndex`
+
+`transformConstructorBody` is then able to use that information to create constructor body statements:
+
+1. If the `super()` call wasn't synthesized, copy prologue statements into `prologue`
+2. Create a `superCallExpression` variable to store a new `super()` call, if a previous one exists:
+    - If the existing `super()` is synthesized, replace it with the ES5 equivalent: `var _this = _super !== null && _super.apply(this, arguments) || this;`
+    - If the existing `super()` wasn't synthesized, store the result of visiting it
+3. Add any default property value assignments and constructor rest parameter to the end of `prologue`
+4. Add any remaining statements from the constructor to `statements`
+
+The logic for where to place that `superCallExpression` node changes based on a few potential cases commented in [src/compiler/transformers/es2015.ts#1056](https://github.com/microsoft/TypeScript/pull/29374/files#diff-dcd4349c3d05901caf249656675e87a417abb13c0c678026b823e8a259442c34R1056):
+
+-   Whether the constructor is in a derived class
+    -   If so, whether the constructor ends with a `super()` call and doesn't refer to `this`
+-   Whether the `super()` call, if it exists, is the first call in the constructor
+
+I know that was a big wall of text, but if you read through the contents of `transformConstructorBody` and use its comments as reference, I think it can be reasoned through.
+The transformer code has to include a few extra function calls to properly massage `this` scoping and source maps from ES2015+ classes to ES5 functions here and there.
+
+> Bewildered at that high-level walkthrough?
+> Me too!
+> Please upvote [#47573: Remove older emit support over time](https://github.com/microsoft/TypeScript/issues/47573) to make it more likely we'll no longer need to support ES5 eventually! 💖
 
 ## Final Thanks
 
@@ -490,4 +558,4 @@ I'd like to extend a sincere heartfelt thanks to the several developers who revi
 -   [Ron Buckton (@rbuckton)](https://twitter.com/rbuckton): For an intensely thorough set of reviews containing deep insights into the wild and wacky world of JavaScript and TypeScript classes, along with the final approval in 2022.
 
 Additional thanks to [Daniel Rosenwasser (@drosenwasser)](https://twitter.com/drosenwasser) for helping me coordinate the cake.
-Hopefully if there's a next time I'll be able to hand-deliver it to the TypeScript team office in Redmond rather than hoard it all for myself in Brooklyn.
+Hopefully if there's a next time I'll be able to hand-deliver it to the TypeScript team office in Redmond (rather than hoard it all for myself in Brooklyn). 🍰
