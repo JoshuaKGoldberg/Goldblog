@@ -265,9 +265,9 @@ These next three blog post sections will give a high-level overview of each of t
 
 ### `transformTypeScript`
 
-> [`src/compiler/transformers/ts.ts](https://github.com/microsoft/TypeScript/pull/29374/files#diff-434a48997b788187774ea0573dd60688d07638fc89e809acf9bb3f455c816027)
+> [src/compiler/transformers/ts.ts](https://github.com/microsoft/TypeScript/pull/29374/files#diff-434a48997b788187774ea0573dd60688d07638fc89e809acf9bb3f455c816027)
 
-`transformTypeScript` includes a `transformConstructorBody` function to turn any parameter properties into assignments within the constructor.
+`transformTypeScript` includes a `transformConstructorBody` function that turns any parameter properties into assignments within the constructor.
 
 For example, this TypeScript class:
 
@@ -290,13 +290,48 @@ class HasParameterProperty {
 }
 ```
 
-`transformTypeScript` previously assumed it could add both prologue directives and the initial super call all at once when transforming a constructor.
+`transformTypeScript` previously assumed it could add both prologue directives and the initial super call all at once when transforming a constructor with nothing between them.
 It did so with a function named `addPrologueDirectivesAndInitialSuperCall` that returned the index of the first statement after them.
 
 I replaced that function with code that computed two important variables:
 
 1. `indexAfterLastPrologueStatement`: After copying any prologue statements, the index of the node just after them
 2. `superStatementIndex`: Index of the first found `super()` call after prologue statements, or `-1` if not found
+
+```ts
+const indexAfterLastPrologueStatement = factory.copyPrologue(
+    body.statements,
+    statements,
+    /*ensureUseStrict*/ false,
+    visitor
+);
+
+const superStatementIndex = findSuperStatementIndex(
+    body.statements,
+    indexAfterLastPrologueStatement
+);
+```
+
+```ts
+function findSuperStatementIndex(
+    statements: NodeArray<Statement>,
+    indexAfterLastPrologueStatement: number
+) {
+    for (
+        let i = indexAfterLastPrologueStatement;
+        i < statements.length;
+        i += 1
+    ) {
+        const statement = statements[i];
+
+        if (getSuperCallFromStatement(statement)) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+```
 
 Using those two variables, this is the order the code now takes to create the transformed constructor's body in the proper order:
 
@@ -306,9 +341,57 @@ Using those two variables, this is the order the code now takes to create the tr
     -   If `superStatementIndex` wasn't found, place the parameter properties first in the constructor
 3.  Add any remaining statements from the body, skipping the `superStatementIndex` index if it was found
 
+```ts
+// If there was a super call, visit existing statements up to and including it
+if (superStatementIndex >= 0) {
+    addRange(
+        statements,
+        visitNodes(
+            body.statements,
+            visitor,
+            isStatement,
+            indexAfterLastPrologueStatement,
+            superStatementIndex + 1 - indexAfterLastPrologueStatement
+        )
+    );
+}
+
+// Transform parameters into property assignments. Transforms this:
+//
+//  constructor (public x, public y) {
+//  }
+//
+// Into this:
+//
+//  constructor (x, y) {
+//      this.x = x;
+//      this.y = y;
+//  }
+//
+const parameterPropertyAssignments = mapDefined(
+    parametersWithPropertyAssignments,
+    transformParameterWithPropertyAssignment
+);
+
+// If there is a super() call, the parameter properties go immediately after it
+if (superStatementIndex >= 0) {
+    addRange(statements, parameterPropertyAssignments);
+}
+// Since there was no super() call, parameter properties are the first statements in the constructor
+else {
+    statements = addRange(parameterPropertyAssignments, statements);
+}
+
+// Add remaining statements from the body, skipping the super() call if it was found
+addRange(
+    statements,
+    visitNodes(body.statements, visitor, isStatement, superStatementIndex + 1)
+);
+```
+
 ### `transformClassFields`
 
-> [`src/compiler/transformers/classFields.ts](https://github.com/microsoft/TypeScript/pull/29374/files#diff-2f470e1718434e5dfb841136a11eda3b4f46e9a2b3d14e0401c64f304da2b87e)
+> [src/compiler/transformers/classFields.ts](https://github.com/microsoft/TypeScript/pull/29374/files#diff-2f470e1718434e5dfb841136a11eda3b4f46e9a2b3d14e0401c64f304da2b87e)
 
 `transformClassFields` also contains a `transformConstructorBody` function.
 This time it's used to turn class properties into assignments within the constructor.
@@ -356,7 +439,7 @@ class HasJustClassProperty {
 }
 ```
 
-In order to account for code being emitted before any class properties and any constructor, a surface-level explanation of the logic could be:
+In order to account for code being emitted before any class properties and any constructor, the logic is roughly:
 
 1. Map any prologue directives and explicit `super()` call into the new constructor
 2. If there was a `super()` call, splice any statements preceding it after the prologue statements and before the `super()` call
@@ -369,6 +452,8 @@ Ordering is tricky!
 
 I also excluded parameter properties from being moved into the constructor when `useDefineForClassFields` is enabled, as those properties are then handled elsewhere.
 I don't remember where else they're handled but I do remember that when I didn't filter them out, they appeared twice in the output JavaScript.
+
+> I've omitted code snippets from this transformer's explanation for brevity.
 
 ### `transformES2015`
 
@@ -430,6 +515,8 @@ The logic for where to place that `superCallExpression` node changes based on a 
 -   Whether the constructor is in a derived class
     -   If so, whether the constructor ends with a `super()` call and doesn't refer to `this`
 -   Whether the `super()` call, if it exists, is the first call in the constructor
+
+> I've omitted code snippets from this transformer's explanation for brevity.
 
 I know that was a big wall of text, but if you read through the contents of `transformConstructorBody` and use its comments as reference, I think it can be reasoned through.
 The transformer code has to include a few extra function calls to properly massage `this` scoping and source maps from ES2015+ classes to ES5 functions here and there.
