@@ -28,10 +28,7 @@ It took three years (albeit mostly waiting for pull request review) and a micro-
 
 My previous _TypeScript Contribution Diary_ posts were structured as stories explaining the timeline of how those changes made it in.
 This entry's pull request had 159 comments over three years -- far too many for that format.
-
-Instead, I'll give a high-level overview of the backing issue's context, the pull request's strategy, and general code changes.
-
-Let's dig in! 🎂
+I'll instead give a high-level overview of the backing issue's context, the pull request's strategy, and general code changes.
 
 > **This contribution diary post is much longer than normal** because its subject matter is deeper.
 > It also assumes you've read through previous entries and/or are already familiar with how JavaScript compilers and type checkers work.
@@ -40,8 +37,7 @@ Let's dig in! 🎂
 
 ## Problem Statement
 
-One quirk of classes in many languages, including JavaScript, is that inside the constructor of a _derived_ class (one that `extends` a _base_ class), trying to access `super` or `this` before calling the base constructor with `super()` call causes a runtime error.
-Languages typically prevent those accesses because they want to enforce a guarantee that the base class constructor will have finished setting up the class instance before any derived class logic reads from the instance.
+In many programming languages including JavaScript, trying to access `super` or `this` inside the constructor of a _derived_ class (one that `extends` a _base_ class) before calling the base constructor with `super()` call causes a runtime error.
 
 Trying to evaluate this snippet in JavaScript will result in an error:
 
@@ -59,10 +55,12 @@ class Derived extends Base {
 new Derived();
 ```
 
+Languages typically prevent those accesses because they want to enforce a guarantee that the base class constructor will have finished setting up the class instance before any derived class logic reads from the instance.
+
 Statically determining whether a constructor is going to cause that runtime error is a nigh-impossible job.
 Constructors can have immediately-called functions, loops, objects, and other runtime shenanigans that make it hard to tell whether a `super()` call will always be run.
 
-This constructor does always call its base constructor, but that would be very difficult for a static type system such as TypeScript's to know:
+This constructor does always call its base constructor but that would be very difficult for a static type system such as TypeScript's to know:
 
 ```ts
 class Base {}
@@ -85,7 +83,7 @@ class Derived extends Base {
 Early versions of TypeScript didn't attempt to figure out those complicated constructor cases.
 They instead only made sure that in classes containing properties, the first logical line of code in a constructor was a `super()` call.
 
-TypeScript's type checker would report an error on the previous snippet's `this`:
+TypeScript's type checker would report a type error on the earlier snippet's `this`:
 
 ```ts
 class Base {}
@@ -119,9 +117,10 @@ class Derived extends Base {
 }
 ```
 
-...but its compiled JavaScript shows that it would log `"1️⃣"` first:
+...but its compiled ES2015+ JavaScript shows that it would log `"1️⃣"` first:
 
 ```js
+class Base extends Derived {}
 class Derived extends Base {
     constructor() {
         super();
@@ -134,13 +133,13 @@ class Derived extends Base {
 }
 ```
 
-> TypeScript's [`useDefineForClassFields`](https://www.typescriptlang.org/tsconfig/#useDefineForClassFields) compiler option changes that output.
+> TypeScript's [`useDefineForClassFields`](https://www.typescriptlang.org/tsconfig/#useDefineForClassFields) compiler option changes the contents of the `property` assignment in that output but not the order of lines.
 > Differences in class fields emit is a whole other can of worms I won't get into here.
 
 Enforcing the first line of the constructor be the `super()` call was much more straightforward for TypeScript to enforce than trying to understand advanced code logic.
 Unfortunately, it came at a cost: even lines of code that don't create logical blocks or reference `super` or `this` were still flagged as invalid.
 
-This snippet was considered invalid in the type system even though all it wanted to do was `console.log` before calling `super()`:
+This snippet was considered invalid in the type system even though it didn't try to access `this` before its `super()`:
 
 ```ts
 class Base {}
@@ -170,6 +169,8 @@ There ended up being two areas of source code I had to change:
 
 I'll give a high-level overview for each.
 I'd strongly recommend referring back to the pull request in your local editor to understand the flow of code.
+
+Let's dig in! 🎂
 
 ---
 

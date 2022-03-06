@@ -47,11 +47,11 @@ The maintainer's side has its own complexities too:
 -   Confirming the changes match their short- and long-term vision for the project
 -   Describe any change requests in a polite and supportive manner
 
-Imagine being a maintainer on a popular open source project who needs to average, say, twenty pull request reviews a week.
-Even if each of those tasks takes only five minutes, that's (5 tasks / pull request) x (5 minutes / task) x (20 pull requests / week) = 500 minutes a week.
-They're spending over eight hours a week _just reviewing pull requests_, and we're assuming each pull request review is a quick and seamless process!
+Imagine a maintainer on a popular open source project who needs to perform, say, twenty pull request reviews a week on average.
+If each task takes only five minutes on average, that's (5 tasks / pull request) x (5 minutes / task) x (20 pull requests / week) = 500 minutes a week.
+They're spending over eight hours a week _just reviewing pull requests_ -- and we're assuming each pull request review is a quick and seamless process!
 
-## Large Pull Requests Are Especially Difficult
+## Large Pull Requests Are Particularly Difficult
 
 All those difficulties are amplified when a pull request involves many changes and/or is in a particularly tricky area to work with.
 Larger pull requests cause a corresponding larger amount of work for both contributors and maintainers to coordinate around, review, QA in beta, and so on.
