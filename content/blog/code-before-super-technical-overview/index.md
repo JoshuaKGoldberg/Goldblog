@@ -2,165 +2,19 @@
 date: "2022-03-07T12:34:56.117Z"
 description: "Allowing derived classes with properties to include code before `super()` call that doesn't touch `this`. A grand pull request three years in the making -- with cake!"
 image: cake.jpg
-title: "TypeScript Contribution Diary: Allowing Code in Constructors Before `super()`"
+title: "TypeScript Contribution Diary: Allowing Code in Constructors Before `super()` (Technical Overview)"
 ---
-
-![Fancy blue and white circular cake with text "Happy 3rd Birthday, #293374" and "Bump for PR review please!" above the TypeScript logo](./cake.jpg)
-
-<em style="display:block;margin-bottom:2rem;text-align:center;">
-A cake I ordered to commemorate the pull request being open for three years. [<a href="https://twitter.com/JoshuaKGoldberg/status/1481654056422567944" title="Cake tweet">tweet</a>]
-<br />
-<small>
-I'd wanted to send it to the TypeScript team, but Daniel Rosenwasser informed me the team was still remote for COVID in January of 2022.
-I ended up eating an unhealthy amount of the cake myself.
-</small>
-</em>
-
-[#8277: Always allow code before super call when it does not use "this"](https://github.com/microsoft/TypeScript/issues/8277) is one of TypeScript's oldest highly-upvoted issues.
-It asks for more leniency in allowing code before a `super()` call inside a class constructor.
-Back in 2019, I thought it'd be a fun medium-sized challenge to fix the issue.
-
-I was right that it'd be fun, but wrong about the scope of the challenge.
-Very, very wrong.
-It took three years (albeit mostly waiting for pull request review) and a micro-viral tweet about sending the TypeScript team a cake to get a fix merged.
-
-✨ [#29374: Allowed non-this, non-super code before super call in derived classes with property initializers](https://github.com/microsoft/TypeScript/pull/29374) ✨
-
-My previous _TypeScript Contribution Diary_ posts were structured as stories explaining the timeline of how those changes made it in.
-This entry's pull request had 159 comments over three years -- far too many for that format.
-I'll instead give a high-level overview of the backing issue's context, the pull request's strategy, and general code changes.
 
 > **This contribution diary post is much longer than normal** because its subject matter is deeper.
 > It also assumes you've read through previous entries and/or are already familiar with how JavaScript compilers and type checkers work.
 > If that's not the case, no worries!
 > Read through a previous entry such as [TypeScript Contribution Diary: Improved Syntax Error for Enum Member Colons](https://blog.joshuakgoldberg.com/enum-commas) and Andrew Branch's [Debugging the TypeScript Codebase](https://blog.andrewbran.ch/debugging-the-type-script-codebase).
 
-## Problem Statement
+My previous _TypeScript Contribution Diary_ posts were structured as stories explaining the timeline of how those changes made it in.
+This entry's pull request had 159 comments over three years -- far too many for that format.
+I'll instead give a high-level overview of the backing issue's context, the pull request's strategy, and general code changes.
 
-In many programming languages including JavaScript, trying to access `super` or `this` inside the constructor of a _derived_ class (one that `extends` a _base_ class) before calling the base constructor with `super()` call causes a runtime error.
-
-Trying to evaluate this snippet in JavaScript will result in an error:
-
-```js
-class Base {}
-class Derived extends Base {
-    constructor() {
-        console.log(this);
-        super();
-    }
-}
-
-// Uncaught ReferenceError: Must call super constructor in derived
-// class before accessing 'this' or returning from derived constructor
-new Derived();
-```
-
-Languages typically prevent those accesses because they want to enforce a guarantee that the base class constructor will have finished setting up the class instance before any derived class logic reads from the instance.
-
-Statically determining whether a constructor is going to cause that runtime error is a nigh-impossible job.
-Constructors can have immediately-called functions, loops, objects, and other runtime shenanigans that make it hard to tell whether a `super()` call will always be run.
-
-This constructor does always call its base constructor but that would be very difficult for a static type system such as TypeScript's to know:
-
-```ts
-class Base {}
-class Derived extends Base {
-    constructor() {
-        [
-            () => console.log("😈"),
-            () => {
-                () => {
-                    console.log("😇");
-                    super();
-                };
-            },
-            () => console.log("😈"),
-        ][1]();
-    }
-}
-```
-
-Early versions of TypeScript didn't attempt to figure out those complicated constructor cases.
-They instead only made sure that in classes containing properties, the first logical line of code in a constructor was a `super()` call.
-
-TypeScript's type checker would report a type error on the earlier snippet's `this`:
-
-```ts
-class Base {}
-class Derived extends Base {
-    constructor() {
-        console.log(this);
-        //          ~~~~
-        // Error: 'super' must be called before accessing
-        // 'this' in the constructor of a derived class.
-        super();
-    }
-}
-```
-
-Containing properties is an important consideration because in the output compiled JavaScript, initial values for those properties are assigned immediately after the `super()` call.
-
-This class seems to run `console.log("2️⃣")` after its `super()`:
-
-```ts
-class Base {}
-class Derived extends Base {
-    property = (() => {
-        console.log("1️⃣");
-        return this.toString();
-    })();
-
-    constructor() {
-        super();
-        console.log("2️⃣");
-    }
-}
-```
-
-...but its compiled ES2015+ JavaScript shows that it would log `"1️⃣"` first:
-
-```js
-class Base extends Derived {}
-class Derived extends Base {
-    constructor() {
-        super();
-        this.property = (() => {
-            console.log("1️⃣");
-            return this.toString();
-        })();
-        console.log("2️⃣");
-    }
-}
-```
-
-> TypeScript's [`useDefineForClassFields`](https://www.typescriptlang.org/tsconfig/#useDefineForClassFields) compiler option changes the contents of the `property` assignment in that output but not the order of lines.
-> Differences in class fields emit is a whole other can of worms I won't get into here.
-
-Enforcing the first line of the constructor be the `super()` call was much more straightforward for TypeScript to enforce than trying to understand advanced code logic.
-Unfortunately, it came at a cost: even lines of code that don't create logical blocks or reference `super` or `this` were still flagged as invalid.
-
-This snippet was considered invalid in the type system even though it didn't try to access `this` before its `super()`:
-
-```ts
-class Base {}
-class Derived extends Base {
-    property = true;
-
-    constructor() {
-        console.log("🥺");
-        // ~~~~~~~~~~~~~~~
-        // Type error: A 'super' call must be the first statement in
-        // the constructor when a class contains initialized
-        // properties, parameter properties, or private identifiers.
-        super();
-    }
-}
-```
-
-I'd previously been inconvenienced by that limitation when working in OOP-style projects in TypeScript.
-This issue seemed like it'd be both a good way to challenge my understanding of TypeScript and solve a real user-issue hit by many users.
-
-### Project Scope
+## Project Scope
 
 There ended up being two areas of source code I had to change:
 
@@ -169,6 +23,8 @@ There ended up being two areas of source code I had to change:
 
 I'll give a high-level overview for each.
 I'd strongly recommend referring back to the pull request in your local editor to understand the flow of code.
+
+✨ [#29374: Allowed non-this, non-super code before super call in derived classes with property initializers](https://github.com/microsoft/TypeScript/pull/29374) ✨
 
 Let's dig in! 🎂
 
@@ -193,7 +49,7 @@ These next two blog post sections will give a high-level overview of them.
 
 > [src/compiler/checker.ts#34739](https://github.com/microsoft/TypeScript/pull/29374/files#diff-d9ab6589e714c71e657f601cf30ff51dfc607fc98419bf72e04f6b0fa92cc4b8R34739)
 
-TypeScript's type checker already found the first `super()` call in a constructor with a call to a `findFirstSuperCall` function:
+TypeScript's type checker already found the first `super()` call in a constructor using a call to an existing `findFirstSuperCall` function:
 
 ```ts
 const superCall = findFirstSuperCall(node.body!);
@@ -224,7 +80,7 @@ if (!superCallIsRootLevelInConstructor(superCall, node.body!)) {
 }
 ```
 
-`superCallIsRootLevelInConstructor` checks whether a `super()` call _call expression_'s parent _expression statement_ is in the body of a constructor:
+`superCallIsRootLevelInConstructor` checks whether a `super()` _call expression_'s parent _expression statement_ is in the body of a constructor:
 
 ```ts
 function superCallIsRootLevelInConstructor(superCall: Node, body: Block) {
@@ -265,7 +121,37 @@ For each statement:
 2. If the statement is a "prologue directive", continue
 3. If the statement "immediately" references `super` or `this`, break the loop
 
-At the end of the loop, if we hadn't found the `super()` call, issue a type error for failing to find it.
+```ts
+for (const statement of node.body!.statements) {
+    if (
+        isExpressionStatement(statement) &&
+        isSuperCall(skipOuterExpressions(statement.expression))
+    ) {
+        superCallStatement = statement;
+        break;
+    }
+
+    if (
+        !isPrologueDirective(statement) &&
+        nodeImmediatelyReferencesSuperOrThis(statement)
+    ) {
+        break;
+    }
+}
+```
+
+After the loop, if we hadn't found the `super()` call, issue a type error with an amusingly long error message for failing to find it.
+
+```ts
+if (superCallStatement === undefined) {
+    error(
+        node,
+        Diagnostics.A_super_call_must_be_the_first_statement_in_the_constructor_to_refer_to_super_or_this_when_a_derived_class_contains_initialized_properties_parameter_properties_or_private_identifiers
+    );
+}
+```
+
+> "A super call must be the first statement in the constructor to refer to super or this when a derived class contains initialized properties parameter properties or private identifiers."
 
 #### Prologue Directives
 
@@ -354,23 +240,25 @@ export function isThisContainerOrFunctionBlock(node: Node): boolean {
 }
 ```
 
-With these approximate type checker changes, the type checker allows for code before the `super()` call so long as it doesn't immediately reference `super` or `this`.
+With these approximate type checker changes, the type checker allows for code before the `super()` call as long as it doesn't immediately reference `super` or `this`.
+The type checker was sufficiently updated for my changes.
+Hooray!
 
-That leaves us with making TypeScript's code emit properly output JavaScript for these new constructor variants.
+That leaves us with making TypeScript's code emit properly transform JavaScript for these new constructor variants.
 
 ## Updating Transformers
 
-TypeScript's code emit works by passing each input file's AST through a series of transformers.
+TypeScript's code emit converts input TypeScript syntax to output JavaScript syntax by passing each input AST through a series of transformers.
 You can see the impacted transformers in the [pull request](https://github.com/microsoft/TypeScript/pull/29374/files) under `src/transformers`.
 They're coordinated by a [`getScriptTransformers` in `src/compiler/transformer.ts`](https://github.com/Microsoft/TypeScript/blob/39ff1568e9676d40cf545477e9fd04077eff9b78/src/compiler/transformer.ts#L41).
 
 The transformers relevant to this pull request are, in order:
 
-1. `transformTypeScript`: Removes type system specific syntax, leaving pure glorious JavaScript
-2. `transformClassFields`: Massages class fields such as class properties and parameter properties into their JavaScript equivalents
-3. For each language version recognized by TypeScript, a transformer of the next language version's name transforms it
-    - These start at ESNext, then decrease sequentially from the newest known language version down to the configured output target language version
-    - For example, if the configured output language version is `es2019`, then as of TypeScript 4.6 the transformers to be run would be: `transformESNext`, `transformES2021`, and `transformES2020`
+1. **`transformTypeScript`**: Removes type system specific syntax, leaving pure glorious JavaScript.
+2. **`transformClassFields`**: Massages class fields such as class properties and parameter properties into their JavaScript equivalents.
+3. **`transformES....`**: For each language version recognized by TypeScript, a transformer of the next language version's name transforms it.
+    - These start at ESNext, then decrease sequentially from the newest known language version down to the configured output target language version.
+    - For example, if the configured output language version is `"es2019"`, then as of TypeScript 4.6 the transformers to be run would be: `transformESNext`, `transformES2021`, and `transformES2020`.
 
 Transformers generally recursively crawl through the nodes in the file's AST, applying transformations to specific node types as they find them.
 These next three blog post sections will give a high-level overview of each of the changed transformers.
@@ -550,26 +438,6 @@ The transformer code has to include a few extra function calls to properly massa
 > Me too!
 > Please upvote [#47573: Remove older emit support over time](https://github.com/microsoft/TypeScript/issues/47573) to make it more likely we'll no longer need to support ES5 eventually! 💖
 
-## "Why Did This Pull Request Take So Long?"
-
-One question that inevitably cropped up many times around the pull request is around _why_ it took three years to merge.
-I want to be very clear in this blog post that there are no hard feelings.
-I don't "blame" the TypeScript team for taking a while to get to it.
-Most of my issues and pull requests to TypeScript are reviewed relatively quickly.
-This one was an outlier.
-
-See [Why Open Source Pull Requests Can Take A While](https://blog.joshuakgoldberg.com/open-source-pull-request-timing) for a context on why some pull requests take a while.
-
-This particular pull request touched an area that needs unusually thorough review -- on top of the already thorough reviews the TypeScript team performs on any pull request.
-You can scan through the review comments left through the life of the pull request to see just how absurdly difficult it is to account for all of JavaScript's class constructor behaviors.
-
-My pull request additionally happened to target an area of code (ES2015 class transformers) that relatively fewer people -even within the TypeScript team- have deep expertise on.
-Very few humans on this planet can keep a full understanding of JavaScript class constructors fresh in their brain.
-I certainly don't, and I authored the pull request!
-
-Looking back on this pull request, I'm glad I sent it and was able to get it reviewed & shipped.
-The next time I want to work on a larger pull request such as this one, I'll make sure I can coordinate with someone on the TypeScript team.
-
 ## Final Thanks
 
 I'd like to extend a sincere heartfelt thanks to the several developers who reviewed the pull request over the years.
@@ -578,6 +446,3 @@ In order of review:
 -   [Klaus Meinhardt](https://github.com/ajafff): An all-around knowledgeable developer who has previously created a linter ([fimbullinter/wotan](https://github.com/fimbullinter/wotan)) and gave helpful pointers early in the pull request -- all as a fellow external contributor.
 -   [Wesley Wigham](https://twitter.com/WesleyWigham): For giving the pull request a helpful review and its first approval back in 2020.
 -   [Ron Buckton](https://twitter.com/rbuckton): For an intensely thorough set of reviews containing deep insights into the wild and wacky world of JavaScript and TypeScript classes, along with the final approval in 2022.
-
-Additional thanks to [Daniel Rosenwasser](https://twitter.com/drosenwasser) for helping me coordinate the cake and helping coach phrasing in the previous section of this blog post.
-Hopefully if there's a next time I'll be able to hand-deliver it to the TypeScript team office in Redmond (rather than hoard it all for myself in Brooklyn). 🍰
