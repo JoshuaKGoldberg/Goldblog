@@ -33,7 +33,8 @@ Instead, I'll give a high-level overview of the backing issue's context, the pul
 
 Let's dig in! 🎂
 
-> This contribution diary post assumes you've read through previous entries and/or are already familiar with how JavaScript compilers and type checkers work.
+> **This contribution diary post is much longer than normal** because its subject matter is deeper.
+> It also assumes you've read through previous entries and/or are already familiar with how JavaScript compilers and type checkers work.
 > If that's not the case, no worries!
 > Read through a previous entry such as [TypeScript Contribution Diary: Improved Syntax Error for Enum Member Colons](https://blog.joshuakgoldberg.com/enum-commas) and Andrew Branch's [Debugging the TypeScript Codebase](https://blog.andrewbran.ch/debugging-the-type-script-codebase).
 
@@ -554,7 +555,7 @@ One question that inevitably cropped up many times around the pull request is ar
 I want to be very clear in this blog post that there are no hard feelings.
 I don't "blame" the TypeScript team for taking a while to get to it.
 Most of my issues and pull requests to TypeScript are reviewed relatively quickly.
-This one was a sharp outlier.
+This one was an outlier.
 
 See [Why Open Source Pull Requests Can Take A While](https://blog.joshuakgoldberg.com/open-source-pull-request-timing) for a context on why some pull requests take a while.
 
