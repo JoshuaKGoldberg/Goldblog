@@ -550,37 +550,32 @@ The transformer code has to include a few extra function calls to properly massa
 
 ## "Why Did This Pull Request Take So Long?"
 
-⚠ TODO: I'm going to ask a contact on the TS team about this section if I can -- just want to make sure I'm not putting words in anybody's mouth...
-
 One question that inevitably cropped up many times around the pull request is around _why_ it took three years to merge.
 I want to be very clear in this blog post that there are no hard feelings.
 I don't "blame" the TypeScript team for taking a while to get to it.
 Most of my issues and pull requests to TypeScript are reviewed relatively quickly.
 This one was a sharp outlier.
 
-To start, keep in mind that TypeScript is a software project like any other: it has deliverables, a set of team priorities, and a finite list of human resources to work with.
-The TypeScript team does a tremendous amount of work to support an open source issue tracker and pull requests.
-Larger pull requests such as mine cause an unusually high amount of work for the team to coordinate around, review, QA in beta, and so on.
+See [Why Open Source Pull Requests Can Take A While](https://blog.joshuakgoldberg.com/open-source-pull-request-timing) for a context on why some pull requests take a while.
 
-This particular pull request also touched an area that needs unusually thorough review -- on top of the already thorough reviews the TypeScript team performs on any pull request.
+This particular pull request touched an area that needs unusually thorough review -- on top of the already thorough reviews the TypeScript team performs on any pull request.
 You can scan through the review comments left through the life of the pull request to see just how absurdly difficult it is to account for all of JavaScript's class constructor behaviors.
 
 My pull request additionally happened to target an area of code (ES2015 class transformers) that relatively fewer people -even within the TypeScript team- have deep expertise on.
 Very few humans on this planet can keep a full understanding of JavaScript class constructors fresh in their brain.
 I certainly don't, and I authored the pull request!
-Repeatedly coordinating an expert to look at an external contributor's large, tricky pull request is a tough ask.
 
 Looking back on this pull request, I'm glad I sent it and was able to get it reviewed & shipped.
-I probably won't try to contribute something quite so extensive to TypeScript again unless I'm actively coordinating with a member of the TypeScript team.
+The next time I want to work on a larger pull request such as this one, I'll make sure I can coordinate with someone on the TypeScript team.
 
 ## Final Thanks
 
 I'd like to extend a sincere heartfelt thanks to the several developers who reviewed the pull request over the years.
 In order of review:
 
--   [Klaus Meinhardt (ajafff)](https://github.com/ajafff): An all-around knowledgeable developer who has previously created a linter ([fimbullinter/wotan](https://github.com/fimbullinter/wotan)) and gave helpful pointers early in the pull request -- all as a fellow external contributor.
--   [Wesley Wigham (@weswigham)](https://twitter.com/WesleyWigham): For giving the pull request a helpful review and its first approval back in 2020.
--   [Ron Buckton (@rbuckton)](https://twitter.com/rbuckton): For an intensely thorough set of reviews containing deep insights into the wild and wacky world of JavaScript and TypeScript classes, along with the final approval in 2022.
+-   [Klaus Meinhardt](https://github.com/ajafff): An all-around knowledgeable developer who has previously created a linter ([fimbullinter/wotan](https://github.com/fimbullinter/wotan)) and gave helpful pointers early in the pull request -- all as a fellow external contributor.
+-   [Wesley Wigham](https://twitter.com/WesleyWigham): For giving the pull request a helpful review and its first approval back in 2020.
+-   [Ron Buckton](https://twitter.com/rbuckton): For an intensely thorough set of reviews containing deep insights into the wild and wacky world of JavaScript and TypeScript classes, along with the final approval in 2022.
 
-Additional thanks to [Daniel Rosenwasser (@drosenwasser)](https://twitter.com/drosenwasser) for helping me coordinate the cake.
+Additional thanks to [Daniel Rosenwasser](https://twitter.com/drosenwasser) for helping me coordinate the cake and helping coach phrasing in the previous section of this blog post.
 Hopefully if there's a next time I'll be able to hand-deliver it to the TypeScript team office in Redmond (rather than hoard it all for myself in Brooklyn). 🍰
