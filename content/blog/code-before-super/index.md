@@ -1,5 +1,5 @@
 ---
-date: "2022-03-07T12:34:56.117Z"
+date: "2022-03-07T02:34:56.117Z"
 description: "Allowing derived classes with properties to include code before `super()` call that doesn't touch `this`. A grand pull request three years in the making -- with cake!"
 image: cake.jpg
 title: "TypeScript Contribution Diary: Allowing Code in Constructors Before `super()`"
@@ -151,7 +151,7 @@ This issue seemed like it'd be both a good way to challenge my understanding of 
 
 ## Technical Overview
 
-The pull request was large enough that I moved its details them into a separate blog post: [TypeScript Contribution Diary: Allowing Code in Constructors Before `super()` (Technical Overview)](https://blog.joshuakgoldberg.com/code-before-super-technical-overview).
+The pull request was large enough that instead of describing them all here, I've moved its details into a separate blog post: [TypeScript Contribution Diary: Allowing Code in Constructors Before `super()` (Technical Overview)](https://blog.joshuakgoldberg.com/code-before-super-technical-overview).
 
 There ended up being two areas of source code I had to change:
 

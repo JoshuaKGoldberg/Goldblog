@@ -1,5 +1,5 @@
 ---
-date: "2022-03-07T12:34:56.117Z"
+date: "2022-03-07T02:34:56.777Z"
 description: "Those costs run both ways. Open source contributors and maintainers alike have to balance their finite energy and time resources within many constraints."
 title: "Why Open Source Pull Requests Can Take A While"
 ---
@@ -22,7 +22,7 @@ I don't want to discourage anybody from participating in open source --really, i
 This blog post is an overview of many of the common factors that go into an open source pull request taking weeks, months, or more to be merged.
 
 I think this information is useful to help developers understand how open source reviews week.
-It's also a useful reference alongside this deep dive for an open source pull request I sent that took three years to merge: [TypeScript Contribution Diary: Allowing Code in Constructors Before `super()`](https://blog.joshuakgoldberg.com/code-before-super-context).
+It's also a useful reference alongside this deep dive for an open source pull request I sent that took three years to merge: [TypeScript Contribution Diary: Allowing Code in Constructors Before `super()`](https://blog.joshuakgoldberg.com/code-before-super).
 
 ## Most Pull Requests Are Nontrivial
 
@@ -72,4 +72,4 @@ They're likely already in high demand for other maintenance tasks and might have
 A pull request staying open a long time is unfortunate but is bound to happen from time to time.
 It's important to understand why that's the case and to maintain empathy for both sides of the review through the process.
 
-Many thanks to [Daniel Rosenwasser](https://twitter.com/drosenwasser) discussing the reviewer's side of larger pull requests in the context of [TypeScript Contribution Diary: Allowing Code in Constructors Before `super()`](https://blog.joshuakgoldberg.com/code-before-super-context).
+Many thanks to [Daniel Rosenwasser](https://twitter.com/drosenwasser) discussing the reviewer's side of larger pull requests in the context of [TypeScript Contribution Diary: Allowing Code in Constructors Before `super()`](https://blog.joshuakgoldberg.com/code-before-super).
