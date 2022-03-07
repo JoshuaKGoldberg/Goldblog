@@ -11,6 +11,12 @@ table {
     width: 100%;
 }
 
+small {
+    display: inline-block;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+}
+
 th {
     text-align: left;
 }
