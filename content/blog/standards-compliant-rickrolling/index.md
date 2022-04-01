@@ -15,7 +15,7 @@ I link it on my [Twitter bio](https://hi.joshuakgoldberg.com), include QR codes 
 
 Making a webpage that can effectively rickroll any arbitrary visitor was a surprisingly tricky task.
 Modern web browsers restrict autoplaying audio and video, complicating the art of the sudden rickroll surprise.
-In celebration of April Fools' Day 2022, this blog post details how and why my site works the way it does.
+This blog post details how and why my site works the way it does in celebration of April Fools' Day 2022, t.
 
 <div style="display:block;margin-bottom:2rem;text-align:center;">
 <img alt="Rick Astley Dancing'" src="/images/rick-astley-dancing.gif" />
@@ -26,13 +26,13 @@ In celebration of April Fools' Day 2022, this blog post details how and why my s
 ## A Brief History of Autoplay Irritation
 
 Back in the day, you used to be able to plop any autoplaying `<audio>` or `<video>` on a webpage and all users visiting the site would experience them immediately.
-I used that as a form of aggressive user engagement on the old [FullScreenMario](https://wikipedia.org/wiki/FullScreenMario) site to blast visitors with the old nostalgia-inducing Super Mario Bros. theme.
+I had used that as a form of aggressive user engagement encouragement on the [FullScreenMario](https://wikipedia.org/wiki/FullScreenMario) site to blast visitors with the old nostalgia-inducing Super Mario Bros. theme.
 
 Unfortunately, sites being able to blast you with whatever multimedia spew they wanted made for a very user-hostile web.
-Imagine all the ads you receive now (if you don't enable AdBlocker) on a typical news site, but with audio mysteriously playing.
-Horrifying.
+Imagine all the ads you receive now on a typical news site (if you don't enable AdBlocker), but with audio mysteriously playing.
+Terrifying.
 
-Desktop web browsers started restricting media autoplay around 2017 and 2018.
+Desktop web browsers started restricting media autoplay around 2017.
 Reading straight from the [Chrome Autoplay announcement post](https://developer.chrome.com/blog/autoplay):
 
 > Chrome's autoplay policies are simple:
@@ -48,7 +48,7 @@ In other words, unless you've either interacted with a site or previously given 
 
 ## Crafting a Standards Complaint Rickroll
 
-Web browser autoplay restrictions rendered ineffective my standard practice of sending the [YouTube rickroll link](https://www.youtube.com/watch?v=dQw4w9WgXcQ) _(which, I might add, recently passed **1 billion views**!)_.
+Web browser autoplay restrictions rendered ineffective my standard practice of sending the [YouTube rickroll link](https://www.youtube.com/watch?v=dQw4w9WgXcQ) _(which, I might add, recently passed **1 billion views!**)_.
 I needed a site that could somehow surprise users with the sights and sounds of _Never Gonna Give You Up_.
 
 Note that per the Chrome autoplay policy, videos are allowed to play sound as soon as the user clicks them.
@@ -113,9 +113,9 @@ button.addEventListener("click", () => {
 ### Detecting Video Play
 
 No built-in JavaScript API or Vimeo SDK method exists to check whether the browser considers the page to have a high Media Engagement Index or equivalent.
-However, the Vimeo Player SDK does include an [event listener API](https://developer.vimeo.com/player/sdk/reference#add-an-event-listener-to-a-player) able to call a function when a _play_ event is fired.
+However, the Vimeo Player SDK does include an [event listener API](https://developer.vimeo.com/player/sdk/reference#add-an-event-listener-to-a-player) able to call a function on video play start.
 
-I added the following code to hide the overlay on video play.
+I added the following code to swap out the overlay on video play.
 
 ```js
 // When the Vimeo Player is able to play the video...
@@ -134,6 +134,9 @@ player.on("play", () => {
 
 You can visit the rickroll on [hi.joshuakgoldberg.com](https://hi.joshuakgoldberg.com "final rickroll page at hi.joshuakgoldberg.com").
 The source code is available on [github.com/JoshuaKGoldberg/standards-compliant-rickroll](https://github.com/JoshuaKGoldberg/standards-compliant-rickroll).
+
+If you're on Chrome, visit `about://media-engagement` and find `hi.joshuakgoldberg.com` after 1-2 visits to the site.
+See how many 6+ second plays it takes your browser to trust the page to autoplay with sound.
 
 ### A Word of Caution
 
