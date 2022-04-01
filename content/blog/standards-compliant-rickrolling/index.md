@@ -110,6 +110,10 @@ button.addEventListener("click", () => {
 });
 ```
 
+I'm [told](https://twitter.com/KipEnyan/status/1509913672667340806 "Tweet from KipEnyan") iOS still might not play the video.
+I'm out of ideas.
+If you know how to fix it, please let me know!
+
 ### Detecting Video Play
 
 No built-in JavaScript API or Vimeo SDK method exists to check whether the browser considers the page to have a high Media Engagement Index or equivalent.
