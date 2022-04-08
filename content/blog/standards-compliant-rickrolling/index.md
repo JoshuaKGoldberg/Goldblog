@@ -15,7 +15,7 @@ I link it on my [Twitter bio](https://hi.joshuakgoldberg.com), include QR codes 
 
 Making a webpage that can effectively rickroll any arbitrary visitor was a surprisingly tricky task.
 Modern web browsers restrict autoplaying audio and video, complicating the art of the sudden rickroll surprise.
-This blog post details how and why my site works the way it does in celebration of April Fools' Day 2022, t.
+This blog post details how and why my site works the way it does in celebration of April Fools' Day 2022.
 
 <div style="display:block;margin-bottom:2rem;text-align:center;">
 <img alt="Rick Astley Dancing'" src="/images/rick-astley-dancing.gif" />
