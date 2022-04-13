@@ -162,6 +162,9 @@ They are by nature allowed to come before any code in a constructor.
 In retrospect, I don't recall why I added a special case for them to the function.
 Ah well.
 
+> Edit 4/13/2022: The [ECMAScript Spec](https://262.ecma-international.org/5.1/#sec-14.1) refers to them as "Directive Prologues".
+> Whoops.
+
 #### Immediately Referencing `super` or `this`
 
 By "immediately" I mean a node accesses `super` or `this` in code that is known to execute immediately, such as children of expressions and blocks.
