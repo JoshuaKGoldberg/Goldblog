@@ -89,9 +89,13 @@ These projects I do because I think they're fascinating and/or fun, if not parti
 I've set up [my GitHub Sponsors page](https://github.com/sponsors/JoshuaKGoldberg) with suggested sponsor tiers for individuals and companies.
 If you want to sponsor me I'd greatly appreciate it. 💝
 
-My first company-based sponsorship starting in March will be $4000/month from Codecademy (10 hours a week, $100/hour) to work on open source projects its frontend teams use.
-That's a excellent gig and I'm tremendously grateful to have it.
-You can track the projects we're working on in my [Codecademy Consulting Notion doc](https://www.notion.so/Codecademy-Consulting-919960606f1f40788c97aab6c4326c35).
+~My first company-based sponsorship starting in March will be $4000/month from Codecademy (10 hours a week, $100/hour) to work on open source projects its frontend teams use.~
+~That's a excellent gig and I'm tremendously grateful to have it.~
+~You can track the projects we're working on in my [Codecademy Consulting Notion doc](https://www.notion.so/Codecademy-Consulting-919960606f1f40788c97aab6c4326c35).~
+
+> **Update 5/26/2022**: Codecademy reneged on this offer after getting acquired.
+> I'm told investments like this one are severely limited because of the Skillsoft acquisition.
+> Disappointing.
 
 I'm also writing an [O'Reilly _Learning TypeScript_ book](https://www.oreilly.com/library/view/learning-typescript/9781098110321) set to publish the middle of this year and working with O'Reilly on more TypeScript content.
 
