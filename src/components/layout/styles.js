@@ -1,6 +1,7 @@
 import { css } from "@emotion/react";
 import {
     darkGray,
+    darkestGray,
     emphasizedBlueDark,
     emphasizedBlueLight,
     emphasizedGreenDark,
@@ -36,8 +37,8 @@ export const global = (darkMode, isMounted) => css`
         ${cssVar(gradientEnd)}: ${darkMode
             ? emphasizedGreenDark
             : emphasizedGreenLight};
-        ${cssVar(textColor)}: ${darkMode ? lightGray : "black"};
-        ${cssVar(textColorDull)}: ${darkMode ? lightGray : darkGray};
+        ${cssVar(textColor)}: ${darkMode ? lightGray : darkestGray};
+        ${cssVar(textColorDull)}: ${darkMode ? lightGray : "black"};
 
         background: ${backgroundColor};
         color: ${textColor};
@@ -76,6 +77,15 @@ export const global = (darkMode, isMounted) => css`
         left: 0;
         position: absolute;
         width: 5px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: ${textColorDull};
     }
 `;
 
