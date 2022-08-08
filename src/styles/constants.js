@@ -1,6 +1,8 @@
 export const nearBlack = "#111";
 
-export const darkGray = "#494949";
+export const darkGray = "#666666";
+
+export const darkestGray = "#494949";
 
 export const brightGray = "#e7e7e7";
 
