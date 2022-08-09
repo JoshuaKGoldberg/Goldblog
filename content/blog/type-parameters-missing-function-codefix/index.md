@@ -17,7 +17,7 @@ function returnSelf<T>(self: T) {
 }
 ```
 
-... and the function TypeScript added had a type error!
+... and the function TypeScript added came with a type error!
 😱
 
 ```ts
