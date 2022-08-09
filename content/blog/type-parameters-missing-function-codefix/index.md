@@ -1,5 +1,5 @@
 ---
-date: "2022-08-15T02:34:56.343Z"
+date: "2022-08-9T02:34:56.343Z"
 description: "Corrects the missing function codefix to add type parameters when the function needs to be generic."
 title: 'TypeScript Contribution Diary: Type Parameters in the "Add Missing Function" Codefix'
 ---
