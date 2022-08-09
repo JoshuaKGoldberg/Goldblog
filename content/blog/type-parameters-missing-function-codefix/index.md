@@ -445,6 +445,23 @@ With these edge cases seemingly working, I pushed it all up, merged upstream cha
 This codefix improvement is now available in the TypeScript nightlies.
 It will be available in stable versions of TypeScript >=4.8.
 
+TypeScript will now be able to add missing functions without introducing type errors, even in the presence of type parameters:
+
+```ts
+function returnSelf<T>(self: T) {
+    if (typeof self === "number") {
+        runEvilSideEffect(self);
+        // ^ Codefix: Add missing function declaration 'runEvilSideEffect'
+    }
+}
+
+function runEvilSideEffect<T>(self: T) {
+    throw new Error("Function not implemented.");
+}
+```
+
+Wonderful! 🥳
+
 ## P.S. Declined Refactors
 
 I also spotted and attempted a couple of refactors as a result of this PR.
