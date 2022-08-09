@@ -221,6 +221,7 @@ Given a `type: Type`, it set up three cases:
 -   Otherwise, return `undefined`, for no known name
 
 > You can think of a type's symbol as TypeScript's deeper understanding of a type.
+> A symbol is TypeScript's storage for what names are declared by various things.
 > For example, if a type indicates a value is an instance of a class, the backing symbol would contain class information such as lists of class members and constructor signatures.
 
 ```ts
@@ -503,7 +504,7 @@ I instead...
 4. Closed the PR after [performance testing](https://github.com/microsoft/TypeScript/pull/50010#issuecomment-1193355846) indicated it caused a ~3% performance loss
 
 Ah well.
-Sometimes you refactor the code, and sometimes limitations in V8 runtime optimization mean the existing code is able to be optimized better for.
+Sometimes you refactor the code, and sometimes limitations in V8 runtime optimization mean the existing code plays better with startup execution and/or JIT optimization.
 🤷
 
 ## Wrapping Up
