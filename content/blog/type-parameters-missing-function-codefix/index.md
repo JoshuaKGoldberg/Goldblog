@@ -101,13 +101,13 @@ The distinction is important when discussing logic around function calls and dec
 
 ## Exploring the Codefix
 
-Out of the two functions called in that snippet:
+Out of the two functions called in the earlier TypeScript source snippet:
 
 -   `addFunctionDeclaration`: includes logic for creating nodes and inserting them into the page
 -   `createCodeFixAction`: seemed to be a general-purpose function used in many codefixes
 
 `addFunctionDeclaration` was almost certainly the right place to go.
-It was calling to a `createSignatureDeclarationFromCallExpression` function, stored in [`src/services/codefixes/helpers.ts`](https://github.com/Microsoft/TypeScript/tree/78e2bfd7126353a12b2c559ca1bcf441431d86b0/src/services/codefixes/helpers.ts).
+It was calling to a `createSignatureDeclarationFromCallExpression` function, declared in [`src/services/codefixes/helpers.ts`](https://github.com/microsoft/TypeScript/blob/78e2bfd7126353a12b2c559ca1bcf441431d86b0/src/services/codefixes/helpers.ts#L279).
 
 That function is a little hefty -lots of calls to other functions- so it took me a little while to squint through it.
 I put a debugger breakpoint in it and looked at the values at runtime.
