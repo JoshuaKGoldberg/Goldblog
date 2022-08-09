@@ -6,7 +6,7 @@ title: 'TypeScript Contribution Diary: Type Parameters in the "Add Missing Funct
 
 I recently had the pleasure of joining [Dan Jutan](https://twitter.com/jutanium)'s Breaking Down the Web series of [Twitch streams](https://twitch.tv/jutanium "'jutanium' on Twitch") to talk about TypeScript.
 You can find the [recording on YouTube](https://www.youtube.com/watch?v=PxrCWHQU6gQ&ab_channel=DanJutan) ([main content start at 4:36](https://youtu.be/PxrCWHQU6gQ?t=276)).
-At [1:29:37](https://youtu.be/PxrCWHQU6gQ?t=5377), Dan used TypeScript's _Add Missing Function_ TypeScript codefix to add a missing missing `runEvilSideEffect` in the following code...
+At [1:29:37](https://youtu.be/PxrCWHQU6gQ?t=5377), Dan used TypeScript's _Add Missing Function_ TypeScript codefix to add a missing `runEvilSideEffect` in the following code...
 
 ```ts
 function returnSelf<T>(self: T) {
