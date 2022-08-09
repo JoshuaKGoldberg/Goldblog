@@ -173,7 +173,7 @@ const { argumentTypeNodes, argumentTypeParameters } =
     );
 ```
 
-I used a `Set<string>` internally for the argument type parameters, to duplicate their names in case two arguments referred to the same type parameter name.
+I used a `Set<string>` internally for the argument type parameters, to de-duplicate their names in case two arguments referred to the same type parameter name.
 
 ```ts
 export function getArgumentTypesAndTypeParameters(
@@ -517,5 +517,6 @@ Thanks again to...
 -   [Dan Jutan](https://twitter.com/jutanium) for having me on the stream and taking the time to report this bug on TypeScript
 -   [Jake Bailey](https://twitter.com/andhaveaniceday) for help with the type predicates PR
 -   [Nathan Shively-Sanders](https://twitter.com/sanders_n) both for hopping on the stream to help us understand the bug and for reviewing & merging the PR
+    -   And: for help reviewing [this blog post's PR](https://github.com/JoshuaKGoldberg/Goldblog/pull/349)!
 
 We did it! 🙌
