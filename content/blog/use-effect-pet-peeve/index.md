@@ -221,7 +221,7 @@ function MyComponent({ value }) {
 }
 ```
 
-> _Updated August 21st, 2022: [@TkDodo](https://twitter.com/TkDodo) on Twitter mentions that this could often be [better solved with a `key`](https://tkdodo.eu/blog/putting-props-to-use-state)._ ✨
+> _Updated August 21st, 2022: [@TkDodo](https://twitter.com/TkDodo) on [Twitter mentions](https://twitter.com/TkDodo/status/1560858411868327936 "TkDodo tweet response to this article") that this could often be [better solved with a `key`](https://tkdodo.eu/blog/putting-props-to-use-state)._ ✨
 
 ### Understand Your Effects
 
