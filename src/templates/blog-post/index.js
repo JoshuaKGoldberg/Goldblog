@@ -36,7 +36,9 @@ export const pageQuery = graphql`
                 date(formatString: "MMMM DD, YYYY")
                 description
                 download
-                image
+                image {
+                    base
+                }
                 link {
                     title
                     url
