@@ -19,7 +19,7 @@ Here's a quick summary of the most notable open source work I'm proud of:
 
 -   Numerous bugfixes, documentation improvements, and features in TypeScript ESLint
     -   I'm particularly happy with the work I did on [automating rule docs](https://github.com/typescript-eslint/typescript-eslint/pull/5593)
--   Numerous bugfixes, documentation improvements, and features in TypeStat
+-   Numerous bugfixes, documentation improvements, and features in [TypeStat](https://github.com/JoshuaKGoldberg/TypeStat)
 -   [Adding a Method Expression mutator to Stryker](https://github.com/stryker-mutator/stryker-js/pull/3508)
 -   Took over maintenance of [eslint-plugin-expect-type](https://github.com/JoshuaKGoldberg/eslint-plugin-expect-type) and fixed a few bugs
 -   A [couple bugfixes](https://github.com/microsoft/TypeScript/pulls?q=+is%3Apr+author%3AJoshuaKGoldberg+is%3Amerged+created%3A2022-02-28..2023-01-01) in TypeScript itself
