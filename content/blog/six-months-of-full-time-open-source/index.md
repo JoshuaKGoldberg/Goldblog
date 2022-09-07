@@ -99,7 +99,7 @@ I'm not going to go out of my way to blow money on unnecessary shenanigans, but 
 
 ## What's Coming Next
 
-If you thought the above list was fun, just wait until you see what's coming up in the next six months.
+If you thought the above list was fun, just wait until you see what's coming up in the next six months!
 My goals for Spring 2023 are:
 
 -   Collaboratively get TypeScript ESLint to a new [6.x major version](https://github.com/typescript-eslint/typescript-eslint/milestone/8)
