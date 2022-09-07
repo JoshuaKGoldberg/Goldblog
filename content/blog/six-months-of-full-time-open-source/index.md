@@ -1,5 +1,5 @@
 ---
-date: "2022-09-09T01:23:45.117Z"
+date: "2022-09-07T01:23:45.117Z"
 description: "What it's like to quit your job and try to work on open source tooling full time."
 image: sisyphus.jpg
 title: "Six Months of Full Time Open Source"
