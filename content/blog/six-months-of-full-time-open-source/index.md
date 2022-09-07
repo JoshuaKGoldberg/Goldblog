@@ -1,7 +1,7 @@
 ---
 date: "2022-09-09T01:23:45.117Z"
 description: "What it's like to quit your job and try to work on open source tooling full time."
-image: TODO.jpg
+image: sisyphus.jpg
 title: "Six Months of Full Time Open Source"
 ---
 
@@ -11,6 +11,13 @@ It's been an exhilarating journey so far, and I'm happy to say I'm going to keep
 
 The bright side of open source is that I've gotten to work on projects that I find technically interesting and/or push the state of modern web development forward.
 The dark side of open source, though, is that **we as an industry have not figured out how to make open source financially sustainable for the vast majority of maintainers**.
+
+![Sispyhus](./sisyphus.jpg)
+
+<em style="display:block;margin-bottom:2rem;text-align:center;">
+Sispyhus working through a queue of issues on a popular GitHub repository
+<br />
+</em>
 
 ## What I've Done
 
