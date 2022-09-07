@@ -137,3 +137,7 @@ The more support I get to work on TS means the less you have to do to get TS wor
 Let me know over [email](mailto:blog@joshuakgoldberg.com "my email") or [@JoshuaKGoldberg on Twitter](https://twitter.com/JoshuaKGoldberg) if there are any projects in particular that you're interested in.
 
 Thanks for reading - and happy open sourcing, everyone! 💖
+
+---
+
+Many thanks to Kenny Lin for invaluable proofreading & suggestions in authoring this article!
