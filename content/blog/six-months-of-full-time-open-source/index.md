@@ -65,12 +65,13 @@ These are the three biggest areas of learning I've been thinking on.
 ### Balancing Passion and Priority
 
 There are a lot of fun open source projects available I could work on, ranging from cute toys to high impact developer tooling.
-At first I resisted the urge to hop around and tried to force myself to work on what I thought was highest impact and visibility.
+At first I resisted the urge to hop around.
+I tried to force myself to work on what I thought was highest impact and visibility.
 But, that's not how my mind works.
 I'm most productive when I'm working on my daily flight of fancy.
 
 These days I keep a list of projects I'm interested in and flit between them as I get motivated.
-I'll only force myself to stay focused on a project if there's something time sensitive like a critical bug.
+I'll only force myself to stay focused on a project if there's something time sensitive, such a critical bug.
 
 > Lesson: I'm most productive when I'm following my passion.
 
@@ -92,7 +93,7 @@ It's a great read for anybody struggling with asking for help and/or growing the
 
 ### Treat Yourself
 
-Being paid directly by sponsors is much more direct than working for a corporation.
+Being paid by sponsors is much more direct than working for a corporation.
 I feel emotionally linked to people's sponsorships.
 For a while I was reluctant to grab nice coffees, go on dinner dates, or otherwise spend on myself.
 My sponsors are giving me money to work on open source, who am I to blow it on luxuries?
