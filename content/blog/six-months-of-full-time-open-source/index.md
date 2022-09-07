@@ -39,7 +39,7 @@ Right now, having done all that work in public, I net about $600/month in open s
 -   $400/month for my portion of [TypeScript ESLint sponsorships](https://opencollective.com/typescript-eslint)
 
 For reference, $600/month of a full time job is roughly half the U.S. federal minimum wage ($7.25 per hour, or ~$1,200/month).
-My base salary as a Staff Frontend Developer in 2021 earned me more money each work day than a month of my open source salary now.
+My base salary in 2021 earned me more money each work day than a month of my open source salary now.
 
 ### Side Gigs, at a Cost
 
@@ -62,7 +62,7 @@ At first I resisted the urge to hop around and tried to force myself to work on 
 But, that's not how my mind works.
 I'm most productive when I'm working on my daily flight of fancy.
 
-These days I keep a list of projects I'm interested in, and flit between them as I get motivated.
+These days I keep a list of projects I'm interested in and flit between them as I get motivated.
 I'll only force myself to stay focused on a project if there's something time sensitive like a critical bug.
 
 > Lesson: I'm most productive when I'm following my passion.
@@ -75,7 +75,8 @@ My instincts tell me that if I'm doing good and important work then people shoul
 
 But, that's not how the world works.
 Nobody will know about me unless I actively promote myself.
-And I need to hear about other people's experiences so I can learn about their ideas and pain points.
+And when others know who I am and what I work on, they now have a person who can learn about their ideas and/or address their pain points.
+This promotion can create ripple effects since word of mouth also spreads as more and more people know about me.
 
 Reading [_Influence is your Superpower_](https://www.google.com/books/edition/_/BGwsEAAAQBAJ) by Zoe Chance helped get me comfortable making waves.
 It's a great read for anybody struggling with asking for help and/or growing their voice.
@@ -99,7 +100,7 @@ I'm not going to go out of my way to blow money on unnecessary shenanigans, but 
 
 ## What's Coming Next
 
-If you thought the above list was fun, just wait until you see what's coming up in the next six months!
+If you thought my current list of projects was fun, just wait until you see what's coming up in the next six months!
 My goals for Spring 2023 are:
 
 -   Collaboratively get TypeScript ESLint to a new [6.x major version](https://github.com/typescript-eslint/typescript-eslint/milestone/8)
