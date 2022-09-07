@@ -221,6 +221,8 @@ function MyComponent({ value }) {
 }
 ```
 
+> _Updated August 21st, 2022: [@TkDodo](https://twitter.com/TkDodo) on [Twitter mentions](https://twitter.com/TkDodo/status/1560858411868327936 "TkDodo tweet response to this article") that this could often be [better solved with a `key`](https://tkdodo.eu/blog/putting-props-to-use-state)._ ✨
+
 ### Understand Your Effects
 
 Built-in React hook APIs such as `useEffect` are intentionally flexible and can be used in a variety of ways.
