@@ -55,7 +55,7 @@ But, those side gigs take my time and energy away from open source work.
 It's a mild vicious cycle: I don't earn a sustainable amount as an open source maintainer, so I have to work on side gigs, which takes time away from my open source work, which makes it harder for me to promote myself and land sponsorships.
 
 Fortunately, I expect the sponsorships to grow as I make more of a name for myself and my projects.
-My goal is to reach $1000/month by the end of the 2022.
+My goal is to reach $1000/month by the end of 2022.
 
 ## Lessons Learned
 
