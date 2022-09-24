@@ -12,16 +12,12 @@ TODO
 <br />
 </em>
 
-Smart people are everywhere.
-Everybody has a unique blend of knowledge and skill.
-When you're new to an industry, seeing the knowledge and past successes of others you don't have (yet) can make you feel like you'll never get them and don't belong.
-
 I've observed experienced and novice people across industries alike utter the following two phrases a lot (and have said them myself):
 
 -   _"According to people much smarter than me..."_
 -   _"This is a dumb question, but..."_
 
-I think they get repeated for a few very admirable, reasonable reasons:
+I think they get repeated for a few very admirable, logical reasons:
 
 -   They're nervous about coming across as arrogant
 -   They're nervous about the false impression that you need to be smart to obtain their knowledge
@@ -36,8 +32,9 @@ But I've come to believe that these "false modesty" phrases are often actively h
 
 Some folks suffer from a false perception that the experts in their field are unapproachable titans of industry who operate on an nigh unattainable intellectual level.
 Describing differences between people in terms of intellectual superiority reinforces that perception.
+While many experts are shockingly smart, many are not -- and it can be demotivating to think that you need to be a genius to be an expert.
 
-Worse, if you're being perceived as an "expert", folks suffering imposter syndrome might already think there's an intelligence gap between you.
+Worse, if you're being perceived as an expert yourself, folks suffering imposter syndrome might already think there's an intelligence gap between you and them.
 Phrasing other experts as much smarter than you can make it seem to that there are _multiple_ impossible-to-bridge intelligence gaps.
 
 It's fine and good to give credit and recognition where they're due.
@@ -63,6 +60,10 @@ Instead of perpetuating the harmful perception that experts' intelligence is una
 | --------------------------------------------- | ------------------------------------------- | --- |
 | According to people much smarter than me, ... | As phrased by people I greatly respect, ... |     |
 | This is a dumb question, but...               | Apologies if I missed this, but...          |     |
+
+Smart people are everywhere.
+Everybody has a unique blend of knowledge and skill.
+When you're new to an industry, seeing the knowledge and past successes of others you don't have (yet) can make you feel like you'll never get them and don't belong.
 
 ---
 
