@@ -1,14 +1,14 @@
 ---
 date: "2022-09-30T01:23:45.117Z"
 description: "In trying to make ourselves relatable, we reinforce the negative perception of intelligence gaps."
-image: TODO.jpg
+image: smort.png
 title: "No Unattainable Intelligence"
 ---
 
-![TODO](./TODO.jpg)
+![Meme of distorted head looking stupid over a background of bright galaxies. Caption: "Smort"](./smort.png)
 
 <em style="display:block;margin-bottom:2rem;text-align:center;">
-TODO
+My favorite meme symbolizing the difference between perceived and actual intelligence.
 <br />
 </em>
 
