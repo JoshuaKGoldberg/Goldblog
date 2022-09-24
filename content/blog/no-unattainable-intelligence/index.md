@@ -20,7 +20,7 @@ I've observed experienced and novice people across industries alike utter the fo
 I think they get repeated for a few very admirable, logical reasons:
 
 -   They're nervous about coming across as arrogant
--   They're nervous about the false impression that you need to be smart to obtain their knowledge
+-   They're nervous about the false impression that you need to be exceptionally smart to obtain important industry knowledge
 -   They want to encourage less confident participants to ask questions
 
 Caring about creating a friendly, welcoming community for newcomers is great.
