@@ -58,21 +58,33 @@ The motivations behind those two phrases around approachability are great.
 I don't want to discourage anybody from taking action on those motivations.
 Instead of perpetuating the harmful perception that experts' intelligence is unattainable for most, though, try to use phrases that convey your intent more directly.
 
-| Before                                        | After                                       |     |
-| --------------------------------------------- | ------------------------------------------- | --- |
-| According to people much smarter than me, ... | As phrased by people I greatly respect, ... |     |
-| This is a dumb question, but...               | Apologies if I missed this, but...          |     |
+<table class="large">
+    <thead>
+        <tr>
+            <th>Before</th>
+            <th>After</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>According to people much smarter than me, …</td>
+            <td>As phrased by people I greatly respect, …</td>
+        </tr>
+        <tr>
+            <td>This is a dumb question, but…</td>
+            <td>Apologies if I missed this, but…</td>
+        </tr>
+    </tbody>
+</table>
 
 Smart people are everywhere.
 Everybody has a unique blend of knowledge and skill.
 When you're new to an industry, seeing the knowledge and past successes of others you don't have (yet) can make you feel like you'll never get them and don't belong.
 
-Making sure discussion spaces don't reinforce the imposter syndrome is important.
+It's important to make sure discussion spaces don't reinforce the imposter syndrome.
 Most intelligence is not unattainable: it takes effort and time to work towards.
 
 ---
-
-Many thanks to TODO for invaluable proofreading & suggestions in authoring this article!
 
 Finally finding the words to describe my thoughts on this subject because of a [Lean Coffee](https://leancoffee.org) conversation at [Strange Loop 2022](https://www.thestrangeloop.com) -- my first chat in that format.
 Props to [Trevor Menagh](https://twitter.com/trevmex) for leading a great group discussion!

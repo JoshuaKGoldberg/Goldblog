@@ -21,7 +21,7 @@ th {
     text-align: left;
 }
 
-td {
+table:not(.large) td {
     font-size: 0.9rem;
 }
 
