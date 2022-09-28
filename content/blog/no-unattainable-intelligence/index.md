@@ -61,8 +61,8 @@ Instead of perpetuating the harmful perception that experts' intelligence is una
 <table class="large">
     <thead>
         <tr>
-            <th>Before</th>
-            <th>After</th>
+            <th scope="col">Before</th>
+            <th scope="col">After</th>
         </tr>
     </thead>
     <tbody>
@@ -75,6 +75,7 @@ Instead of perpetuating the harmful perception that experts' intelligence is una
             <td>Apologies if I missed this, but…</td>
         </tr>
     </tbody>
+    <caption>Potentially harmful phrases with less disruptive counterparts</caption>
 </table>
 
 Smart people are everywhere.
