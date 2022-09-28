@@ -12,6 +12,10 @@ My favorite meme symbolizing the difference between perceived and actual intelli
 <br />
 </em>
 
+Smart people are everywhere.
+Everybody has a unique blend of knowledge and skill.
+Seeing other people's knowledge and past successes that you don't have (yet) can make you feel like you'll never get them and don't belong.
+
 I've observed experienced and novice people alike utter the following two phrases a lot (and have said them myself):
 
 -   _"According to people much smarter than me..."_
@@ -54,7 +58,7 @@ Maybe directly say that instead?
 
 ## Handy Replacements
 
-The motivations behind those two phrases around approachability are great.
+The motivations around approachability behind those two phrases are great.
 I don't want to discourage anybody from taking action on those motivations.
 Instead of perpetuating the harmful perception that experts' intelligence is unattainable for most, though, try to use phrases that convey your intent more directly.
 
@@ -78,12 +82,8 @@ Instead of perpetuating the harmful perception that experts' intelligence is una
     <caption>Potentially harmful phrases with less disruptive counterparts</caption>
 </table>
 
-Smart people are everywhere.
-Everybody has a unique blend of knowledge and skill.
-When you're new to an industry, seeing the knowledge and past successes of others you don't have (yet) can make you feel like you'll never get them and don't belong.
-
 It's important to make sure discussion spaces don't reinforce the imposter syndrome.
-Most intelligence is not unattainable: it takes effort and time to work towards.
+Don't encourage the false thinking there are huge gaps between newcomers and the average participant in your industry.
 
 ---
 
