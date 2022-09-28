@@ -24,13 +24,13 @@ I think they get repeated for a few very admirable, logical reasons:
 -   They're nervous about the false impression that you need to be exceptionally smart to obtain important industry knowledge
 
 Caring about creating a friendly, welcoming community for newcomers is great.
-But I've come to believe that these "false modesty" phrases often harm community building by reinforcing the view that competency in a field requires high amounts of brains and talent.
+But I've come to believe that these "false modesty" phrases can actually harm community building by reinforcing the view that competency in a field requires high amounts of brains and talent.
 
-For both of those phrases, let's dive into why they can be harmful.
+For both phrases, let's dive into why they can be harmful.
 
 ## "According to people much smarter than me..."
 
-Some folks suffer from a false perception -often considered a variant of [imposter syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome)- that the average competent player in their field is an unapproachable titan of industry.
+Some folks suffer from a false perception -often considered a variant of [imposter syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome)- that the average competent player in their field is an unapproachable intellectual powerhouse.
 Describing differences between people in terms of intellectual superiority reinforces that perception.
 While many experts are shockingly smart, many are not -- and it can be demotivating to think that you need to be a genius to be competent.
 
