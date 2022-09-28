@@ -1,5 +1,5 @@
 ---
-date: "2022-09-30T01:23:45.117Z"
+date: "2022-09-28T01:23:45.117Z"
 description: "In trying to make ourselves relatable, we reinforce the negative perception of intelligence gaps."
 image: smort.png
 title: "No Unattainable Intelligence"
