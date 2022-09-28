@@ -7,22 +7,38 @@ p {
     overflow-x: auto;
 }
 
-table {
-    width: 100%;
-}
-
 small {
     display: inline-block;
     line-height: 1.5;
     margin-top: 0.5rem;
 }
 
+table {
+    width: 100%;
+}
+
+table.large {
+    margin: 2rem 0;
+}
+
+table.large td,
+table.large th {
+    padding-bottom: 0.5rem;
+}
+
 th {
     text-align: left;
 }
 
-td {
+table:not(.large) td {
     font-size: 0.9rem;
+}
+
+caption {
+    caption-side: bottom;
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-top: 1rem;
 }
 
 nav {
