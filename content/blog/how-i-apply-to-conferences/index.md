@@ -1,11 +1,11 @@
 ---
-date: "2022-10-28T01:23:45.117Z"
+date: "2022-11-03T01:23:45.117Z"
 description: "From a hundred conference applications and thirty speaking roles, this is my process for submitting talks."
 image: me-at-prisma.jpg
 title: "How I Apply to Conferences"
 ---
 
-As of October 2022, I've applied to about 100 unique conferences and gotten accepted to about a third of them.
+As of November 2022, I've applied to about 100 unique conferences and gotten accepted to about a third of them.
 I've also started helping out organizing conferences, such as reviewing talks submitted by speakers.
 So while I'm not the greatest conference speaker in the world, I think I've gotten at least good at them.
 
@@ -45,37 +45,79 @@ Keep track of these things and remember them for when you want to submit your ta
 
 ## 2. Research the conference
 
-TODO
+So you've found a conference you want to speak at.
+Great!
+Familiarize yourself with what the conference is about and what kinds of talks they tend to include:
 
 -   Thoroughly read their website
 -   Follow the conference and any organizers you can find on whatever social media you use
 -   Watch talks from the most recent 1-2 iterations of the event
 
-TODO
-
-### Aside: Speaker Rider
-
-I have a [speaker rider](https://github.com/JoshuaKGoldberg/speaker-rider), which is a declaration of the things I need in order to speak at an event.
-That speaker rider consists only of must-haves that I think every event should do:
-
--   TODO
-
-You don't need to have a speaker rider yourself.
-I imagine my being a little more "demanding" (TODO WORDING) than many may hurt my chances for some conferences.
-
-TODO
+You wouldn't believe how many talk submissions CFPs get that are clearly low quality copy & paste, only barely suitable -if at all- for the conference's intended subject matter.
 
 ## 3. Determine Topic Matches
 
-Now that I have a feel for what the conference is looking for, I'll try to see what areas of work I've spent time in match up with what they could look for.
+Now that you have a feel for what the conference is looking for, try to see what areas of work you've spent time in match up with what they could look for.
+This doesn't have to be some amazing cutting-edge novel idea: just something you think attendees might want to know about.
 
-## 4, Sketch the Story
+A few examples of topic match areas I've seen come up frequently are:
 
-TODO
+-   General software engineering:
+    -   Coding patterns you've found useful
+    -   Documentation and/or new developer onboarding strategies how you approach testing
+-   Frontend:
+    -   Best practices with your chosen UI library (React hooks, Angular components, ...)
+    -   Design systems
+    -   How your team does microfrontends
+    -   Using TypeScript
+-   React:
+    -   CSS-in-JS libraries (Emotion, Tailwind, Vanilla Extract, ...)
+    -   Integrations with other libraries (Apollo, Redux, tRPC, ...)
+    -   Your latest 🌶 hot take on hooks
+
+It's impossible to know what topics will match well with organizers.
+Since most conferences allow multiple CFP submissions, I generally try with a few different topics, often 2-3 out of:
+
+1. A talk directly on the conference's focus
+1. A talk generally on the conference's focus, but with a twist and/or additional technical area
+1. A talk partially on the conference's focus, but focused on a different topic with a fun twist
+
+### Aside: Naming Talks
+
+I find naming talks to be one of the hardest parts of CFPs.
+A good talk title needs to be clear, concise, and to the point.
+It's also often beneficial to include some flashy tech buzzwords to draw people in.
+
+## 4. Sketch the Story
+
+For each talk title, think on:
+
+1. What are the takeaways you want audience members to leave the talk with?
+2. For each of those takeaways, what are the pieces of information needed to get there?
+3. What starting points (pre-requisite knowledge) do you want to assume in your attendees?
+4. How can you structure a journey from the starting points to the ending takeaways that introduces those pieces of information in a reasonable way?
+
+That process is similar to the process teachers, documentation or textbook writers, and other knowledge sharers often take when structuring their content.
+You're effectively performing a [tree traversal](https://en.wikipedia.org/wiki/Tree_traversal), where nodes are knowledge and lines are prerequisites.
 
 ## 5. Submit the CFP
 
-TODO
+Ok!
+You've gotten your talk titles, abstracts, and general storylines figured out: time to submit the form.
+As with job applications, I strongly recommend thoroughly filling out all pieces of information you can.
+The biggest mistake I see in CFP submissions is teeny 1-2 sentence descriptions in fields like _Full Talk Description_.
+
+That being said, don't put heaping mounds of unnecessary details.
+Human beings with limited time will need to read your application and many others'.
+
+You can see the Submissions table in my [Conferences Notion page](https://joshuakgoldberg.notion.site/Conferences-bfb4bb5065b44a8488ebd37271ff3bfc) (also linked below) for examples of what I've applied to conferences with.
+
+### Aside: Speaker Bios
+
+Most conferences ask for some kind of speaker biography / _"about you"_ field.
+You don't have to think too hard on these.
+List your name, your employment, technical areas you work with, and one or two fun facts.
+I keep a copy & paste blurb in that Notion page for all conferences.
 
 ## 6. Don't Get My Hopes Up
 
@@ -214,7 +256,7 @@ TODO SOMETHING ABOUT THANKING AND HEART REACTIONS
 ### My proposal was accepted, but I learned of something the conference does that makes me uncomfortable. What do I do?
 
 Depends on the severity of the misdeed.
-If it's something you'd feel comfortable talking to the organizers about, I highly recommend reaching out to them directly to raise your misgivings.
+If it's something you'd feel comfortable talking to the organizers about, I strongly recommend reaching out to them directly to raise your misgivings.
 Oftentimes the organizer will appreciate you talking to them and will work hard to make it right.
 
 Messages like the following are TODO PHRASING:
@@ -246,3 +288,26 @@ Messages like the following are TODO PHRASING:
 
 If you got accepted at this one event, you can get accepted at some other one later on.
 Don't feel obligated to stay with a bad group.
+
+### Should I make a speaker rider?
+
+TODO a speaker rider is...
+
+I have a [speaker rider](https://github.com/JoshuaKGoldberg/speaker-rider), which is a declaration of the things I need in order to speak at an event.
+That speaker rider consists only of must-haves that I think every event should do:
+
+-   Accessibility: Be it, whether in-person and/or online
+-   Accommodations: Pay for travel expenses and my ticket
+-   Code of Conduct: Have a real one
+-   Diversity, Equity, and Inclusion: Be at least ~30% not-white-cisgender-male speakers
+
+You don't need to have a speaker rider yourself.
+I imagine my being a little more restrictive than many may hurt my chances for some conferences.
+
+TODO
+
+### TODO FAQ DO I HAVE TO BE AN EXPERT
+
+## Further Resources
+
+-   https://writing.jan.io/2013/05/10/how-to-give-the-killer-tech-talk---a-pamphlet.html
