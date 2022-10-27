@@ -1,39 +1,49 @@
 ---
 date: "2022-10-28T01:23:45.117Z"
-description: "TODO"
-image: todo.png
+description: "From a hundred conference applications and thirty speaking roles, this is my process for submitting talks."
+image: me-at-prisma.jpg
 title: "How I Apply to Conferences"
 ---
 
 As of October 2022, I've applied to about 100 unique conferences and gotten accepted to about a third of them.
+I've also started helping out organizing conferences, such as reviewing talks submitted by speakers.
+So while I'm not the greatest conference speaker in the world, I think I've gotten at least good at them.
 
-TODO
+This blog post goes over the process that I take to submit my talks to CFPs (Call For Proposals).
+That process can be summarized in the following steps:
 
-![TODO"](./todo.png)
+1. [Pre-Work](#1-pre-work)
+1. [Research the conference](#2-research-the-conference)
+1. [Determine topic matches](#3-determine-topic-matches)
+1. [Sketch the story](#4-sketch-the-story)
+1. [Submit the CFP](#5-submit-the-cfp)
+1. [Don't get my hopes up](#6-dont-get-my-hopes-up)
 
-1. Research the conference
-1. Determine topic matches
-1. Sketch the story
-1. Submit the CFP
-1. Don't get my hopes up
+![Me smiling and speaking at a conference podium, wearing a pineapples-on-white t-shirt, gesturing with one hand](./me-at-prisma.jpg)
 
 <em style="display:block;margin-bottom:2rem;text-align:center;">
-TODO
-<br />
+Me speaking at Prisma Day 2022 in Berlin.
 </em>
 
-## Pre-Work
+## 1. Pre-Work
 
-TODO
+Speaking at a conference is rarely the first bit of community involvement speakers take.
+It's a good idea to start smaller so you can build your skills and network with other people in your areas of programming.
 
--   Start attending meetups, such as city-specific ones
--   Speak at a meetup
--   Actively ask meetup organizers for feedback on your talks there
--   Repeat the previous two steps a few times
+If you're interested in getting started talking about programming topics, a strategy like this one with meetups can be very helpful:
 
-TODO
+1.  Start attending meetups, such as city-specific ones
+1.  Speak at a meetup
+1.  Actively ask meetup organizers for feedback on your talks there
+1.  Repeat the previous two steps a few times
+1.  Start attending conferences
 
-## Research the conference
+Attending meetups and conferences is helpful for seeing what does or doesn't work in talks.
+What kinds of topics do you relate to as an attendee?
+What speaking styles, narrative arcs, and general storytelling methods make you excited about the topic and/or effectively transmit information to you?
+Keep track of these things and remember them for when you want to submit your talks.
+
+## 2. Research the conference
 
 TODO
 
@@ -55,19 +65,19 @@ I imagine my being a little more "demanding" (TODO WORDING) than many may hurt m
 
 TODO
 
-## Determine Topic Matches
+## 3. Determine Topic Matches
 
 Now that I have a feel for what the conference is looking for, I'll try to see what areas of work I've spent time in match up with what they could look for.
 
-## Sketch the Story
+## 4, Sketch the Story
 
 TODO
 
-## Submit the CFP
+## 5. Submit the CFP
 
 TODO
 
-## Don't Get My Hopes Up
+## 6. Don't Get My Hopes Up
 
 Applying to conferences is like to applying for jobs: you're going to rejected loads of times, especially when you're new.
 Many CFP processes are chaotic and poorly managed behind the scenes, which introduces a strong element of random chance to which submissions of yours will get chosen.
