@@ -64,9 +64,11 @@ A few examples of topic match areas I've seen come up frequently are:
 
 -   General software engineering:
     -   Coding patterns you've found useful
-    -   Documentation and/or new developer onboarding strategies how you approach testing
+    -   Documentation and/or new developer onboarding strategies
+    -   How you approach testing
+    -   Getting started using a popular framework
 -   Frontend:
-    -   Best practices with your chosen UI library (React hooks, Angular components, ...)
+    -   Best practices with your chosen UI library (Angular components, React hooks, ...)
     -   Design systems
     -   How your team does microfrontends
     -   Using TypeScript
@@ -79,8 +81,8 @@ It's impossible to know what topics will match well with organizers.
 Since most conferences allow multiple CFP submissions, I generally try with a few different topics, often 2-3 out of:
 
 1. A talk directly on the conference's focus
-1. A talk generally on the conference's focus, but with a twist and/or additional technical area
-1. A talk partially on the conference's focus, but focused on a different topic with a fun twist
+1. A talk generally on the conference's focus, but with a twist and/or another area
+1. A talk partially on the conference's focus, but focused on another topic and/or a fun twist
 
 ### Aside: Naming Talks
 
@@ -129,10 +131,6 @@ Getting rejected is part of the process.
 That's totally fine!
 Just keep applying, and eventually others will go in.
 
-## Miscellaneous tips
-
--   It's also totally fine to _not_ speak at conferences. Most developers don't.
-
 ## FAQs
 
 ### Can you still go to a conference that rejected your CFP submission?
@@ -151,11 +149,23 @@ If you don't want to spend a day in a conference center with a bunch of stranger
 ### Do you need to be active on Twitter to speak at conferences?
 
 No, but it's very helpful.
-There are a lot of developer communities and discussions on Twitter, and many conference TODO
+There are a lot of developer communities and discussions on Twitter and many conference organizers are active there.
+I've made countless invaluable personal connections and tech discoveries by using Twitter daily.
+I'd certainly recommend sticking at Twitter if you're up for it.
+
+That being said, social media comes with a cost.
+It takes time to actively work on engaging with others, responding to tweets, checking your timeline, etc.
+And seeing the constant cycle of extreme takes, angry negativity, and general human stupidity that is the internet can be emotionally draining.
+Some experienced speakers choose not to be active on social media, or even to not have accounts at all.
+
+Do what's right for you.
 
 ### Do you need to be an expert on a subject to give a talk on it?
 
 No.
+_No!_
+
+If only the top experts on subjects gave talks on those subjects, most conferences wouldn't be able to find speakers!
 
 TODO
 
@@ -222,7 +232,7 @@ You've done everything you can.
 Everybody knows public speaking can be nerve-wracking.
 Nobody whose opinion is worth anything will judge you harshly on your first talk.
 
-You got this!
+**You got this!**
 
 ### Is it ok to repeat talk submissions?
 
@@ -230,7 +240,8 @@ I think so, unless the conference explicitly states they prefer not.
 Giving a talk multiple times allows you to iterate on it and give a better talk each time.
 Most developers don't go to very many conferences per year, so the chances that they'll see you give the same talk twice are very small.
 
-TODO MY STRATEGY
+Especially if you've got a talk you're excited about but haven't given yet, it's fine to submit it to multiple conferences.
+Don't limit your chances of giving that great talk by only having one submission with it pending at a time.
 
 ### My proposal was accepted, but I have to back out for personal reasons. What do I do?
 
@@ -307,6 +318,29 @@ I imagine my being a little more restrictive than many may hurt my chances for s
 TODO
 
 ### TODO FAQ DO I HAVE TO BE AN EXPERT
+
+## What are the best conference talks you've seen?
+
+I've seen so many amazing ones!
+"Best" is too subjective of a term.
+This answer would be different each different month I try to answer it.
+
+A couple great ones that have been top-of-mind for me recently are:
+
+-   [Goodbye, UseEffect 👋: David Khourshid, React Brussels 2022](https://youtu.be/HPoC-k7Rxwo)
+    -   Note: I saw this in React Brussels, and will replace the link with that video once it's shared on YouTube!
+-   [How We Automated our Relationship: Daphne Liu & Tiger Oakes, CascadiaJS 2022](https://youtu.be/Zxe7bDZweoI?t=70)
+-   [A SERIOUS discussion about Next.js: Cassidy Williams, Reactathon 2021](https://youtu.be/dK2bTdb_CTc)
+
+## What are your favorite talks you've given?
+
+My favorite is giving wacky things, ideally also dive into cool technical stuff.
+This is again subjective and might change each time you ask.
+I do prefer in-person talks for the audience energy and more engaging physical presence.
+
+1. [Binary Arithmetic in the TypeScript Type System: TSConf 2019](https://www.youtube.com/watch?v=7lyb22x9tcM): my first in-person conference talk (!), about my favorite programming language (!!), about a wacky use case of its type system (!!!)
+1. [From Takedown to TypeScript: A Retro Game Engine Story: CascadiaJS 2021](https://youtu.be/UhUFW-sYJwk): a personal story about my first big web project, how to sustainably grow projects, and barriers to entry _(sorry about the sound quality!)_
+1. WebXR Karaoke: React Brussels 2022 (video pending!): A talk I've been working on for a while, which combines live karaoke, a 3d multiplayer demo, and enthusing about the future of code
 
 ## Further Resources
 
