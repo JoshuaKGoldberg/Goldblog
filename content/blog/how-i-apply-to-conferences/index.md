@@ -19,8 +19,10 @@ That process can be summarized in the following steps:
 1. [Submit the CFP](#5-submit-the-cfp)
 1. [Don't get my hopes up](#6-dont-get-my-hopes-up)
 
-I've added a bunch of [FAQs](#faqs) to the end, too.
-Let me know if you have any other questions to add!
+I've added two more sections later:
+
+-   [FAQs](#faqs)
+-   [Further Resources](#further-resources)
 
 ![Me smiling and speaking at a conference podium, wearing a pineapples-on-white t-shirt, gesturing with one hand](./me-at-prisma.jpg)
 
@@ -140,6 +142,8 @@ Just keep applying, and eventually others will go in.
 ---
 
 ## FAQs
+
+Let me know if you have any other questions to add!
 
 ### Can you still go to a conference that rejected your CFP submission?
 
@@ -361,4 +365,5 @@ I do prefer in-person talks for the audience energy and more engaging physical p
 
 ## Further Resources
 
--   https://writing.jan.io/2013/05/10/how-to-give-the-killer-tech-talk---a-pamphlet.html
+-   [How to write an effective conference talk abstract](https://dev.to/benghamine/on-conference-speaking-and-effective-talk-abstracts-2bp6): A fantastic deep dive on good and bad abstracts in CFPs
+-   [How To Give the Killer Tech Talk — A Pamphlet](https://writing.jan.io/2013/05/10/how-to-give-the-killer-tech-talk---a-pamphlet.html): Great tips on giving the talk once you're accepted
