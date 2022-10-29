@@ -366,4 +366,4 @@ I do prefer in-person talks for the audience energy and more engaging physical p
 ## Further Resources
 
 -   [How to write an effective conference talk abstract](https://dev.to/benghamine/on-conference-speaking-and-effective-talk-abstracts-2bp6): A fantastic deep dive on good and bad abstracts in CFPs
--   [How To Give the Killer Tech Talk — A Pamphlet](https://writing.jan.io/2013/05/10/how-to-give-the-killer-tech-talk---a-pamphlet.html): Great tips on giving the talk once you're accepted
+-   [How To Give the Killer Tech Talk — A Pamphlet](https://writing.jan.io/2013/05/10/how-to-give-the-killer-tech-talk---a-pamphlet.html): Great, actionable tips on giving the talk
