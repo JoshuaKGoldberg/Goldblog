@@ -332,6 +332,8 @@ A couple great ones that have been top-of-mind for me recently are:
 -   [How We Automated our Relationship: Daphne Liu & Tiger Oakes, CascadiaJS 2022](https://youtu.be/Zxe7bDZweoI?t=70)
 -   [A SERIOUS discussion about Next.js: Cassidy Williams, Reactathon 2021](https://youtu.be/dK2bTdb_CTc)
 
+TODO put explanations ^
+
 ## What are your favorite talks you've given?
 
 My favorite is giving wacky things, ideally also dive into cool technical stuff.
