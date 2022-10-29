@@ -19,18 +19,22 @@ That process can be summarized in the following steps:
 1. [Submit the CFP](#5-submit-the-cfp)
 1. [Don't get my hopes up](#6-dont-get-my-hopes-up)
 
+I've added a bunch of [FAQs](#faqs) to the end, too.
+Let me know if you have any other questions to add!
+
 ![Me smiling and speaking at a conference podium, wearing a pineapples-on-white t-shirt, gesturing with one hand](./me-at-prisma.jpg)
 
 <em style="display:block;margin-bottom:2rem;text-align:center;">
 Me speaking at Prisma Day 2022 in Berlin.
+Fun patterns on solid color shirts is my vibe now.
 </em>
 
 ## 1. Pre-Work
 
 Speaking at a conference is rarely the first bit of community involvement speakers take.
-It's a good idea to start smaller so you can build your skills and network with other people in your areas of programming.
+Start with smaller events so you can build your skills and network with other people in your areas of programming.
 
-If you're interested in getting started talking about programming topics, a strategy like this one with meetups can be very helpful:
+The strategy I took was:
 
 1.  Start attending meetups, such as city-specific ones
 1.  Speak at a meetup
@@ -50,15 +54,15 @@ Great!
 Familiarize yourself with what the conference is about and what kinds of talks they tend to include:
 
 -   Thoroughly read their website
--   Follow the conference and any organizers you can find on whatever social media you use
+-   Follow the conference and any organizers you can find on any social media you use
 -   Watch talks from the most recent 1-2 iterations of the event
 
-You wouldn't believe how many talk submissions CFPs get that are clearly low quality copy & paste, only barely suitable -if at all- for the conference's intended subject matter.
+You wouldn't believe how many talk submissions CFPs get that are clearly low quality copy & paste, only barely suitable -if at all- for the conference's intended subject matter. 🙃
 
 ## 3. Determine Topic Matches
 
-Now that you have a feel for what the conference is looking for, try to see what areas of work you've spent time in match up with what they could look for.
-This doesn't have to be some amazing cutting-edge novel idea: just something you think attendees might want to know about.
+Now that you have a feel for what the conference is looking for, try to recall your areas of work that match.
+You don't need to present some amazing cutting-edge novel idea: just information you think attendees might want to know about.
 
 A few examples of topic match areas I've seen come up frequently are:
 
@@ -82,7 +86,7 @@ Since most conferences allow multiple CFP submissions, I generally try with a fe
 
 1. A talk directly on the conference's focus
 1. A talk generally on the conference's focus, but with a twist and/or another area
-1. A talk partially on the conference's focus, but focused on another topic and/or a fun twist
+1. A talk partially on the conference's focus, but more on another topic and/or a fun twist
 
 ### Aside: Naming Talks
 
@@ -90,13 +94,15 @@ I find naming talks to be one of the hardest parts of CFPs.
 A good talk title needs to be clear, concise, and to the point.
 It's also often beneficial to include some flashy tech buzzwords to draw people in.
 
+For inspiration, see other talks submitted to that same conference.
+
 ## 4. Sketch the Story
 
 For each talk title, think on:
 
 1. What are the takeaways you want audience members to leave the talk with?
 2. For each of those takeaways, what are the pieces of information needed to get there?
-3. What starting points (pre-requisite knowledge) do you want to assume in your attendees?
+3. What starting points (pre-requisite knowledge) do you want to assume?
 4. How can you structure a journey from the starting points to the ending takeaways that introduces those pieces of information in a reasonable way?
 
 That process is similar to the process teachers, documentation or textbook writers, and other knowledge sharers often take when structuring their content.
@@ -112,7 +118,7 @@ The biggest mistake I see in CFP submissions is teeny 1-2 sentence descriptions 
 That being said, don't put heaping mounds of unnecessary details.
 Human beings with limited time will need to read your application and many others'.
 
-You can see the Submissions table in my [Conferences Notion page](https://joshuakgoldberg.notion.site/Conferences-bfb4bb5065b44a8488ebd37271ff3bfc) (also linked below) for examples of what I've applied to conferences with.
+You can see the Submissions table in my [Conferences Notion page](https://joshuakgoldberg.notion.site/Conferences-bfb4bb5065b44a8488ebd37271ff3bfc) for examples of what I've applied to conferences with.
 
 ### Aside: Speaker Bios
 
@@ -130,6 +136,8 @@ Then, even if a CFP process is well-managed, your submission just might not matc
 Getting rejected is part of the process.
 That's totally fine!
 Just keep applying, and eventually others will go in.
+
+---
 
 ## FAQs
 
@@ -167,36 +175,49 @@ _No!_
 
 If only the top experts on subjects gave talks on those subjects, most conferences wouldn't be able to find speakers!
 
-TODO
+The only familiarity level you need for a subject is what your talk will cover plus a few common questions you expect people will ask.
+
+For example, you don't need to deeply understand a UI library's rendering internals or the backing of its architectural decisions when giving a talk on getting started with it.
+But do know FAQs such as how it works with data fetching, CSS-in-JS, and other important integrations.
 
 ### How do you know whether to submit to a conference?
 
 If you're unsure, just submit.
 You never know what the conference organizers will want to branch out to.
 
-As long as you do the due diligence of finding topics that match between you and the conference
+Nobody will be irritated or offended by your submission (as long as you do the due diligence mentioned in this post).
 
 Remember: not all talks have to be technical.
-I've seen fantastic talks at frontend-end conferences from low-level systems programmers on topics like mentorship and teamwork.
+I've seen fantastic talks at frontend conferences from junior and not-frontend developers on topics such as mentorship and teamwork.
 
-If you're still unsure, you can always ask the conference organizers over email.
+If you're still unsure, you can always ask the conference organizers.
+Or [DM me on Twitter](https://twitter.com/JoshuaKGoldberg); I'm happy to encourage you!
 
 ### How can I find out about conferences?
 
 I subscribe to as many newsletters, Twitter accounts, and automated services as possible.
 That includes:
 
--   TODO CFPLAND AND THE REST
+-   [Calling All Papers](https://callingallpapers.com)
+-   [CFPLand](https://www.cfpland.com)
+-   [SeeCFP](https://seecfp.com)
+-   [PaperCall](https://www.papercall.io)
+-   [Sessionize](https://sessionize.com)
+
+If you use Twitter, you might consider making a [Twitter List](https://help.twitter.com/en/using-twitter/twitter-lists) containing conferences you think you might be a speaker fit for.
+Mine is [Josh Conference Matches](https://twitter.com/i/lists/1461079394861027328).
+
+> Got another service to add to the list?
+> Please [@ me on Twitter](https://twitter.com/JoshuaKGoldberg)!
 
 ### I don't think I know enough about anything to give a talk. How do I find a topic?
 
 _Wrong._
 You absolutely do know enough to give a talk on something.
-
-TODO
+See [Do you need to be an expert on a subject to give a talk on it?](#do-you-need-to-be-an-expert-on-a-subject-to-give-a-talk-on-it)
 
 If you're really struggling to think of things, I'd suggest keeping a journal at work of the main lessons you learn.
-TODO
+I _guarantee_ you'll have at least a half dozen items within a month.
 
 ### I have anxiety. Can I speak at conferences?
 
@@ -250,19 +271,18 @@ They will understand: personal situations happen, and it's not their place to tr
 
 (if anybody does, please let me know so I don't waste my time applying to their conferences!)
 
-Messages like the following are TODO PHRASING:
+Messages like the following are inoffensive and reasonable:
 
 > Hi {organizer},
 >
 > I'm so sorry, something in my personal life came up and I can't speak at {conference} anymore.
-> TODO
 >
 > Thanks again for choosing me and giving me this opportunity.
 > I hope we can make this happen another time.
 >
 > -{you}
 
-TODO SOMETHING ABOUT THANKING AND HEART REACTIONS
+If you have the energy and time, consider personalizing the message to how you've talked with the organizers in the past.
 
 ### My proposal was accepted, but I learned of something the conference does that makes me uncomfortable. What do I do?
 
@@ -270,7 +290,7 @@ Depends on the severity of the misdeed.
 If it's something you'd feel comfortable talking to the organizers about, I strongly recommend reaching out to them directly to raise your misgivings.
 Oftentimes the organizer will appreciate you talking to them and will work hard to make it right.
 
-Messages like the following are TODO PHRASING:
+Messages like the following are inoffensive and reasonable:
 
 > Hi {organizer},
 >
@@ -286,7 +306,7 @@ Messages like the following are TODO PHRASING:
 If the bad deed is _really_ bad, though, it's absolutely fine to back out.
 You don't want to help an event that violates your own moral code.
 
-Messages like the following are TODO PHRASING:
+Messages like the following are inoffensive and reasonable:
 
 > Hi {organizer},
 >
@@ -302,8 +322,6 @@ Don't feel obligated to stay with a bad group.
 
 ### Should I make a speaker rider?
 
-TODO a speaker rider is...
-
 I have a [speaker rider](https://github.com/JoshuaKGoldberg/speaker-rider), which is a declaration of the things I need in order to speak at an event.
 That speaker rider consists only of must-haves that I think every event should do:
 
@@ -315,9 +333,8 @@ That speaker rider consists only of must-haves that I think every event should d
 You don't need to have a speaker rider yourself.
 I imagine my being a little more restrictive than many may hurt my chances for some conferences.
 
-TODO
-
-### TODO FAQ DO I HAVE TO BE AN EXPERT
+But, if you become a somewhat known name in your industry (which I am in TypeScript-land), I'd urge you to consider having one.
+The more speakers require points such as accessibility, the more pressure conferences will feel to do the right thing.
 
 ## What are the best conference talks you've seen?
 
@@ -327,12 +344,10 @@ This answer would be different each different month I try to answer it.
 
 A couple great ones that have been top-of-mind for me recently are:
 
--   [Goodbye, UseEffect 👋: David Khourshid, React Brussels 2022](https://youtu.be/HPoC-k7Rxwo)
+-   [Goodbye, UseEffect 👋: David Khourshid, React Brussels 2022](https://youtu.be/HPoC-k7Rxwo): An approachable, engaging explanation of the context, pitfalls, and common alternatives around React's `useEffect` API. Plus a great state charts product demo at the end!
     -   Note: I saw this in React Brussels, and will replace the link with that video once it's shared on YouTube!
--   [How We Automated our Relationship: Daphne Liu & Tiger Oakes, CascadiaJS 2022](https://youtu.be/Zxe7bDZweoI?t=70)
--   [A SERIOUS discussion about Next.js: Cassidy Williams, Reactathon 2021](https://youtu.be/dK2bTdb_CTc)
-
-TODO put explanations ^
+-   [How We Automated our Relationship: Daphne Liu & Tiger Oakes, CascadiaJS 2022](https://youtu.be/Zxe7bDZweoI?t=70): Each project shown was cool on its own, but the speakers made it all exciting and added a lot of great humor and personal flair.
+-   [A SERIOUS discussion about Next.js: Cassidy Williams, Reactathon 2021](https://youtu.be/dK2bTdb_CTc): A great walk-through of setting up a fun project in Next.js and deploying to Netlify, which I know many beginner developers found useful. Plus it breaks down the unapproachability of big frameworks in a hilarious way.
 
 ## What are your favorite talks you've given?
 
