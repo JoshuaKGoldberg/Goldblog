@@ -24,6 +24,9 @@ I've added two more sections later:
 -   [FAQs](#faqs)
 -   [Further Resources](#further-resources)
 
+I keep a publicly viewable [Conferences Notion page](https://joshuakgoldberg.notion.site/Conferences-bfb4bb5065b44a8488ebd37271ff3bfc) tracking what I've applied to conferences with.
+Feel free to reference that as a resource of examples for what I mean throughout this post. ❤️
+
 ![Me smiling and speaking at a conference podium, wearing a pineapples-on-white t-shirt, gesturing with one hand](./me-at-prisma.jpg)
 
 <em style="display:block;margin-bottom:2rem;text-align:center;">
@@ -96,7 +99,15 @@ I find naming talks to be one of the hardest parts of CFPs.
 A good talk title needs to be clear, concise, and to the point.
 It's also often beneficial to include some flashy tech buzzwords to draw people in.
 
-For inspiration, see other talks submitted to that same conference.
+Keep your talk title as small as possible while still conveying the gist of your talk.
+I try to combine 1-2 _buzzwords_ with a relatable **situation**.
+Here are a few made-up examples:
+
+-   _React Hooks_ **Best Practices and Common Pitfalls**
+-   **Statically Catching Bugs** with _ESLint_ and _TypeScript_
+-   How _TypeScript_ **Helps Scale Team Expertise**
+
+Try checking talks given at conferences you're applying to for more inspiration.
 
 ## 4. Sketch the Story
 
@@ -119,8 +130,6 @@ The biggest mistake I see in CFP submissions is teeny 1-2 sentence descriptions 
 
 That being said, don't put heaping mounds of unnecessary details.
 Human beings with limited time will need to read your application and many others'.
-
-You can see the Submissions table in my [Conferences Notion page](https://joshuakgoldberg.notion.site/Conferences-bfb4bb5065b44a8488ebd37271ff3bfc) for examples of what I've applied to conferences with.
 
 ### Aside: Speaker Bios
 
