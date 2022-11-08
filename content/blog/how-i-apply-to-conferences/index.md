@@ -349,20 +349,20 @@ I imagine my being a little more restrictive than many may hurt my chances for s
 But, if you become a somewhat known name in your industry (which I am in TypeScript-land), I'd urge you to consider having one.
 The more speakers require points such as accessibility, the more pressure conferences will feel to do the right thing.
 
-## What are the best conference talks you've seen?
+### What are the best conference talks you've seen?
 
 I've seen so many amazing ones!
 "Best" is too subjective of a term.
 This answer would be different each different month I try to answer it.
 
-A couple great ones that have been top-of-mind for me recently are:
+Three great ones that have been top-of-mind for me recently are:
 
 -   [Goodbye, UseEffect 👋: David Khourshid, React Brussels 2022](https://youtu.be/HPoC-k7Rxwo): An approachable, engaging explanation of the context, pitfalls, and common alternatives around React's `useEffect` API. Plus a great state charts product demo at the end!
     -   Note: I saw this in React Brussels, and will replace the link with that video once it's shared on YouTube!
 -   [How We Automated our Relationship: Daphne Liu & Tiger Oakes, CascadiaJS 2022](https://youtu.be/Zxe7bDZweoI?t=70): Each project shown was cool on its own, but the speakers made it all exciting and added a lot of great humor and personal flair.
 -   [A SERIOUS discussion about Next.js: Cassidy Williams, Reactathon 2021](https://youtu.be/dK2bTdb_CTc): A great walk-through of setting up a fun project in Next.js and deploying to Netlify, which I know many beginner developers found useful. Plus it breaks down the unapproachability of big frameworks in a hilarious way.
 
-## What are your favorite talks you've given?
+### What are your favorite talks you've given?
 
 My favorite is giving wacky things, ideally also dive into cool technical stuff.
 This is again subjective and might change each time you ask.
