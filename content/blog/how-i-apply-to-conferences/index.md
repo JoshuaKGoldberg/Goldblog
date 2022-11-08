@@ -33,8 +33,9 @@ Fun patterns on solid color shirts is my vibe now.
 
 ## 1. Pre-Work
 
-Speaking at a conference is rarely the first bit of community involvement speakers take.
-Start with smaller events so you can build your skills and network with other people in your areas of programming.
+Speaking at a conference is rarely the first bit of community involvement taken by a developer.
+Start with smaller events and work your way up.
+That way you can build your skills and network with other people in your areas of work.
 
 The strategy I took was:
 
@@ -58,6 +59,11 @@ Familiarize yourself with what the conference is about and what kinds of talks t
 -   Thoroughly read their website
 -   Follow the conference and any organizers you can find on any social media you use
 -   Watch talks from the most recent 1-2 iterations of the event
+
+Pay special attention to the tone of the talks from the conference.
+Are they fun and wacky?
+Serious and suit-and-tie professional?
+Keep a note of the conference's talk vibes for when you submit.
 
 You wouldn't believe how many talk submissions CFPs get that are clearly low quality copy & paste, only barely suitable -if at all- for the conference's intended subject matter. 🙃
 
@@ -146,7 +152,7 @@ Human beings with limited time will need to read your application and many other
 Most conferences ask for some kind of speaker biography / _"about you"_ field.
 You don't have to think too hard on these.
 List your name, your employment, technical areas you work with, and one or two fun facts.
-I keep a copy & paste blurb in that Notion page for all conferences.
+I keep a copy & paste blurb in that Notion page for all conferences ([link](https://www.notion.so/joshuakgoldberg/Conferences-bfb4bb5065b44a8488ebd37271ff3bfc#6a2e6a2684914cde8df0919bec1b215a "copy and paste of my speaker bio")).
 
 ## 6. Don't Get My Hopes Up
 
@@ -155,11 +161,15 @@ Many CFP processes are chaotic and poorly managed behind the scenes, which intro
 Then, even if a CFP process is well-managed, your submission just might not match what the organizers are looking for.
 
 I was rejected from multiple conferences before I landed my first talk.
-After that my rate was around 5% for a while.
-Now it's around 35% or so.
+For a while after that my rate was around 5%.
+It's since slowly grown to around 35% or so.
 
-Getting rejected is part of the process.
+Rejections are part of the process.
 Keep applying and eventually you'll get in.
+You got this!
+💙
+
+---
 
 ## Further Resources
 
@@ -169,7 +179,7 @@ On top of the references mentioned in this article, I recommend reading at least
 -   [How To Give the Killer Tech Talk — A Pamphlet](https://writing.jan.io/2013/05/10/how-to-give-the-killer-tech-talk---a-pamphlet.html): Great, actionable tips on giving the talk.
 
 > Got any more great resources?
-> Let me know!
+> [Let me know](mailto:blog@joshuakgoldberg.com)!
 
 ## FAQs
 

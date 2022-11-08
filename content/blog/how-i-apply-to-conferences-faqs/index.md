@@ -64,7 +64,7 @@ Remember: not all talks have to be technical.
 I've seen fantastic talks at frontend conferences from junior and not-frontend developers on topics such as mentorship and teamwork.
 
 If you're still unsure, you can always ask the conference organizers.
-Or [DM me on Twitter](https://twitter.com/JoshuaKGoldberg); I'm happy to encourage you!
+Or [reach out to me](mailto:blog@joshuakgoldberg.com); I'm happy to encourage you!
 
 ### How can I find out about conferences?
 
@@ -81,7 +81,7 @@ If you use Twitter, you might consider making a [Twitter List](https://help.twit
 Mine is [Josh Conference Matches](https://twitter.com/i/lists/1461079394861027328).
 
 > Got another service to add to the list?
-> Please [@ me on Twitter](https://twitter.com/JoshuaKGoldberg)!
+> Please [let me know](mailto:blog@joshuakgoldberg.com)!
 
 ### I don't think I know enough about anything to give a talk. How do I find a topic?
 
@@ -91,6 +91,9 @@ See [Do you need to be an expert on a subject to give a talk on it?](#do-you-nee
 
 If you're really struggling to think of things, I'd suggest keeping a journal at work of the main lessons you learn.
 I _guarantee_ you'll have at least a half dozen items within a month.
+
+You also don't need to give a talk on a technical topic.
+I've seen great talks with titles like _My First 30 Days as a Software Developer_ or _How Not to Onboard Engineers_ that barely touched on code at all.
 
 ### I have anxiety. Can I speak at conferences?
 
@@ -104,7 +107,7 @@ We're all different.
 By the way, I recommend everybody get a therapist if they can.
 Even if you don't think you need it.
 Even if you think your body and mind are already perfect (which, frankly, is a sign on its own that you probably need therapy...).
-A good therapist can be shockingly helpful for many personal issues, including but not limited to fear of drawing attention to yourself, self-doubt, and social anxiety.
+A good therapist can be shockingly helpful for many personal issues, including but not limited to: fear of drawing attention to yourself, self-doubt, and social anxiety.
 
 ### I'm giving my first talk soon and I'm nervous. What do I do?
 
@@ -115,8 +118,8 @@ Give yourself a pat on the back. 😊
 Everybody gets nervous before their first talk.
 It's a natural part of the process.
 
-If you can, try giving the talk to people you trust, such as coworkers, family, and friends.
-Rehearse it ahead of time as much as you think is helpful, then stop rehearsing it and go do something that takes your mind off it.
+If you can, try giving a preview presentation of the talk to people you trust, such as coworkers, family, and friends.
+Rehearse it ahead of time as much as you think is helpful, then stop rehearsing it the day before the conference and go do something that takes your mind off it.
 I especially recommend something mentally and/or physically engaging, such as exercise, a particularly engrossing book, going out with a close friend or three, or an old favorite video game.
 
 Plan something fun for after the talk to treat yourself.
@@ -124,13 +127,13 @@ Plan something fun for after the talk to treat yourself.
 When you're getting ready to start the talk, breathe deeply and calmly.
 You've done everything you can.
 Everybody knows public speaking can be nerve-wracking.
-Nobody whose opinion is worth anything will judge you harshly on your first talk.
+Nobody whose opinion is worth anything will judge you harshly on your first few talks.
 
-**You got this!**
+**You got this!** 👏
 
 ### Is it ok to repeat talk submissions?
 
-I think so, unless the conference explicitly states they prefer not.
+Absolutely, unless the conference explicitly states they prefer not (which is rare).
 Giving a talk multiple times allows you to iterate on it and give a better talk each time.
 Most developers don't go to very many conferences per year, so the chances that they'll see you give the same talk twice are very small.
 
@@ -212,10 +215,10 @@ The more speakers require points such as accessibility, the more pressure confer
 ### What are the best conference talks you've seen?
 
 I've seen so many amazing ones!
-"Best" is too subjective of a term.
-This answer would be different each different month I try to answer it.
+"Best" is so subjective of a term.
+My answer would be different each different month I try to give it.
 
-Three great ones that have been top-of-mind for me recently are:
+Three great talks that have been top-of-mind for me recently are:
 
 -   [Goodbye, UseEffect 👋: David Khourshid, React Brussels 2022](https://youtu.be/HPoC-k7Rxwo): An approachable, engaging explanation of the context, pitfalls, and common alternatives around React's `useEffect` API. Plus a great state charts product demo at the end!
     -   Note: I saw this in React Brussels, and will replace the link with that video once it's shared on YouTube!
@@ -224,13 +227,15 @@ Three great ones that have been top-of-mind for me recently are:
 
 ### What are your favorite talks you've given?
 
-My favorite is giving wacky things, ideally also dive into cool technical stuff.
 This is again subjective and might change each time you ask.
 I do prefer in-person talks for the audience energy and more engaging physical presence.
 
 1. [Binary Arithmetic in the TypeScript Type System: TSConf 2019](https://www.youtube.com/watch?v=7lyb22x9tcM): my first in-person conference talk (!), about my favorite programming language (!!), about a wacky use case of its type system (!!!)
 1. [From Takedown to TypeScript: A Retro Game Engine Story: CascadiaJS 2021](https://youtu.be/UhUFW-sYJwk): a personal story about my first big web project, how to sustainably grow projects, and barriers to entry _(sorry about the sound quality!)_
 1. WebXR Karaoke: React Brussels 2022 (video pending!): A talk I've been working on for a while, which combines live karaoke, a 3d multiplayer demo, and enthusing about the future of code
+
+For a while my favorite talks were on wacky subjects, like bending TypeScript's type system into weird shapes.
+I've recently also been enjoying talks on communications and team processes.
 
 ## Closing Thoughts
 
