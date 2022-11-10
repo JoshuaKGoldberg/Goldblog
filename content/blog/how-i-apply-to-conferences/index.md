@@ -207,3 +207,7 @@ On top of the references mentioned in this article, I recommend reading at least
 
 Speaking at conferences is a big topic.
 See my [How I Apply to Conferences: FAQs](../how-i-apply-to-conferences-faqs) article for answers to many common questions.
+
+## Thanks
+
+Much appreciation to Sylvana Santos for advice and feedback in writing this post!

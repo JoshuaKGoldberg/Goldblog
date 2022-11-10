@@ -232,7 +232,7 @@ I do prefer in-person talks for the audience energy and more engaging physical p
 
 1. [Binary Arithmetic in the TypeScript Type System: TSConf 2019](https://www.youtube.com/watch?v=7lyb22x9tcM): my first in-person conference talk (!), about my favorite programming language (!!), about a wacky use case of its type system (!!!)
 1. [From Takedown to TypeScript: A Retro Game Engine Story: CascadiaJS 2021](https://youtu.be/UhUFW-sYJwk): a personal story about my first big web project, how to sustainably grow projects, and barriers to entry _(sorry about the sound quality!)_
-1. WebXR Karaoke: React Brussels 2022 (video pending!): A talk I've been working on for a while, which combines live karaoke, a 3d multiplayer demo, and enthusing about the future of code
+1. WebXR Karaoke: React Brussels 2022 (video pending): A talk I've been working on for a while, which combines live karaoke, a 3d multiplayer demo, and enthusing about the future of code
 
 For a while my favorite talks were on wacky subjects, like bending TypeScript's type system into weird shapes.
 I've recently also been enjoying talks on communications and team processes.
