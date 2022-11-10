@@ -15,9 +15,10 @@ That process can be summarized as:
 1. [Pre-Work](#1-pre-work)
 1. [Research the conference](#2-research-the-conference)
 1. [Determine topic matches](#3-determine-topic-matches)
-1. [Sketch the story](#4-sketch-the-story)
-1. [Submit the CFP](#5-submit-the-cfp)
-1. [Don't get my hopes up](#6-dont-get-my-hopes-up)
+1. [Craft a Title](#4-craft-a-title)
+1. [Sketch the story](#5-sketch-the-story)
+1. [Submit the CFP](#6-submit-the-cfp)
+1. [Don't get my hopes up](#7-dont-get-my-hopes-up)
 
 I've added a [Further Resources](#further-resources) section below, and a separate [FAQs article](../how-i-apply-to-conferences-faqs) for assorted questions.
 
@@ -96,7 +97,16 @@ Since most conferences allow multiple CFP submissions, I generally try with a fe
 1. A talk generally on the conference's focus, but with a twist and/or another area
 1. A talk partially on the conference's focus, but more on another topic and/or a fun twist
 
-### Aside: Naming Talks
+Here's a set of examples for a React-focused conference:
+
+-   [React Context and Dependency Injection](https://www.notion.so/joshuakgoldberg/React-Advanced-London-2022-3d205e4212e5467aa163761517b7c212): Directly focused on React
+-   [React Design Systems: Maximum Consistency, Minimum Effort](https://www.notion.so/joshuakgoldberg/React-Advanced-London-2022-1747a069d0944a7db983b00db0e75030): Generally on React, but applied to the area of design systems
+-   [React + TypeScript Best Practices](https://www.notion.so/joshuakgoldberg/React-Advanced-London-2022-5cc3e8b6d2bd458887f5c49392a7f0c3): Partially on React, but more on TypeScript
+
+Don't be afraid to branch out and experiment.
+As long as a topic has some overlap with the conference's focus area(s), it's a potentially good idea.
+
+## 4. Craft a Title
 
 I find naming talks to be one of the hardest parts of CFPs.
 A good talk title needs to be clear, concise, and to the point.
@@ -104,15 +114,24 @@ It's also often beneficial to include some flashy tech buzzwords to draw people 
 
 Keep your talk title as small as possible while still conveying the gist of your talk.
 If you're getting stuck, try to combine 1-2 _buzzwords_ with a relatable **situation**.
-Here are a few made-up examples:
+Here are a few examples:
 
 -   _React Hooks_ **Best Practices and Common Pitfalls**
 -   **Statically Catching Bugs** with _ESLint_ and _TypeScript_
 -   How _TypeScript_ **Helps Scale Team Expertise**
 
+You don't have to stick to that format.
+If I think a title is catchy with less information, I'll go with it.
+Especially if I can sneak in some alliteration!
+Here are a few examples:
+
+-   Redux Redone (Redux Toolkit Totally Rocks)
+-   Static Analysis: Shockingly Useful!
+-   Why Software Projects Fail
+
 Try checking past talks given at conferences you're applying to for more inspiration.
 
-## 4. Sketch the Story
+## 5. Sketch the Story
 
 For each talk title, think on:
 
@@ -123,21 +142,24 @@ For each talk title, think on:
 
 That process is similar to the process teachers, documentation or textbook writers, and other knowledge sharers often take when structuring their content.
 
+You'll want to summarize those points in the talk description.
+You don't have to narrate the entire presentation - just the high-level takeaways and general topics you'll cover.
+
 ### Describing the Story
 
-I often use a format like the following for descriptions:
+I often use the STAR format for talk descriptions:
 
-1. State the context behind your talk
-2. Summarize what your talk will cover
-3. Give a list of topics within the talk
-4. Summarize the conclusions/takeaways from the talk
+1. **Situation**: The context behind your talk / what problem you're trying to solve
+2. **Task**: Your general strategy for improving the situation / fixing the problem
+3. **Action**: A list of actions, software projects, or other information for the task
+4. **Result**: End state after the actions, along with conclusions/takeaways
 
 These submissions of mine contain good examples of matching descriptions: [How to Complain Positively](https://www.notion.so/joshuakgoldberg/LeadDev-London-2023-2e51b443e42f46719448831973e00ab9) and [TypeScript Static Analysis Hidden Gems](https://www.notion.so/joshuakgoldberg/All-Things-Open-3157bc256629486d8a668632e547c6ba).
 
 > I highly recommend reading _[On Writing Well](https://www.google.com/books/edition/On_Writing_Well/UvlnAAAAMAAJ?hl=en)_ to learn how to write engaging, pithy descriptions.
 > Its lessons apply both to writing CFPs and giving the talks themselves.
 
-## 5. Submit the CFP
+## 6. Submit the CFP
 
 Ok!
 You've gotten your talk titles, abstracts, and general storylines figured out: time to submit the form.
@@ -154,7 +176,7 @@ You don't have to think too hard on these.
 List your name, your employment, technical areas you work with, and one or two fun facts.
 I keep a copy & paste blurb in that Notion page for all conferences ([link](https://www.notion.so/joshuakgoldberg/Conferences-bfb4bb5065b44a8488ebd37271ff3bfc#6a2e6a2684914cde8df0919bec1b215a "copy and paste of my speaker bio")).
 
-## 6. Don't Get My Hopes Up
+## 7. Don't Get My Hopes Up
 
 Applying to conferences is like to applying for jobs: you're going to rejected loads of times, especially when you're new.
 Many CFP processes are chaotic and poorly managed behind the scenes, which introduces a strong element of random chance to which submissions of yours will get chosen.
