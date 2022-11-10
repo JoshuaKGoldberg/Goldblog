@@ -210,4 +210,4 @@ See my [How I Apply to Conferences: FAQs](../how-i-apply-to-conferences-faqs) ar
 
 ## Thanks
 
-Much appreciation to Sylvana Santos for advice and feedback in writing this post!
+Much appreciation to [Sylvana Santos](https://linkedin.com/in/sylvanaelizabethsantos) for advice and feedback in writing this post!
