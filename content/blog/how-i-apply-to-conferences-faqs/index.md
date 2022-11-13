@@ -58,7 +58,7 @@ But do know FAQs such as how it works with data fetching, CSS-in-JS, and other i
 If you're unsure, just submit.
 You never know what the conference organizers will want to branch out to.
 
-Nobody will be irritated or offended by your submission (as long as you do the due diligence mentioned in this post).
+Nobody will be irritated or offended by your submission (as long as you do the due diligence mentioned in [How I Apply to Conferences](./how-i-apply-to-conferences)).
 
 Remember: not all talks have to be technical.
 I've seen fantastic talks at frontend conferences from junior and not-frontend developers on topics such as mentorship and teamwork.
@@ -73,8 +73,8 @@ That includes:
 
 -   [Calling All Papers](https://callingallpapers.com)
 -   [CFPLand](https://www.cfpland.com)
--   [SeeCFP](https://seecfp.com)
 -   [PaperCall](https://www.papercall.io)
+-   [SeeCFP](https://seecfp.com)
 -   [Sessionize](https://sessionize.com)
 
 If you use Twitter, you might consider making a [Twitter List](https://help.twitter.com/en/using-twitter/twitter-lists) containing conferences you think you might be a speaker fit for.
@@ -121,7 +121,7 @@ We're all different.
 
 By the way, I recommend everybody get a therapist if they can.
 Even if you don't think you need it.
-Even if you think your body and mind are already perfect (which, frankly, is a sign on its own that you probably need therapy...).
+Even if you think your body and mind are already perfect (which, frankly, is a sign that you likely need therapy...).
 A good therapist can be shockingly helpful for many personal issues, including but not limited to: fear of drawing attention to yourself, self-doubt, and social anxiety.
 
 ### I'm giving my first talk soon and I'm nervous. What do I do?
@@ -158,7 +158,8 @@ Don't limit your chances of giving that great talk by only having one submission
 ### My proposal was accepted, but I have to back out for personal reasons. What do I do?
 
 Talk to the organizers as soon as possible, and give them as much information as you feel comfortable sharing.
-They will understand: personal situations happen, and it's not their place to try to force you to do their event.
+They will understand.
+Personal situations happen, and it's not their place to try to force you to do their event.
 
 (if anybody does, please let me know so I don't waste my time applying to their conferences!)
 
@@ -216,15 +217,15 @@ Don't feel obligated to stay with a bad group.
 I have a [speaker rider](https://github.com/JoshuaKGoldberg/speaker-rider), which is a declaration of the things I need in order to speak at an event.
 That speaker rider consists only of must-haves that I think every event should do:
 
--   Accessibility: Be it, whether in-person and/or online
+-   Accessibility: Be accessible, whether in-person and/or online
 -   Accommodations: Pay for travel expenses and my ticket
--   Code of Conduct: Have a real one
+-   Code of Conduct: Have a real one and enforce it
 -   Diversity, Equity, and Inclusion: Be at least ~30% not-white-cisgender-male speakers
 
 You don't need to have a speaker rider yourself.
 I imagine my being a little more restrictive than many may hurt my chances for some conferences.
 
-But, if you become a somewhat known name in your industry (which I am in TypeScript-land), I'd urge you to consider having one.
+But, if you become a somewhat known name in your industry niche, I'd urge you to consider having one.
 The more speakers require points such as accessibility, the more pressure conferences will feel to do the right thing.
 
 ### What are the best conference talks you've seen?
@@ -237,7 +238,7 @@ Three great talks that have been top-of-mind for me recently are:
 
 -   [Goodbye, UseEffect 👋: David Khourshid, React Brussels 2022](https://youtu.be/HPoC-k7Rxwo): An approachable, engaging explanation of the context, pitfalls, and common alternatives around React's `useEffect` API. Plus a great state charts product demo at the end!
     -   Note: I saw this in React Brussels, and will replace the link with that video once it's shared on YouTube!
--   [How We Automated our Relationship: Daphne Liu & Tiger Oakes, CascadiaJS 2022](https://youtu.be/Zxe7bDZweoI?t=70): Each project shown was cool on its own, but the speakers made it all exciting and added a lot of great humor and personal flair.
+-   [How We Automated our Relationship: Daphne Liu & Tiger Oakes, CascadiaJS 2022](https://youtu.be/Zxe7bDZweoI?t=70): Each project shown was cool on its own, but the speakers made it all exciting, explained the concepts very well, and added a lot of great humor and personal flair.
 -   [A SERIOUS discussion about Next.js: Cassidy Williams, Reactathon 2021](https://youtu.be/dK2bTdb_CTc): A great walk-through of setting up a fun project in Next.js and deploying to Netlify, which I know many beginner developers found useful. Plus it breaks down the unapproachability of big frameworks in a hilarious way.
 
 ### What are your favorite talks you've given?
@@ -251,6 +252,8 @@ I do prefer in-person talks for the audience energy and more engaging physical p
 
 For a while my favorite talks were on wacky subjects, like bending TypeScript's type system into weird shapes.
 I've recently also been enjoying talks on communications and team processes.
+
+> Check this again in March 2023 - I _really_ liked my talks at [All Things Open 2022](https://2022.allthingsopen.org) and [LeadDev Berlin 2022](https://leaddev.com/leaddev-berlin), and those videos should be available by then.
 
 ## Closing Thoughts
 
