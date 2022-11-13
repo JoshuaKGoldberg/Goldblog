@@ -81,7 +81,7 @@ If you use Twitter, you might consider making a [Twitter List](https://help.twit
 Mine is [Josh Conference Matches](https://twitter.com/i/lists/1461079394861027328).
 
 > Got another service to add to the list?
-> Please [let me know](mailto:blog@joshuakgoldberg.com)!
+> Please let me know over [email](mailto:blog@joshuakgoldberg.com), [Masstodon](https://fosstodon.org/@JoshuaKGoldberg), or [Twitter](https://twitter.com/JoshuaKGoldberg)!
 
 ### I don't think I know enough about anything to give a talk. How do I find a topic?
 
@@ -94,6 +94,7 @@ I _guarantee_ you'll have at least a half dozen items within a month.
 
 You also don't need to give a talk on a technical topic.
 I've seen great talks with titles like _My First 30 Days as a Software Developer_ or _How Not to Onboard Engineers_ that barely touched on code at all.
+In fact, engineers who have never given a talk and/or are relatively junior are often _better_ for talks about those subjects, as they're more recently familiar!
 
 ### How do I make my submission stand out?
 
@@ -253,7 +254,9 @@ I've recently also been enjoying talks on communications and team processes.
 
 ## Closing Thoughts
 
-Please do let me know if there are any more FAQs you'd like to see here.
 Thanks for reading! 💖
+
+Got any more FAQs you'd like to see here?
+Please let me know over [email](mailto:blog@joshuakgoldberg.com), [Masstodon](https://fosstodon.org/@JoshuaKGoldberg), or [Twitter](https://twitter.com/JoshuaKGoldberg!
 
 Much appreciation to [Julie Jones](https://twitter.com/codewithjulie) and [Sylvana Santos](https://linkedin.com/in/sylvanaelizabethsantos) for advice and feedback in writing this post!
