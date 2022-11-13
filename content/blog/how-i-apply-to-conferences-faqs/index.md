@@ -1,5 +1,5 @@
 ---
-date: "2022-11-14T01:23:45.117Z"
+date: "2022-11-17T01:23:45.343Z"
 description: "Common questions and answers for my How I Apply To Conferences article."
 image: me-at-prisma-thumbs-up.jpg
 title: "How I Apply to Conferences: FAQs"
