@@ -95,6 +95,20 @@ I _guarantee_ you'll have at least a half dozen items within a month.
 You also don't need to give a talk on a technical topic.
 I've seen great talks with titles like _My First 30 Days as a Software Developer_ or _How Not to Onboard Engineers_ that barely touched on code at all.
 
+### How do I make my submission stand out?
+
+The most important thing is to write a good submission.
+That really will make it stand out beyond most of the other submissions.
+A well written, detailed submission will almost always win over a sloppy one.
+
+Adding personality to it might be good too: alliteration or a pun are my go-to delighters.
+
+It also doesn't hurt to have some online presence in the topic, like a blog post or open source library.
+But that's certainly not necessary, and sometimes won't be a factor at all.
+
+Much of the process is randomized: how the CFP reviewers are feeling that day; what topics they decide they want; what's gone viral in the last month.
+Just keep submitting! 💪
+
 ### I have anxiety. Can I speak at conferences?
 
 Hey, me too!
@@ -241,3 +255,5 @@ I've recently also been enjoying talks on communications and team processes.
 
 Please do let me know if there are any more FAQs you'd like to see here.
 Thanks for reading! 💖
+
+Much appreciation to [Julie Jones](https://twitter.com/codewithjulie) and [Sylvana Santos](https://linkedin.com/in/sylvanaelizabethsantos) for advice and feedback in writing this post!
