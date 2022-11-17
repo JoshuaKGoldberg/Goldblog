@@ -248,11 +248,17 @@ I've seen so many amazing ones!
 "Best" is so subjective of a term.
 My answer would be different each different month I try to give it.
 
+### What are your favorite conference talks you've seen?
+
 Three great talks that have been top-of-mind for me (and also have publicly available videos) recently are:
 
 -   [Goodbye, UseEffect 👋: David Khourshid, React Brussels 2022](https://youtu.be/bGzanfKVFeU): An approachable, engaging explanation of the context, pitfalls, and common alternatives around React's `useEffect` API. Plus a great state charts product demo at the end!
 -   [How We Automated our Relationship: Daphne Liu & Tiger Oakes, CascadiaJS 2022](https://youtu.be/Zxe7bDZweoI?t=70): Each project shown was cool on its own, but the speakers made it all exciting, explained the concepts very well, and added a lot of great humor and personal flair.
 -   [A SERIOUS discussion about Next.js: Cassidy Williams, Reactathon 2021](https://youtu.be/dK2bTdb_CTc): A great walk-through of setting up a fun project in Next.js and deploying to Netlify, which I know many beginner developers found useful. Plus it breaks down the unapproachability of big frameworks in a hilarious way.
+
+But, again, that's informed in large part by what I've been separately thinking about lately.
+I've seen plenty of other equally great talks - including from the same conferences as those three!
+I'd highly recommend going through those conferences' playlists on YouTube to see which talks you like the most.
 
 ### What are the best talks you've given?
 
