@@ -248,7 +248,7 @@ I've seen so many amazing ones!
 "Best" is so subjective of a term.
 My answer would be different each different month I try to give it.
 
-Three great talks that have been top-of-mind for me recently are:
+Three great talks that have been top-of-mind for me (and also have publicly available videos) recently are:
 
 -   [Goodbye, UseEffect 👋: David Khourshid, React Brussels 2022](https://youtu.be/bGzanfKVFeU): An approachable, engaging explanation of the context, pitfalls, and common alternatives around React's `useEffect` API. Plus a great state charts product demo at the end!
 -   [How We Automated our Relationship: Daphne Liu & Tiger Oakes, CascadiaJS 2022](https://youtu.be/Zxe7bDZweoI?t=70): Each project shown was cool on its own, but the speakers made it all exciting, explained the concepts very well, and added a lot of great humor and personal flair.
