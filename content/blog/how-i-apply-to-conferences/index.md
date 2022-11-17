@@ -201,7 +201,7 @@ On top of the references mentioned in this article, I recommend reading at least
 -   [How To Give the Killer Tech Talk — A Pamphlet](https://writing.jan.io/2013/05/10/how-to-give-the-killer-tech-talk---a-pamphlet.html): Great, actionable tips on giving the talk.
 
 > Got any more great resources?
-> Please let me know over [email](mailto:blog@joshuakgoldberg.com), [Masstodon](https://fosstodon.org/@JoshuaKGoldberg), or [Twitter](https://twitter.com/JoshuaKGoldberg!
+> Please let me know over [email](mailto:blog@joshuakgoldberg.com), [Masstodon](https://fosstodon.org/@JoshuaKGoldberg), or [Twitter](https://twitter.com/JoshuaKGoldberg)!
 
 ## FAQs
 
