@@ -255,6 +255,20 @@ Three great talks that have been top-of-mind for me recently are:
 -   [How We Automated our Relationship: Daphne Liu & Tiger Oakes, CascadiaJS 2022](https://youtu.be/Zxe7bDZweoI?t=70): Each project shown was cool on its own, but the speakers made it all exciting, explained the concepts very well, and added a lot of great humor and personal flair.
 -   [A SERIOUS discussion about Next.js: Cassidy Williams, Reactathon 2021](https://youtu.be/dK2bTdb_CTc): A great walk-through of setting up a fun project in Next.js and deploying to Netlify, which I know many beginner developers found useful. Plus it breaks down the unapproachability of big frameworks in a hilarious way.
 
+### What are the best talks you've given?
+
+Hard to say.
+Different topics and styles work better for different people.
+I'm also always trying to improve as a speaker, so this answer will probably select from within the last few I've given.
+
+As of November 2022, I think my overall best two talks were my two most recent ones:
+
+1. TypeScript Static Analysis Hidden Gems, given at [All Things Open 2022](https://2022.allthingsopen.org)
+1. Lessons Learned from Refactors and Rearchitectures, given at [LeadDev Berlin 2022](https://leaddev.com/leaddev-berlin)
+
+Unfortunately neither of those talks have videos available online yet.
+They should be available by March 2023.
+
 ### What are your favorite talks you've given?
 
 This is again subjective and might change each time you ask.
@@ -266,8 +280,6 @@ I do prefer in-person talks for the audience energy and more engaging physical p
 
 For a while my favorite talks were on wacky subjects, like bending TypeScript's type system into weird shapes.
 I've recently also been enjoying talks on communications and team processes.
-
-> Check this again in March 2023 - I _really_ liked my talks at [All Things Open 2022](https://2022.allthingsopen.org) and [LeadDev Berlin 2022](https://leaddev.com/leaddev-berlin), and those videos should be available by then.
 
 ## Closing Thoughts
 
