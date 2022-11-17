@@ -250,8 +250,7 @@ My answer would be different each different month I try to give it.
 
 Three great talks that have been top-of-mind for me recently are:
 
--   [Goodbye, UseEffect 👋: David Khourshid, React Brussels 2022](https://youtu.be/HPoC-k7Rxwo): An approachable, engaging explanation of the context, pitfalls, and common alternatives around React's `useEffect` API. Plus a great state charts product demo at the end!
-    -   Note: I saw this in React Brussels, and will replace the link with that video once it's shared on YouTube!
+-   [Goodbye, UseEffect 👋: David Khourshid, React Brussels 2022](https://youtu.be/bGzanfKVFeU): An approachable, engaging explanation of the context, pitfalls, and common alternatives around React's `useEffect` API. Plus a great state charts product demo at the end!
 -   [How We Automated our Relationship: Daphne Liu & Tiger Oakes, CascadiaJS 2022](https://youtu.be/Zxe7bDZweoI?t=70): Each project shown was cool on its own, but the speakers made it all exciting, explained the concepts very well, and added a lot of great humor and personal flair.
 -   [A SERIOUS discussion about Next.js: Cassidy Williams, Reactathon 2021](https://youtu.be/dK2bTdb_CTc): A great walk-through of setting up a fun project in Next.js and deploying to Netlify, which I know many beginner developers found useful. Plus it breaks down the unapproachability of big frameworks in a hilarious way.
 
@@ -276,7 +275,7 @@ I do prefer in-person talks for the audience energy and more engaging physical p
 
 1. [Binary Arithmetic in the TypeScript Type System: TSConf 2019](https://www.youtube.com/watch?v=7lyb22x9tcM): my first in-person conference talk (!), about my favorite programming language (!!), about a wacky use case of its type system (!!!)
 1. [From Takedown to TypeScript: A Retro Game Engine Story: CascadiaJS 2021](https://youtu.be/UhUFW-sYJwk): a personal story about my first big web project, how to sustainably grow projects, and barriers to entry _(sorry about the sound quality!)_
-1. WebXR Karaoke: React Brussels 2022 (video pending): A talk I've been working on for a while, which combines live karaoke, a 3d multiplayer demo, and enthusing about the future of code
+1. [WebXR Karaoke: React Brussels 2022](https://youtu.be/W7YIQ5qkrok): A talk I've been working on for a while, which combines live karaoke, a 3d multiplayer demo, and enthusing about the future of code
 
 For a while my favorite talks were on wacky subjects, like bending TypeScript's type system into weird shapes.
 I've recently also been enjoying talks on communications and team processes.
