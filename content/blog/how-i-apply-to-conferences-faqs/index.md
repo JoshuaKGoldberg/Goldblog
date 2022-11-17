@@ -41,6 +41,23 @@ Some experienced speakers choose not to be active on social media, or even to no
 
 Do what's right for you.
 
+### How can I find out about conferences?
+
+I subscribe to as many newsletters, Twitter accounts, and automated services as possible.
+That includes:
+
+-   [Calling All Papers](https://callingallpapers.com)
+-   [CFPLand](https://www.cfpland.com)
+-   [PaperCall](https://www.papercall.io)
+-   [SeeCFP](https://seecfp.com)
+-   [Sessionize](https://sessionize.com)
+
+If you use Twitter, you might consider making a [Twitter List](https://help.twitter.com/en/using-twitter/twitter-lists) containing conferences you think you might be a speaker fit for.
+Mine is [Josh Conference Matches](https://twitter.com/i/lists/1461079394861027328).
+
+> Got another service to add to the list?
+> Please let me know over [email](mailto:blog@joshuakgoldberg.com), [Masstodon](https://fosstodon.org/@JoshuaKGoldberg), or [Twitter](https://twitter.com/JoshuaKGoldberg)!
+
 ### Do you need to be an expert on a subject to give a talk on it?
 
 No.
@@ -65,23 +82,6 @@ I've seen fantastic talks at frontend conferences from junior and not-frontend d
 
 If you're still unsure, you can always ask the conference organizers.
 Or [reach out to me](mailto:blog@joshuakgoldberg.com); I'm happy to encourage you!
-
-### How can I find out about conferences?
-
-I subscribe to as many newsletters, Twitter accounts, and automated services as possible.
-That includes:
-
--   [Calling All Papers](https://callingallpapers.com)
--   [CFPLand](https://www.cfpland.com)
--   [PaperCall](https://www.papercall.io)
--   [SeeCFP](https://seecfp.com)
--   [Sessionize](https://sessionize.com)
-
-If you use Twitter, you might consider making a [Twitter List](https://help.twitter.com/en/using-twitter/twitter-lists) containing conferences you think you might be a speaker fit for.
-Mine is [Josh Conference Matches](https://twitter.com/i/lists/1461079394861027328).
-
-> Got another service to add to the list?
-> Please let me know over [email](mailto:blog@joshuakgoldberg.com), [Masstodon](https://fosstodon.org/@JoshuaKGoldberg), or [Twitter](https://twitter.com/JoshuaKGoldberg)!
 
 ### I don't think I know enough about anything to give a talk. How do I find a topic?
 
@@ -109,6 +109,20 @@ But that's certainly not necessary, and sometimes won't be a factor at all.
 
 Much of the process is randomized: how the CFP reviewers are feeling that day; what topics they decide they want; what's gone viral in the last month.
 Just keep submitting! 💪
+
+### What do CFP reviewers look for in submissions?
+
+That's _very_ dependent on the conference and reviewer.
+Most reviewers I've talked look for qualities something like:
+
+-   Does the topic at least partially match the conference?
+-   Do the proposed topic & details seem interesting to the target audience(s)?
+-   Does the proposal have at least the level of detail asked for?
+-   Does the proposal flow well with other proposals being accepted?
+    -   This one is roughly impossible to predict as an applicant, so don't worry about it!
+
+> I'm planning on writing follow-up posts on more conference topics, including how I review CFP submissions.
+> Please let me know over [email](mailto:blog@joshuakgoldberg.com), [Masstodon](https://fosstodon.org/@JoshuaKGoldberg), or [Twitter](https://twitter.com/JoshuaKGoldberg) if there's anything you'd like to see answered!
 
 ### I have anxiety. Can I speak at conferences?
 
@@ -260,6 +274,6 @@ I've recently also been enjoying talks on communications and team processes.
 Thanks for reading! 💖
 
 Got any more FAQs you'd like to see here?
-Please let me know over [email](mailto:blog@joshuakgoldberg.com), [Masstodon](https://fosstodon.org/@JoshuaKGoldberg), or [Twitter](https://twitter.com/JoshuaKGoldberg!
+Please let me know over [email](mailto:blog@joshuakgoldberg.com), [Masstodon](https://fosstodon.org/@JoshuaKGoldberg), or [Twitter](https://twitter.com/JoshuaKGoldberg)!
 
 Much appreciation to [Julie Jones](https://twitter.com/codewithjulie) and [Sylvana Santos](https://linkedin.com/in/sylvanaelizabethsantos) for advice and feedback in writing this post!
