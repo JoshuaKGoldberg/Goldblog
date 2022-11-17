@@ -116,7 +116,7 @@ That's _very_ dependent on the conference and reviewer.
 Most reviewers I've talked look for qualities something like:
 
 -   Does the topic at least partially match the conference?
--   Do the proposed topic & details seem interesting to the target audience(s)?
+-   Do the proposed topic & details seem of interest to the target audience(s)?
 -   Does the proposal have at least the level of detail asked for?
 -   Does the proposal flow well with other proposals being accepted?
     -   This one is roughly impossible to predict as an applicant, so don't worry about it!
