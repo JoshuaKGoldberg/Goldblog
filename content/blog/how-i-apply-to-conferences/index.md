@@ -193,7 +193,17 @@ You got this!
 
 ---
 
-## Further Resources
+## Closing Thoughts
+
+I hope this was useful to to as a resource for getting started applying to CFPs.
+Thanks for reading! 💖
+
+### FAQs
+
+Speaking at conferences is a big topic!
+See my [How I Apply to Conferences: FAQs](../how-i-apply-to-conferences-faqs) article for answers to many common questions.
+
+### Further Resources
 
 On top of the references mentioned in this article, I recommend reading at least these two articles:
 
@@ -203,11 +213,6 @@ On top of the references mentioned in this article, I recommend reading at least
 > Got any more great resources?
 > Please let me know over [email](mailto:blog@joshuakgoldberg.com), [Masstodon](https://fosstodon.org/@JoshuaKGoldberg), or [Twitter](https://twitter.com/JoshuaKGoldberg)!
 
-## FAQs
-
-Speaking at conferences is a big topic.
-See my [How I Apply to Conferences: FAQs](../how-i-apply-to-conferences-faqs) article for answers to many common questions.
-
-## Thanks
+### Thanks
 
 Much appreciation to [Ali Nehzat](https://twitter.com/nehzata), [Julie Jones](https://twitter.com/codewithjulie), and [Sylvana Santos](https://linkedin.com/in/sylvanaelizabethsantos) for advice and feedback in writing this post!

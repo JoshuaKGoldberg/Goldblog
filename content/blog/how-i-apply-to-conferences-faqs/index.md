@@ -293,4 +293,6 @@ Thanks for reading! 💖
 Got any more FAQs you'd like to see here?
 Please let me know over [email](mailto:blog@joshuakgoldberg.com), [Masstodon](https://fosstodon.org/@JoshuaKGoldberg), or [Twitter](https://twitter.com/JoshuaKGoldberg)!
 
+### Thanks
+
 Much appreciation to [Ali Nehzat](https://twitter.com/nehzata), [Julie Jones](https://twitter.com/codewithjulie), and [Sylvana Santos](https://linkedin.com/in/sylvanaelizabethsantos) for advice and feedback in writing this post!
