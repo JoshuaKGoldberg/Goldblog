@@ -195,7 +195,7 @@ You got this!
 
 ## Closing Thoughts
 
-I hope this was useful to to as a resource for getting started applying to CFPs.
+I hope this was useful to you as a resource for getting started applying to CFPs.
 Thanks for reading! 💖
 
 ### FAQs
