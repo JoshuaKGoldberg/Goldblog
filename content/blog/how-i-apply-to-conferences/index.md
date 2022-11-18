@@ -210,9 +210,14 @@ On top of the references mentioned in this article, I recommend reading at least
 -   [How to write an effective conference talk abstract](https://dev.to/benghamine/on-conference-speaking-and-effective-talk-abstracts-2bp6): A fantastic deep dive on good and bad abstracts in CFPs.
 -   [How To Give the Killer Tech Talk — A Pamphlet](https://writing.jan.io/2013/05/10/how-to-give-the-killer-tech-talk---a-pamphlet.html): Great, actionable tips on giving the talk.
 
+Edit 11/18: [Luis Sánchez](https://twitter.com/chiefblagger), an organizer of conferences including [J on the Beach](https://www.jonthebeach.com) [Wey Wey Web](https://weyweyweb.com), wrote a great post from an organizer's point of view: [CFP Tips and Tricks for Tech Conferences](https://www.jonthebeach.com/blog/CFP-Tips-and-Tricks-for-Tech-Conferences).
+Would recommend!
+
 > Got any more great resources?
 > Please let me know over [email](mailto:blog@joshuakgoldberg.com), [Masstodon](https://fosstodon.org/@JoshuaKGoldberg), or [Twitter](https://twitter.com/JoshuaKGoldberg)!
 
 ### Thanks
 
-Much appreciation to [Ali Nehzat](https://twitter.com/nehzata), [Julie Jones](https://twitter.com/codewithjulie), and [Sylvana Santos](https://linkedin.com/in/sylvanaelizabethsantos) for advice and feedback in writing this post!
+Much appreciation to [Ali Nehzat](https://twitter.com/nehzata), [Julie Jones](https://twitter.com/codewithjulie), and [Sylvana Santos](https://linkedin.com/in/sylvanaelizabethsantos) for advice and feedback in writing this post, and [Carter Rabasa](https://twitter.com/crtr0) for enthusiasm and moral support.
+Y'all rock!
+🙌

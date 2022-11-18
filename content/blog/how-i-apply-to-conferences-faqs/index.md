@@ -295,4 +295,6 @@ Please let me know over [email](mailto:blog@joshuakgoldberg.com), [Masstodon](ht
 
 ### Thanks
 
-Much appreciation to [Ali Nehzat](https://twitter.com/nehzata), [Julie Jones](https://twitter.com/codewithjulie), and [Sylvana Santos](https://linkedin.com/in/sylvanaelizabethsantos) for advice and feedback in writing this post!
+Much appreciation to [Ali Nehzat](https://twitter.com/nehzata), [Julie Jones](https://twitter.com/codewithjulie), and [Sylvana Santos](https://linkedin.com/in/sylvanaelizabethsantos) for advice and feedback in writing this post, and [Carter Rabasa](https://twitter.com/crtr0) for enthusiasm and moral support.
+Y'all rock!
+🙌
