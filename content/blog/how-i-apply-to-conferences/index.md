@@ -184,7 +184,7 @@ Then, even if a CFP process is well-managed, your submission just might not matc
 
 I was rejected from multiple conferences before I landed my first talk.
 For a while after that my rate was around 5%.
-It's since slowly grown to around 50% or so.
+It's since slowly grown to around 40% or so.
 
 Rejections are part of the process.
 Keep applying and eventually you'll get in.
