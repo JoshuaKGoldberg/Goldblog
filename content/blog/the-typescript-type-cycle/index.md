@@ -1,17 +1,18 @@
 ---
-date: "2022-11-18T01:23:45.117Z"
+date: "2022-12-05T01:23:45.117Z"
 description: "Charting a typical developer's emotional journey through learning TypeScript's type system."
 image: the-typescript-type-cycle.png
 title: "The TypeScript Type Cycle"
 ---
 
-The [Gartner Hype Cycle](TODO) is a cycle TODO.
+The [Gartner Hype Cycle](https://wikipedia.org/wiki/Gartner%20Hype%20Cycle) is an industry phenomenon theorized to occur with most new technologies.
 It describes how new (technologies?) tend to go through three public vibes, in order:
 
 1. **Peak of Inflated Expectations**: The technology is the latest new hotness and everybody loves using it for everything
 2. **Trough of Disillusionment**: Users discover its flaws the hard way - especially when using it in areas it's not optimal for
 3. **Plateau of Productivity**: The community settles on optimal ways to use the technology
 
+Anecdotally, I've seen this happen plenty of times.
 TypeScript -and its type system in particular- are no exception to the Gartner Hype Cycle.
 Most users who learn TypeScript go through a reminiscent cycle of their own:
 
@@ -37,40 +38,37 @@ Many developers go overboard with those type system features upon first understa
 Take a look at the types that enable the following `exclaim` function's return type to be more specific if the type of `data.happy` is known:
 
 ```ts
+// This code snippet is intentionally convoluted. Please don't copy it!
+
 interface MessageData<M extends string> {
     happy: boolean;
     message: M;
 }
 
-type ExclaimedHappy<M extends string> = `It's happy! ${M}`;
+type HappyMessage<M extends string> = `Happy ${M}!`;
 
-type ExclaimedUnhappy<M extends string> = `Not so happy: ${M}`;
+type UnhappyMessage<M extends string> = `Unhappy ${M}...`;
 
-type ExclaimedMessage<
-    M extends string,
-    MD extends MessageData<M>
-> = MD["happy"] extends true
-    ? ExclaimedHappy<M>
+type ExclaimedMessage<MD extends MessageData<string>> = MD["happy"] extends true
+    ? HappyMessage<MD["message"]>
     : MD["happy"] extends false
-    ? ExclaimedUnhappy<M>
-    : ExclaimedUnhappy<M> | ExclaimedHappy<M>;
+    ? UnhappyMessage<MD["message"]>
+    : HappyMessage<MD["message"]> | UnhappyMessage<MD["message"]>;
 
-function exclaim<M extends string, MD extends MessageData<M>>(data: MD) {
+function exclaim<MD extends MessageData<string>>(data: MD) {
     return (
-        data.happy
-            ? `It's happy! ${data.message}`
-            : `Not so happy: ${data.message}`
-    ) as ExclaimedMessage<M, MD>;
+        data.happy ? `Happy ${data.message}!` : `Unhappy ${data.message}...`
+    ) as ExclaimedMessage<MD>;
 }
 
-// Type: "It's happy! ..."
-exclaim({ happy: true, message: "apple" });
+// Type: "Happy apple!"
+exclaim({ happy: true, message: "apple" } as const);
 
-// Type: "Not so happy: ..."
-exclaim({ happy: false, message: "banana" });
+// Type: "Unhappy banana..."
+exclaim({ happy: false, message: "banana" } as const);
 
-// Type: "It's happy! ..." | "Not so happy: ..."
-exclaim({ happy: Math.random() > 0.5, message: "cherry" });
+// Type: "Happy cherry!" | "Unhappy cherry..."
+exclaim({ happy: Math.random() > 0.5, message: "cherry" } as const);
 ```
 
 This is some cool stuff!
@@ -95,24 +93,33 @@ Consider this correct and wise quote on writing and then debugging complex code:
 >
 > _—Brian Kernighan_
 
-Complex TypeScript features are particularly prone to perplexing programmers for a few reasons:
+If you're struggling to understand generics and write code at the limit of your comprehension, you're almost guaranteeing you're going to have a bad experience the next time you modify that code.
+
+I think complex TypeScript features are particularly prone to perplexing programmers for a few reasons:
 
 -   Their syntax is different from what we normally code in, and therefore
 -   Developers typically only use them rarely, so information can be quickly forgotten
 -   There is no common tooling for debugging through type system types _(yet!)_
 
-Don't despair
+Don't despair though!
+Many TypeScript developers have waded through the trough of type disillusionment.
+Keep banging your head against those generics, and eventually you'll reach the...
 
 ## Plateau of Productive Types 😊
 
-TODO
+Generic types eventually click for most TypeScript developers who keep trying to use them.
+They're a coding system like any other: they have defined rules, they have best -and worst- practices, and there are known types of situations where it is or is not a good idea to use them.
 
-Don't be clever with your types.
-Be as simple as possible.
+Developers who truly master the TypeScript type system generally come to the following correct conclusions:
 
-TODO
+-   Most complex uses of TypeScript generic types are unnecessary and should be removed
+    -   Libraries such as ORMs that provide generic operations can use complex generics, but only to save users from having to
+-   When you do need to use multiple generic type parameters, use explicit and clear names for each of them
 
-For example, the `exclaim` snippet from before can be rewritten to remove the conditional return type:
+In other words, don't be clever with your types.
+Be as _readable_ and _simple_ as possible.
+
+For example, the `exclaim` snippet from before can most likely be rewritten to remove the conditional return type:
 
 ```ts
 interface MessageData {
@@ -127,11 +134,29 @@ function exclaim(data: MessageData) {
 }
 ```
 
-### Tips for TODO
+Look at that!
+The same runtime code, but with a fraction of the TypeScript types around it.
+Much more readable.
 
--   TODOfull names exacmple `MessageData<Message extends string>`
+If the code is in a situation where the `ExclaimedMessage` type does need to be generic, it should use clear names like `Message` and `MessageData` instead of acronyms like `M` and `MD`.
 
-> I see a lot of code from newly capable TypeScript developers that violates the [Golden Rule of Generics](https://effectivetypescript.com/2020/08/12/generics-golden-rule), like
+```ts
+type ExclaimedMessage<
+    Message extends string,
+    MessageData extends MessageData<Message>
+> = MessageData["happy"] extends true
+    ? ExclaimedHappy<Message>
+    : MessageData["happy"] extends false
+    ? ExclaimedUnhappy<Message>
+    : ExclaimedUnhappy<Message> | ExclaimedHappy<Message>;
+```
+
+### Tips for Improving your Generics
+
+-   Readers should ideally be able to understand what a type does by reading its name and type parameters.
+-   Don't violate the [Golden Rule of Generics](https://effectivetypescript.com/2020/08/12/generics-golden-rule): _If a type parameter only appears in one location, strongly reconsider
+    if you actually need it._
+-   Don't make anything generic until at least two or three consumers of it have demonstrated a real benefit to doing so.
 
 ## Further Reading
 
