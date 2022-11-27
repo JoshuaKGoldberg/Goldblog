@@ -160,4 +160,4 @@ type ExclaimedMessage<
 
 ## Further Reading
 
-I ideated this concept while working on my Adventures in _Type Safe Prisma Clients_ talk at Prisma Day 2022 [slides](https://1drv.ms/p/s!AvUc1cvPrJnWvtQLoqKbcgSfwfAZYw?e=fR6JqZ "Prisma Day 2022 slides")] [[video](https://www.youtube.com/watch?v=uFj4qsyGvH0&ab_channel=Prisma "Prisma Day 2022 video")]
+I ideated this concept while working on my Adventures in _Type Safe Prisma Clients_ talk at Prisma Day 2022 [[slides](https://1drv.ms/p/s!AvUc1cvPrJnWvtQLoqKbcgSfwfAZYw?e=fR6JqZ "Prisma Day 2022 slides")] [[video](https://www.youtube.com/watch?v=uFj4qsyGvH0&ab_channel=Prisma "Prisma Day 2022 video")]
