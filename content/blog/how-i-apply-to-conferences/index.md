@@ -12,13 +12,13 @@ So while I'm not the greatest conference speaker in the world, I think I've gott
 This blog post goes over the process that I take to submit my talks to CFPs (Call For Proposals).
 That process can be summarized as:
 
-1. [Pre-Work](#1-pre-work)
-1. [Research the conference](#2-research-the-conference)
-1. [Determine topic matches](#3-determine-topic-matches)
-1. [Craft a Title](#4-craft-a-title)
-1. [Sketch the story](#5-sketch-the-story)
-1. [Submit the CFP](#6-submit-the-cfp)
-1. [Don't get my hopes up](#7-dont-get-my-hopes-up)
+1. [🧠 Pre-Work](#1-pre-work)
+1. [👁‍🗨 Research the conference](#2-research-the-conference)
+1. [🤝 Determine topic matches](#3-determine-topic-matches)
+1. [📇 Craft a Title](#4-craft-a-title)
+1. [✍️ Sketch the story](#5-sketch-the-story)
+1. [📫 Submit the CFP](#6-submit-the-cfp)
+1. [🙏 Don't get my hopes up](#7-dont-get-my-hopes-up)
 
 I've added a [Further Resources](#further-resources) section below, and a separate [FAQs article](../how-i-apply-to-conferences-faqs) for assorted questions.
 
