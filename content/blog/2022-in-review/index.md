@@ -1,7 +1,7 @@
 ---
 date: "2022-12-31T01:23:45.117Z"
 description: "Looking back at a pivotal year in my open source career."
-image: me-at-prisma.jpg
+image: me-laughing-on-stage.jpg
 title: "2022 In Review"
 ---
 
@@ -24,6 +24,13 @@ What a year!
 
 I like looking back at large time periods to reflect on the major events that happened during them.
 Let's do that now for the past year.
+
+![Me laughing and speaking with a conference mic on my face, wearing a white t-shirt with small pink flamingos, holding a cup of water](./me-laughing-on-stage.jpg)
+
+<em style="display:block;margin-bottom:2rem;text-align:center;">
+Me speaking at LeadDev 2022 in Berlin.
+Fun patterns on solid color shirts is definitely still my vibe.
+</em>
 
 ## Biggest Accomplishments
 
