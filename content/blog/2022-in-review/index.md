@@ -168,7 +168,13 @@ Ah well.
 
 ### Networking
 
-I've been to dozens of conferences -in-person and virtual- yet still feel only beginner-level at socializing with people there.
+I've been to dozens of conferences -in-person and virtual- but still feel only beginner-level at socializing with people there.
+Idle chit chat is fine, but following up with people after conferences?
+Turning connections into long-term professional partnerships, even mentorships?
+I'm truly lost.
+
+It's a little dissapointing looking back at all the great people I've met this year and haven't stayed in touch with.
+I hope to do better at this in 2023.
 
 ### TypeStat Instability
 
