@@ -5,10 +5,6 @@ image: me-laughing-on-stage.jpg
 title: "2022 In Review"
 ---
 
-> This is a draft blog post.
-> I'll try to publish it soon.
-> See PR: https://github.com/JoshuaKGoldberg/Goldblog/pull/373
-
 Wow.
 I can't believe 2022 is over.
 And I can't believe how _much_ happened last year.
