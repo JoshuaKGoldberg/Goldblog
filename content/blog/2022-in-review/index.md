@@ -1,5 +1,5 @@
 ---
-date: "2022-01-07T01:23:45.117Z"
+date: "2023-01-07T01:23:45.117Z"
 description: "Looking back at a pivotal year in my open source career."
 image: me-laughing-on-stage.jpg
 title: "2022 In Review"
