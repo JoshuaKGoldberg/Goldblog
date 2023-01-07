@@ -1,5 +1,5 @@
 ---
-date: "2022-12-31T01:23:45.117Z"
+date: "2022-01-07T01:23:45.117Z"
 description: "Looking back at a pivotal year in my open source career."
 image: me-laughing-on-stage.jpg
 title: "2022 In Review"
@@ -10,8 +10,8 @@ title: "2022 In Review"
 > See PR: https://github.com/JoshuaKGoldberg/Goldblog/pull/373
 
 Wow.
-I can't believe 2022 is almost over.
-And I can't believe how _much_ happened this year.
+I can't believe 2022 is over.
+And I can't believe how _much_ happened last year.
 
 12 months ago, I lived in Brooklyn and was gainfully employed in a dream job (Staff Frontend Developer) on a dream team (Web Platform) in my favorite tech education company (Codecademy).
 I knew I was going to leave the company at the end of January but wasn't sure what my self-employment life would look like.
@@ -22,15 +22,16 @@ I've gotten a bunch of work done on my open source projects such as typescript-e
 _Learning TypeScript_ was released, I've spoken at several great in-person conferences, and I have multiple exciting ones lined up for 2023 already.
 What a year!
 
-I like looking back at large time periods to reflect on the major events that happened during them.
-Let's do that now for the past year.
-
 ![Me laughing and speaking with a conference mic on my face, wearing a white t-shirt with small pink flamingos, holding a cup of water](./me-laughing-on-stage.jpg)
 
 <em style="display:block;margin-bottom:2rem;text-align:center;">
 Me speaking at LeadDev 2022 in Berlin.
 Fun patterns on solid color shirts is definitely still my vibe.
 </em>
+
+I like looking back at large time periods and the major events that happened during them.
+It's useful to reflect back on what the most important happenings were, and to learn from any missed opportunities or mistakes.
+Let's do that now for my 2022.
 
 ## Biggest Accomplishments
 
@@ -43,7 +44,7 @@ You get to attend talks by and chat with wonderful people from all over the indu
 I can't get enough of them.
 
 2022 was the year I really went big on speaking at in-person conferences.
-I talked in Berlin _(twice!)_, Brussels, Newquay, and Raleigh -- all in the second half of the year.
+I talked in Berlin _(twice!)_, Brussels, Newquay, and Raleigh in the second half of the year.
 And at each and every one of those conferences, I met people in person who I still have interactions with online months later.
 Amazing.
 
@@ -51,7 +52,7 @@ Talking in-person at conferences is its own skill that I'm working on.
 You can see me get more comfortable with enunciation, stage presence, and storytelling as the months went on.
 I'm excited to keep getting better as a speaker - and hopefully keynote something in 2023.
 
-You can see my [How I Apply to Conferences](../how-i-apply-to-conferences) post for more information on talking at conferences.
+> See my [How I Apply to Conferences](../how-i-apply-to-conferences) post for more information on talking at conferences.
 
 ### Minimum Wage in Open Source
 
@@ -67,7 +68,7 @@ My open source salary is about $1,700 a month / $20,400 a year:
 For context, I was earning more than ten times that amount in base salary alone in industry.
 Which is how I was able to build up savings to go full time open source in the first place.
 
-Separately, I have three other sources of income:
+Separately, I had three other sources of income:
 
 -   ~$1,500 a month on average from _Learning TypeScript_ royalties
 -   ~$27,000 from consulting, which I've mostly stopped to focus on open source
@@ -75,7 +76,7 @@ Separately, I have three other sources of income:
 
 All this is to say: I'm not poor and am not complaining about my financial situation.
 But!
-You should absolutely still sponsor me to work on open source because the current income levels aren't long-term sustainable for us.
+You should absolutely still sponsor me to work on open source because the current income levels aren't long-term sustainable.
 
 ### typescript-eslint
 
@@ -83,13 +84,15 @@ The biggest push I participated in was developer advocacy and software developme
 typescript-eslint is a crucial piece of the TypeScript ecosystem: it's what allows tools such as ESlint and Prettier to work with TypeScript.
 Yet most TypeScript developers aren't familiar with typescript-eslint enough to use its recommended preset configurations.
 
-My primary goals with typescript-eslint in 2022 ended up being:
+My primary goals around typescript-eslint in 2022 were:
 
--   Ramping up on the codebase as a new full-time maintainer
 -   Documentation: continuously adding to, reorganizing, and refining typescript-eslint.io.
 -   Organizational: documenting common contributing & maintenance tasks, and increasing funding sponsorships
 -   Paper cuts: fixing common user pains and longstanding bugs & feature requests
--   v6: Crunching on breaking changes for our upcoming v6 major release, scheduled for February or March
+-   v6: Crunching on breaking changes for our upcoming v6 major release
+
+2022 was a great year for typescript-eslint.
+And I'm seriously looking forward to releasing v6 and getting more work done in the new year.
 
 > [Here's a query for all merged typescript-eslint PRs that I created in 2022](https://github.com/typescript-eslint/typescript-eslint/pulls?q=is%3Apr+author%3AJoshuaKGoldberg+created%3A2022-01-01..2023-01-01+is%3Amerged).
 
@@ -109,10 +112,7 @@ If you want a good template for a basic TypeScript application, I'd encourage yo
 [TypeStat](https://github.com/JoshuaKGoldberg/TypeStat) is the coolest project I work on.
 It is (to my knowledge) the most advanced static JavaScript-to-TypeScript converter available in open source as of 2022.
 I didn't make much progress on it this year ([more on that later](#typestat-instability)), but I did land a few nice things:
-
--   [Revamped logging](https://github.com/JoshuaKGoldberg/TypeStat/pull/1034)
--   [Infinite wave detection](https://github.com/JoshuaKGoldberg/TypeStat/pull/1056)
--   [feat: create TSConfig in CLI](https://github.com/JoshuaKGoldberg/TypeStat/pull/1065)
+[revamped logging](https://github.com/JoshuaKGoldberg/TypeStat/pull/1034), [infinite wave detection](https://github.com/JoshuaKGoldberg/TypeStat/pull/1056), and [creating a TSConfig via the CLI](https://github.com/JoshuaKGoldberg/TypeStat/pull/1065) to name a few.
 
 > [Here's a query for all merged TypeStat PRs that I created in 2022](https://github.com/JoshuaKGoldberg/TypeStat/pulls?q=is%3Apr+author%3AJoshuaKGoldberg+created%3A2022-01-01..2023-01-01+is%3Amerged).
 
@@ -197,3 +197,11 @@ Open source is a gigantic playground that I've only barely started to explore.
 2022 was a fun year that's positioned me to go deeper in 2023.
 Look forward to lots more stuff from me in the coming months!
 🥳
+
+<span style="display:block;margin-bottom:2rem;text-align:center;">
+<img alt="Bruce Campbell in medieval armor intensely saying 'buckle up, bonehead" src="./buckle-up-bonehead.gif" />
+<br />
+<small>
+How it feels to look at 2023. A full year of open source shenanigans. [<a aria-label="Goku Super Saiyan Gif" href="https://giphy.com/gifs/peacocktv-peacock-buckle-up-bonehead-CpyfM1h1qLgWECSBxf">source</a>]
+</small>
+</span>
