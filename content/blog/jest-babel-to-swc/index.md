@@ -36,7 +36,7 @@ SWC boasts significant performance improvements over Babel for being written in 
 1. Install `@swc/jest` as a dev dependency along with `jest`
 
     ```shell
-    npm i -D jest @swc/jest
+    npm i -D jest @swc/core @swc/jest
     ```
 
 2. Add a `transform` line to your `jest.config.js` file indicating to use `@swc/jest`:
