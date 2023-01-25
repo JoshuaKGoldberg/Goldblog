@@ -1,9 +1,16 @@
 ---
 date: "2023-01-25T01:23:45.117Z"
 description: "Using the common markdown linter and disabling any rules that would intersect with dedicated formatters such as Prettier."
-image: me-laughing-on-stage.jpg
+image: superintendent.png
 title: "Configuring Markdownlint Alongside Prettier"
 ---
+
+![Me laughing and speaking with a conference mic on my face, wearing a white t-shirt with small pink flamingos, holding a cup of water](./superintendent.png)
+
+<em style="display:block;margin-bottom:2rem;text-align:center;">
+Concept art from the Halo 3: ODST character, Superintendent, known for saying <em>keep it clean</em>.
+[<a href="https://halo.fandom.com/wiki/Superintendent?file=Concept_surveillance_cam.png " title="Source: 'Concept surveillance cam.png'">source</a>]
+</em>
 
 As a maintainer of a popular linting tool, [typescript-eslint](https://typescript-eslint.io), I often get asked how I configure linting for my projects.
 My JavaScript code gets [ESLint](https://eslint.org); my TypeScript code gets [typescript-eslint](https://typescript-eslint.io) added on top, and my Markdown code gets [Markdownlint](https://github.com/DavidAnson/markdownlint).
