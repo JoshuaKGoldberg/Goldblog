@@ -5,7 +5,7 @@ image: superintendent.png
 title: "Configuring Markdownlint Alongside Prettier"
 ---
 
-![Me laughing and speaking with a conference mic on my face, wearing a white t-shirt with small pink flamingos, holding a cup of water](./superintendent.png)
+![Sketches of a surveilance camera](./superintendent.png)
 
 <em style="display:block;margin-bottom:2rem;text-align:center;">
 Concept art from the Halo 3: ODST character, Superintendent, known for saying <em>keep it clean</em>.
@@ -15,7 +15,7 @@ Concept art from the Halo 3: ODST character, Superintendent, known for saying <e
 As a maintainer of a popular linting tool, [typescript-eslint](https://typescript-eslint.io), I often get asked how I configure linting for my projects.
 My JavaScript code gets [ESLint](https://eslint.org); my TypeScript code gets [typescript-eslint](https://typescript-eslint.io) added on top, and my Markdown code gets [Markdownlint](https://github.com/DavidAnson/markdownlint).
 
-For all three of those tools (and others like them), keepin mind that [linters are not good formatters](https://typescript-eslint.io/linting/troubleshooting/formatting#formatters-vs-linters).
+For all three of those tools (and others like them), keep in mind that [linters are not good formatters](https://typescript-eslint.io/linting/troubleshooting/formatting#formatters-vs-linters).
 Linters are great at catching bugs, enforcing stylistic decisions such as naming, and detecting violations of best practices - but they're inherently terrible at _formatting_ your code.
 Whenever you enable a linter, you should make sure it isn't also trying to format your code.
 
