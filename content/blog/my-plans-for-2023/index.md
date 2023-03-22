@@ -5,6 +5,8 @@ image: i-should-finish-my-new-years-resolutions.jpg
 title: "My Plans for 2023"
 ---
 
+> **Draft post for review** - set to be published in a day or two!
+
 I posted my [2022 In Review](https://blog.joshuakgoldberg.com/2022-in-review) blog post one week into January 2023: two and a half months ago.
 2023 has already been a wild and wacky year for me, which enabled procrastinating on solidifying details on my plans for the year.
 But I've learned it's important -especially when you're independent like me and have no job or manager- to set medium- and long-term goals for yourself.
@@ -348,3 +350,12 @@ Maybe.
 Who knows.
 
 But I don't have time for this, and thus will wait for someone else to do it!
+
+## Closing Thoughts
+
+I think 2023 is going to be very good for me.
+Instead of radically changing everything, I'm planning on incrementally improving all my existing activities.
+We'll see how it goes!
+
+> If you read this far - thank you, and I have no idea why.
+> Let me know!
