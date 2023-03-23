@@ -234,7 +234,6 @@ The next logical step would have been to create free companion videos on YouTube
 My personal life was too chaotic to commit to such a large project...
 
 ...but I have the time now!
-And I'm working with someone very exciting to help make this a reality!
 Hooray!
 
 The current plan is to create free companion videos for each of the major topics discussed in each of the _Learning TypeScript_ book chapters.
