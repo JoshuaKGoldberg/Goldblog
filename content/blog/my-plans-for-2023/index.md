@@ -96,6 +96,22 @@ I tell people I contribute to TypeScript, but then will sometimes go a couple mo
 This year, I'm going to try to find the time to contribute regularly.
 Hopefully.
 
+### [Open Contributions Project](https://github.com/OpenContributionsProject)
+
+> Objective: Create a high quality set of resources to advocate for contributing to open source.
+
+Free and open software must be open source and freely available for a progressing tech industry.
+However, the model by which that software is created and maintained today is deeply flawed.
+Maintainers such as myself are expected to work on free software used by companies that do not then appropriately -if at all- compensate us for our work.
+
+I believe part of solving this issue should be getting more companies to sponsor open source.
+Many companies -especially those without high visibility in developer communities- have no budget for sponsoring their open source dependencies.
+Oftentimes many or all of the employees in those companies -especially the financial decisionmakers- aren't familiar with open source or why they should sponsor it.
+
+I'd like to create a set of resources tailored towards convincing various groups of people to contribute to open source.
+Those groups can include: developers, developers managers, financiers, marketers, and so on.
+Contributing can be coding, proofreading, outright funding with money, and so on.
+
 ### My Other, Smaller Packages
 
 > Objective: Create a small suite of well-managed open source repositories in my areas of interest.
