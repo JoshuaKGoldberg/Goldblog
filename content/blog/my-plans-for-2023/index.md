@@ -150,7 +150,27 @@ My general area of growth for them recently has been in storytelling and present
 -   Building up towards more advanced concepts by layering together introductory ones
 -   Seeding each talk with at least a couple slides audience members will want to toot/tweet
 
+### Blogging
+
+> Reliably create high quality blogs post in my managed blogs.
+
+I have a few blogs under my purview:
+
+-   My main personal blog at [blog.joshuakgoldberg.com](https://blog.joshuakgoldberg.com)
+-   Learning TypeScript's blog at [learningtypescript.com/articles](https://www.learningtypescript.com/articles)
+-   typescript-eslint's blog at [typescript-eslint.io/blog](https://www.typescript-eslint.io/blog)
+
+I didn't post very frequently to any of them in 2022.
+Which is a pity: there's a lot of stuff I want to post!
+
+For 2023, I'd like to maintain two consistency goals:
+
+-   At least one blog post every two weeks
+-   At least one post in each blog every two months
+
 ### Personal Branding
+
+> Present an approachable, informative, professional persona online.
 
 I haven't changed the design of [my personal site](https://joshuakgoldberg.com) in years.
 Which is unfortunate because I've added a lot of content to the site and now the design is starting to show its age.
@@ -166,6 +186,8 @@ Sigh.
 This year, I promise!
 
 ### PhillyJS
+
+> Goal: make a great online presence for PhillyJS.
 
 I joined the organizer crew for [PhillyJS](https://phillyjs.com), Philadelphia's JavaScript meetup, as the marketing coordinator.
 That means I'm meant to manage documentation and runbooks, social media presence, and the website.
@@ -277,7 +299,7 @@ Don't keep a sad glimmer of hope to be continuously crushed until you eventually
 
 Sorted in order of the ones I was most likely to tackle this year, first...
 
-### TypeStat
+### [TypeStat](https://github.com/JoshuaKGoldberg/TypeStat)
 
 Converts JavaScript to TypeScript and TypeScript to better TypeScript.
 I have high hopes for this library: in addition to being very cool tech internally, TypeStat solves a super common need in industry and open source alike.
@@ -291,6 +313,10 @@ When I do eventually have time to work on it, I'd like to:
 -   [Restructure its core architecture significantly](https://github.com/JoshuaKGoldberg/TypeStat/issues/1000) to make it more comprehensible and deduplicate repeated logic
 -   Create a plugin system to support library-specific mutations
 -   Rework its onboarding flow & suggested fixers so that users can get started with it immediately upon trying it out
+
+I'll still act as a maintainer for the project this year, of course.
+I'll still triage issues and review & merge pull requests.
+But beyond onboarding it to my template-typescript-node-package I don't plan on working on major features or overhauls.
 
 My end goal for the library is to make it reliably good enough that people use it as the first step in converting a project from JavaScript to TypeScript.
 
@@ -324,7 +350,7 @@ But I haven't finished my other pipe dreams for the project:
 ...but, again, even if I did have the time to work on those three non-trivial items (I don't), I again certainly wouldn't additionally have the time to put them to use in any meaningful way.
 [FullScreenPokemon](https://github.com/FullScreenShenanigans/FullScreenPokemon) will remain unfinished another year longer.
 
-### Philly TypeScript Meetup
+### Philadelphia TypeScript Meetup
 
 I really like TypeScript, and a really like meetups.
 It would be awesome to have a TypeScript-focused meetup in Philadelphia, now that I live here.
