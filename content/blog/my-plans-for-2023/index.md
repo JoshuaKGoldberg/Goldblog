@@ -53,7 +53,7 @@ Speaking of which, the v6 contains a lot of quality-of-life improvements for the
 
 The next big area we'd like to improve is performance.
 With help from the TypeScript team, we're investigating using different TypeScript APIs so that we can improve type checking speed and support project references.
-If v6 focused on quality-of-life, then v6 will focus on performance. ⚡️
+If v6 focused on quality-of-life, then v7 will focus on performance. ⚡️
 
 Additionally, now that we have more maintainers and maintainer budget than ever before, we can perform much more community outreach and developer advocacy.
 We recently opened up our Discord to the community and created a Mastodon account.
@@ -319,7 +319,7 @@ I have high hopes for this library: in addition to being very cool tech internal
 It brings me great visibility and is the most visible TypeScript area thing I've created on my own (almost 1k stars!).
 
 But, TypeStat is a _difficult_ project to work on.
-There are so many edge case and potential bugs in code changes, and many different preferences users have demonstrated in their requests to
+There are so many edge case and potential bugs in code changes, and many different preferences users have demonstrated.
 
 When I do eventually have time to work on it, I'd like to:
 
