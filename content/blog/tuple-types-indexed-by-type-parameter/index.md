@@ -1,5 +1,5 @@
 ---
-date: "2023-01-30T01:23:45.117Z"
+date: "2023-03-30T01:23:45.117Z"
 description: "Fixing a slight bug in how TypeScript resolves type elements of tuple types indexed by type parameters."
 image: jerry-catwalk.jpg
 title: "TypeScript Contribution Diary: Tuple Types Indexed by a Type Parameter"
@@ -9,7 +9,6 @@ title: "TypeScript Contribution Diary: Tuple Types Indexed by a Type Parameter"
 
 <em style="display:block;margin-bottom:2rem;text-align:center;">
 Jerry the cat showing both his head and tail.
-Heads and tails will be relevant later, sort of.
 </em>
 
 ## Problem Statement
@@ -181,7 +180,7 @@ Yay!
 
 ### Improving a Test
 
-[@Andarist](https://github.com/Andarist) [pointed out](Andarist comment on GitHub "https://github.com/microsoft/TypeScript/pull/51037/files#r987365768") that the test probably meant to check `typeof x[0] === "number"`, not just `x[0] === "number"`.
+[@Andarist](https://github.com/Andarist) [commented on GitHub](https://github.com/microsoft/TypeScript/pull/51037/files#r987365768 "Andarist comment on GitHub") that the test probably meant to check `typeof x[0] === "number"`, not just `x[0] === "number"`.
 I ended up filing [#52410 narrowingDestructuring test missing a 'typeof' operator](https://github.com/microsoft/TypeScript/issues/52410) in writing this blog post.
 
 ## Final Thanks
