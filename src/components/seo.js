@@ -77,6 +77,7 @@ function SEO({ description, image, lang, meta, title }) {
             ].map((data) => (
                 <meta key={[data.content, data.name].join("/")} {...data} />
             ))}
+            <link href="https://fosstodon.org/@JoshuaKGoldberg" rel="me" />
         </Helmet>
     );
 }

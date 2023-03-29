@@ -268,11 +268,13 @@ I'm also always trying to improve as a speaker, so this answer will probably sel
 
 As of November 2022, I think my overall best two talks were my two most recent ones:
 
-1. TypeScript Static Analysis Hidden Gems, given at [All Things Open 2022](https://2022.allthingsopen.org)
+1. <a href="https://www.youtube.com/watch?v=0x9I0XE7GDo&ab_channel=AllThingsOpen">TypeScript Static Analysis Hidden Gems</a>, given at [All Things Open 2022](https://2022.allthingsopen.org)
 1. Lessons Learned from Refactors and Rearchitectures, given at [LeadDev Berlin 2022](https://leaddev.com/leaddev-berlin)
 
-Unfortunately neither of those talks have videos available online yet.
+<str>Unfortunately neither of those talks have videos available online yet.</str>
 They should be available by March 2023.
+
+<em>Update March 2023: one is now!</em>
 
 ### What are your favorite talks you've given?
 
