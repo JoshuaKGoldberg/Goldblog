@@ -41,6 +41,8 @@ Walking through the code:
 ...so if `rest` is supposed to be type `[]`, why is it somehow `"a"[]`?
 Something was going wrong with TypeScript's type checker.
 
+> Spoiler: here's the [resultant pull request](https://github.com/microsoft/TypeScript/pull/51037). ✨
+
 ### Playing with Type Parameters
 
 Interestingly, if we change the `i` parameter's type from `N` to `number`, `rest`'s type is correctly inferred as `[]`:
@@ -178,6 +180,9 @@ My change improved an existing test baseline!
 Yay!
 🥳
 
+...and with tests working, I was able to send a pull request.
+[Fixed tuple types indexed by type parameter](https://github.com/microsoft/TypeScript/pull/51037). ✨
+
 ### Improving a Test
 
 [@Andarist](https://github.com/Andarist) [commented on GitHub](https://github.com/microsoft/TypeScript/pull/51037/files#r987365768 "Andarist comment on GitHub") that the test probably meant to check `typeof x[0] === "number"`, not just `x[0] === "number"`.
@@ -186,5 +191,5 @@ I ended up filing [#52410 narrowingDestructuring test missing a 'typeof' operato
 ## Final Thanks
 
 Thanks to [@sandersn](https://github.com/sandersn) for reviewing and merging the PR from the TypeScript team's side.
-Additional thanks to [@Zamiell](https://github.com/Zamiell) for reporting the issue in the first place, and [@Andarist](https://github.com/Andarist) for posting helpful comments on the pull request.
+Additional thanks to [@Zamiell](https://github.com/Zamiell) for reporting the issue in the first place, and [@Andarist](https://github.com/Andarist) for posting helpful comments on the [resultant pull request](https://github.com/microsoft/TypeScript/pull/51037).
 Cheers! 🙌
