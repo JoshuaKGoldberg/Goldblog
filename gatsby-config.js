@@ -3,6 +3,13 @@ module.exports = {
     siteMetadata: {
         author: `Josh Goldberg`,
         description: `Personal blog for Josh Goldberg. It's mostly TypeScript things!`,
+        keywords: [
+            "blog",
+            "josh goldberg",
+            "javascript",
+            "react",
+            "typescript",
+        ],
         siteUrl: `https://blog.joshuakgoldberg.com`,
         title: `Goldblog`,
         thumbnail: `/thumbnail.jpg`,

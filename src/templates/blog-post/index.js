@@ -39,6 +39,7 @@ export const pageQuery = graphql`
                 image {
                     base
                 }
+                keywords
                 link {
                     title
                     url
