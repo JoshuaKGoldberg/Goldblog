@@ -67,7 +67,7 @@ function SEO({ description, image, lang, meta, title }) {
                     name: `twitter:image`,
                 },
                 {
-                    content: `Goldblog`,
+                    content: `@JoshuaKGoldberg`,
                     name: `twitter:site`,
                 },
                 {
