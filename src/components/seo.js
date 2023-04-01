@@ -21,6 +21,9 @@ function SEO({ description, image, lang, meta, title }) {
     );
 
     const metaDescription = description || site.siteMetadata.description;
+    const previewImage = `${site.siteMetadata.siteUrl}${
+        image || site.siteMetadata.thumbnail
+    }`;
 
     return (
         <Helmet
@@ -48,6 +51,10 @@ function SEO({ description, image, lang, meta, title }) {
                     property: `og:type`,
                 },
                 {
+                    content: previewImage,
+                    name: `thumbnail`,
+                },
+                {
                     content: `summary`,
                     name: `twitter:card`,
                 },
@@ -56,9 +63,7 @@ function SEO({ description, image, lang, meta, title }) {
                     name: `twitter:creator`,
                 },
                 {
-                    content: `${site.siteMetadata.siteUrl}${
-                        image || site.siteMetadata.thumbnail
-                    }`,
+                    content: previewImage,
                     name: `twitter:image`,
                 },
                 {
