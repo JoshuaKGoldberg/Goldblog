@@ -2,7 +2,7 @@
 date: "2023-04-30T01:23:45.117Z"
 description: "TODO"
 image: TODO.jpg
-title: "TypeScript Contribution Diary: Removing use-before-define Errors For Const Enums"
+title: "TypeScript Contribution Diary: Removing use-before-its-declaration Errors For Const Enums"
 ---
 
 ![Black cat walking on a holiday light decorated railing towards the viewer, tail held high, looking at the viewer](./jerry-catwalk.jpg)
