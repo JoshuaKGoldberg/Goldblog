@@ -293,7 +293,7 @@ I've recently also been enjoying talks on communications and team processes.
 Thanks for reading! 💖
 
 Got any more FAQs you'd like to see here?
-Please let me know over [email](mailto:blog@joshuakgoldberg.com), [Masstodon](https://fosstodon.org/@JoshuaKGoldberg), or [Twitter](https://twitter.com/JoshuaKGoldberg)!
+Please let me know over [email](mailto:blog@joshuakgoldberg.com), [Mastodon](https://fosstodon.org/@JoshuaKGoldberg), or [Twitter](https://twitter.com/JoshuaKGoldberg)!
 
 ### Thanks
 

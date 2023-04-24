@@ -1,8 +1,8 @@
 ---
-title: "Configuring ESLint, Prettier, and TypeScript Together"
 date: "2023-04-23T12:34:56.117Z"
 description: "How I recommend getting your formatter, linter, and type checker to play together nicely."
 image: react-miami-me-speaking.jpg
+title: "Configuring ESLint, Prettier, and TypeScript Together"
 ---
 
 Static analysis tools -those that scrutinize your source code without running it- are awesome.
@@ -26,7 +26,7 @@ Everything in this blog post is available online for free:
 -   [template-typescript-node-package](https://github.com/JoshuaKGoldberg/template-typescript-node-package): Template repo I maintain that sets up these three tools (and more!) in a general Node package
 -   [Linting TypeScript in 2023](https://github.com/JoshuaKGoldberg/linting-typescript-in-2023): Demo repo showing using three type-checked typescript-eslint rules to catch three bugs in a React app
 
-The rest of this post walks through each of formatting, linting, and type checking: what each does and good practices for getting started with them.
+I've also posted a separate [FAQs article](../configuring-eslint-prettier-and-typescript-together-faqs) for assorted questions.
 
 ## Forms of Static Analysis
 
@@ -532,6 +532,8 @@ Let's recap how the tools all interact:
 -   **[typescript-eslint](https://typescript-eslint.io)** allows ESLint to parse TypeScript code and exposes TypeScript type checking APIs to ESLint rules
 
 [Linting TypeScript in 2023](https://github.com/JoshuaKGoldberg/linting-typescript-in-2023): is a demo repo showing configurations for all those tools, as well as an example of using three type-checked typescript-eslint rules to catch three bugs in a React app.
+
+See also the separate [FAQs article](../configuring-eslint-prettier-and-typescript-together-faqs) for assorted questions on static analysis.
 
 ### Supporting Open Source Projects
 
