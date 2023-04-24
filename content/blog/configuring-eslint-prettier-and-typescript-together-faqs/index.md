@@ -2,7 +2,7 @@
 date: "2023-04-23T12:34:56.117Z"
 description: "How I recommend getting your formatter, linter, and type checker to play together nicely."
 image: react-miami-me-speaking-alt.jpg
-title: "Configuring ESLint, Prettier, and TypeScript Together"
+title: "Configuring ESLint, Prettier, and TypeScript Together: FAQs"
 ---
 
 ## Context
