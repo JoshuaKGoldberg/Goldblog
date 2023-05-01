@@ -528,6 +528,9 @@ For example, [`@typescript-eslint/await-thenable`](https://typescript-eslint.io/
 // Unexpected await of a non-Promise (non-"Thenable") value.
 ```
 
+Type-aware lint rules with typescript-eslint are, to my knowledge, the most powerful lint rules you can get for JavaScript/TypeScript projects today.
+I'd highly recommend using them!
+
 ## Putting it All Together
 
 Let's recap how the tools all interact:
