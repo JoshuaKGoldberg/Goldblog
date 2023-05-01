@@ -1,15 +1,22 @@
 ---
-date: "2023-04-23T12:34:56.117Z"
+date: "2023-05-01T12:34:56.117Z"
 description: "How I recommend getting your formatter, linter, and type checker to play together nicely."
 image: react-miami-me-speaking.jpg
 title: "Configuring ESLint, Prettier, and TypeScript Together"
 ---
 
-Static analysis tools -those that scrutinize your source code without running it- are awesome.
-But, there are a lot of them, and it can be confusing figuring out which tooling to enable and the right way to configure it all.
-I recently [gave a talk at React Miami 2023](https://www.reactmiami.com/speakers/joshuagoldberg) about setting up ESLint and TypeScript for React that includes my recommendations.
+_Static analysis_ is tooling that scrutinizes code without running it.
+This is in contrast with _dynamic analysis_: tooling such as testing that executes your code and scrutinizes the result.
+Static analysis tools tend to exist on a spectrum from speed to power:
 
-![Photo of me on stage in React Miami presenting the Type Checking React (v2) slide from the slides](./react-miami-me-speaking.jpg)
+1. **Formatters** _(e.g. [Prettier](https://prettier.io))_: which only format your code quickly, without worrying about logic
+2. **Linters** _(e.g. [ESLint](https://eslint.org))_: which run a set of discrete rules meant to check the raw logic of your code, one file at a time
+3. **Type checkers** _(e.g. [TypeScript](https://typescriptlang.org))_: which generate an understanding of all your files at once and validate that code behavior matches intent
+
+I recently [gave a talk at React Miami 2023](https://www.reactmiami.com/speakers/joshuagoldberg) about setting up ESLint and TypeScript for React that includes my recommendations.
+This blog post covers all the info in that talk: describing how to get started with each form of static analysis in JavaScript/TypeScript and some quick tips for using them effectively.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/mPPZ-NUnR-4?start=25744" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <em style="display:block;margin-bottom:2rem;text-align:center;">
 <a href="https://www.youtube.com/live/mPPZ-NUnR-4?feature=share&t=25743">You can watch my talk along with all the other React Miami talks here on YouTube</a>
@@ -28,26 +35,12 @@ Everything in this blog post is available online for free:
 
 I've also posted a separate [FAQs article](../configuring-eslint-prettier-and-typescript-together-faqs) for assorted questions.
 
-## Forms of Static Analysis
-
-_Static analysis_ is tooling that scrutinizes code without running it.
-This is in contrast with _dynamic analysis_: tooling such as testing that executes your code and scrutinizes the result.
-Static analysis tools tend to exist on a spectrum from speed to power:
-
-1. Formatters: which only format your code quickly, without worrying about logic
-2. Linters: which run a set of discrete rules meant to check the raw logic of your code, one file at a time
-3. Type checkers: which generate an understanding of all your files at once and validate that code behavior matches intent
-
-I'll go through each of these tools in order, describing how to get started with them and some quick tips for using them effectively.
-
 ### Abstract Syntax Trees (ASTs)
 
-We should note that the term _"AST"_ shows up a lot around static analysis tools.
-An AST, short for _Abstract Syntax Tree_, is a representation of your source code's contents.
-Static analysis tools generally read your source files into an AST to be able to understand your code.
+Before we dig into the tools, I want to briefly mention _Abstract Syntax Trees (ASTs)_.
 
-You don't need to understand ASTs or memorize anything about them to use static analysis tools!
-Just know that when someone says AST, they're talking about how tools represent your code.
+An AST is an object description of your source code's contents.
+Static analysis tools generally read your source files into an AST to be able to understand your code.
 
 For example, code like `friend = friend || "me"` could be represented with something like:
 
@@ -69,7 +62,20 @@ For example, code like `friend = friend || "me"` could be represented with somet
 
 > If you're curious how TypeScript ASTs work, you can read about them on [ASTs and typescript-eslint](https://typescript-eslint.io/blog/asts-and-typescript-eslint) and play around with them on [typescript-eslint.io/play](https://typescript-eslint.io/play).
 
+The concept of ASTs sometimes shows up in tool documentation - and while **you don't need to understand ASTs to use static analysis tools**, they're a useful concept in general.
+Just know that when someone says AST, they're talking about how tools represent your code.
+
+Enough theory!
+Let's dig into the types of tools.
+
 ## Formatting
+
+<p style="text-align:center">
+<img alt="Cute otter cleaning itself in a body of water." src="./otter-cleaning.gif" />
+<em style="display:block;text-align:center;">
+<small>Formatters clean your code. That's all they do. [<a href="https://giphy.com/gifs/montereybayaquarium-face-otter-sea-1xlGfZ07Dq62jqKT9t">image source</a>]</small>
+</em>
+</p>
 
 A formatter is a tool that reads in your source code, ignores your formatting, and suggests how to write it.
 For example, given this oddly formatted code block:
@@ -137,13 +143,13 @@ The only option I generally set in my configs is [changing `useTabs` to true](ht
 ```
 
 > If you want much more control over your formatting, you might prefer [dprint](https://dprint.dev) for formatting.
-> It's much more configurable than Prettier, though less widely used and thus has fewer community plugins.
+> It's much more configurable than Prettier, though less widely used.
 
 ## Linting
 
 <p style="text-align:center">
 <img alt="Will Ferrel in SNL banging a cowbell behind the band in the 'needs more cowbell' sketch. Caption: 'NEEDS MORE LINT RULES'" src="./needs-more-lint-rules.gif" />
-<em style="display:block;margin-top:-1rem;text-align:center;">
+<em style="display:block;text-align:center;">
 <small>me irl</small>
 </em>
 </p>
@@ -351,8 +357,8 @@ Use a dedicated linter, please!
 
 <p style="text-align:center">
 <img alt="April Ludgate in Parks and Recreation putting her fingers to her forehead and looking exasperated and overwhelmed'" src="./april.gif" />
-<em style="display:block;margin-top:-1rem;text-align:center;">
-<small>me and all other linter maintainers irl having to deal with formatting rules</small>
+<em style="display:block;text-align:center;">
+<small>me and all other linter maintainers irl having to deal with formatting rules [<a href="https://giphy.com/gifs/parksandrec-episode-5-parks-and-recreation-rec-76Nahzjx4Y6WXP2APE">image source</a>]</small>
 </em>
 </p>
 
