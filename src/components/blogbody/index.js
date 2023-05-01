@@ -19,7 +19,7 @@ const BlogBody = ({ post }) => {
         <>
             <Seo
                 description={description || post.excerpt}
-                image={image ? `/images/${image.base}` : undefined}
+                image={image ? `/images/${image.base || image}` : undefined}
                 keywords={keywords}
                 title={title}
             />
