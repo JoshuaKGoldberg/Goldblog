@@ -408,7 +408,7 @@ npx tsc
 The following compiler options are the minimum I recommend for most projects using React or another framework that uses JSX:
 
 -   [`"jsx"`](https://www.typescriptlang.org/tsconfig#jsx): Indicates that TypeScript should allow JSX syntax
--   [`"module"`](https://www.typescriptlang.org/tsconfig#module): Which module system TypeScript should assume is running in
+-   [`"module"`](https://www.typescriptlang.org/tsconfig#module): Which module system TypeScript should assume code is running in
 -   [`"strict"`](https://www.typescriptlang.org/tsconfig#strict): Enables a suite of useful opt-in type checking rules that make TypeScript more strict (so it'll catch more issues)
 -   [`"target"`](https://www.typescriptlang.org/tsconfig#target): Indicates which global APIs & environment syntax features TypeScript should assume are available
 
