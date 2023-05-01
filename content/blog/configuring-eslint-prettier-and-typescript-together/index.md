@@ -353,7 +353,7 @@ They're not the same!
 Although a linter can have rules tailored to formatting (e.g. [`indent`](https://eslint.org/docs/latest/rules/indent), [`max-len`](https://eslint.org/docs/latest/rules/max-len), [`semi`](https://eslint.org/docs/latest/rules/semi)), those rules get to be ridiculously complex and difficult to maintain because of all the edge cases they need to handle.
 [In typescript-eslint land we've given up on the `indent` rule altogether](https://github.com/typescript-eslint/typescript-eslint/issues/1824).
 Formatting rules are evil, a waste of time to maintain, and not the right way to format your code.
-Use a dedicated linter, please!
+Use a dedicated formatter, please!
 
 <p style="text-align:center">
 <img alt="April Ludgate in Parks and Recreation putting her fingers to her forehead and looking exasperated and overwhelmed'" src="./april.gif" />
