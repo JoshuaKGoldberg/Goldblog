@@ -9,6 +9,12 @@ These are common questions and my answers for my [Configuring ESLint, Prettier, 
 
 Let me know if you have any other questions to add!
 
+## TL;DR
+
+It _might_ make sense for you to use `eslint-config-prettier` if you're using an own ESLint config with rules which could potentially conflict with prettier (more on that below).
+
+The other tools (`eslint-plugin-prettier`, `tslint`, `tslint-config-prettier` and `tslint-plugin-prettier`) are not recommended to use.
+
 ## What is `eslint-config-prettier`?
 
 [`eslint-config-prettier`](https://www.npmjs.com/package/eslint-config-prettier) is a utility package containing an ESLint configuration that explicitly turns off all common ESLint rules that are unnecessary or might conflict with Prettier.
@@ -55,6 +61,12 @@ The [typescript-eslint _What About TSLint?_ page](https://typescript-eslint.io/l
 
 > Tip: people sometimes refer to TypeScript's complaints as "tslint" or "the tslinter".
 > That's inaccurate and confusing.
+
+### tslint-config-prettier and tslint-plugin-prettier
+
+The same applies to [tslint-config-prettier](https://github.com/prettier/tslint-config-prettier) and [tslint-plugin-prettier](https://github.com/prettier/tslint-plugin-prettier). Very often, those are still recommended if you're using TypeScript (and you'll hear stuff along the lines of "use this for TypeScript"). This is not true - those two tools work together with **TSLint**, not plain, standalone TypeScript.
+
+Since TSLint is deprecated and not recommended anymore, these two plugins shouldn't be used anymore as well, since they're specifically made for TSLint. You don't need them for TypeScript.
 
 ## Closing Thoughts
 
