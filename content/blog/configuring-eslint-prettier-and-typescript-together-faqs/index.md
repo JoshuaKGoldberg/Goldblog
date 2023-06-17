@@ -68,3 +68,5 @@ Thanks for reading! 💖
 
 Got any more FAQs you'd like to see here?
 Please let me know over [email](mailto:blog@joshuakgoldberg.com), [Masstodon](https://fosstodon.org/@JoshuaKGoldberg), or [Twitter](https://twitter.com/JoshuaKGoldberg)!
+
+> Special appreciation to [Alessio Gravili](https://github.com/AlessioGr) for [adding clarity about TSLint plugins](https://github.com/JoshuaKGoldberg/Goldblog/pull/386). 💙
