@@ -9,12 +9,6 @@ These are common questions and my answers for my [Configuring ESLint, Prettier, 
 
 Let me know if you have any other questions to add!
 
-## TL;DR
-
-It _might_ make sense for you to use `eslint-config-prettier` if you're using an own ESLint config with rules which could potentially conflict with prettier (more on that below).
-
-The other tools (`eslint-plugin-prettier`, `tslint`, `tslint-config-prettier` and `tslint-plugin-prettier`) are not recommended to use.
-
 ## What is `eslint-config-prettier`?
 
 [`eslint-config-prettier`](https://www.npmjs.com/package/eslint-config-prettier) is a utility package containing an ESLint configuration that explicitly turns off all common ESLint rules that are unnecessary or might conflict with Prettier.
