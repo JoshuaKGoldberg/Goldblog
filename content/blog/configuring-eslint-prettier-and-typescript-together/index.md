@@ -542,7 +542,7 @@ Let's recap how the tools all interact:
 
 [Linting TypeScript in 2023](https://github.com/JoshuaKGoldberg/linting-typescript-in-2023): is a demo repo showing configurations for all those tools, as well as an example of using three type-checked typescript-eslint rules to catch three bugs in a React app.
 
-See also the separate [FAQs article](../configuring-eslint-prettier-and-typescript-together-faqs) for assorted questions on static analysis.
+See also the separate [FAQs article](../configuring-eslint-prettier-and-typescript-together-faqs) for assorted questions on static analysis. This includes any questions you might have about plugins like eslint-config-prettier, eslint-plugin-prettier, tslint, tslint-config-prettier, and tslint-plugin-prettier.
 
 ### Supporting Open Source Projects
 

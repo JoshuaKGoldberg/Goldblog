@@ -56,6 +56,12 @@ The [typescript-eslint _What About TSLint?_ page](https://typescript-eslint.io/l
 > Tip: people sometimes refer to TypeScript's complaints as "tslint" or "the tslinter".
 > That's inaccurate and confusing.
 
+### tslint-config-prettier and tslint-plugin-prettier
+
+The same applies to [tslint-config-prettier](https://github.com/prettier/tslint-config-prettier) and [tslint-plugin-prettier](https://github.com/prettier/tslint-plugin-prettier). Very often, those are still recommended if you're using TypeScript (and you'll hear stuff along the lines of "use this for TypeScript"). This is not true - those two tools work together with **TSLint**, not plain, standalone TypeScript.
+
+Since TSLint is deprecated and not recommended anymore, these two plugins shouldn't be used anymore as well, since they're specifically made for TSLint. You don't need them for TypeScript.
+
 ## Closing Thoughts
 
 Thanks for reading! 💖
