@@ -163,4 +163,4 @@ You can read more about the concerns of formatters vs. linters in the following 
 -   [typescript-eslint's _What About Formatting?_ page](https://typescript-eslint.io/linting/troubleshooting/formatting)
 
 This blog post was inspired by a [timely discussion thread on Twitter](https://twitter.com/JoshuaKGoldberg/status/1667978271269502979) with [@azat_io_en](https://twitter.com/azat_io_en) and [@helloklose](https://twitter.com/helloklose).
-Thanks to Azat for sharing out `eslint-plugin-perfectionist` and friesenjung for asking great questions! 🙌
+Thanks to Azat for sharing out `eslint-plugin-perfectionist` and Oksel for asking great questions! 🙌
