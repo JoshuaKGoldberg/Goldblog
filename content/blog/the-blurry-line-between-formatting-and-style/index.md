@@ -1,5 +1,5 @@
 ---
-date: "2023-06-13T12:34:56.117Z"
+date: "2023-06-19T12:34:56.117Z"
 description: "Why separating responsibilities between your formatter and linter isn't always clear-cut."
 title: "The Blurry Line Between Formatting and Style"
 ---
