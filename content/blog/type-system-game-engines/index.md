@@ -15,7 +15,7 @@ Here's a cute photo of a cat to start the blog post off right.
 ## Preamble
 
 This is the companion blog post for my [TSConf 2020](https://tsconf.io) talk.
-At the end of it, we'll have figured out how to take a template string literal like this one, simulate a Tic Tac Toe game on it, figure out who the winner of that game is.
+At the end of it, we'll have figured out how to take a template string literal like this one, simulate a Tic Tac Toe game on it, and figure out who the winner of that game is.
 
 ```ts
 type Winner = TicTacToe<`
