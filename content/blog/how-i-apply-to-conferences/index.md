@@ -214,7 +214,7 @@ Edit 11/18: [Luis Sánchez](https://twitter.com/chiefblagger), an organizer of c
 Would recommend!
 
 > Got any more great resources?
-> Please let me know over [email](mailto:blog@joshuakgoldberg.com), [Masstodon](https://fosstodon.org/@JoshuaKGoldberg), or [Twitter](https://twitter.com/JoshuaKGoldberg)!
+> Please let me know over [email](mailto:blog@joshuakgoldberg.com), [Mastodon](https://fosstodon.org/@JoshuaKGoldberg), or [Twitter](https://twitter.com/JoshuaKGoldberg)!
 
 ### Thanks
 

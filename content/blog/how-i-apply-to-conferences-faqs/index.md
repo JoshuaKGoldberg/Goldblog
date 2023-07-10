@@ -56,7 +56,7 @@ If you use Twitter, you might consider making a [Twitter List](https://help.twit
 Mine is [Josh Conference Matches](https://twitter.com/i/lists/1461079394861027328).
 
 > Got another service to add to the list?
-> Please let me know over [email](mailto:blog@joshuakgoldberg.com), [Masstodon](https://fosstodon.org/@JoshuaKGoldberg), or [Twitter](https://twitter.com/JoshuaKGoldberg)!
+> Please let me know over [email](mailto:blog@joshuakgoldberg.com), [Mastodon](https://fosstodon.org/@JoshuaKGoldberg), or [Twitter](https://twitter.com/JoshuaKGoldberg)!
 
 ### Do you need to be an expert on a subject to give a talk on it?
 
@@ -122,7 +122,7 @@ Most reviewers I've talked look for qualities something like:
     -   This one is roughly impossible to predict as an applicant, so don't worry about it!
 
 > I'm planning on writing follow-up posts on more conference topics, including how I review CFP submissions.
-> Please let me know over [email](mailto:blog@joshuakgoldberg.com), [Masstodon](https://fosstodon.org/@JoshuaKGoldberg), or [Twitter](https://twitter.com/JoshuaKGoldberg) if there's anything you'd like to see answered!
+> Please let me know over [email](mailto:blog@joshuakgoldberg.com), [Mastodon](https://fosstodon.org/@JoshuaKGoldberg), or [Twitter](https://twitter.com/JoshuaKGoldberg) if there's anything you'd like to see answered!
 
 ### I have anxiety. Can I speak at conferences?
 
