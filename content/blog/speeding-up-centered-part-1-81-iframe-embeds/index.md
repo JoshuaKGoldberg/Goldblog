@@ -110,7 +110,7 @@ Next step: reducing that number.
 
 ### 3. Implementation
 
-One of the most commonly effective techniques in performance work is _lazy loading_: loading content only when it is needed.
+One of the most common techniques in performance work is _lazy loading_: loading content only when it is needed.
 In web pages, that often means loading only content _"above the fold"_- content the user can see without scrolling - initially, then loading subsequent content as the user scrolls down.
 The quotes page only really needed the first half dozen or so tweets to load immediately.
 
