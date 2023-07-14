@@ -81,7 +81,7 @@ I'm guessing this particular page had started off with only a small number of qu
 ### 1. Identification
 
 Normally at the beginning of an investigation I'll run a tool such as the [Chrome dev tools > Lighthouse performance audit](https://developer.chrome.com/docs/devtools/lighthouse) to get an overview of a page's performance issues.
-But for this page I felt I could run off my past experiences and intuition.
+But this page page was straightforward enough that I felt I could run off my past experiences and intuition.
 
 The page's HTML, CSS, and JavaScript all loaded pretty quickly: so the issue was client-side, rather than the server taking a long time to send them over.
 That meant the issue was most likely some client scripts taking too long to run.
