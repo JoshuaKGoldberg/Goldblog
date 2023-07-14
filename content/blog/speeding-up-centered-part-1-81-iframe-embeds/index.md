@@ -171,7 +171,7 @@ The general time from page load to all visible content loading was reduced from 
 </small>
 
 The page still has a bit of choppiness as the frames load in, but that's a touchup for another day.
-I'm satisfied with the 300% speedup result.
+I'm satisfied with the 300% speedup result for now.
 ⚡️
 
 ## In Conclusion
