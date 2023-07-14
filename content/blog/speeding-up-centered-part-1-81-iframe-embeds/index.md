@@ -13,7 +13,7 @@ But when you're a startup working quickly to implement critical user features, i
 
 <small style="display:block;margin-bottom:2rem;text-align:center;">
 <img alt="Mr. Bean waiting ni front of a yellow field of flowers, checking his watch'" src="./mr-bean-waiting.gif" />
-<div>Your users are not Mr. Bean. Don't make them wait to use your website. [<a aria-label="Spongebob gif source" href="https://giphy.com/gifs/waiting-mr-bean-checking-time-pFZTlrO0MV6LoWSDXd">source</a>]</div>
+<div>Your users are not Mr. Bean. Don't make them wait to use your website. [<a aria-label="Spongebob gif source" href="https://giphy.com/gifs/waiting-mr-bean-checking-time-pFZTlrO0MV6LoWSDXd" target="_blank">source</a>]</div>
 </small>
 
 This post is the first in a series describing how I significantly improved the page load performance of the popular [Centered app](https://centered.app).
@@ -60,7 +60,7 @@ My first instinct as a web developer is to check web apps for serious SEO issues
 ## Issue 1: The Quotes Page
 
 The first issue I looked at on was the [centered.app/quotes](https://centered.app/quotes) marketing page.
-It contains about over 80 `<iframe>` embeds of tweets from various happy users.
+It contains 81 `<iframe>` embeds of tweets from various happy users.
 The team had noticed the page takes a long time to load and spikes the user's CPU in the process.
 
 I tried visiting centered.app/quotes, and ... wow!
