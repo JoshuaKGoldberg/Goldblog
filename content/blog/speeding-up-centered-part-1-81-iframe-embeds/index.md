@@ -121,7 +121,7 @@ In over-eager loading, not-yet-needed content is still not loaded immediately, b
 
 > ✨ Tip: A more common example of over-eager loading is pre-fetching HTTP resources with [`<link rel="preload">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/preload).
 
-The code change roughly boiled down to incrementing counter in state tracking how many cards should be shown:
+The code change roughly boiled down to incrementing a counter in state tracking how many cards should be shown:
 
 ```diff
 + const startingCardsCount = 6;
