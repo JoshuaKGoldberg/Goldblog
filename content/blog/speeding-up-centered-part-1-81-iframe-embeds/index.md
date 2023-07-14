@@ -115,7 +115,7 @@ In web pages, that often means loading only content _"above the fold"_ -content 
 The quotes page only really needed the first half dozen or so tweets to load immediately.
 
 I opted for a variant sometimes called _"over-eager loading"_: loading the initial content first, then "eagerly" loading in more and more content later.
-You can think of over-eager loading as an optimization over _"lazy loading"_.
+You can think of over-eager loading as an optimization over lazy loading.
 In lazy loading, content isn't loaded until it's needed.
 In over-eager loading, not-yet-needed content is still not loaded immediately, but it is "preloaded" after the main content.
 
