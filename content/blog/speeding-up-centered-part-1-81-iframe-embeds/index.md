@@ -111,7 +111,7 @@ Next step: reducing that number.
 ### 3. Implementation
 
 One of the most common techniques in performance work is _lazy loading_: loading content only when it is needed.
-In web pages, that often means loading only content _"above the fold"_- content the user can see without scrolling - initially, then loading subsequent content as the user scrolls down.
+In web pages, that often means loading only content _"above the fold"_ -content the user can see without scrolling- initially, then loading subsequent content as the user scrolls down.
 The quotes page only really needed the first half dozen or so tweets to load immediately.
 
 I opted for a variant sometimes called _"over-eager loading"_: loading the initial content first, then "eagerly" loading in more and more content later.
