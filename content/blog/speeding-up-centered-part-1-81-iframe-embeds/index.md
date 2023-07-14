@@ -186,7 +186,7 @@ Strategies such as lazy loading and over-eager loading can trim those bloated we
 Many thanks to:
 
 -   [Cassidy Williams](https://cassidoo.co) for connecting us in the first place
--   [Steven Puri](https://twitter.com/stevenpuri) for great initial chats about the product _(and real enthusiasm about making a great product)_ and [Michael Cash](https://twitter.com/mikecashatx) for helping continue that onboarding
+-   [Steven Puri](https://twitter.com/stevenpuri) for great initial chats about the product _(plus real enthusiasm about making a great product!)_ and [Michael Cash](https://twitter.com/mikecashatx) for helping continue that onboarding
 -   [Nicolas Carlo](https://www.nicoespeon.com) for reviewing my PRs into the Centered repository
 
 ### Coming Soon
