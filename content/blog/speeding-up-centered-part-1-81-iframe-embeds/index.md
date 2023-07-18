@@ -1,5 +1,5 @@
 ---
-date: "2023-07-21T12:34:56.117Z"
+date: "2023-07-19T12:34:56.117Z"
 description: "Improving a page's performance by over-eager loading most of its embedded content."
 image: mr-bean-waiting.gif
 title: "Speeding Up Centered Part 1: 81 <iframe> Embeds"
