@@ -101,7 +101,7 @@ What I saw amused me: dozens upon dozens of `<iframe>`s, each embedding one of t
 </small>
 
 The page uses the popular [`react-twitter-embed` library](https://saurabhnemade.github.io/react-twitter-embed/?path=/story/twitter-tweet-embed--tweet-embed) to render an `<iframe>` for each tweet.
-The `<iframe>` strategy for embedding tweets is common and handy for avoiding the higher cost approach of using Twitter API to populate tweet data in a custom-written component.
+The `<iframe>` strategy for embedding tweets is common and handy for avoiding the higher cost approach of using Twitter API's to populate tweet data in a custom-written component.
 
 Fun fact: each `<iframe>` in a web page causes the browser to recreate what is essentially a webpage-in-a-webpage, complete with its own DOM body and JavaScript execution environment.
 Placing several dozen `<iframe>`s immediately on a single webpage is almost the equivalent of opening that many browser tabs all at the same times.
