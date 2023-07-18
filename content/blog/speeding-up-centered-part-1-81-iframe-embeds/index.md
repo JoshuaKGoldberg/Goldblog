@@ -16,7 +16,8 @@ But when you're a startup working quickly to implement critical user features, i
 <div>Your users are not Mr. Bean. Don't make them wait to use your website. [<a aria-label="Spongebob gif source" href="https://giphy.com/gifs/waiting-mr-bean-checking-time-pFZTlrO0MV6LoWSDXd" target="_blank">source</a>]</div>
 </small>
 
-This post is the first in a series describing how I significantly improved the page load performance of the popular [Centered app](https://centered.app).
+Earlier this year, I spent some time working on performance for the popular [Centered app](https://centered.app).
+This post is the first in a series describing each of the significant page load performance improvements I made.
 For each improvement, I'll cover:
 
 1. **Identification**: how I used developer tools at a high level to identify where there was an issue
@@ -29,7 +30,7 @@ The net results were quite pleasing:
 -   ~80% reduction in bundle size loaded on all pages
 -   ≥2 second reduction in all pages' load script processing
 
-This post covers the first of six key improvements I made to the Centered app:
+This post covers the first of five key improvements I made to the Centered app:
 
 1. 👉 81 &lt;iframe&gt; Embeds
 1. _Hidden Embedded Images: coming soon!_
@@ -81,7 +82,7 @@ I'm guessing this particular page had started off with only a small number of qu
 ### 1. Identification
 
 Normally at the beginning of an investigation I'll run a tool such as the [Chrome dev tools > Lighthouse performance audit](https://developer.chrome.com/docs/devtools/lighthouse) to get an overview of a page's performance issues.
-But this page page was straightforward enough that I felt I could run off my past experiences and intuition.
+But this page was straightforward enough that I felt I could run off my past experiences and intuition.
 
 The page's HTML, CSS, and JavaScript all loaded pretty quickly: so the issue was client-side, rather than the server taking a long time to send them over.
 That meant the issue was most likely some client scripts taking too long to run.
@@ -98,6 +99,9 @@ What I saw amused me: dozens upon dozens of `<iframe>`s, each embedding one of t
 <img alt="Screenshot of centered.app/quotes with Elements dev tools open, showing a masonry grid with one entry (class name 'w-full  shadow-2xl') expanded to show an iframe" src="./quotes-dom-iframes.png" />
 <div><em>Each of the w-full divs contains an &lt;iframe&gt;. That's a lot of &lt;iframe&gt;s.</em></div>
 </small>
+
+The page uses the popular [`react-twitter-embed` library](https://saurabhnemade.github.io/react-twitter-embed/?path=/story/twitter-tweet-embed--tweet-embed) to render an `<iframe>` for each tweet.
+The `<iframe>` strategy for embedding tweets is common and handy for avoiding the higher cost approach of using Twitter API to populate tweet data in a custom-written component.
 
 Fun fact: each `<iframe>` in a web page causes the browser to recreate what is essentially a webpage-in-a-webpage, complete with its own DOM body and JavaScript execution environment.
 Placing several dozen `<iframe>`s immediately on a single webpage is almost the equivalent of opening that many browser tabs all at the same times.
@@ -174,12 +178,17 @@ The page still has a bit of choppiness as the frames load in, but that's a touch
 I'm satisfied with the 300% speedup result for now.
 ⚡️
 
+> Normally at this stage I'd try to validate with real user data on production, ideally by running an A/B test.
+> Seeing if any user behaviors such as bounce rate changed on production could work as a backup.
+> Unfortunately, we didn't have a suitable analytics provider set up at the time.
+
 ## In Conclusion
 
 Web performance is easy to neglect when you've got other pressing concerns to handle.
 But pages that may have been fine one year may slowly turn slow over time.
 
-Strategies such as lazy loading and over-eager loading can trim those bloated webpages back to speedier versions of themselves.
+When your pages grow too slow, strategies such as lazy loading and over-eager loading can trim those bloated webpages back to speedier versions of themselves.
+Be sure to always investigate the root cause of issues, surgically improve performance bottlenecks, and validate your changes do what you intend.
 
 ### Acknowledgments
 
