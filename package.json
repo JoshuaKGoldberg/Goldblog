@@ -37,7 +37,7 @@
     "react-use": "^17.4.0"
   },
   "devDependencies": {
-    "prettier": "^3.0.0"
+    "prettier": "^2.7.1"
   },
   "homepage": "https://github.com/JoshuaKGoldberg/goldblog#readme",
   "keywords": [

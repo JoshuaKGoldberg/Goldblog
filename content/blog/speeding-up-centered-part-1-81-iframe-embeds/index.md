@@ -17,6 +17,7 @@ But when you're a startup working quickly to implement critical user features, i
 </small>
 
 Earlier this year, I spent some time working on performance for the popular [Centered app](https://centered.app).
+My goal was to improve the app's page load times to help them improve user acquisition and the general experience of using the app.
 This post is the first in a series describing each of the significant page load performance improvements I made.
 For each improvement, I'll cover:
 
