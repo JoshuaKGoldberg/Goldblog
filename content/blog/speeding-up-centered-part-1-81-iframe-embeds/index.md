@@ -191,7 +191,7 @@ Web performance is easy to neglect when you've got other pressing concerns to ha
 But pages that may have been fine one year may slowly turn slow over time.
 
 When your pages grow too slow, strategies such as lazy loading and over-eager loading can trim those bloated webpages back to speedier versions of themselves.
-Be sure to always investigate the root cause of issues, surgically improve performance bottlenecks, and validate your changes do what you intend.
+Be sure to always investigate the root cause of issues, surgically improve performance bottlenecks, and validate that your changes do what you intend.
 
 ### Acknowledgments
 
