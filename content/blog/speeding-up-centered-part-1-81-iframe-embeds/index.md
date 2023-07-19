@@ -174,8 +174,10 @@ The general time from page load to all visible content loading was reduced from 
 <div><em>1x recording of loading centered.app/quotes with the over-eager loading</em></div>
 </small>
 
-The page still has a bit of choppiness as the frames load in, but that's a touchup for another day.
-I'm satisfied with the 300% speedup result for now.
+The page still has a bit of choppiness as the frames load in.
+It'd be nice to set up a page system that uses its own React components with cached tweet data instead of any `<iframe>` embeds.
+That's a longer task for another day.
+For now, I'm satisfied with the 300% speedup.
 ⚡️
 
 > Normally at this stage I'd try to validate with real user data on production, ideally by running an A/B test.
